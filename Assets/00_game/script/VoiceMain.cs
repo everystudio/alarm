@@ -5,6 +5,9 @@ using System.Collections.Generic;
 public class VoiceMain : PageBase {
 
 	public ButtonManager m_TabButtonManager;
+	private FooterButton m_btnList;
+	private FooterButton m_btnStore;
+
 	public GameObject m_goPanelList;
 	public GameObject m_goPanelStore;
 
@@ -78,6 +81,9 @@ public class VoiceMain : PageBase {
 			m_bSubStarted = true;
 		}
 		m_TabButtonManager.ButtonInit ();
+		m_btnList = m_TabButtonManager.GetButtonBase (0).gameObject.GetComponent<FooterButton> ();
+		m_btnStore = m_TabButtonManager.GetButtonBase (1).gameObject.GetComponent<FooterButton> ();
+
 		m_TabButtonManager.TriggerClearAll ();
 		m_iTabIndex = m_TabButtonManager.Index;
 		tab_switch (m_iTabIndex);
@@ -99,10 +105,16 @@ public class VoiceMain : PageBase {
 		if (_iIndex == 0) {
 			m_goPanelList.SetActive (true);
 			m_goPanelStore.SetActive (false);
+
+			m_btnList.SetImage (true);
+			m_btnStore.SetImage (false);
 		} else if (_iIndex == 1) {
 			m_goPanelList.SetActive (false);
 			m_goPanelStore.SetActive (true);
+			m_btnList.SetImage (false);
+			m_btnStore.SetImage (true);
 		}
+
 		foreach (BannerList banner in m_bannerList) {
 			banner.Reset ();
 		}

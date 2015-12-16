@@ -165,6 +165,7 @@ public class TimeEdit : OtherPage {
 			}
 
 			if (ButtonPushed) {
+				//Debug.LogError (Index);
 				TriggerClearAll ();
 				if (Index == 0) {
 					OutStart ();
@@ -172,9 +173,8 @@ public class TimeEdit : OtherPage {
 				} else if (Index == 1) {
 					OutStart ();
 					// ここは保存
-					Debug.LogError (GameMain.Instance.EditingAlarmParam.serial);
-					GameMain.Instance.EditingAlarmParam.time = string.Format( "1982-10-10 {0:D2}:{1:D2}:00" , m_iHour , m_iMinute );
-
+					//Debug.LogError (GameMain.Instance.EditingAlarmParam.serial);
+					GameMain.Instance.EditingAlarmParam.time = string.Format ("1982-10-10 {0:D2}:{1:D2}:00", m_iHour, m_iMinute);
 					GameMain.Instance.m_AlarmData.Load (AlarmData.FILENAME);
 					if (0 < GameMain.Instance.EditingAlarmParam.serial) {
 						foreach (AlarmParam param in GameMain.Instance.m_AlarmData.list) {
@@ -196,6 +196,25 @@ public class TimeEdit : OtherPage {
 						GameMain.Instance.EditingAlarmParam.serial = GameMain.Instance.m_AlarmData.list.Count + 1;
 						GameMain.Instance.m_AlarmData.list.Add (GameMain.Instance.EditingAlarmParam);
 					}
+				}
+				else if( Index == 2 ){
+					OutStart ();
+					GameMain.Instance.EditingAlarmParam.time = string.Format ("1982-10-10 {0:D2}:{1:D2}:00", m_iHour, m_iMinute);
+					GameMain.Instance.m_AlarmData.Load (AlarmData.FILENAME);
+					//Debug.LogError (GameMain.Instance.EditingAlarmParam.serial);
+					if (0 < GameMain.Instance.EditingAlarmParam.serial) {
+						foreach (AlarmParam param in GameMain.Instance.m_AlarmData.list) {
+							//Debug.LogError (param.serial);
+							if (param.serial == GameMain.Instance.EditingAlarmParam.serial) {
+								param.status = -1;
+							}
+						}
+					} else {
+					}
+					GameMain.Instance.m_AlarmData.Save ();
+					GameMain.Instance.reserveTimeReset ();
+					GameMain.Instance.TimeSetRefresh ();
+
 				} else {
 				}
 				GameMain.Instance.m_AlarmData.Save ();
@@ -241,7 +260,11 @@ public class TimeEdit : OtherPage {
 				m_PageVoice.InStart ();
 			}
 			int select_index = 0;
-			if (m_PageVoice.m_bmBannerListSelect.ButtonPushed) {
+			if (m_PageVoice.ButtonPushed) {
+				m_PageVoice.OutStart ();
+				m_eStep = STEP.IDLE;
+			}
+			else if (m_PageVoice.m_bmBannerListSelect.ButtonPushed) {
 				select_index = m_PageVoice.m_bmBannerListSelect.Index;
 				GameMain.Instance.EditingAlarmParam.voice_type = m_PageVoice.m_bannerList [select_index].m_csvVoiceData.id;
 				m_PageVoice.OutStart ();

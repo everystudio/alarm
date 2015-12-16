@@ -20,7 +20,7 @@ public class IconList : IconBase {
 		m_csvImageData = _data;
 		Index = _iIndex;
 		SetSelect (_iSelectingId);
-		m_switchSprite.SetSize (213, 213);
+		m_switchSprite.SetSize (212, 212);
 		m_switchSprite.SetSprite (_data.name_icon );
 	}
 

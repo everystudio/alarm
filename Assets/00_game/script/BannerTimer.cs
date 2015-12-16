@@ -22,7 +22,6 @@ public class BannerTimer : BannerBase {
 
 		m_lbName.text = DataManagerAlarm.Instance.GetVoiceData(_param.voice_type).description;
 
-		Debug.Log (_param.status);
 		SetStatus (_param.status);
 
 		m_btnTrigger.TriggerClear ();

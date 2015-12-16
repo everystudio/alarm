@@ -25,7 +25,7 @@ public class BannerVoiceBase : BannerBase {
 	public CsvVoiceData m_csvVoiceData;
 
 	public void SetSprite( CsvVoiceData _data ){
-		m_switchSprite.SetSize (200, 200);
+		m_switchSprite.SetSize (161, 161);
 		m_switchSprite.SetSprite (_data.name_icon);
 	}
 

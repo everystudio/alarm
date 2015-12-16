@@ -156,7 +156,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 640, y: 120, z: 0}
+  m_Size: {x: 640, y: 123, z: 0}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &11402198
 MonoBehaviour:
@@ -189,12 +189,12 @@ MonoBehaviour:
   mColor: {r: .985294104, g: .985294104, b: .985294104, a: 1}
   mPivot: 4
   mWidth: 640
-  mHeight: 120
+  mHeight: 123
   mDepth: 0
   autoResizeBoxCollider: 1
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 5.33333349
+  aspectRatio: 5.20325184
   mType: 0
   mFillDirection: 4
   mFillAmount: 1
@@ -205,7 +205,7 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mSprite: {fileID: 21300000, guid: b7857e24d05304f4198209e9249dd9bd, type: 3}
+  mSprite: {fileID: 21300000, guid: fecd13dbd4a774b0189f65318f12ebce, type: 3}
   mMat: {fileID: 0}
   mShader: {fileID: 4800000, guid: e75727d9555d9d14ca51d91908c681bc, type: 3}
   mBorder: {x: 0, y: 0, z: 0, w: 0}
@@ -242,8 +242,8 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 50
-  mHeight: 50
+  mWidth: 41
+  mHeight: 41
   mDepth: 2
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
@@ -272,7 +272,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 103178}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e9d0b5f3bbe925a408bd595c79d0bf63, type: 3}
   m_Name: 
@@ -346,8 +346,13 @@ MonoBehaviour:
   m_intIndex: 0
   m_bButtonClicked: 0
   m_lbText: {fileID: 11410350}
+  m_sprBack: {fileID: 11402198}
   m_sprSelecting: {fileID: 11409998}
   m_bFlag: 0
+  sprite_list:
+  - {fileID: 21300000, guid: fecd13dbd4a774b0189f65318f12ebce, type: 3}
+  - {fileID: 21300000, guid: d66942702610f415dad7ee4104ca37f5, type: 3}
+  - {fileID: 21300000, guid: 545ea9e46ecfd41a18abb241ac392918, type: 3}
 --- !u!114 &11415620
 MonoBehaviour:
   m_ObjectHideFlags: 1

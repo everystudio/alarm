@@ -93,10 +93,10 @@ MonoBehaviour:
   keepAspectRatio: 0
   aspectRatio: 3.5999999
   keepCrispWhenShrunk: 1
-  mTrueTypeFont: {fileID: 12800000, guid: 898282f85c3564779bfbd07b7579218a, type: 3}
+  mTrueTypeFont: {fileID: 12800000, guid: 4872a07db2362418f8d3535c6fe43596, type: 3}
   mFont: {fileID: 0}
   mText: "00\u6642"
-  mFontSize: 50
+  mFontSize: 42
   mFontStyle: 1
   mAlignment: 0
   mEncoding: 1
@@ -130,7 +130,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: mFontSize
-      value: 50
+      value: 42
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: mHeight
@@ -140,6 +140,11 @@ Prefab:
       propertyPath: aspectRatio
       value: 3.5999999
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: mTrueTypeFont
+      value: 
+      objectReference: {fileID: 12800000, guid: 4872a07db2362418f8d3535c6fe43596,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 163552}

@@ -99,7 +99,7 @@ public class GameMain : PageBase {
 
 		DateTime datetimeNow = TimeManager.GetNow();
 		foreach (AlarmParam param in _alarmList) {
-			if (param.status == 0) {
+			if ( param.status <= 0) {
 				continue;
 			}
 			//Debug.Log ( string.Format( "serial:{0} repeat_type:{1}",param.serial,  param.repeat_type));
@@ -113,6 +113,7 @@ public class GameMain : PageBase {
 				if (0 < time_span.TotalSeconds) {
 					insert_data.m_strTime = strCheckDate;
 					insert_data.m_iVoiceType = param.voice_type;
+					insert_data.m_iSnoozeType = param.snooze;
 					insert_data.m_lTime = (long)TimeManager.Instance.GetDiffNow (insert_data.m_strTime).TotalSeconds;
 					_insertList.Add (insert_data);
 				} else {
@@ -161,6 +162,7 @@ public class GameMain : PageBase {
 							AlarmReserve insert_data = new AlarmReserve ();
 							insert_data.m_strTime = strNext;
 							insert_data.m_iVoiceType = param.voice_type;
+							insert_data.m_iSnoozeType = param.snooze;
 							insert_data.m_lTime = (long)TimeManager.Instance.GetDiffNow (insert_data.m_strTime).TotalSeconds;
 							_insertList.Add (insert_data);
 
@@ -172,8 +174,34 @@ public class GameMain : PageBase {
 			}
 			_insertList.Sort ((a, b) => (int)(a.m_lTime - b.m_lTime));
 		}
+
 		foreach (AlarmReserve reserve in _insertList) {
-			LocalNotificationManager.Instance.AddLocalNotification (reserve.m_lTime, ConfigManager.Instance.GetEditPlayerSettingsData ().projectData.m_strProductName, "時刻になりました");
+			int iLoop = 1;
+
+			long lOffset = 0;
+			switch (reserve.m_iSnoozeType) {
+			case 1:
+				iLoop = 10;
+				lOffset = 5 * 60;
+				break;
+			case 2:
+				iLoop = 5;
+				lOffset = 10 * 60;
+				break;
+			default:
+				iLoop = 1;
+				lOffset = 0;
+				break;
+			}
+
+			for (int i = 0; i < iLoop; i++) {
+				LocalNotificationManager.Instance.AddLocalNotification (
+					reserve.m_lTime + i*lOffset,
+					ConfigManager.Instance.GetEditPlayerSettingsData ().projectData.m_strProductName,
+					"時刻になりました",
+					GetAssetName (reserve.m_iVoiceType, true)
+				);
+			}
 		}
 
 		return;
@@ -207,7 +235,7 @@ public class GameMain : PageBase {
 		kvs_data.WriteInt ("test", iTest );
 		kvs_data.Save ();
 		m_PageNow = m_PageBaseList [m_iPagePre];
-		InitPage (m_PageNow);
+		InitPage (m_PageNow , m_iPagePre);
 	}
 
 	public float m_fCheckIntervalTime;
@@ -219,7 +247,7 @@ public class GameMain : PageBase {
 
 				ClosePage (m_PageNow, m_iPagePre);
 				m_PageNow = m_PageBaseList [m_PageFooter.Index];
-				InitPage (m_PageNow);
+				InitPage (m_PageNow  , m_PageFooter.Index);
 				m_iPagePre = m_PageFooter.Index;
 			}
 			m_PageFooter.TriggerClearAll ();
@@ -263,16 +291,30 @@ public class GameMain : PageBase {
 		return;
 	}
 
-	public void CallVoice( int _iVliceType ){
-		List<string> sound_list = new List<string> ();
+	public string GetAssetName(int _iVliceType , bool _bAddPath = false ){
+		List<CsvVoicesetData> sound_list = new List<CsvVoicesetData> ();
 
 		foreach (CsvVoicesetData data in DataManagerAlarm.Instance.master_voiceset_list) {
 			if (_iVliceType == data.id) {
-				sound_list.Add (data.name);
+				sound_list.Add (data);
 			}
 		}
 		int iIndex = UtilRand.GetRand (sound_list.Count);
-		SoundManager.Instance.PlaySE ( sound_list[iIndex] );
+
+		CsvVoicesetData use_data = sound_list [iIndex];
+
+		string strRet = "";
+		if (_bAddPath == false) {
+			strRet = use_data.name;
+		} else {
+			strRet = string.Format( "{0}/{1}.{2}" , use_data.path , use_data.name , use_data.kakucho );
+		}
+		return strRet;
+	}
+
+	public void CallVoice( int _iVoiceType ){
+		string strFilename = GetAssetName (_iVoiceType);
+		SoundManager.Instance.PlaySE ( strFilename );
 		return;
 	}
 	void OnApplicationPause(bool pauseStatus) {
@@ -281,10 +323,12 @@ public class GameMain : PageBase {
 		}
 	}
 
-	public void InitPage( PageBase _pageBase ){
+	public void InitPage( PageBase _pageBase , int _iPageIndex ){
 		//_obj.SetActive (true);
 		_pageBase.gameObject.transform.localPosition = Vector3.zero;
 		_pageBase.Initialize ();
+
+		m_PageFooter.SetIndex (_iPageIndex);
 	}
 
 	public void ClosePage(PageBase _pageBase , int _iIndex ){

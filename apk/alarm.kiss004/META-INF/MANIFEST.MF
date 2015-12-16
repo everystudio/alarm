@@ -1,0 +1,724 @@
+Manifest-Version: 1.0
+Created-By: 1.0 (Android)
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/sprite/xn
+ os/kiss/kiss_member04_01_illust.unity3d.manifest
+SHA1-Digest: MLVwvytqfBQFsj+YAxqZkoXK0qM=
+
+Name: assets/bin/Data/5e4c1c6a0dfce481daffe05658a611a5
+SHA1-Digest: zimXnGMvDtQoO9AiFuP9AMXceuU=
+
+Name: assets/bin/Data/d3686533aff0e2b4bac7a2a7faf73f7a
+SHA1-Digest: ND99qYt0wbQd5e5hACfN5IUgqzU=
+
+Name: assets/bin/Data/9f39f1d1f2f3ee04bb793082eee05819
+SHA1-Digest: 8t8I7EujPzxdYfJlYYvhp57cVuU=
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/sprite/xn
+ os/kiss/kiss_all_01_illust.unity3d
+SHA1-Digest: oSjkQPQm5RJ3/X82PJFBmF7uh6Q=
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/sprite/ev
+ erystudio/school/hoshina_saki_face.unity3d.manifest
+SHA1-Digest: ADpXpLHEAZJfHhfGUpbR2rDKpa8=
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/sprite/xn
+ os/kiss/kiss_member06_01_illust.unity3d
+SHA1-Digest: HROCAyLIfoZK1gdVH865ZPo4IG8=
+
+Name: assets/bin/Data/099285386a7c64106a2b736459bea130
+SHA1-Digest: Kks8XqXXd9w4WP186SqhZueA8Uw=
+
+Name: assets/bin/Data/Managed/P31RestKit.dll
+SHA1-Digest: wBsG7dG37T74L3xRodh4NEAZXE8=
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/sprite/ev
+ erystudio/school/yuuki_shima_01.unity3d
+SHA1-Digest: wojQogfhsfHigiGtQ0NoX6zU6fo=
+
+Name: assets/bin/Data/eec9c90e5acd4d74d9e021119fc70cf8
+SHA1-Digest: iS4lQ6uLl+BKzq2OjiFkSuHhnyk=
+
+Name: assets/bin/Data/37590480333382341b5007dec2a032c6
+SHA1-Digest: uKTjNzOFTvgJ37JAVGNKFiDFbHM=
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/sprite/xn
+ os/kiss/kiss_member04_01_icon.unity3d
+SHA1-Digest: AN9plEtquEjuqdHigfS8b20SVEQ=
+
+Name: assets/AssetBundles/Android/Android
+SHA1-Digest: Z6cieBP0sac/RcslizMzNFuXnJE=
+
+Name: assets/bin/Data/dfd71a03722781a4d871f01b8e1bb7e7
+SHA1-Digest: G8nLMFOlU7gB/M77qxWKW0czKAU=
+
+Name: assets/bin/Data/a1dc8dd7d7b654f7e8b526c25bd17f55
+SHA1-Digest: WVPY6YKEe3lwqewQyeaRiVOVbl0=
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/sprite/ev
+ erystudio/school/yuuki_shima_face.unity3d.manifest
+SHA1-Digest: GwnbtTxeIzg/RFrVU1xK0kzbO5k=
+
+Name: assets/bin/Data/5e31d8f1bdab8490395827d21da082cc
+SHA1-Digest: CvMj8oTCZOO1BquhKh02aXSjsnM=
+
+Name: assets/bin/Data/5e82b392f79aa394fb1a579743600d5f
+SHA1-Digest: X6GG4EZJo0PTdyN7ZQLDyZJIXiA=
+
+Name: assets/bin/Data/9156d5174e3e84b1999d4142b2618802
+SHA1-Digest: 2Kg0EahbtTWLRpL336hknfelPVg=
+
+Name: assets/bin/Data/settings.xml
+SHA1-Digest: a7HHMr594h9F9uRN95FTW4Gdb6U=
+
+Name: res/drawable-ldpi-v4/app_icon.png
+SHA1-Digest: Mqt1oMQlYnaxTnaBVEGx6bA+ajQ=
+
+Name: assets/bin/Data/Managed/UnityEngine.dll.mdb
+SHA1-Digest: g7adHNEuwTKjFUCbQAVkJ3eGsF8=
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/sprite/ev
+ erystudio/school/tsukinaga_himeka_face.unity3d
+SHA1-Digest: 77fwNNRnd5q+dgrevrg6Ye2rutc=
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/sprite/ev
+ erystudio/school/harusaki_yusa_01.unity3d.manifest
+SHA1-Digest: vxtinXf8CY7bB6zHXL5+f3i1DIs=
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/sprite/ev
+ erystudio/school/yuuki_shima_01.unity3d.manifest
+SHA1-Digest: grunHLzkiaec6Vh9BdxBKHdU/7g=
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/sprite/ev
+ erystudio/school/kanashiro_ririko_face.unity3d.manifest
+SHA1-Digest: tk1BWpXPgaag+GN4If1JD1dN/Hc=
+
+Name: assets/bin/Data/4a55f6dbe125f4b5cb7f08428d2fda41
+SHA1-Digest: beFQumMDSHsjiUJhvRcgt2ql/YM=
+
+Name: resources.arsc
+SHA1-Digest: u56N/FExYTGGDvDehyc/80l4Tj4=
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/sprite/ev
+ erystudio/school/tsukinaga_himeka_01.unity3d
+SHA1-Digest: 9MwRO0IJpe00+1f+3lRN3hNmO5c=
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/sprite/xn
+ os/kiss/kiss_member05_01_illust.unity3d
+SHA1-Digest: ND7pqXs1zQCl4GBbrIgIsHRe0/s=
+
+Name: assets/bin/Data/f3fd145b191cf4040ac6b55cda352a53
+SHA1-Digest: 6jdK6AKIV1BvwQrbxG5u6MxKrgc=
+
+Name: assets/bin/Data/62f5aba3103db4198a857d4eae7010cc
+SHA1-Digest: VEx8tdo9QnSCTwxNwwfqzf0xhno=
+
+Name: AndroidManifest.xml
+SHA1-Digest: /UKctkn3aTPRLBJiVumZO6VEROA=
+
+Name: assets/bin/Data/Managed/UnityEngine.UI.dll
+SHA1-Digest: 3HmwajpKqMxhuDSWTc9TOXUIAJQ=
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/sprite/ev
+ erystudio/school/harusaki_yusa_face.unity3d
+SHA1-Digest: 40pubmdewN1icqnHYsdKEWTSc0A=
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/sprite/ev
+ erystudio/school/koya_chihiro_face.unity3d.manifest
+SHA1-Digest: 1Aasf182NUPKnjo5oQFDM/FVx0A=
+
+Name: assets/bin/Data/2cd1f5408130bdc4cbcf8c8fab8efd21
+SHA1-Digest: sMsiBCgZAjbfNbR7aDKVz7CtNfQ=
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/sprite/ev
+ erystudio/school/takira_itsuki_01.unity3d
+SHA1-Digest: +VhtP2kFKnYptR0/WTg4gME9NP4=
+
+Name: assets/ttest/sample.mp3
+SHA1-Digest: WP5TtQS4zORzTG9ZmF3dM+lVyfQ=
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/sprite/ev
+ erystudio/school/kanashiro_ririko_01.unity3d.manifest
+SHA1-Digest: fLKkigPI9bRbEEukPw4onJxKoSc=
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/sprite/ev
+ erystudio/school/amachi_emi_01.unity3d.manifest
+SHA1-Digest: W/pF7qyi41Zqmbxz/EmVPV4/oGo=
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/sprite/xn
+ os/kiss/kiss_member04_01_illust.unity3d
+SHA1-Digest: TBoFeGWVTCd/DraFGnBjeTQqQmM=
+
+Name: lib/armeabi-v7a/libmain.so
+SHA1-Digest: nsFP639dMEFt2RKbQrw3jAwSeuM=
+
+Name: assets/bin/Data/9c794d6f46ac84689a3fbc28d913fd1f
+SHA1-Digest: 8ag7LPA3Hd/9ETZHT/ibD6fyNpU=
+
+Name: assets/bin/Data/Managed/UnityEngine.dll
+SHA1-Digest: TpNPgJz/U6m9TiiZ1ZoqKEXJQlw=
+
+Name: assets/bin/Data/c587ac32e9db4474b8424e4f0ee278b4
+SHA1-Digest: HETeXrWwrEWmM8Y9gWJDB1kuQTE=
+
+Name: assets/bin/Data/e795384bc367d4c3bb4a37fd925cdfe1
+SHA1-Digest: 0HeW3BTLNu5vbGYmfO6XhlzvNa8=
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/sprite/ev
+ erystudio/school/sakuragawa_meina_face.unity3d.manifest
+SHA1-Digest: EAg5HjRDAby4JDaexxT7UyygMjY=
+
+Name: res/drawable/app_icon.png
+SHA1-Digest: 2sLZjruJCvhJEaHRBNRJE7yhsHo=
+
+Name: assets/bin/Data/Managed/Assembly-CSharp-firstpass.dll
+SHA1-Digest: 6hZG5soVB4hD1ToP5phj4ewcE04=
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/sprite/ev
+ erystudio/school/kureha_ruri_01.unity3d.manifest
+SHA1-Digest: Nz6x+peISnD4smhzhvD44kOWW9U=
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/sprite/ev
+ erystudio/school/mashino_kayo_face.unity3d
+SHA1-Digest: oKiHPrNkoW7iGSdn9i0ETYgxqzM=
+
+Name: assets/bin/Data/fc4ee6024f761466da823e33f507750f
+SHA1-Digest: GUQ0VlkTNbxESYwBYIXBKQPrpKI=
+
+Name: assets/bin/Data/1d484395cdf46451382e28f84e8a903b
+SHA1-Digest: ug48Rxx0YKVdVkEUkIi+VU8BbCI=
+
+Name: assets/bin/Data/mainData
+SHA1-Digest: QP6svG+XOtB5WeWV6T/D5Z9oVGg=
+
+Name: assets/bin/Data/773417da4aa1b46409bd1e7574dcb251
+SHA1-Digest: VeGot9M41MtXIBHtNzBs30oPw5E=
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/sprite/xn
+ os/kiss/kiss_member01_01_illust.unity3d.manifest
+SHA1-Digest: NbRwFllt1BVaoCRz1a4rQ2+CfPk=
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/sprite/ev
+ erystudio/school/yuuki_shima_face.unity3d
+SHA1-Digest: iNUNww5jvSVd3kh7b0yCK7D+aOs=
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/sprite/xn
+ os/kiss/kiss_member02_01_illust.unity3d
+SHA1-Digest: nWINXtrU3fdKyXjwbRUoWwXqeBY=
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/sprite/ev
+ erystudio/school/amachi_emi_face.unity3d.manifest
+SHA1-Digest: GHZEE3jzemB9T1yYIXjW6RCV1Gw=
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/sound/bgm
+ /demo_song.unity3d
+SHA1-Digest: 2RTvw05EKVJXqGdMnkubZaK/3Ng=
+
+Name: assets/bin/Data/b30d5cc68a01446d98ee0aaeb4341992
+SHA1-Digest: Yp/GU4t6cQMO6qgJPg61GJXV9Nc=
+
+Name: assets/bin/Data/d1ba9e7ba321b2c4d97f6a19f1deab6a
+SHA1-Digest: 6NxkWkqKXkbWCL41zL/8f0Np0Jo=
+
+Name: assets/bin/Data/8b61b384397f2410a9aa17544890e7f4
+SHA1-Digest: jjsvWZP2riDiLU7Ej29Jzffk5Ec=
+
+Name: assets/bin/Data/caefeb7e4d9894e0198e588d6b0b3115
+SHA1-Digest: mEUcHeccBBl4eV6d4kJt+/tpPw0=
+
+Name: assets/bin/Data/182695e850938314fa6675a8926ad9ee
+SHA1-Digest: Z0EJaQBeuUXDyCP0bgC00SDYY0M=
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/sprite/xn
+ os/kiss/kiss_member01_01_icon.unity3d.manifest
+SHA1-Digest: SKEkG6MnOj7rlXQub6QHajjAcnY=
+
+Name: assets/bin/Data/79aa84c705a744670aeae21a951196b6
+SHA1-Digest: PC9TNsyOSMNji0EUH3Nc6XAUkIY=
+
+Name: assets/bin/Data/a9b5ea5ffdfe2490c854cb0b61e8f82e
+SHA1-Digest: UCBkti+DjhyevLLzd71hw5on/qg=
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/sprite/xn
+ os/kiss/kiss_all_02_icon.unity3d.manifest
+SHA1-Digest: 629WytrQQwxjBNIrg5ML6SnTvP0=
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/sprite/ev
+ erystudio/school/hoshina_saki_01.unity3d
+SHA1-Digest: +WlPSDit+bPP73zUzSIkntdPrC8=
+
+Name: assets/bin/Data/3faeaa34352c24429a6347142bdf04a1
+SHA1-Digest: yBCcmAbMc7VItJpbvQiwVrjR9YM=
+
+Name: assets/bin/Data/7c0a1aa668787ad42a48d1a535825520
+SHA1-Digest: EhgPTLbAnMT7lNo09FSiiRhzkcU=
+
+Name: assets/bin/Data/93c84009f8f004b4f84697c8cb12dd63
+SHA1-Digest: kLE72BIbWEbg9GmpNaanAXjwm3Y=
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/sprite/xn
+ os/kiss/kiss_all_01_illust.unity3d.manifest
+SHA1-Digest: H4uwX2IMquzhbcp0TZkrBEeBipI=
+
+Name: assets/bin/Data/a107fe3c17c264407986f9e40475613f
+SHA1-Digest: gVaekSuGACYLRamZL/PLuGR82Ho=
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/sprite/ev
+ erystudio/school/sakuragawa_meina_01.unity3d
+SHA1-Digest: Ssnu4u4KLeB2KNoxjQLd5/xrkO4=
+
+Name: assets/bin/Data/splash.png
+SHA1-Digest: WL+5PBN6ZD41VmsXXQ5tkpJcMy4=
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/sprite/xn
+ os/kiss/kiss_member05_01_icon.unity3d.manifest
+SHA1-Digest: oTckg7TwVAE/iCY8hHEz7IWYpno=
+
+Name: assets/bin/Data/cc3920d5e24c04bce8594c5a823c076e
+SHA1-Digest: RZLH70GkLcLfjHGcxukPiKXlwcc=
+
+Name: assets/AssetBundles/Android/Android.manifest
+SHA1-Digest: LrlO7NGalIExV7ynY8/ftlnVeSc=
+
+Name: lib/x86/libmain.so
+SHA1-Digest: Q64ny7U+XnInDRMNqvWmA5SK3OA=
+
+Name: assets/bin/Data/cf9ebc36d43f657468fecb524763e3bc
+SHA1-Digest: +/uj+dLICOPCfFW3jfzYN/9xsDI=
+
+Name: assets/bin/Data/Managed/System.Core.dll
+SHA1-Digest: yt7BcLbZME/epeiqJRB49eH3E2c=
+
+Name: assets/bin/Data/cbed58b7d6d29483da5206ad6bd5d865
+SHA1-Digest: gSoYfjZEhhDplFc/w0M/dNIpxso=
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/sprite/ev
+ erystudio/school/takira_itsuki_face.unity3d.manifest
+SHA1-Digest: u8nSPV0MpMHBkvmKTvV36dWxVHk=
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/sprite/xn
+ os/kiss/kiss_member03_01_illust.unity3d
+SHA1-Digest: BeLaawYywYF6c5VmNd2QJ1ceScg=
+
+Name: assets/bin/Data/0240a6a09cb8c4abe84166fec7173bb6
+SHA1-Digest: CpR33EZHouM3RBfUssRrLYvQL2Q=
+
+Name: assets/bin/Data/6439234b8ec0547b28e67d443023149a
+SHA1-Digest: zKHVV73A4N0Y6LwhpzA1s5CT3q0=
+
+Name: assets/bin/Data/ec67ead4613b94fdfb3923de6682b1c4
+SHA1-Digest: 8ImVJZ/udo4JVmynabOUTUYiGEQ=
+
+Name: assets/bin/Data/fa60649a16f7841258c5cc74aa195d45
+SHA1-Digest: aeCnZ0zP2pIXO57+dyjQqpo1LQU=
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/sprite/ev
+ erystudio/school/hoshina_saki_01.unity3d.manifest
+SHA1-Digest: 30fKFReACNcepvmAjXZeP7831tY=
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/sprite/xn
+ os/kiss/kiss_all_02_illust.unity3d
+SHA1-Digest: qO+vWFTn9SMdRIq719tjn+EltkM=
+
+Name: lib/x86/libunity.so
+SHA1-Digest: GL8ORNuNwLn3sAzl03KfqVTUeYk=
+
+Name: lib/armeabi-v7a/libmono.so
+SHA1-Digest: LhgP+vKeQkf4sc8enhnWEl/7kAs=
+
+Name: assets/bin/Data/773952d1ab5b7714392cdc5473b20244
+SHA1-Digest: 17qu1q0eLbOnwY4z6TZz2qyMDt8=
+
+Name: res/drawable-xhdpi-v4/app_icon.png
+SHA1-Digest: uWggdMWjxKOyfOKMear9R5uUzVg=
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/sprite/ev
+ erystudio/school/amachi_emi_01.unity3d
+SHA1-Digest: xhZAyIKtCj1eC1Rf/JkQ1VCO3DE=
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/sprite/xn
+ os/kiss/kiss_member01_01_icon.unity3d
+SHA1-Digest: VlTzLJLbXI7mAYu+Xwg/Ax2ADn4=
+
+Name: res/drawable-xhdpi-v4/app_banner.png
+SHA1-Digest: aqv4ndS5je2XQWdMhG66+5fhv9I=
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/sprite/ev
+ erystudio/school/tsukinaga_himeka_01.unity3d.manifest
+SHA1-Digest: ehrYjWMCeb8HnP3bBkyd4oY3ShA=
+
+Name: assets/bin/Data/Managed/Mono.Security.dll
+SHA1-Digest: tEZnhN8KOK+57n7mGoL7V+4kFAA=
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/voice/eve
+ rystudio/school/se_start_00.unity3d.manifest
+SHA1-Digest: G9R3W96SQ+xkpZrfmZRfFweY9hw=
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/sprite/ev
+ erystudio/school/takira_itsuki_face.unity3d
+SHA1-Digest: pmttnBqsIhrU/lT79kbYWD0T7MQ=
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/sprite/ev
+ erystudio/school/koya_chihiro_01.unity3d.manifest
+SHA1-Digest: kdIhiaeJ52DS4Ajujekk0YH4jiQ=
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/sprite/ev
+ erystudio/school/mashino_kayo_face.unity3d.manifest
+SHA1-Digest: Ki6Jh21Enh+pkTj7HwftQNB11MU=
+
+Name: assets/bin/Data/a81d146fc1c79a649a5ce2327a40d8d3
+SHA1-Digest: XKganZGUCcSL+EAbv9775ZAXcW8=
+
+Name: assets/bin/Data/c6f11eb0ceeb5e044b3199208e1a99bf
+SHA1-Digest: x1Sez43VFOp+Zfj3C7CFd8rxivw=
+
+Name: assets/bin/Data/1682092270f88d04bb434756a984ea87
+SHA1-Digest: K8GtdO9pcG4WgZKrFeOYc3M11Lw=
+
+Name: assets/bin/Data/acbd6430e55a141bc8b61dcdaef511d9
+SHA1-Digest: ZRHTZgtzHpix+tPLfRo2tIgxZGY=
+
+Name: assets/bin/Data/b79d4b6307c88490e84d5346aa984e7d
+SHA1-Digest: eL6mhmFmi+3QplJ/F7iccU4GB7k=
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/voice/eve
+ rystudio/school/se_start_00.unity3d
+SHA1-Digest: IMZdHTLIqe6lo03W9dM55mpcG/0=
+
+Name: assets/bin/Data/27275fc7df2ec0346ba12831e6a01345
+SHA1-Digest: zHCv02UOD8aYsmAFTLwBHK00ilA=
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/sprite/xn
+ os/kiss/kiss_member03_01_icon.unity3d.manifest
+SHA1-Digest: rtpKEtwa2uC9H3W6iZ5ZwF5LAVo=
+
+Name: assets/bin/Data/8276154f234fe404d89fd09cac88a757
+SHA1-Digest: 14+cP8ZEKb5atGNunICJmm6baik=
+
+Name: assets/bin/Data/222c64d503379884db00185ebbe08590
+SHA1-Digest: JLWs3COUetv3TRBU0woYhtjAjCE=
+
+Name: assets/bin/Data/Managed/UnityEngine.xml
+SHA1-Digest: JuwDPdKULgWo+/apNiUa+fys69M=
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/sprite/xn
+ os/kiss/kiss_member02_01_illust.unity3d.manifest
+SHA1-Digest: sFvuBgMdS+oE85y4xDrukkOifJ0=
+
+Name: assets/bin/Data/unity default resources
+SHA1-Digest: +mUlDnLLq3LL7h3oaEnI0vQ6mV0=
+
+Name: res/drawable-hdpi-v4/app_icon.png
+SHA1-Digest: 4+SC/MSXmh6uJm0eIpc60T34SXg=
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/sprite/ev
+ erystudio/school/harusaki_yusa_01.unity3d
+SHA1-Digest: 79EooSAwzusQZBYR5nOV8ZHPVQg=
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/sprite/xn
+ os/kiss/kiss_member06_01_icon.unity3d.manifest
+SHA1-Digest: voOIxMYRclnC+MBc8NoaJDNYVyQ=
+
+Name: assets/bin/Data/f5f2e1bb3775f467f94edee26a47336e
+SHA1-Digest: KyqbEbSnTJhw4E7DEBlB7wcP5pU=
+
+Name: assets/bin/Data/720c2c242cde13e4188964c550502b5e
+SHA1-Digest: ++Rk8dZn+Yp2kSo0h8WVkIJDpN4=
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/sprite/ev
+ erystudio/school/kanashiro_ririko_face.unity3d
+SHA1-Digest: Cv1TbbifHwpa7XVqlz7bdxKljVs=
+
+Name: assets/bin/Data/74cde1d38f35440a7870a3c9ded6b941
+SHA1-Digest: 0EW3FmwwhHHgE0rkhwNQh26WcwU=
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/voice/eve
+ rystudio/school/se_goal_00.unity3d
+SHA1-Digest: 7KmvF7+NsK1KgNLOOBjXMjkk8Gw=
+
+Name: assets/bin/Data/Resources/unity_builtin_extra
+SHA1-Digest: BDmVrRuklJ0ZGvY7dr1UqP/PzdI=
+
+Name: assets/bin/Data/d7f7f4dddb1864ca6841ae8b1778cc7f
+SHA1-Digest: qPVaFU57hF16C6Zk7jM59LSW9tY=
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/sprite/xn
+ os/kiss/kiss_all_02_illust.unity3d.manifest
+SHA1-Digest: KzsJs2n7W8Z9qggYlu60Pn8FXxI=
+
+Name: assets/bin/Data/a91fd319b5cda426a9cb58ea3ac8e357
+SHA1-Digest: lpHBr6nbhBfPnS0Xjvx9D/+gvU8=
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/sprite/xn
+ os/kiss/kiss_all_02_icon.unity3d
+SHA1-Digest: tSaFMgCFKtigt2HtsPkMdbyBPSo=
+
+Name: assets/bin/Data/ed5591596df551e4c8f4b05ce88a7a07
+SHA1-Digest: fi9BMKCcc5tm/r1THi6RMmEyBSo=
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/sprite/ev
+ erystudio/school/kureha_ruri_face.unity3d
+SHA1-Digest: dEisbG6BJOBotWDE44QToe6Bj00=
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/sprite/ev
+ erystudio/school/kureha_ruri_face.unity3d.manifest
+SHA1-Digest: 8YsPiR18pwhrqKEcj2RkUizQur8=
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/sprite/ev
+ erystudio/school/mashino_kayo_01.unity3d
+SHA1-Digest: MXxihe1cO7iLpKF/SsqixTXAVDo=
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/voice/eve
+ rystudio/school/se_goal_00.unity3d.manifest
+SHA1-Digest: TJSPHHkmDskbI43hWabrK6GHk6s=
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/sprite/xn
+ os/kiss/kiss_member03_01_icon.unity3d
+SHA1-Digest: xhgtkfHxEOfpu+Pw7Karcpqjgmc=
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/sprite/xn
+ os/kiss/kiss_member06_01_illust.unity3d.manifest
+SHA1-Digest: aL+rWivrNV6zzTcOl3x4p/famnE=
+
+Name: assets/bin/Data/f4f0faf73e6bf89419cf29b611f29ade
+SHA1-Digest: lqdy31isNuuJfDQBmX+gSHzMQDU=
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/sprite/xn
+ os/kiss/kiss_member06_01_icon.unity3d
+SHA1-Digest: l5+hlBfsUSds9asyVkaKcL3KGWQ=
+
+Name: assets/bin/Data/ccdca7eb1572c4a08872609e8fdfbfc4
+SHA1-Digest: zqsNkuU+1EOO8gJjq/BpStpMiZY=
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/sprite/ev
+ erystudio/school/tsukinaga_himeka_face.unity3d.manifest
+SHA1-Digest: rfi7dpFQwKh898Tq2TwwNTud6kw=
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/sprite/ev
+ erystudio/school/sakuragawa_meina_01.unity3d.manifest
+SHA1-Digest: 9+Lj6FP4FnHF3+0ekTQDHrK9Cjk=
+
+Name: assets/bin/Data/Managed/System.dll
+SHA1-Digest: ufdn1/KpGIL7KM7O5avi/C+YGaY=
+
+Name: lib/x86/libmono.so
+SHA1-Digest: Vej1fQiYWVOE0wpMi0hYLYbqnxM=
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/sprite/ev
+ erystudio/school/koya_chihiro_01.unity3d
+SHA1-Digest: WBiSJP4MCizzG7oXQgE5xt1f0Fw=
+
+Name: res/drawable-xxxhdpi-v4/app_icon.png
+SHA1-Digest: KMGLCrJS+fK37uotFzx+hLDeCSE=
+
+Name: assets/bin/Data/3fb0ccc68257e45c19fbeddd454d2720
+SHA1-Digest: UH1HGD0+Xyn7qg95GeK/QEAnj7A=
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/sound/bgm
+ /demo_song.unity3d.manifest
+SHA1-Digest: xeu22TZnSCMWqh3zey3XauRcc9I=
+
+Name: assets/bin/Data/6814c2e5ee7a24448a6f6c1797d84df4
+SHA1-Digest: 7j5OnLjDsS98czwsiuA2TIhoeHk=
+
+Name: assets/AssetBundles/Android/sample.mp3
+SHA1-Digest: WP5TtQS4zORzTG9ZmF3dM+lVyfQ=
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/sprite/xn
+ os/kiss/kiss_member01_01_illust.unity3d
+SHA1-Digest: klNdnLML71uQaP9j2v7KKt5hUO4=
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/sprite/xn
+ os/kiss/kiss_all_01_icon.unity3d
+SHA1-Digest: jyf+AyYcfJc9fiEdRMyL+msG9Go=
+
+Name: assets/bin/Data/Managed/UnityEngine.Networking.dll
+SHA1-Digest: RN5eJn9zJ7OF0FQLrRuKFF40LgY=
+
+Name: assets/bin/Data/c8f750b8a772e48e88574e3427177b24
+SHA1-Digest: Eu8NodPB4mhRFaS48JHnFGYKnmQ=
+
+Name: assets/bin/Data/9300d87db4ad0b0439f6fb97c3ce8ccf
+SHA1-Digest: IGSH4y8QyA+aevEGhIYRi8UFS7Q=
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/sprite/xn
+ os/kiss/kiss_member03_01_illust.unity3d.manifest
+SHA1-Digest: 7H6d/J7vvA3k107stpruBazGYtg=
+
+Name: assets/bin/Data/sharedassets0.assets.split6
+SHA1-Digest: 26zCIUR+qWNpYUN2OtxMnstWo44=
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/sprite/xn
+ os/kiss/kiss_member04_01_icon.unity3d.manifest
+SHA1-Digest: 6l1X7VrIYEpwpagl0NBnz66Tgw0=
+
+Name: assets/bin/Data/sharedassets0.assets.split7
+SHA1-Digest: 6ivHAXEg/DfamY9pkozXo0H9aZ4=
+
+Name: assets/bin/Data/sharedassets0.assets.split8
+SHA1-Digest: UZ2iZtZuFnACGvFD2WnfzgKcd3w=
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/sprite/ev
+ erystudio/school/koya_chihiro_face.unity3d
+SHA1-Digest: 2Dk9bgbeRsdQ4JbqU0MhqGGA+mo=
+
+Name: assets/bin/Data/sharedassets0.assets.split9
+SHA1-Digest: 7S2Rlbuc3I01zSUDYFAExYKZ/Xo=
+
+Name: assets/bin/Data/ec6b5c75e383145d582636f5e8935b5a
+SHA1-Digest: QXEO6SsFSxzQkLvkgWfgHEdeE5c=
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/sprite/ev
+ erystudio/school/mashino_kayo_01.unity3d.manifest
+SHA1-Digest: WKemwzEPHMQmvkNOfcw5Q4sjV3s=
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/sprite/ev
+ erystudio/school/amachi_emi_face.unity3d
+SHA1-Digest: fHv9gvdhaPffwHA/oGHSsyZ5nt0=
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/sprite/ev
+ erystudio/school/sakuragawa_meina_face.unity3d
+SHA1-Digest: Zey3ho3s+aJjFXH0F+plmdHCR8o=
+
+Name: assets/bin/Data/1738d4c32925442b292e185c5b1e6cb9
+SHA1-Digest: 0fJBSTsSMjk8ZsvTSA0hxJYTxCY=
+
+Name: assets/bin/Data/Managed/mscorlib.dll
+SHA1-Digest: Zba1nTum6IWxbAn7vVYlRUCfQns=
+
+Name: assets/bin/Data/sharedassets0.assets.split0
+SHA1-Digest: +72wJi2O3UrEha+hfsXXWTciR+8=
+
+Name: assets/bin/Data/sharedassets0.assets.split1
+SHA1-Digest: 7qh6bHFyi6SOGqEcalRcxsFSEg8=
+
+Name: assets/bin/Data/sharedassets0.assets.split2
+SHA1-Digest: WcTnfolmZflsq13+BaS96wSSXQ0=
+
+Name: assets/bin/Data/sharedassets0.assets.split3
+SHA1-Digest: C7EalZFgwpFR3odW8nV7o0TQ4Rs=
+
+Name: assets/bin/Data/sharedassets0.assets.split4
+SHA1-Digest: 09P3g36Q7nMzg1MQXUvT5f9FnjU=
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/sprite/xn
+ os/kiss/kiss_member05_01_illust.unity3d.manifest
+SHA1-Digest: R49d62kJyzRP3kyMurc7cuBrrN8=
+
+Name: assets/bin/Data/sharedassets0.assets.split5
+SHA1-Digest: xaQCSNMXSImydoC3X6Dtsvalsh4=
+
+Name: assets/bin/Data/02127e2abb8d44ff2a570c0d025e8e7b
+SHA1-Digest: dugbYzMGsvikT3hNRRbYJjh6O8E=
+
+Name: assets/bin/Data/11c83085ffdbe4a4c9e39907543211b3
+SHA1-Digest: QXEO6SsFSxzQkLvkgWfgHEdeE5c=
+
+Name: assets/bin/Data/8bef80e46148c46b7833a258c480f21e
+SHA1-Digest: GrT2uNyerD/aNonhsYiYl+hHsqg=
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/sprite/xn
+ os/kiss/kiss_member02_01_icon.unity3d
+SHA1-Digest: nyJuplTrAHglKsdN9jrXSLJ3xBE=
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/sprite/xn
+ os/kiss/kiss_member05_01_icon.unity3d
+SHA1-Digest: PfRbR6vzIWe4F/S92JHvbJfCwEg=
+
+Name: assets/bin/Data/52289783e77444058a039adef2bfad76
+SHA1-Digest: 5+YBvt3c3HB5bLDU+jkRu6QlrMo=
+
+Name: assets/bin/Data/e37f44f1a08cf594fb6b3919774527ed
+SHA1-Digest: CIhCyij8q0Ha3e5Rz1Bp+E9sfVQ=
+
+Name: lib/armeabi-v7a/libunity.so
+SHA1-Digest: ajgQO0lVYHuiCI7XFQXRKeBhPUM=
+
+Name: assets/bin/Data/sharedassets0.assets.split15
+SHA1-Digest: JP2fwUVeLZpaudUumtKNvUr4CDg=
+
+Name: assets/bin/Data/sharedassets0.assets.split16
+SHA1-Digest: rFOBfec29g3ONYqH6e5wDSjAx/Y=
+
+Name: assets/bin/Data/sharedassets0.assets.split13
+SHA1-Digest: bS1B2vXhMQ2SvH9m53BKuBA2rbY=
+
+Name: assets/bin/Data/372fed9c85e28419fb57e3a455a82f35
+SHA1-Digest: R1444ECLdMCXjG3OSfDJQv31STA=
+
+Name: assets/bin/Data/sharedassets0.assets.split14
+SHA1-Digest: n+CR3xiearvKi+PU+rNR+hXF40c=
+
+Name: assets/bin/Data/b36c6061619714e68a11019d570bbc1e
+SHA1-Digest: zMfTUaRPE7SLS0tRaOEwCzZVCPw=
+
+Name: assets/bin/Data/sharedassets0.assets.split19
+SHA1-Digest: qFUhCe/JpbyI01OBGFJfNXs1/vM=
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/sprite/xn
+ os/kiss/kiss_member02_01_icon.unity3d.manifest
+SHA1-Digest: 5ci1LCQWYxgZiTM3lfrNIY/Ux4Y=
+
+Name: assets/bin/Data/sharedassets0.assets.split17
+SHA1-Digest: 0mFDK0JrKwsvdqSaWTwzYbDRHjU=
+
+Name: res/drawable-xxhdpi-v4/app_icon.png
+SHA1-Digest: JbVzqKCKfL+FvOeXrm0NRqd1Sow=
+
+Name: assets/bin/Data/sharedassets0.assets.split18
+SHA1-Digest: mgveeK0Sd8t0u44QiMOdkxHq94s=
+
+Name: assets/bin/Data/becfdeef1534456438d787466a94d207
+SHA1-Digest: 8S1GaDilBadlevn2LDvWPleh30k=
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/sprite/ev
+ erystudio/school/hoshina_saki_face.unity3d
+SHA1-Digest: fOvkThZUPxkQeSywM0cIxCWIIt4=
+
+Name: assets/bin/Data/sharedassets0.assets.split11
+SHA1-Digest: EemRXflb9nIMMKUSUYaM3ZEvbEc=
+
+Name: assets/bin/Data/sharedassets0.assets.split12
+SHA1-Digest: xfUfQLL8aEc0yoealglBLtTjUhI=
+
+Name: assets/bin/Data/sharedassets0.assets.split10
+SHA1-Digest: fTBFDr9C/xMu8acsedfTk9dNrns=
+
+Name: assets/bin/Data/65ca32170bb371f459991a5d7696a9ba
+SHA1-Digest: Jv+Enu89qUG5ar0kQgpHsfPdIpk=
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/sprite/xn
+ os/kiss/kiss_all_01_icon.unity3d.manifest
+SHA1-Digest: YzGHnjqxwij3BJ3Gk4gISfojiso=
+
+Name: assets/bin/Data/0c7c0e506cced43e0b3374082c60b9bb
+SHA1-Digest: C8XmoR5Me7FrZUoyvUbKX1nr3Jk=
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/sprite/ev
+ erystudio/school/kureha_ruri_01.unity3d
+SHA1-Digest: mczhClypgRYsjsPw0NCFH17f3fM=
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/sprite/ev
+ erystudio/school/takira_itsuki_01.unity3d.manifest
+SHA1-Digest: DaJFcqXYhQe5rPNfchEKP5ZGEMA=
+
+Name: assets/bin/Data/ccfca3a760524479cacd4bccbf67b9a9
+SHA1-Digest: K1f1zjcv5KpIstzM21ZtVtfU07s=
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/sprite/ev
+ erystudio/school/harusaki_yusa_face.unity3d.manifest
+SHA1-Digest: WnR9YnR7Eit5npcEG8D0KWcwhWE=
+
+Name: assets/bin/Data/Managed/Assembly-CSharp.dll
+SHA1-Digest: gl1IfAN6k+5w/T2fBjqv69KkdmY=
+
+Name: assets/AssetBundles/Android/assets/assetbundleresource/sprite/ev
+ erystudio/school/kanashiro_ririko_01.unity3d
+SHA1-Digest: iKcpYFwZGnH0ud0HMxJS+sZF71Y=
+
+Name: classes.dex
+SHA1-Digest: IPseN/+dxVtZn+L47pCblA78GXo=
+
+Name: assets/bin/Data/sharedassets0.assets.split20
+SHA1-Digest: bqGyugbl7gZ4j3R/3wuArvMh3g8=
+

@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 5a560a23244ff4eb5b42c300a7d6bdad
+timeCreated: 1449488410
+licenseType: Free
+AudioImporter:
+  serializedVersion: 6
+  defaultSettings:
+    loadType: 0
+    sampleRateSetting: 0
+    sampleRateOverride: 44100
+    compressionFormat: 1
+    quality: 1
+    conversionMode: 0
+  platformSettingOverrides: {}
+  forceToMono: 0
+  normalize: 1
+  preloadAudioData: 1
+  loadInBackground: 0
+  3D: 1
+  userData: 
+  assetBundleName: assets/assetbundleresource/sound/bgm/demo_song.unity3d
+  assetBundleVariant: 

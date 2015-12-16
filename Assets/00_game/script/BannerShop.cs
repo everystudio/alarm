@@ -44,6 +44,7 @@ public class BannerShop : BannerVoiceBase {
 			*/
 		}
 
+		/*
 		foreach (GoogleSkuInfo info in DataManagerAlarm.Instance.product_data_list) {
 			if (info.productId.Equals (m_csvVoiceData.name_voice)) {
 
@@ -58,6 +59,7 @@ public class BannerShop : BannerVoiceBase {
 				m_lbPrice.text = string.Format ("{0}円", info.price);
 			}
 		}
+		*/
 
 	}
 

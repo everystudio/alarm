@@ -23,6 +23,55 @@ public class AlarmData : CsvData<AlarmParam>{
 
 	public const string FILENAME = "alarmparam";
 
+	public override void Load (string _strFilename)
+	{
+		string file = string.Format ("{0}.csv", _strFilename);
+		string pathDB = System.IO.Path.Combine (Application.persistentDataPath, file);
+		if (System.IO.File.Exists (pathDB) == false ) {
+			list.Clear ();
+			AlarmParam param1 = new AlarmParam ();
+			param1.serial = 1;
+			param1.snooze = 2;
+			param1.voice_type = 1;
+			param1.time = "2015-10-10 06:00:00";
+			AlarmParam param2 = new AlarmParam ();
+			param2.serial = 2;
+			param2.snooze = 2;
+			param2.voice_type = 1;
+			param2.time = "2015-10-10 07:00:00";
+			AlarmParam param3 = new AlarmParam ();
+			param3.serial = 3;
+			param3.snooze = 2;
+			param3.voice_type = 1;
+			param3.time = "2015-10-10 08:00:00";
+			AlarmParam param4 = new AlarmParam ();
+			param4.serial = 4;
+			param4.snooze = 2;
+			param4.voice_type = 1;
+			param4.time = "2015-10-10 09:00:00";
+			AlarmParam param5 = new AlarmParam ();
+			param5.serial = 5;
+			param5.snooze = 2;
+			param5.voice_type = 1;
+			param5.time = "2015-10-10 10:00:00";
+			list.Add (param1);
+			list.Add (param2);
+			list.Add (param3);
+			list.Add (param4);
+			list.Add (param5);
+			/*
+			list.Add (new AlarmParam (1,  "2015-10-10 06:00:00"));
+			list.Add (new AlarmParam (2,  "2015-10-10 07:00:00"));
+			list.Add (new AlarmParam (3,  "2015-10-10 08:00:00"));
+			list.Add (new AlarmParam (4,  "2015-10-10 09:00:00"));
+			list.Add (new AlarmParam (5,  "2015-10-10 10:00:00"));
+			*/
+			save ();
+		}
+
+		base.Load (_strFilename);
+	}
+
 	protected override void save ()
 	{
 		StreamWriter sw = Textreader.Open (string.Format ("{0}.csv", "alarmparam"));

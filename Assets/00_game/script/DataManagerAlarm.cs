@@ -93,6 +93,7 @@ public class AlarmReserve{
 	public long m_lTime;
 	public string m_strTime;
 	public int m_iVoiceType;
+	public int m_iSnoozeType;
 }
 
 

@@ -1,0 +1,18 @@
+ManifestFileVersion: 0
+CRC: 3774832526
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: a2a644366278d1a2b107368a8ceb67e3
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 00ffc586b3c4c12c72c7fed589b81235
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+Assets:
+- Assets/AssetBundleResource/sprite/xnos/kiss/kiss_member03_01_icon.png
+Dependencies: []

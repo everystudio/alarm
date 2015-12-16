@@ -149,8 +149,8 @@ PlayerSettings:
   AndroidTargetDevice: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: everystudio_everystudio_everypass.keystore
-  AndroidKeyaliasName: everystudio
+  AndroidKeystoreName: xnospass.keystore
+  AndroidKeyaliasName: xnos.s.inc@gmail.com
   AndroidTVCompatibility: 1
   AndroidIsGame: 1
   androidEnableBanner: 1
@@ -163,7 +163,7 @@ PlayerSettings:
   m_BuildTargetIcons:
   - m_BuildTarget: 
     m_Icons:
-    - m_Icon: {fileID: 2800000, guid: deb621551edd242bb8e94447b11bc38a, type: 3}
+    - m_Icon: {fileID: 2800000, guid: 827f9a6d6749248bbbe41f4aca2c1a9a, type: 3}
       m_Size: 128
   m_BuildTargetBatching: []
   m_BuildTargetGraphicsAPIs: []

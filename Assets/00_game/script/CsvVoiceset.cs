@@ -5,6 +5,8 @@ public class CsvVoicesetData : CsvDataParam
 {
 	public int id { get; private set; }
 	public string name { get; private set; }
+	public string path { get; private set; }
+	public string kakucho { get; private set; }
 }
 
 
