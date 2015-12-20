@@ -1,0 +1,18 @@
+ManifestFileVersion: 0
+CRC: 3170674355
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 23218c77fcce562b9d823ac84e146f1c
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 00ffc586b3c4c12c72c7fed589b81235
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+Assets:
+- Assets/AssetBundleResource/sprite/harutake/comic/comic_0047.jpg
+Dependencies: []

@@ -1,0 +1,18 @@
+ManifestFileVersion: 0
+CRC: 2056308967
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 6b840757fc71c22ed0d67c200e442632
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 00ffc586b3c4c12c72c7fed589b81235
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+Assets:
+- Assets/AssetBundleResource/sprite/harutake/texture/harutake_okan_illust.png
+Dependencies: []
