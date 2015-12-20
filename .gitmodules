@@ -1,3 +1,6 @@
 [submodule "Assets/every-studio-library"]
 	path = Assets/every-studio-library
 	url = https://github.com/mainitiamai/every-studio-library
+[submodule "Assets/00_game/alarm.Resources"]
+	path = Assets/00_game/alarm.Resources
+	url = /Users/mainitiamai/git/alarm.Resources
