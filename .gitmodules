@@ -4,3 +4,6 @@
 [submodule "Assets/00_game/alarm.Resources"]
 	path = Assets/00_game/alarm.Resources
 	url = /Users/mainitiamai/git/alarm.Resources
+[submodule "Assets/AssetBundleResource"]
+	path = Assets/AssetBundleResource
+	url = /Users/mainitiamai/git/alarm.AssetBundleResource
