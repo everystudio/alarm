@@ -84,7 +84,9 @@ public class DataManagerAlarm : DataManagerBase<DataManagerAlarm> {
 		}
 		return new CsvVoiceData ();
 	}
+	#if UNITY_ANDROID
 	public List<GoogleSkuInfo> product_data_list = new List<GoogleSkuInfo> ();
+	#endif
 	public List<string> purchased_list = new List<string> ();
 }
 

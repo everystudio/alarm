@@ -3,6 +3,7 @@ using System.Collections;
 using LitJson_AppMarket;
 
 public class IabResult {
+	#if UNITY_ANDROID
 	public int Response;
 	public string Message;
 
@@ -38,4 +39,5 @@ public class IabResult {
 	{
 		return string.Format ("[IabResult: Response={0}, Message={1}]", Response, Message);
 	}
+	#endif
 }

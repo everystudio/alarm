@@ -1,0 +1,18 @@
+ManifestFileVersion: 0
+CRC: 3072635352
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: fad0318f96043af54774ff4b581f810c
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 00ffc586b3c4c12c72c7fed589b81235
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+Assets:
+- Assets/AssetBundleResource/sprite/everystudio/school/tsukinaga_himeka_face.png
+Dependencies: []

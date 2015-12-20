@@ -45,6 +45,7 @@ public class ImageCheck : OtherPage {
 			if (bInit) {
 				foreach (CsvImageData data in DataManagerAlarm.Instance.master_image_list) {
 					if (data.id == m_iSelectingId) {
+						Debug.LogError (data.name_image);
 						m_switchSprite.SetSprite (data.name_image);
 					}
 				}

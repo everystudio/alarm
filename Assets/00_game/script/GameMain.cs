@@ -221,8 +221,9 @@ public class GameMain : PageBase {
 		m_iPagePre = 0;
 
 		string key = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwoEtQFcqjLFQJ0wXu8mkFjowH8t4I7tcG1G6Ais7Vx8qZWYidwNPzdp2pvPCQS4/BZDgtRyk1+FsPbaCOndof2e4OlVmdlGUXVQOtJl5hT40xxmlotliBG9IzO1A5Huvy0tjv2pQ6Et0g72k1qxJPFI1O/L7mzQDHPzawYEqHv47U/yGD1GTE6jHK0u1apgxUI89UJsiYIhVlwdZ40390LGWAR8+LrUhk+q//NYjxfKBd3fotgV4QZecNPQks1fz9bk5oWOwOpOz2pQ3aZ62RInlueAk8ttsfow6+M4rmdfBDVGOkVKgScwhBjeCAcsXQaO+qwWdr1GhLPNuYck39wIDAQAB";
-
+		#if UNITY_ANDROID
 		GoogleIAB.init (key);
+		#endif
 
 		if (m_AlarmData == null) {
 			m_AlarmData = new AlarmData ();

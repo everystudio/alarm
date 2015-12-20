@@ -313,6 +313,7 @@ PlayerSettings:
   psmSplashimage: {fileID: 0}
   spritePackerPolicy: 
   scriptingDefineSymbols:
+    4: USE_NGUI
     7: USE_NGUI
   metroPackageName: alarm(Android)
   metroPackageLogo: 

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using LitJson_AppMarket;
 
 public class AppMarketHelper : MonoBehaviour {
-
+	#if UNITY_ANDROID
 	// License
 	public const int LICENSE_RESPONSE_RESULT_OWN = 0;
 	public const int LICENSE_RESPONSE_RESULT_NOT_OWN = 1;
@@ -308,5 +308,5 @@ public class AppMarketHelper : MonoBehaviour {
 			return iab_msgs[code];
 		}
 	}
-	
+	#endif
 }

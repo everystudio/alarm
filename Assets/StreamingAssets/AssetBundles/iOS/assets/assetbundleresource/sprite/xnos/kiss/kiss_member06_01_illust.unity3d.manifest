@@ -1,0 +1,18 @@
+ManifestFileVersion: 0
+CRC: 3181952224
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: d64c3f9537625ea891b7aa152cb08528
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 00ffc586b3c4c12c72c7fed589b81235
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+Assets:
+- Assets/AssetBundleResource/sprite/xnos/kiss/kiss_member06_01_illust.png
+Dependencies: []

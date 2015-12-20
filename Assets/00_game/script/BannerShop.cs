@@ -44,7 +44,7 @@ public class BannerShop : BannerVoiceBase {
 			*/
 		}
 
-		/*
+		#if UNITY_ANDROID
 		foreach (GoogleSkuInfo info in DataManagerAlarm.Instance.product_data_list) {
 			if (info.productId.Equals (m_csvVoiceData.name_voice)) {
 
@@ -59,7 +59,7 @@ public class BannerShop : BannerVoiceBase {
 				m_lbPrice.text = string.Format ("{0}円", info.price);
 			}
 		}
-		*/
+		#endif
 
 	}
 
@@ -69,7 +69,9 @@ public class BannerShop : BannerVoiceBase {
 
 		if (m_btnBuy.ButtonPushed) {
 			m_btnBuy.TriggerClear ();
+			#if UNITY_ANDROID
 			GoogleIAB.purchaseProduct( m_csvVoiceData.name_voice );
+			#endif
 		}
 	}
 

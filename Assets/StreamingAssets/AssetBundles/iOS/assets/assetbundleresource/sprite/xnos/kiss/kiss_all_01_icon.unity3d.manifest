@@ -1,0 +1,18 @@
+ManifestFileVersion: 0
+CRC: 3644778524
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 808a8f7e7ec37d19e467541800defed7
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 00ffc586b3c4c12c72c7fed589b81235
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+Assets:
+- Assets/AssetBundleResource/sprite/xnos/kiss/kiss_all_01_icon.png
+Dependencies: []

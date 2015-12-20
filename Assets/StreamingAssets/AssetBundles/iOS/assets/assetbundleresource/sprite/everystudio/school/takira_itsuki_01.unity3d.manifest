@@ -1,0 +1,18 @@
+ManifestFileVersion: 0
+CRC: 404459061
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: e617c126c16f9b3c9f9e734e5d0acb86
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 00ffc586b3c4c12c72c7fed589b81235
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+Assets:
+- Assets/AssetBundleResource/sprite/everystudio/school/takira_itsuki_01.png
+Dependencies: []
