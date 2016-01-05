@@ -3,7 +3,7 @@
 	url = https://github.com/mainitiamai/every-studio-library
 [submodule "Assets/00_game/alarm.Resources"]
 	path = Assets/00_game/alarm.Resources
-	url = /Users/mainitiamai/git/alarm.Resources
+url=https://github.com/mainitiamai/alarm.Resources
 [submodule "Assets/AssetBundleResource"]
 	path = Assets/AssetBundleResource
-	url = /Users/mainitiamai/git/alarm.AssetBundleResource
+url=https://github.com/mainitiamai/alarm.AssetBundleResource
