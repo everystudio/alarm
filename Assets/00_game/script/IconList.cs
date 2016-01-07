@@ -21,6 +21,7 @@ public class IconList : IconBase {
 		Index = _iIndex;
 		SetSelect (_iSelectingId);
 		m_switchSprite.SetSize (212, 212);
+		Debug.Log(_data.name_icon);
 		m_switchSprite.SetSprite (_data.name_icon );
 	}
 

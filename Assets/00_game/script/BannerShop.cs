@@ -10,7 +10,7 @@ public class BannerShop : BannerVoiceBase {
 
 	public ButtonBase m_btnBuy;
 	public GameObject m_goPurchased;
-	public CsvVoiceData m_csvVoiceData;
+	public new CsvVoiceData m_csvVoiceData;
 
 	// 一方通行
 	public void Purchase( string _strProductId ){
@@ -63,15 +63,16 @@ public class BannerShop : BannerVoiceBase {
 
 	}
 
-	void Update(){
+	new void Update()
+	{
+		base.Update();
 
-		base.Update ();
-
-		if (m_btnBuy.ButtonPushed) {
-			m_btnBuy.TriggerClear ();
-			#if UNITY_ANDROID
-			GoogleIAB.purchaseProduct( m_csvVoiceData.name_voice );
-			#endif
+		if (m_btnBuy.ButtonPushed)
+		{
+			m_btnBuy.TriggerClear();
+#if UNITY_ANDROID
+			GoogleIAB.purchaseProduct(m_csvVoiceData.name_voice);
+#endif
 		}
 	}
 
