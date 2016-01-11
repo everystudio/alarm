@@ -62,7 +62,7 @@ public class GameMain : PageBase {
 	public void timeRefreshFromToday(){
 
 		string strNow = TimeManager.StrNow ();
-		DateTime dateTime = TimeManager.GetNow ();
+		//DateTime dateTime = TimeManager.GetNow ();
 		foreach( AlarmParam alarm in m_AlarmData.list ){
 			TimeSpan ts = TimeManager.Instance.GetDiff (strNow , alarm.time);
 			if (0 < ts.Seconds) {
@@ -84,7 +84,7 @@ public class GameMain : PageBase {
 
 	public AlarmParam GetNearParam(){
 
-		int iSerial = 0;
+		//int iSerial = 0;
 
 		return new AlarmParam ();
 
@@ -104,7 +104,7 @@ public class GameMain : PageBase {
 			}
 			//Debug.Log ( string.Format( "serial:{0} repeat_type:{1}",param.serial,  param.repeat_type));
 			if (param.repeat_type == 0) {
-				DateTime checkDate = TimeManager.Instance.MakeDateTime (param.time);
+				//DateTime checkDate = TimeManager.Instance.MakeDateTime (param.time);
 				//string strCheckDate = string.Format ("{0}-{1:D2}-{2:D2} {3:D2}:{4:D2}:00", datetimeNow.Year, datetimeNow.Month, datetimeNow.Day, checkDate.Hour, checkDate.Minute);
 				//Debug.Log (TimeManager.Instance.GetDiffNow (strCheckDate).TotalSeconds);
 				string strCheckDate = param.time;
@@ -138,7 +138,7 @@ public class GameMain : PageBase {
 				for (int i = 0; i < DataManagerAlarm.Instance.STR_WEEK_ARR.Length; i++) {
 					if (0 < (param.repeat_type & (1<<i))) {
 						// 曜日にひっかかった
-						string strStartDate = "";
+						//string strStartDate = "";
 						int iOffset = i - iNowWeek;
 						DateTime checkDate = TimeManager.Instance.MakeDateTime (param.time);
 						if (iOffset == 0) {
@@ -158,7 +158,7 @@ public class GameMain : PageBase {
 
 						for (int count = 0; count < 10; count++) {
 							string strNext = string.Format ("{0}-{1:D2}-{2:D2} {3:D2}:{4:D2}:00", nextDateTime.Year, nextDateTime.Month, nextDateTime.Day, checkDate.Hour, checkDate.Minute);
-							strStartDate = strNext;
+							//strStartDate = strNext;
 							AlarmReserve insert_data = new AlarmReserve ();
 							insert_data.m_strTime = strNext;
 							insert_data.m_iVoiceType = param.voice_type;
@@ -263,10 +263,10 @@ public class GameMain : PageBase {
 
 	public void RemoveAlarm( bool _bCall ){
 		List <AlarmReserve> remove_list = new List<AlarmReserve>();
-		List<int> remove_index_list = new List<int> ();
+		//List<int> remove_index_list = new List<int> ();
 		int iRemoveNum = 0;
 
-		int iCount = 0;
+		//int iCount = 0;
 		foreach (AlarmReserve reserve_param in reserve_list) {
 			if (TimeManager.Instance.GetDiffNow (reserve_param.m_strTime).TotalSeconds < 0 ) {
 				iRemoveNum += 1;

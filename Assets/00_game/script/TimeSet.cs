@@ -21,7 +21,7 @@ public class TimeSet : OtherPage {
 
 		m_BannerTimerList.Clear ();
 		GameMain.Instance.m_AlarmData.Load (AlarmData.FILENAME);
-		GameObject prefBannerTimer = PrefabManager.Instance.PrefabLoadInstance ("prefab/BannerTimer");
+		//GameObject prefBannerTimer = PrefabManager.Instance.PrefabLoadInstance ("prefab/BannerTimer");
 
 		foreach (AlarmParam param in GameMain.Instance.m_AlarmData.list) {
 
@@ -68,7 +68,7 @@ public class TimeSet : OtherPage {
 		DisplayReflresh ();
 	}
 
-	void Update(){
+	new void Update(){
 
 		if (ButtonPushed) {
 			//Debug.Log ("Pushed");

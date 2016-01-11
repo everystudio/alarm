@@ -104,7 +104,6 @@ public class SpecialMain : PageBase {
 		switch (m_eStep) {
 		case STEP.NONE:
 			return;
-			break;
 		case STEP.LOADING:
 			if (bInit) {
 				m_btnPause.gameObject.SetActive (false);

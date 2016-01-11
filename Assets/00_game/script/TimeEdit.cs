@@ -139,7 +139,7 @@ public class TimeEdit : OtherPage {
 	public STEP m_eStep;
 	public STEP m_eStepPre;
 
-	void Update(){
+	new void Update(){
 	
 		bool bInit = false;
 		if (m_eStepPre != m_eStep) {
@@ -310,7 +310,7 @@ public class TimeEdit : OtherPage {
 	// バナーがドラッグされて切り替わった際に呼ばれるイベント
 	public void DragBannerHour(GameObject _goBanner) {
 		m_iHour = int.Parse (_goBanner.name);
-		int iBannerNo = 0;
+		//int iBannerNo = 0;
 		SetBannerHour(_goBanner);
 		return;
 	}
@@ -337,7 +337,7 @@ public class TimeEdit : OtherPage {
 	public void DragBannerMinute(GameObject _goBanner) {
 		//Debug.Log (_goBanner.name);
 		m_iMinute = int.Parse (_goBanner.name);
-		int iBannerNo = 0;
+		//int iBannerNo = 0;
 		SetBannerMinute(_goBanner);
 		return;
 	}

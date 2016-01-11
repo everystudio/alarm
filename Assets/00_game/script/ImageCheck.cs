@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using System.Collections;
+//using System.Collections;
 
 public class ImageCheck : OtherPage {
 
@@ -33,7 +33,7 @@ public class ImageCheck : OtherPage {
 		m_eStep = STEP.END;
 	}
 
-	void Update(){
+	new void Update(){
 
 		bool bInit = false;
 		if (m_eStepPre != m_eStep) {

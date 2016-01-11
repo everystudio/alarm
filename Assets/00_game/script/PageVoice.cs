@@ -8,7 +8,7 @@ public class PageVoice : VoiceMain {
 
 	public bool m_bInitialized;
 
-	public void Initialize(){
+	public override void Initialize(){
 		base.Initialize ();
 		if (m_bInitialized == false) {
 			myTransform.localPosition = POS_OUT;

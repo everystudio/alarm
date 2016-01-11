@@ -46,7 +46,7 @@ namespace Prime31
 			Debug.Log( "billingSupportedEvent" );
 
 			// enter all the available skus from the Play Developer Console in this array so that item information can be fetched for them
-			int iCount = 0;
+			//int iCount = 0;
 			List<string> product_id_list = new List<string> ();
 			foreach (CsvVoiceData data in DataManagerAlarm.Instance.master_voice_list) {
 				if (data.type == 2) {

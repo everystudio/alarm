@@ -167,6 +167,11 @@ public class VoiceMain : PageBase {
 
 		switch (m_eStep) {
 		case STEP.IDLE:
+				if( bInit)
+				{
+					Debug.Log("Init");
+
+				}
 			break;
 		}
 
