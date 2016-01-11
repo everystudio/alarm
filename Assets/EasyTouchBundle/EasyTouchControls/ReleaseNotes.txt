@@ -2,11 +2,26 @@
 				EASY TOUCH CONTROLS
 				
 Copyright © 2015 The Hedgehog Team
-http://www.blitz3dfr.com/teamtalk/index.php
+http://www.thehedgehogteam.com/Forum/
 
 		the.hedgehog.team@gmail.com
 
 **********************************************
+
+EasyTouchControls 1.2.6
+=======================
+
+- News
+*******
+* You can choose to unregister or not a control at disabling time.
+* StandAloneInputModule  composant is automatically add to the  EventSystem gameobject.
+
+- Bug fixed
+************
+* Change UNITY_IPHONE by UNITY_IOS 
+* Second dynamic joystick no longer show when the touch come from another area in the editor mode
+* InputManager is automatically add in static (in the hierachy when you create a control)
+
 
 EasyTouchControls 1.2.5
 =======================

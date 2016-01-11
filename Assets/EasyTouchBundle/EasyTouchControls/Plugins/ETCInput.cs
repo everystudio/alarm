@@ -91,6 +91,14 @@ public class ETCInput : MonoBehaviour{
 	
 	}
 
+	public static void Register(ETCBase ctrl){
+		ETCInput.instance.RegisterControl( ctrl);
+	}
+
+	public static void UnRegister(ETCBase ctrl){
+		ETCInput.instance.UnRegisterControl( ctrl);
+	}
+
 
 	public static void SetControlVisible(string ctrlName,bool value){
 		if (ETCInput.instance.controls.TryGetValue( ctrlName, out control)){

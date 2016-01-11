@@ -19,9 +19,19 @@ public class DataManagerAlarm : DataManagerBase<DataManagerAlarm> {
 		}
 	}
 	public CsvVoiceset m_csvVoiceset = new CsvVoiceset();
-	public List<CsvVoicesetData> master_voiceset_list {
-		get{ 
+	public List<CsvVoicesetData> master_voiceset_list
+	{
+		get
+		{
 			return Instance.m_csvVoiceset.All;
+		}
+	}
+	public CsvConfig m_csvConfig= new CsvConfig();
+	public List<CsvKvsParam> master_csv_config
+	{
+		get
+		{
+			return Instance.m_csvConfig.All;
 		}
 	}
 
@@ -33,6 +43,11 @@ public class DataManagerAlarm : DataManagerBase<DataManagerAlarm> {
 		m_csvImage.Load ();
 		m_csvVoice.Load ();
 		m_csvVoiceset.Load ();
+		m_csvConfig.Load();
+		foreach( CsvKvsParam param in m_csvConfig.All)
+		{
+			Debug.LogError(param.key);
+		}
 
 	}
 	public string [] STR_MONTH_SHORT_ARR = new string[13]{

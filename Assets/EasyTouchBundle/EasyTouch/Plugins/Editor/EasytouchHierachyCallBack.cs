@@ -18,6 +18,18 @@ public class EasytouchHierachyCallBack{
 			return EasytouchHierachyCallBack.hierarchyIcon;
 		}
 	}	
+
+	private static Texture2D hierarchyEventIcon;
+	private static Texture2D HierarchyEventIcon {
+		get {
+			if (EasytouchHierachyCallBack.hierarchyEventIcon==null){
+				EasytouchHierachyCallBack.hierarchyEventIcon = (Texture2D)Resources.Load( "EasyTouchTrigger_Icon");
+			}
+			return EasytouchHierachyCallBack.hierarchyEventIcon;
+		}
+	}
+
+
 	// constructor
 	static EasytouchHierachyCallBack()
 	{
@@ -34,6 +46,13 @@ public class EasytouchHierachyCallBack{
 			Rect rect = new Rect(selectionRect.x + selectionRect.width - 16f, selectionRect.y, 16f, 16f);
 			GUI.DrawTexture( rect,EasytouchHierachyCallBack.HierarchyIcon);
 		}
+
+		/*
+		if (gameObject != null && gameObject.GetComponent<ETComponentBase>() != null)
+		{
+			Rect rect = new Rect(selectionRect.x + selectionRect.width - 16f, selectionRect.y, 16f, 16f);
+			GUI.DrawTexture( rect,EasytouchHierachyCallBack.HierarchyEventIcon);
+		}*/
 	}
 		
 }

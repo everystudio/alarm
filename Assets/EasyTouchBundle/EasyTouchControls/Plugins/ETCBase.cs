@@ -104,6 +104,7 @@ public abstract class ETCBase : MonoBehaviour {
 	public bool showDownEventInspector;
 	public bool showPressEventInspector;
 
+	public bool isUnregisterAtDisable = false;
 	private bool visibleAtStart = true;
 	private bool activatedAtStart = true;
 
@@ -119,19 +120,29 @@ public abstract class ETCBase : MonoBehaviour {
 
 		visibleAtStart = _visible;
 		activatedAtStart = _activated;
+
+		if (!isUnregisterAtDisable){
+			ETCInput.instance.RegisterControl( this);
+		}
 	}
 
 	
 	public virtual void OnEnable(){
 
-		ETCInput.instance.RegisterControl( this);
+		if (isUnregisterAtDisable){
+			ETCInput.instance.RegisterControl( this);
+		}
+
 		visible = visibleAtStart;
 		activated = activatedAtStart;
 	}
 	
 	void OnDisable(){
-		if (ETCInput._instance && !Application.isLoadingLevel){
-			ETCInput.instance.UnRegisterControl( this );
+
+		if (ETCInput._instance ){
+			if (isUnregisterAtDisable){
+				ETCInput.instance.UnRegisterControl( this );
+			}
 		}
 
 		visibleAtStart = _visible;
@@ -143,7 +154,7 @@ public abstract class ETCBase : MonoBehaviour {
 	
 	void OnDestroy(){
 
-		if (ETCInput._instance && !Application.isLoadingLevel){
+		if (ETCInput._instance){
 			ETCInput.instance.UnRegisterControl( this );
 		}
 	}

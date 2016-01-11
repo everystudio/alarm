@@ -34,17 +34,17 @@ public class GameMain : PageBase {
 		m_VoiceMain.Purchase (_strProductId);
 	}
 
-	public KvsData kvs_data{
+	public CsvKvs kvs_data{
 		get{ 
-			if (m_KvsData == null) {
+			if (m_CsvKvs == null) {
 
-				m_KvsData = new KvsData ();
+				m_CsvKvs = new CsvKvs ();
 
 			}
-			return m_KvsData;
+			return m_CsvKvs;
 		}
 	}
-	public KvsData m_KvsData;
+	public CsvKvs m_CsvKvs;
 
 	public PageBase m_PageNow;
 	public List<PageBase> m_PageBaseList = new List<PageBase> ();
@@ -230,7 +230,7 @@ public class GameMain : PageBase {
 		}
 		reserveTimeReset ();
 
-		kvs_data.Load (KvsData.FILE_NAME);
+		kvs_data.Load (CsvKvs.FILE_NAME);
 		int iTest = kvs_data.ReadInt ("test");
 		iTest += 1;
 		kvs_data.WriteInt ("test", iTest );

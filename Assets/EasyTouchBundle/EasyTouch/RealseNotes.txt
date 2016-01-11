@@ -2,11 +2,18 @@
 				EASY TOUCH 4
 				
 Copyright © 2015 The Hedgehog Team
-http://www.blitz3dfr.com/teamtalk/index.php
+http://www.thehedgehogteam.com/Forum/
 
 		the.hedgehog.team@gmail.com
 
 **********************************************
+
+EasyTouch 4.1.1
+===============
+- Unity remote is activated automatically if needed ( the option is still available in the Inspector)
+- UNITY_IPHONE platform defines is replaced by UNITY_IOS
+- Lightmap data are removed.
+
 EasyTouch 4.1.0 
 ===============
 -Add support of UI Element on EasyTouchTrigger component

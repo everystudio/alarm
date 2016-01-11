@@ -2,7 +2,7 @@
 				EASY TOUCH CONTROLS
 				
 Copyright © 2015 The Hedgehog Team
-http://www.blitz3dfr.com/teamtalk/index.php
+http://www.thehedgehogteam.com/Forum/
 
 		the.hedgehog.team@gmail.com
 
@@ -11,7 +11,7 @@ http://www.blitz3dfr.com/teamtalk/index.php
 Thank you for your purchase!
 
 If you have any questions, suggestions, please
-use the Hedgehog Team Community forum,  here: http://www.blitz3dfr.com/teamtalk/index.php
+use the Hedgehog Team Community forum,  here: http://www.thehedgehogteam.com/Forum/
 
 Or send us an email at : the.hedgehog.team@gmail.com
 

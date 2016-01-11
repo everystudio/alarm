@@ -7,6 +7,10 @@ http://www.thehedgehogteam.com/Forum/
 		the.hedgehog.team@gmail.com
 
 **********************************************
+EasyTouch Bundle 4.4.0
+***********************
+EasyTouch => 4.1.1 
+EasyTouch Controls => EasyTouchControls 1.2.6
 
 EasyTouch Bundle 4.3.3
 ***********************

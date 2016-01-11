@@ -15,14 +15,15 @@ public static class ETCMenu{
 	[MenuItem ("GameObject/EasyTouch Controls/Joystick", false, 0)]
 	static void  AddJoystick(){
 	
-		//ETCInput.instance.Init();
-
+		ETCInput.instance.Create();
 		GameObject canvas = SetupUI();
 
 		Object[] sprites = Resources.LoadAll("ETCDefaultSprite");
 
 		GameObject joystick = new GameObject("New Joystick", typeof(ETCJoystick),typeof(RectTransform), typeof( CanvasGroup), typeof(Image) );
 		joystick.transform.SetParent( canvas.transform,false);
+
+	
 		joystick.GetComponent<Image>().preserveAspect = true;
 		joystick.GetComponent<Image>().sprite = GetSpriteByName("ETCArea",sprites);
 		joystick.GetComponent<Image>().rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal,130);
@@ -48,8 +49,7 @@ public static class ETCMenu{
 	[MenuItem ("GameObject/EasyTouch Controls/D-Pad", false, 0)]
 	static void  AddDPad(){
 
-		//ETCInput.instance.Init();
-
+		ETCInput.instance.Create();
 		GameObject canvas = SetupUI();
 		
 		Object[] sprites = Resources.LoadAll("ETCDefaultSprite"); 
@@ -73,7 +73,7 @@ public static class ETCMenu{
 	[MenuItem ("GameObject/EasyTouch Controls/Button", false, 0)]
 	static void  AddButton(){
 
-		//ETCInput.instance.Init();
+		ETCInput.instance.Create();
 
 		GameObject canvas = SetupUI();
 
@@ -97,8 +97,7 @@ public static class ETCMenu{
 
 	[MenuItem ("GameObject/EasyTouch Controls/TouchPad", false, 0)]
 	static void  AddTouchPad(){
-
-		//ETCInput.instance.Init();
+		ETCInput.instance.Create();
 
 		GameObject canvas = SetupUI();
 
@@ -118,8 +117,6 @@ public static class ETCMenu{
 	[MenuItem ("GameObject/EasyTouch Controls/Area", false, 0)]
 	public static ETCArea AddJoystickArea(){
 
-		//ETCInput.instance.Init();
-
 		GameObject canvas = SetupUI();
 		
 		Object[] sprites = Resources.LoadAll("ETCDefaultSprite");
@@ -133,6 +130,7 @@ public static class ETCMenu{
 		
 		area.GetComponent<ETCArea>().ApplyPreset(ETCArea.AreaPreset.BottomLeft);
 		return area.GetComponent<ETCArea>();
+
 	
 	}
 
@@ -149,18 +147,23 @@ public static class ETCMenu{
 		}
 
 		// TouchInput
+		#if !UNITY_5_3
 		if ( GameObject.FindObjectOfType(typeof(TouchInputModule)) ){
 			TouchInputModule tm = (TouchInputModule)GameObject.FindObjectOfType(typeof(TouchInputModule));
+			//tm.allowActivationOnStandalone = true;
 			tm.forceModuleActive = true;
 		}
-
+		#endif
 		return canvas;
 
 	}
 	
 	static void AddEventSystem(){
-
-		new GameObject("EventSystem",typeof(EventSystem), typeof(TouchInputModule));
+		#if UNITY_5_3
+		new GameObject("EventSystem",typeof(EventSystem), typeof(StandaloneInputModule));
+		#else
+		new GameObject("EventSystem",typeof(EventSystem), typeof(TouchInputModule), typeof(StandaloneInputModule));
+		#endif
 
 	}
 

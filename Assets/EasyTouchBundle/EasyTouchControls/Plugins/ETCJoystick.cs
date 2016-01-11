@@ -176,10 +176,39 @@ public class ETCJoystick : ETCBase,IPointerEnterHandler,IDragHandler, IBeginDrag
 		noReturnPosition = thumb.position;
 
 		pointId = -1;
+
+		if (joystickType == JoystickType.Dynamic){
+			visible = false;
+		}
 	}
 
-	protected override void UpdateControlState ()
-	{
+
+	public override void Update (){
+
+		base.Update ();
+
+		#region dynamic joystick
+		if (joystickType == JoystickType.Dynamic && !_visible && _activated){
+			Vector2 localPosition = Vector2.zero;
+			Vector2 screenPosition = Vector2.zero;
+			
+			if (isTouchOverJoystickArea(ref localPosition, ref screenPosition)){
+				
+				GameObject overGO = GetFirstUIElement( screenPosition);
+				
+				if (overGO == null || (allowJoystickOverTouchPad && overGO.GetComponent<ETCTouchPad>()) || (overGO != null && overGO.GetComponent<ETCArea>() ) ) {
+					cachedRectTransform.anchoredPosition = localPosition;
+					visible = true;
+				}
+			}
+		}
+		#endregion
+
+
+	}
+
+	protected override void UpdateControlState (){
+	
 		UpdateJoystick();
 	}
 
@@ -310,7 +339,7 @@ public class ETCJoystick : ETCBase,IPointerEnterHandler,IDragHandler, IBeginDrag
 	#region Joystick Update
 	private void UpdateJoystick(){
 
-	
+	/*
 		#region dynamic joystick
 		if (joystickType == JoystickType.Dynamic && !_visible && _activated){
 			Vector2 localPosition = Vector2.zero;
@@ -326,7 +355,7 @@ public class ETCJoystick : ETCBase,IPointerEnterHandler,IDragHandler, IBeginDrag
 				}
 			}
 		}
-		#endregion
+		#endregion*/
 
 		#region Key simulation
 		if (enableKeySimulation && !isOnTouch && _activated && _visible){
@@ -473,16 +502,15 @@ public class ETCJoystick : ETCBase,IPointerEnterHandler,IDragHandler, IBeginDrag
 		screenPosition = Vector2.zero;
 		
 		int count = GetTouchCount();
-		
 		int i=0;
 		while (i<count && !touchOverArea){
-			#if ((UNITY_ANDROID || UNITY_IPHONE || UNITY_WINRT || UNITY_BLACKBERRY) && !UNITY_EDITOR) 
+			#if ((UNITY_ANDROID || UNITY_IOS || UNITY_WINRT || UNITY_BLACKBERRY) && !UNITY_EDITOR) 
 			if (Input.GetTouch(i).phase == TouchPhase.Began){
 				screenPosition = Input.GetTouch(i).position;
 				doTest = true;
 			}
 			#else
-			if (Input.GetMouseButton(0)){
+			if (Input.GetMouseButtonDown(0)){
 				screenPosition = Input.mousePosition;
 				doTest = true;
 			}
@@ -571,7 +599,7 @@ public class ETCJoystick : ETCBase,IPointerEnterHandler,IDragHandler, IBeginDrag
 	}
 	
 	private int GetTouchCount(){
-		#if ((UNITY_ANDROID || UNITY_IPHONE || UNITY_WINRT || UNITY_BLACKBERRY) && !UNITY_EDITOR) 
+		#if ((UNITY_ANDROID || UNITY_IOS || UNITY_WINRT || UNITY_BLACKBERRY) && !UNITY_EDITOR) 
 		return Input.touchCount;
 		#else
 		if (Input.GetMouseButton(0) || Input.GetMouseButtonUp(0)){

@@ -13,6 +13,7 @@ public class EasyTouchInspector : Editor {
 		#region General properties
 		EditorGUILayout.Space();
 		t.enable = HTGuiTools.Toggle("Enable EasyTouch", t.enable,true);
+
 		t.enableRemote = HTGuiTools.Toggle("Enable Unity Remote", t.enableRemote,true);
 
 
@@ -213,6 +214,9 @@ public class EasyTouchInspector : Editor {
 		}
 
 		#endregion
+
+		if (GUI.changed)
+			EditorUtility.SetDirty(target);
 	}
 }
 

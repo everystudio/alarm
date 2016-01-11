@@ -10,7 +10,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-[AddComponentMenu("Event/EasyTouch Trigger")]
+[AddComponentMenu("Event/EasyTouch/Trigger")]
 [System.Serializable]
 public class EasyTouchTrigger : MonoBehaviour {
 

@@ -11,7 +11,7 @@ public class BannerRepeat : BannerBase {
 
 	public bool m_bFlag;
 
-	public int m_iIndex;
+	public  int m_iIndex;
 
 	private void button( bool _bOn ){
 		if (_bOn) {
@@ -40,7 +40,7 @@ public class BannerRepeat : BannerBase {
 			button (m_bFlag);
 
 			if (m_bFlag) {
-				GameMain.Instance.EditingAlarmParam.repeat_type |= (1 << m_iIndex);
+				GameMain.Instance.EditingAlarmParam.repeat_type |= 1 << m_iIndex;
 			} else {
 				GameMain.Instance.EditingAlarmParam.repeat_type &= ~(1 << m_iIndex);
 			}

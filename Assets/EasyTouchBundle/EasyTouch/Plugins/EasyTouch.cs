@@ -271,7 +271,26 @@ public class EasyTouch : MonoBehaviour {
 	#endregion
 	
 	#region Public members
-	public static EasyTouch instance;
+	public static EasyTouch _instance;
+
+	public static EasyTouch instance{
+		get{
+			if( !_instance ){
+				
+				// check if an ObjectPoolManager is already available in the scene graph
+				_instance = FindObjectOfType( typeof( EasyTouch ) ) as EasyTouch;
+				
+				// nope, create a new one
+				if( !_instance ){
+					GameObject obj = new GameObject( "Easytouch" );
+					_instance = obj.AddComponent<EasyTouch>();
+				}
+			}
+			
+			return _instance;
+		}
+	}
+
 	
 	public bool enable;				// Enables or disables Easy Touch
 	public bool enableRemote;			// Enables or disables Unity remote
@@ -384,12 +403,12 @@ public class EasyTouch : MonoBehaviour {
 	#region MonoBehaviour Callback
 	void OnEnable(){
 		if (Application.isPlaying && Application.isEditor){
-			InitEasyTouch();	
+			Init();	
 		}
 	}
 
 	void Awake(){
-		InitEasyTouch();	
+		Init();	
 	}
 
 	void Start(){
@@ -412,14 +431,17 @@ public class EasyTouch : MonoBehaviour {
 		}
 	}
 	
-	void InitEasyTouch(){
+	void Init(){
 
+		// Comment for EasyTouch 5.X
+		/* 
 		// Assing the fake singleton
 		if (EasyTouch.instance == null)
 			instance = this;
-		
+		*/
+
 		// The texture to display the simulation of the second finger.
-		#if ((!UNITY_ANDROID && !UNITY_IPHONE && !UNITY_WINRT && !UNITY_BLACKBERRY) || UNITY_EDITOR)
+		#if ((!UNITY_ANDROID && !UNITY_IOS && !UNITY_WINRT && !UNITY_BLACKBERRY) || UNITY_EDITOR)
 			if (secondFingerTexture==null && enableSimulation){
 				secondFingerTexture =Resources.Load("secondFinger") as Texture;
 			}
@@ -427,7 +449,7 @@ public class EasyTouch : MonoBehaviour {
 	}
 	
 	// Display the simulation of the second finger
-	#if ((!UNITY_ANDROID && !UNITY_IPHONE && !UNITY_WINRT && !UNITY_BLACKBERRY) || UNITY_EDITOR)
+	#if ((!UNITY_ANDROID && !UNITY_IOS && !UNITY_WINRT && !UNITY_BLACKBERRY) || UNITY_EDITOR)
 	void OnGUI(){
 		if (enableSimulation && !enableRemote){
 			Vector2 finger = input.GetSecondFingerPosition();
@@ -447,6 +469,12 @@ public class EasyTouch : MonoBehaviour {
 
 		if (enable && EasyTouch.instance==this){
 		
+			#if (UNITY_EDITOR)
+			if (Application.isPlaying && Input.touchCount>0){
+				enableRemote = true;
+			}
+			#endif
+
 			int i;
 			
 			// How many finger do we have ?
@@ -458,7 +486,7 @@ public class EasyTouch : MonoBehaviour {
 			}
 
 			// Get touches		
-			#if (((UNITY_ANDROID || UNITY_IPHONE || UNITY_WINRT || UNITY_BLACKBERRY) && !UNITY_EDITOR))
+			#if (((UNITY_ANDROID || UNITY_IOS || UNITY_WINRT || UNITY_BLACKBERRY) && !UNITY_EDITOR))
 				UpdateTouches(true, count);
 			#else
 
@@ -784,13 +812,6 @@ public class EasyTouch : MonoBehaviour {
 		gesture.deltaPinch = 0;
 		gesture.twistAngle = 0;
 
-		/*
-		#if (UNITY_ANDROID && !UNITY_EDITOR)
-		if (gesture.deltaTime!=0){
-			Debug.Log("ok");
-			gesture.deltaPosition  *= Time.deltaTime / gesture.deltaTime;
-		}
-		#endif*/
 
 		// Firing event
 		if ( firingEvent){
@@ -1988,6 +2009,7 @@ public class EasyTouch : MonoBehaviour {
 		if (EasyTouch.instance)
 			EasyTouch.instance.minTwistAngle = angle;
 	}
+
 	public static float GetMinTwistAngle(){
 		if (EasyTouch.instance)
 			return EasyTouch.instance.minTwistAngle;

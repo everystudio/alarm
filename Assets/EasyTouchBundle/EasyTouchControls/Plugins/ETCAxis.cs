@@ -402,10 +402,31 @@ public class ETCAxis {
 	}
 
 	private void DoAngleLimitation(){
-		
-		float angle= GetAngle();
 
-		angle = Mathf.Clamp (angle, -minAngle, maxAngle);
+		/*
+		float angle = 0;
+
+		switch(axisInfluenced){
+		case AxisInfluenced.X:
+			angle = _directTransform.localRotation.eulerAngles.x;
+			break;
+		case AxisInfluenced.Y:
+			angle = _directTransform.localRotation.eulerAngles.y;
+			break;
+		case AxisInfluenced.Z:
+			angle = _directTransform.localRotation.eulerAngles.z;
+			break;			
+		}	
+
+		//float angle= GetAngle();
+
+		//Debug.Log( _directTransform.localEulerAngles.x);
+
+		if (angle<180){
+			angle = Mathf.Clamp( angle,0, minAngle);
+		}else{
+			angle = Mathf.Clamp( angle,360-maxAngle, 360);
+		}
 
 		switch(axisInfluenced){
 		case AxisInfluenced.X:
@@ -418,7 +439,39 @@ public class ETCAxis {
 			_directTransform.localEulerAngles = new Vector3( _directTransform.localEulerAngles.x,_directTransform.localEulerAngles.y,angle);
 			break;	
 			
+		}*/
+
+
+		Quaternion q = _directTransform.localRotation;
+		
+		q.x /= q.w;
+		q.y /= q.w;
+		q.z /= q.w;
+		q.w = 1.0f;
+		
+		float newAngle = 0;
+		
+		switch(axisInfluenced){
+		case AxisInfluenced.X:
+			newAngle = 2.0f * Mathf.Rad2Deg * Mathf.Atan (q.x);
+			newAngle = Mathf.Clamp (newAngle, -minAngle, maxAngle);
+			q.x = Mathf.Tan (0.5f * Mathf.Deg2Rad * newAngle);
+			break;
+		case AxisInfluenced.Y:
+			newAngle = 2.0f * Mathf.Rad2Deg * Mathf.Atan (q.y);
+			newAngle = Mathf.Clamp (newAngle, -minAngle, maxAngle);
+			q.y = Mathf.Tan (0.5f * Mathf.Deg2Rad * newAngle);
+			break;
+		case AxisInfluenced.Z:
+			newAngle = 2.0f * Mathf.Rad2Deg * Mathf.Atan (q.z);
+			newAngle = Mathf.Clamp (newAngle, -minAngle, maxAngle);
+			q.z = Mathf.Tan (0.5f * Mathf.Deg2Rad * newAngle);
+			break;
 		}
+		
+		
+		
+		_directTransform.localRotation = q;
 		
 	}
 	#endregion

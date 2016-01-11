@@ -19,7 +19,10 @@ public class ETCButtonInspector : Editor {
 
 		t.activated = ETCGuiTools.Toggle("Activated",t.activated,true);
 		t.visible = ETCGuiTools.Toggle("Visible",t.visible,true);
-		t.useFixedUpdate = ETCGuiTools.Toggle("Use Fixed Updae",t.useFixedUpdate,true);
+
+		EditorGUILayout.Space();
+		t.useFixedUpdate = ETCGuiTools.Toggle("Use Fixed Update",t.useFixedUpdate,true);
+		t.isUnregisterAtDisable = ETCGuiTools.Toggle("Unregister at disabling time",t.isUnregisterAtDisable,true);
 
 		#region Position & Size
 		t.showPSInspector = ETCGuiTools.BeginFoldOut( "Position & Size",t.showPSInspector);
