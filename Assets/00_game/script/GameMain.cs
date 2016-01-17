@@ -119,19 +119,6 @@ public class GameMain : PageBase {
 				} else {
 
 				}
-				/*
-				 * こっちは旧式
-				else {
-
-					DateTime tomorrowDateTime = TimeManager.GetNow();
-					tomorrowDateTime = tomorrowDateTime.AddDays (1);
-					string strTomorrow = string.Format ("{0}-{1:D2}-{2:D2} {3:D2}:{4:D2}:00", tomorrowDateTime.Year, tomorrowDateTime.Month, tomorrowDateTime.Day, checkDate.Hour, checkDate.Minute);
-					insert_data.m_strTime = strTomorrow;
-				}
-				insert_data.m_iVoiceType = param.voice_type;
-				insert_data.m_lTime = (long)TimeManager.Instance.GetDiffNow (insert_data.m_strTime).TotalSeconds;
-				_insertList.Add (insert_data);
-				*/
 			} else {
 				int iNowWeek = TimeManager.Instance.GetWeekIndex (TimeManager.StrGetTime ());
 

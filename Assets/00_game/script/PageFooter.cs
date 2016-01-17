@@ -8,9 +8,17 @@ public class PageFooter : ButtonManager {
 
 	public UIGrid m_grid;
 
+	public readonly string[] FOOTER_NAME = new string[] {
+		"Alarm",
+		"Voice",
+		"Image",
+		"Special",
+		"Comic"
+	};
+
 	void Start(){
 
-		Debug.LogError(DataManagerAlarm.Instance.m_csvConfig.Read("footer"));
+		//Debug.LogError(DataManagerAlarm.Instance.m_csvConfig.Read("footer"));
 		string strFooterInfo = DataManagerAlarm.Instance.m_csvConfig.Read("footer");
 		string [] strArr = strFooterInfo.Split('-');
 		for( int i = 0; i < strArr.Length; i++)
@@ -19,12 +27,24 @@ public class PageFooter : ButtonManager {
 			Debug.Log(strPrefabName);
 
 			GameObject obj = PrefabManager.Instance.MakeObject(strPrefabName, m_grid.gameObject);
+			ButtonBase button = obj.GetComponent<ButtonBase>();
 
+			int iButtonIndex = 0;
+			foreach( string button_name in FOOTER_NAME)
+			{
+				if( true == button_name.Equals(strArr[i]) )
+				{
+					break;
+				}
+				iButtonIndex += 1;
+			}
+			button.ButtonInit(iButtonIndex);
 			AddButtonBase(i, obj);
 		}
 		m_grid.enabled = true;
 
-		ButtonInit ();
+		//ButtonInit ();
+		TriggerClearAll();
 	}
 
 	public void SetIndex( int _iIndex ){
@@ -32,7 +52,8 @@ public class PageFooter : ButtonManager {
 			FooterButton script = m_csButtonList [i].gameObject.GetComponent<FooterButton> ();
 
 			bool bSet = false;
-			if (_iIndex == i) {
+
+			if (_iIndex == script.Index) {
 				bSet = true;
 			}
 			script.SetImage (bSet);

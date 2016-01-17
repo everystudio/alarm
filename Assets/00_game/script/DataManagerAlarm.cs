@@ -35,6 +35,14 @@ public class DataManagerAlarm : DataManagerBase<DataManagerAlarm> {
 		}
 	}
 
+	public CsvImage m_csvComic = new CsvImage("csv/comic_list");
+	public List<CsvImageData> master_comic_list
+	{
+		get
+		{
+			return Instance.m_csvComic.All;
+		}
+	}
 
 	public override void Initialize ()
 	{
@@ -44,6 +52,7 @@ public class DataManagerAlarm : DataManagerBase<DataManagerAlarm> {
 		m_csvVoice.Load ();
 		m_csvVoiceset.Load ();
 		m_csvConfig.Load();
+		m_csvComic.Load();
 		foreach( CsvKvsParam param in m_csvConfig.All)
 		{
 			Debug.LogError(param.key);

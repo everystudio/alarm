@@ -4,7 +4,6 @@ using System.Collections;
 public class BannerRepeat : BannerBase {
 
 	public UILabel m_lbText;
-
 	public ButtonBase m_btnTrigger;
 	public UI2DSprite m_sprYes;
 	public UI2DSprite m_sprNo;
@@ -40,7 +39,7 @@ public class BannerRepeat : BannerBase {
 			button (m_bFlag);
 
 			if (m_bFlag) {
-				GameMain.Instance.EditingAlarmParam.repeat_type |= 1 << m_iIndex;
+				GameMain.Instance.EditingAlarmParam.repeat_type |= (long)(1 << m_iIndex);
 			} else {
 				GameMain.Instance.EditingAlarmParam.repeat_type &= ~(1 << m_iIndex);
 			}

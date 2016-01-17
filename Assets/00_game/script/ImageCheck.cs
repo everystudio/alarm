@@ -12,11 +12,15 @@ public class ImageCheck : OtherPage {
 		IDLE		,
 		END			,
 		MAX			,
+		LOAD_FILENAME,
 	}
 	public STEP m_eStep;
 	public STEP m_eStepPre;
 
 	public int m_iSelectingId;
+	public string m_strFilename;
+
+	public GameObject m_goOkButton;
 
 	public void InStart ( int _iSelectingId )
 	{
@@ -24,7 +28,18 @@ public class ImageCheck : OtherPage {
 		m_eStep = STEP.LOAD;
 		m_eStepPre = STEP.MAX;
 
+		m_goOkButton.SetActive(true);
+
+
 		return;
+	}
+
+	public void InStart( string _strFilename)
+	{
+		m_strFilename = _strFilename;
+		m_eStep = STEP.LOAD_FILENAME;
+		m_eStepPre = STEP.MAX;
+		m_goOkButton.SetActive(false);
 	}
 
 	public override void OutStart ()
@@ -46,15 +61,31 @@ public class ImageCheck : OtherPage {
 				foreach (CsvImageData data in DataManagerAlarm.Instance.master_image_list) {
 					if (data.id == m_iSelectingId) {
 						Debug.LogError (data.name_image);
-						m_switchSprite.SetSprite (data.name_image);
+
+							m_strFilename = data.name_image;
+						m_switchSprite.SetSprite (m_strFilename);
 					}
 				}
 			}
 
-			if (m_switchSprite.IsIdle()) {
+			if (m_switchSprite.IsIdle() ) {
 				m_eStep = STEP.IDLE;
 			}
 			break;
+
+			case STEP.LOAD_FILENAME:
+				if (bInit)
+				{
+					m_switchSprite.SetSize(640, 1136);
+					m_switchSprite.SetSprite(m_strFilename);
+				}
+				if (m_switchSprite.IsIdle())
+				{
+					m_eStep = STEP.IDLE;
+				}
+
+				break;
+
 		case STEP.IDLE:
 			if (bInit) {
 				base.InStart ();
