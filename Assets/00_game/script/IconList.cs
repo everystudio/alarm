@@ -50,7 +50,11 @@ public class IconList : IconBase {
 
 		switch(m_eStep)
 		{
-			case STEP.LOADING:
+		case STEP.LOADING:
+			if (bInit) {
+				Debug.Log ("Loading,init");
+					
+			}
 				if(true == SpriteManager.Instance.IsLoaded(m_csvImageData.name_icon))
 				{
 					if (m_Grid != null)

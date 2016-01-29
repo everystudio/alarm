@@ -162,7 +162,9 @@ public class SpecialMain : PageBase {
 			m_fTimer = fRate * m_fTimerMax;
 			m_AudioChannelData.m_tAudioSource.time = m_fTimer;
 		} else {
-			m_goCursor.transform.localPosition = new Vector3 (Linear (fRate, -320.0f, 320.0f), 0.0f, 0.0f);
+			float fx = 0.0f;
+			Linear (fRate, -320.0f, 320.0f, out fx);
+			m_goCursor.transform.localPosition = new Vector3 (fx, 0.0f, 0.0f);
 		}
 		SetTime (m_fTimer, m_fTimerMax);
 

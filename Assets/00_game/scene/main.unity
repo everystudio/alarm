@@ -5232,47 +5232,6 @@ MonoBehaviour:
   m_iSelectingId: 0
   m_strFilename: 
   m_goOkButton: {fileID: 1043566025}
---- !u!1 &831725500
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 831725502}
-  - 114: {fileID: 831725501}
-  m_Layer: 0
-  m_Name: KvsData
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &831725501
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 831725500}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21b1fefbc311145838b13d89aebc6ae8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  list: []
-  READ_ERROR_STRING: sql_datamanager_read_error
---- !u!4 &831725502
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 831725500}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
 --- !u!1 &837439314
 GameObject:
   m_ObjectHideFlags: 0
@@ -5865,7 +5824,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
 --- !u!1 &906258787
 GameObject:
   m_ObjectHideFlags: 0
@@ -8088,9 +8047,7 @@ MonoBehaviour:
     m_repeat_type: 0
     m_snooze: 0
     m_voice_type: 0
-  m_AlarmData: {fileID: 0}
   m_VoiceMain: {fileID: 0}
-  m_CsvKvs: {fileID: 0}
   m_PageNow: {fileID: 0}
   m_PageBaseList:
   - {fileID: 1003416868}
@@ -8191,15 +8148,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_intIndex: 0
   m_bButtonClicked: 0
-  m_csButtonList:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  m_csButtonList: []
 --- !u!114 &1310176873
 MonoBehaviour:
   m_ObjectHideFlags: 0

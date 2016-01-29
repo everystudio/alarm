@@ -43,10 +43,20 @@ public class DataManagerAlarm : DataManagerBase<DataManagerAlarm> {
 			return Instance.m_csvComic.All;
 		}
 	}
+	public CsvAudio m_masterTableAudio = new CsvAudio();
+	public CsvPrefab m_masterTablePrefab = new CsvPrefab();
+	public CsvSprite m_masterTableSprite = new CsvSprite();
 
 	public override void Initialize ()
 	{
 		base.Initialize ();
+		m_masterTableAudio.Load ();
+		m_masterTablePrefab.Load ();
+		m_masterTableSprite.Load ();
+
+		SpriteManager.Instance.csv_sprite_list = m_masterTableSprite.All;
+		PrefabManager.Instance.csv_prefab_list = m_masterTablePrefab.All;
+		SoundManager.Instance.m_csvAudioDataList = m_masterTableAudio.All;
 
 		m_csvImage.Load ();
 		m_csvVoice.Load ();
