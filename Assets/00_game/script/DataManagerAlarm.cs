@@ -62,7 +62,9 @@ public class DataManagerAlarm : DataManagerBase<DataManagerAlarm> {
 		m_csvVoice.Load ();
 		m_csvVoiceset.Load ();
 		m_csvConfig.Load();
-		m_csvComic.Load();
+		if (m_csvConfig.Read ("footer").Contains ("Comic")) {
+			m_csvComic.Load ();
+		}
 		foreach( CsvKvsParam param in m_csvConfig.All)
 		{
 			Debug.LogError(param.key);

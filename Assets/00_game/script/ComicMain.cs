@@ -25,6 +25,11 @@ public class ComicMain : PageBase
 	// Use this for initialization
 	void Start()
 	{
+		Debug.LogError ("here");
+		Debug.LogError (DataManagerAlarm.Instance.m_csvConfig.Read ("footer"));
+		if (DataManagerAlarm.Instance.m_csvConfig.Read ("footer").Contains ("Comic") == false) {
+			gameObject.SetActive (false);
+		}
 		m_eStep = STEP.WAIT;
 		m_eStepPre = STEP.MAX;
 	}
