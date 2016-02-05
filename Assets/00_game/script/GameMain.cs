@@ -28,6 +28,7 @@ public class GameMain : PageBase {
 	public AlarmMain m_AlarmMain;
 	public AlarmParam EditingAlarmParam;
 	public AlarmData m_AlarmData = new AlarmData ();
+	public TimeComing m_timeComming;
 
 	public VoiceMain m_VoiceMain;
 	public void Purchase( string _strProductId ){
@@ -206,7 +207,8 @@ public class GameMain : PageBase {
 		instance = this;
 		EditingAlarmParam = new AlarmParam ();
 		m_iPagePre = 0;
-
+		m_timeComming.TriggerClear ();
+		m_timeComming.gameObject.SetActive (false);
 		string key = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwoEtQFcqjLFQJ0wXu8mkFjowH8t4I7tcG1G6Ais7Vx8qZWYidwNPzdp2pvPCQS4/BZDgtRyk1+FsPbaCOndof2e4OlVmdlGUXVQOtJl5hT40xxmlotliBG9IzO1A5Huvy0tjv2pQ6Et0g72k1qxJPFI1O/L7mzQDHPzawYEqHv47U/yGD1GTE6jHK0u1apgxUI89UJsiYIhVlwdZ40390LGWAR8+LrUhk+q//NYjxfKBd3fotgV4QZecNPQks1fz9bk5oWOwOpOz2pQ3aZ62RInlueAk8ttsfow6+M4rmdfBDVGOkVKgScwhBjeCAcsXQaO+qwWdr1GhLPNuYck39wIDAQAB";
 		#if UNITY_ANDROID
 		GoogleIAB.init (key);
@@ -246,6 +248,12 @@ public class GameMain : PageBase {
 			m_fCheckIntervalTime -= 2.0f;
 			RemoveAlarm (true);
 		}
+
+		if (m_timeComming.ButtonPushed) {
+			m_timeComming.TriggerClear ();
+			m_timeComming.Disappear ();
+			SoundManager.Instance.StopAll (AUDIO_TYPE.SE);
+		}
 	}
 
 	public void RemoveAlarm( bool _bCall ){
@@ -270,7 +278,8 @@ public class GameMain : PageBase {
 		if (0 < iRemoveNum) {
 			Debug.LogError ("remove");
 			m_AlarmMain.setNextTimer (reserve_list);
-
+			m_timeComming.gameObject.SetActive (true);
+			m_timeComming.Appear ();
 			if (_bCall) {
 				CallVoice (voice_type);
 			}
