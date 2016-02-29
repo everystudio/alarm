@@ -39,9 +39,9 @@ public class BannerRepeat : BannerBase {
 			button (m_bFlag);
 
 			if (m_bFlag) {
-				GameMain.Instance.EditingAlarmParam.repeat_type |= (long)(1 << m_iIndex);
+				GameMain.Instance.EditingAlarmParam.repeat_type |= (ulong)(1 << m_iIndex);
 			} else {
-				GameMain.Instance.EditingAlarmParam.repeat_type &= ~(1 << m_iIndex);
+				GameMain.Instance.EditingAlarmParam.repeat_type &= (ulong)~(1 << m_iIndex);
 			}
 			return;
 		}

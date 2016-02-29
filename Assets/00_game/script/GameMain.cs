@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System;
 using Prime31;
 
-public class GameMain : PageBase {
+public class GameMain : PageBase2 {
 
 	private static GameMain instance;
 	public static GameMain Instance {
@@ -47,8 +47,8 @@ public class GameMain : PageBase {
 	}
 	public CsvKvs m_CsvKvs;
 
-	public PageBase m_PageNow;
-	public List<PageBase> m_PageBaseList = new List<PageBase> ();
+	public PageBase2 m_PageNow;
+	public List<PageBase2> m_PageBaseList = new List<PageBase2> ();
 
 
 
@@ -124,7 +124,7 @@ public class GameMain : PageBase {
 				int iNowWeek = TimeManager.Instance.GetWeekIndex (TimeManager.StrGetTime ());
 
 				for (int i = 0; i < DataManagerAlarm.Instance.STR_WEEK_ARR.Length; i++) {
-					if (0 < (param.repeat_type & (1<<i))) {
+					if (0 < (param.repeat_type & (ulong)(1<<i))) {
 						// 曜日にひっかかった
 						//string strStartDate = "";
 						int iOffset = i - iNowWeek;
@@ -223,7 +223,7 @@ public class GameMain : PageBase {
 		int iTest = kvs_data.ReadInt ("test");
 		iTest += 1;
 		kvs_data.WriteInt ("test", iTest );
-		kvs_data.Save ();
+		kvs_data.Save (CsvKvs.FILE_NAME);
 		m_PageNow = m_PageBaseList [m_iPagePre];
 		InitPage (m_PageNow , m_iPagePre);
 	}
@@ -320,7 +320,7 @@ public class GameMain : PageBase {
 		}
 	}
 
-	public void InitPage( PageBase _pageBase , int _iPageIndex ){
+	public void InitPage( PageBase2 _pageBase , int _iPageIndex ){
 		//_obj.SetActive (true);
 		_pageBase.gameObject.transform.localPosition = Vector3.zero;
 		_pageBase.Initialize ();
@@ -328,7 +328,7 @@ public class GameMain : PageBase {
 		m_PageFooter.SetIndex (_iPageIndex);
 	}
 
-	public void ClosePage(PageBase _pageBase , int _iIndex ){
+	public void ClosePage(PageBase2 _pageBase , int _iIndex ){
 		//_obj.SetActive (false);
 		_pageBase.gameObject.transform.localPosition = new Vector3( 640.0f , 1136.0f * (2 - _iIndex ) , 0.0f );
 		_pageBase.Close ();

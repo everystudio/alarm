@@ -60,7 +60,7 @@ public class BannerTimer : BannerBase {
 			}
 			SetStatus (m_AlarmParam.status);
 			GameMain.Instance.m_AlarmData.UpdateStatus (m_AlarmParam.serial, m_AlarmParam.status);
-			GameMain.Instance.m_AlarmData.Save ();
+			GameMain.Instance.m_AlarmData.Save (AlarmData.FILENAME);
 			m_btnTrigger.TriggerClear ();
 		}
 	}

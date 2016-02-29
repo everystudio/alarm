@@ -28,7 +28,7 @@ public class PageRepeat : OtherPage {
 		base.InStart ();
 
 		for (int i = 0; i < m_BannerRepeatList.Count; i++) {
-			bool bFlag = 0 < (_param.repeat_type & (1<<i));
+			bool bFlag = 0 < (_param.repeat_type & (ulong)(1<<i));
 			m_BannerRepeatList [i].Initialize (DataManagerAlarm.Instance.STR_WEEK_ARR [i], bFlag , i );
 		}
 

@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class PictureMain : PageBase {
+public class PictureMain : PageBase2 {
 
 	public int m_iSelectingId;
 	public ButtonManager m_bmIconList;
@@ -22,7 +22,7 @@ public class PictureMain : PageBase {
 
 	// Use this for initialization
 	void Start () {
-		m_bmIconList.ButtonRefresh (DataManagerAlarm.Instance.master_image_list.Count);
+		m_bmIconList.ButtonRefresh ();
 
 		m_iSelectingId = GameMain.Instance.kvs_data.ReadInt (DataManagerAlarm.KEY_SELECTING_IMAGE_ID);
 
@@ -37,7 +37,7 @@ public class PictureMain : PageBase {
 
 			m_iconList.Add (script);
 
-			m_bmIconList.AddButtonBase (iIndex, obj);
+			m_bmIconList.AddButtonBase ( obj);
 
 			iIndex += 1;
 		}
@@ -104,7 +104,7 @@ public class PictureMain : PageBase {
 				} else if (m_imageCheck.Index == 1) {
 					IconSelect (m_iSelectingId);
 					GameMain.Instance.kvs_data.WriteInt (DataManagerAlarm.KEY_SELECTING_IMAGE_ID, m_iSelectingId);
-					GameMain.Instance.kvs_data.Save ();
+					GameMain.Instance.kvs_data.Save (CsvKvs.FILE_NAME);
 				} else {
 				}
 				m_imageCheck.OutStart ();

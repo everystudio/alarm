@@ -106,7 +106,7 @@ public class TimeEdit : OtherPage {
 		string strRepeat = "None";
 
 		for (int i = 0; i < DataManagerAlarm.Instance.STR_WEEK_ARR.Length; i++) {
-			bool bFlag = 0 < (_param.repeat_type & (1<<i));
+			bool bFlag = 0 < (_param.repeat_type & (ulong)(1<<i));
 			if (bFlag) {
 				if (strRepeat.Equals ("None") == true) {
 					strRepeat = DataManagerAlarm.Instance.STR_WEEK_ARR [i];
@@ -211,13 +211,13 @@ public class TimeEdit : OtherPage {
 						}
 					} else {
 					}
-					GameMain.Instance.m_AlarmData.Save ();
+					GameMain.Instance.m_AlarmData.Save (AlarmData.FILENAME);
 					GameMain.Instance.reserveTimeReset ();
 					GameMain.Instance.TimeSetRefresh ();
 
 				} else {
 				}
-				GameMain.Instance.m_AlarmData.Save ();
+				GameMain.Instance.m_AlarmData.Save (AlarmData.FILENAME);
 				GameMain.Instance.TimeSetRefresh ();
 			}
 

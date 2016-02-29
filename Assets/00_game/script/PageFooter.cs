@@ -39,7 +39,7 @@ public class PageFooter : ButtonManager {
 				iButtonIndex += 1;
 			}
 			button.ButtonInit(iButtonIndex);
-			AddButtonBase(i, obj);
+			AddButtonBase( obj);
 		}
 		m_grid.enabled = true;
 
@@ -48,7 +48,7 @@ public class PageFooter : ButtonManager {
 	}
 
 	public void SetIndex( int _iIndex ){
-		for( int i = 0 ; i < m_csButtonList.Length ; i++ ){
+		for( int i = 0 ; i < m_csButtonList.Count ; i++ ){
 			FooterButton script = m_csButtonList [i].gameObject.GetComponent<FooterButton> ();
 
 			bool bSet = false;

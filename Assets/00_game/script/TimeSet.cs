@@ -52,7 +52,7 @@ public class TimeSet : OtherPage {
 		} else {
 			m_scrollView.enabled = false;
 		}
-		GameMain.Instance.m_AlarmData.Save ();
+		GameMain.Instance.m_AlarmData.Save (AlarmData.FILENAME);
 		m_Grid.enabled = true;
 		return;
 	}

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SpecialMain : PageBase {
+public class SpecialMain : PageBase2 {
 
 	public override void Initialize ()
 	{

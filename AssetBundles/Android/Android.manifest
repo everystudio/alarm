@@ -2,575 +2,530 @@ ManifestFileVersion: 0
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
-      Name: assets/assetbundleresource/sprite/everystudio/school/takira_itsuki_01.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/texture/harutake_sister_illust.unity3d
       Dependencies: {}
     Info_1:
-      Name: assets/assetbundleresource/sprite/everystudio/school/koya_chihiro_01.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0098.unity3d
       Dependencies: {}
     Info_2:
-      Name: assets/assetbundleresource/sprite/everystudio/school/harusaki_yusa_01.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0077.unity3d
       Dependencies: {}
     Info_3:
-      Name: assets/assetbundleresource/sprite/everystudio/school/yuuki_shima_face.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0067.unity3d
       Dependencies: {}
     Info_4:
-      Name: assets/assetbundleresource/sprite/everystudio/school/tsukinaga_himeka_01.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/texture/harutake_taro_illust.unity3d
       Dependencies: {}
     Info_5:
-      Name: assets/assetbundleresource/sprite/everystudio/school/mashino_kayo_face.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0036.unity3d
       Dependencies: {}
     Info_6:
-      Name: assets/assetbundleresource/sprite/everystudio/school/hoshina_saki_01.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0019.unity3d
       Dependencies: {}
     Info_7:
-      Name: assets/assetbundleresource/sprite/everystudio/school/yuuki_shima_01.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0090.unity3d
       Dependencies: {}
     Info_8:
-      Name: assets/assetbundleresource/sprite/everystudio/school/kanashiro_ririko_01.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0044.unity3d
       Dependencies: {}
     Info_9:
-      Name: assets/assetbundleresource/sprite/everystudio/school/kureha_ruri_face.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0007.unity3d
       Dependencies: {}
     Info_10:
-      Name: assets/assetbundleresource/sprite/everystudio/school/kanashiro_ririko_face.unity3d
+      Name: assets/assetbundleresource/sprite/xnos/kiss/kiss_member02_01_illust.unity3d
       Dependencies: {}
     Info_11:
-      Name: assets/assetbundleresource/sprite/everystudio/school/kureha_ruri_01.unity3d
+      Name: assets/assetbundleresource/sprite/everystudio/school/takira_itsuki_01.unity3d
       Dependencies: {}
     Info_12:
-      Name: assets/assetbundleresource/sprite/everystudio/school/takira_itsuki_face.unity3d
+      Name: assets/assetbundleresource/sprite/everystudio/school/koya_chihiro_01.unity3d
       Dependencies: {}
     Info_13:
-      Name: assets/assetbundleresource/sprite/everystudio/school/koya_chihiro_face.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0011.unity3d
       Dependencies: {}
     Info_14:
-      Name: assets/assetbundleresource/sprite/everystudio/school/harusaki_yusa_face.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0114.unity3d
       Dependencies: {}
     Info_15:
-      Name: assets/assetbundleresource/sprite/everystudio/school/hoshina_saki_face.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0053.unity3d
       Dependencies: {}
     Info_16:
-      Name: assets/assetbundleresource/sprite/everystudio/school/tsukinaga_himeka_face.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0101.unity3d
       Dependencies: {}
     Info_17:
-      Name: assets/assetbundleresource/sprite/everystudio/school/mashino_kayo_01.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0058.unity3d
       Dependencies: {}
     Info_18:
-      Name: assets/assetbundleresource/sprite/everystudio/school/amachi_emi_face.unity3d
+      Name: assets/assetbundleresource/sprite/xnos/kiss/kiss_member05_01_illust.unity3d
       Dependencies: {}
     Info_19:
-      Name: assets/assetbundleresource/sprite/everystudio/school/sakuragawa_meina_01.unity3d
+      Name: assets/assetbundleresource/sprite/everystudio/school/harusaki_yusa_01.unity3d
       Dependencies: {}
     Info_20:
-      Name: assets/assetbundleresource/sprite/everystudio/school/sakuragawa_meina_face.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0040.unity3d
       Dependencies: {}
     Info_21:
-      Name: assets/assetbundleresource/sprite/everystudio/school/amachi_emi_01.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0021.unity3d
       Dependencies: {}
     Info_22:
-      Name: assets/assetbundleresource/sound/bgm/demo_song.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0031.unity3d
       Dependencies: {}
     Info_23:
-      Name: assets/assetbundleresource/voice/everystudio/school/se_start_00.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0111.unity3d
       Dependencies: {}
     Info_24:
-      Name: assets/assetbundleresource/voice/everystudio/school/se_goal_00.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0084.unity3d
       Dependencies: {}
     Info_25:
-      Name: assets/assetbundleresource/voice/everystudio/school/amachi_emi/amachi_emi_12.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0016.unity3d
       Dependencies: {}
     Info_26:
-      Name: assets/assetbundleresource/voice/everystudio/school/amachi_emi/amachi_emi_01.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0122.unity3d
       Dependencies: {}
     Info_27:
-      Name: assets/assetbundleresource/voice/everystudio/school/amachi_emi/amachi_emi_06.unity3d
+      Name: assets/assetbundleresource/sprite/xnos/kiss/kiss_member06_01_illust.unity3d
       Dependencies: {}
     Info_28:
-      Name: assets/assetbundleresource/voice/everystudio/school/amachi_emi/amachi_emi_10.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0027.unity3d
       Dependencies: {}
     Info_29:
-      Name: assets/assetbundleresource/voice/everystudio/school/amachi_emi/amachi_emi_14.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/texture/harutake_taro_icon.unity3d
       Dependencies: {}
     Info_30:
-      Name: assets/assetbundleresource/voice/everystudio/school/amachi_emi/amachi_emi_08.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0115.unity3d
       Dependencies: {}
     Info_31:
-      Name: assets/assetbundleresource/voice/everystudio/school/amachi_emi/amachi_emi_09.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0002.unity3d
       Dependencies: {}
     Info_32:
-      Name: assets/assetbundleresource/voice/everystudio/school/amachi_emi/amachi_emi_13.unity3d
+      Name: assets/assetbundleresource/sprite/xnos/kiss/kiss_member06_01_icon.unity3d
       Dependencies: {}
     Info_33:
-      Name: assets/assetbundleresource/voice/everystudio/school/amachi_emi/amachi_emi_15.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0117.unity3d
       Dependencies: {}
     Info_34:
-      Name: assets/assetbundleresource/voice/everystudio/school/amachi_emi/amachi_emi_07.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0075.unity3d
       Dependencies: {}
     Info_35:
-      Name: assets/assetbundleresource/voice/everystudio/school/amachi_emi/amachi_emi_05.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0028.unity3d
       Dependencies: {}
     Info_36:
-      Name: assets/assetbundleresource/voice/everystudio/school/amachi_emi/amachi_emi_02.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0078.unity3d
       Dependencies: {}
     Info_37:
-      Name: assets/assetbundleresource/voice/everystudio/school/amachi_emi/amachi_emi_04.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0025.unity3d
       Dependencies: {}
     Info_38:
-      Name: assets/assetbundleresource/voice/everystudio/school/amachi_emi/amachi_emi_11.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0063.unity3d
       Dependencies: {}
     Info_39:
-      Name: assets/assetbundleresource/voice/everystudio/school/amachi_emi/amachi_emi_03.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/texture/harutake_granpa_illust.unity3d
       Dependencies: {}
     Info_40:
-      Name: assets/assetbundleresource/voice/everystudio/school/harusaki_yusa/harusaki_yusa_13.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0087.unity3d
       Dependencies: {}
     Info_41:
-      Name: assets/assetbundleresource/voice/everystudio/school/harusaki_yusa/harusaki_yusa_08.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0037.unity3d
       Dependencies: {}
     Info_42:
-      Name: assets/assetbundleresource/voice/everystudio/school/harusaki_yusa/harusaki_yusa_07.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0083.unity3d
       Dependencies: {}
     Info_43:
-      Name: assets/assetbundleresource/voice/everystudio/school/harusaki_yusa/harusaki_yusa_12.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0097.unity3d
       Dependencies: {}
     Info_44:
-      Name: assets/assetbundleresource/voice/everystudio/school/harusaki_yusa/harusaki_yusa_15.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0125.unity3d
       Dependencies: {}
     Info_45:
-      Name: assets/assetbundleresource/voice/everystudio/school/harusaki_yusa/harusaki_yusa_06.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0066.unity3d
       Dependencies: {}
     Info_46:
-      Name: assets/assetbundleresource/voice/everystudio/school/harusaki_yusa/harusaki_yusa_09.unity3d
+      Name: assets/assetbundleresource/sprite/xnos/kiss/kiss_member04_01_illust.unity3d
       Dependencies: {}
     Info_47:
-      Name: assets/assetbundleresource/voice/everystudio/school/harusaki_yusa/harusaki_yusa_11.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0118.unity3d
       Dependencies: {}
     Info_48:
-      Name: assets/assetbundleresource/voice/everystudio/school/harusaki_yusa/harusaki_yusa_05.unity3d
+      Name: assets/assetbundleresource/sprite/everystudio/school/yuuki_shima_face.unity3d
       Dependencies: {}
     Info_49:
-      Name: assets/assetbundleresource/voice/everystudio/school/harusaki_yusa/harusaki_yusa_01.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0112.unity3d
       Dependencies: {}
     Info_50:
-      Name: assets/assetbundleresource/voice/everystudio/school/harusaki_yusa/harusaki_yusa_03.unity3d
+      Name: assets/assetbundleresource/sprite/everystudio/school/tsukinaga_himeka_01.unity3d
       Dependencies: {}
     Info_51:
-      Name: assets/assetbundleresource/voice/everystudio/school/harusaki_yusa/harusaki_yusa_04.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0020.unity3d
       Dependencies: {}
     Info_52:
-      Name: assets/assetbundleresource/voice/everystudio/school/harusaki_yusa/harusaki_yusa_02.unity3d
+      Name: assets/assetbundleresource/sprite/everystudio/school/mashino_kayo_face.unity3d
       Dependencies: {}
     Info_53:
-      Name: assets/assetbundleresource/voice/everystudio/school/harusaki_yusa/harusaki_yusa_10.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0068.unity3d
       Dependencies: {}
     Info_54:
-      Name: assets/assetbundleresource/voice/everystudio/school/harusaki_yusa/harusaki_yusa_14.unity3d
+      Name: assets/assetbundleresource/sprite/everystudio/school/hoshina_saki_01.unity3d
       Dependencies: {}
     Info_55:
-      Name: assets/assetbundleresource/voice/everystudio/school/hoshina_saki/hoshina_saki_11.unity3d
+      Name: assets/assetbundleresource/sprite/everystudio/school/yuuki_shima_01.unity3d
       Dependencies: {}
     Info_56:
-      Name: assets/assetbundleresource/voice/everystudio/school/hoshina_saki/hoshina_saki_05.unity3d
+      Name: assets/assetbundleresource/sprite/xnos/kiss/kiss_member03_01_icon.unity3d
       Dependencies: {}
     Info_57:
-      Name: assets/assetbundleresource/voice/everystudio/school/hoshina_saki/hoshina_saki_07.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0006.unity3d
       Dependencies: {}
     Info_58:
-      Name: assets/assetbundleresource/voice/everystudio/school/hoshina_saki/hoshina_saki_15.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0069.unity3d
       Dependencies: {}
     Info_59:
-      Name: assets/assetbundleresource/voice/everystudio/school/hoshina_saki/hoshina_saki_09.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0046.unity3d
       Dependencies: {}
     Info_60:
-      Name: assets/assetbundleresource/voice/everystudio/school/hoshina_saki/hoshina_saki_12.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0126.unity3d
       Dependencies: {}
     Info_61:
-      Name: assets/assetbundleresource/voice/everystudio/school/hoshina_saki/hoshina_saki_10.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0093.unity3d
       Dependencies: {}
     Info_62:
-      Name: assets/assetbundleresource/voice/everystudio/school/hoshina_saki/hoshina_saki_06.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0001.unity3d
       Dependencies: {}
     Info_63:
-      Name: assets/assetbundleresource/voice/everystudio/school/hoshina_saki/hoshina_saki_08.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0103.unity3d
       Dependencies: {}
     Info_64:
-      Name: assets/assetbundleresource/voice/everystudio/school/hoshina_saki/hoshina_saki_03.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0108.unity3d
       Dependencies: {}
     Info_65:
-      Name: assets/assetbundleresource/voice/everystudio/school/hoshina_saki/hoshina_saki_02.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0022.unity3d
       Dependencies: {}
     Info_66:
-      Name: assets/assetbundleresource/voice/everystudio/school/hoshina_saki/hoshina_saki_14.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0085.unity3d
       Dependencies: {}
     Info_67:
-      Name: assets/assetbundleresource/voice/everystudio/school/hoshina_saki/hoshina_saki_13.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0070.unity3d
       Dependencies: {}
     Info_68:
-      Name: assets/assetbundleresource/voice/everystudio/school/hoshina_saki/hoshina_saki_04.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0038.unity3d
       Dependencies: {}
     Info_69:
-      Name: assets/assetbundleresource/voice/everystudio/school/hoshina_saki/hoshina_saki_01.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0055.unity3d
       Dependencies: {}
     Info_70:
-      Name: assets/assetbundleresource/voice/everystudio/school/kanashiro_ririko/kanashiro_ririko_06.unity3d
+      Name: assets/assetbundleresource/sprite/xnos/kiss/kiss_member03_01_illust.unity3d
       Dependencies: {}
     Info_71:
-      Name: assets/assetbundleresource/voice/everystudio/school/kanashiro_ririko/kanashiro_ririko_10.unity3d
+      Name: assets/assetbundleresource/sprite/everystudio/school/kanashiro_ririko_01.unity3d
       Dependencies: {}
     Info_72:
-      Name: assets/assetbundleresource/voice/everystudio/school/kanashiro_ririko/kanashiro_ririko_07.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0100.unity3d
       Dependencies: {}
     Info_73:
-      Name: assets/assetbundleresource/voice/everystudio/school/kanashiro_ririko/kanashiro_ririko_11.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0091.unity3d
       Dependencies: {}
     Info_74:
-      Name: assets/assetbundleresource/voice/everystudio/school/kanashiro_ririko/kanashiro_ririko_02.unity3d
+      Name: assets/assetbundleresource/sprite/everystudio/school/kureha_ruri_face.unity3d
       Dependencies: {}
     Info_75:
-      Name: assets/assetbundleresource/voice/everystudio/school/kanashiro_ririko/kanashiro_ririko_14.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0029.unity3d
       Dependencies: {}
     Info_76:
-      Name: assets/assetbundleresource/voice/everystudio/school/kanashiro_ririko/kanashiro_ririko_01.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0106.unity3d
       Dependencies: {}
     Info_77:
-      Name: assets/assetbundleresource/voice/everystudio/school/kanashiro_ririko/kanashiro_ririko_09.unity3d
+      Name: assets/assetbundleresource/sprite/xnos/kiss/kiss_all_01_icon.unity3d
       Dependencies: {}
     Info_78:
-      Name: assets/assetbundleresource/voice/everystudio/school/kanashiro_ririko/kanashiro_ririko_15.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0105.unity3d
       Dependencies: {}
     Info_79:
-      Name: assets/assetbundleresource/voice/everystudio/school/kanashiro_ririko/kanashiro_ririko_12.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0050.unity3d
       Dependencies: {}
     Info_80:
-      Name: assets/assetbundleresource/voice/everystudio/school/kanashiro_ririko/kanashiro_ririko_05.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0041.unity3d
       Dependencies: {}
     Info_81:
-      Name: assets/assetbundleresource/voice/everystudio/school/kanashiro_ririko/kanashiro_ririko_04.unity3d
+      Name: assets/assetbundleresource/sprite/everystudio/school/kanashiro_ririko_face.unity3d
       Dependencies: {}
     Info_82:
-      Name: assets/assetbundleresource/voice/everystudio/school/kanashiro_ririko/kanashiro_ririko_13.unity3d
+      Name: assets/assetbundleresource/sprite/everystudio/school/kureha_ruri_01.unity3d
       Dependencies: {}
     Info_83:
-      Name: assets/assetbundleresource/voice/everystudio/school/kanashiro_ririko/kanashiro_ririko_03.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0116.unity3d
       Dependencies: {}
     Info_84:
-      Name: assets/assetbundleresource/voice/everystudio/school/kanashiro_ririko/kanashiro_ririko_08.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0074.unity3d
       Dependencies: {}
     Info_85:
-      Name: assets/assetbundleresource/voice/everystudio/school/koya_chihiro/koya_chihiro_10.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0056.unity3d
       Dependencies: {}
     Info_86:
-      Name: assets/assetbundleresource/voice/everystudio/school/koya_chihiro/koya_chihiro_13.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/texture/harutake_granpa_icon.unity3d
       Dependencies: {}
     Info_87:
-      Name: assets/assetbundleresource/voice/everystudio/school/koya_chihiro/koya_chihiro_07.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0033.unity3d
       Dependencies: {}
     Info_88:
-      Name: assets/assetbundleresource/voice/everystudio/school/koya_chihiro/koya_chihiro_06.unity3d
+      Name: assets/assetbundleresource/sprite/xnos/kiss/kiss_member02_01_icon.unity3d
       Dependencies: {}
     Info_89:
-      Name: assets/assetbundleresource/voice/everystudio/school/koya_chihiro/koya_chihiro_03.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0073.unity3d
       Dependencies: {}
     Info_90:
-      Name: assets/assetbundleresource/voice/everystudio/school/koya_chihiro/koya_chihiro_02.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0045.unity3d
       Dependencies: {}
     Info_91:
-      Name: assets/assetbundleresource/voice/everystudio/school/koya_chihiro/koya_chihiro_05.unity3d
+      Name: assets/assetbundleresource/sprite/everystudio/school/takira_itsuki_face.unity3d
       Dependencies: {}
     Info_92:
-      Name: assets/assetbundleresource/voice/everystudio/school/koya_chihiro/koya_chihiro_09.unity3d
+      Name: assets/assetbundleresource/sprite/xnos/kiss/kiss_all_01_illust.unity3d
       Dependencies: {}
     Info_93:
-      Name: assets/assetbundleresource/voice/everystudio/school/koya_chihiro/koya_chihiro_01.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0012.unity3d
       Dependencies: {}
     Info_94:
-      Name: assets/assetbundleresource/voice/everystudio/school/koya_chihiro/koya_chihiro_14.unity3d
+      Name: assets/assetbundleresource/sprite/everystudio/school/koya_chihiro_face.unity3d
       Dependencies: {}
     Info_95:
-      Name: assets/assetbundleresource/voice/everystudio/school/koya_chihiro/koya_chihiro_08.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0095.unity3d
       Dependencies: {}
     Info_96:
-      Name: assets/assetbundleresource/voice/everystudio/school/koya_chihiro/koya_chihiro_04.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0096.unity3d
       Dependencies: {}
     Info_97:
-      Name: assets/assetbundleresource/voice/everystudio/school/koya_chihiro/koya_chihiro_12.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0042.unity3d
       Dependencies: {}
     Info_98:
-      Name: assets/assetbundleresource/voice/everystudio/school/koya_chihiro/koya_chihiro_11.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0039.unity3d
       Dependencies: {}
     Info_99:
-      Name: assets/assetbundleresource/voice/everystudio/school/koya_chihiro/koya_chihiro_15.unity3d
+      Name: assets/assetbundleresource/sprite/xnos/kiss/kiss_member05_01_icon.unity3d
       Dependencies: {}
     Info_100:
-      Name: assets/assetbundleresource/voice/everystudio/school/kureha_ruri/kureha_ruri_05.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0064.unity3d
       Dependencies: {}
     Info_101:
-      Name: assets/assetbundleresource/voice/everystudio/school/kureha_ruri/kureha_ruri_07.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0120.unity3d
       Dependencies: {}
     Info_102:
-      Name: assets/assetbundleresource/voice/everystudio/school/kureha_ruri/kureha_ruri_01.unity3d
+      Name: assets/assetbundleresource/sprite/everystudio/school/harusaki_yusa_face.unity3d
       Dependencies: {}
     Info_103:
-      Name: assets/assetbundleresource/voice/everystudio/school/kureha_ruri/kureha_ruri_12.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0004.unity3d
       Dependencies: {}
     Info_104:
-      Name: assets/assetbundleresource/voice/everystudio/school/kureha_ruri/kureha_ruri_10.unity3d
+      Name: assets/assetbundleresource/sprite/everystudio/school/hoshina_saki_face.unity3d
       Dependencies: {}
     Info_105:
-      Name: assets/assetbundleresource/voice/everystudio/school/kureha_ruri/kureha_ruri_15.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0010.unity3d
       Dependencies: {}
     Info_106:
-      Name: assets/assetbundleresource/voice/everystudio/school/kureha_ruri/kureha_ruri_11.unity3d
+      Name: assets/assetbundleresource/sprite/xnos/kiss/kiss_member01_01_icon.unity3d
       Dependencies: {}
     Info_107:
-      Name: assets/assetbundleresource/voice/everystudio/school/kureha_ruri/kureha_ruri_14.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0065.unity3d
       Dependencies: {}
     Info_108:
-      Name: assets/assetbundleresource/voice/everystudio/school/kureha_ruri/kureha_ruri_13.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0035.unity3d
       Dependencies: {}
     Info_109:
-      Name: assets/assetbundleresource/voice/everystudio/school/kureha_ruri/kureha_ruri_02.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0054.unity3d
       Dependencies: {}
     Info_110:
-      Name: assets/assetbundleresource/voice/everystudio/school/kureha_ruri/kureha_ruri_03.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0123.unity3d
       Dependencies: {}
     Info_111:
-      Name: assets/assetbundleresource/voice/everystudio/school/kureha_ruri/kureha_ruri_08.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0124.unity3d
       Dependencies: {}
     Info_112:
-      Name: assets/assetbundleresource/voice/everystudio/school/kureha_ruri/kureha_ruri_04.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0026.unity3d
       Dependencies: {}
     Info_113:
-      Name: assets/assetbundleresource/voice/everystudio/school/kureha_ruri/kureha_ruri_06.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0099.unity3d
       Dependencies: {}
     Info_114:
-      Name: assets/assetbundleresource/voice/everystudio/school/kureha_ruri/kureha_ruri_09.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0024.unity3d
       Dependencies: {}
     Info_115:
-      Name: assets/assetbundleresource/voice/everystudio/school/mashino_kayo/mashino_kayo_04.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0081.unity3d
       Dependencies: {}
     Info_116:
-      Name: assets/assetbundleresource/voice/everystudio/school/mashino_kayo/mashino_kayo_06.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0110.unity3d
       Dependencies: {}
     Info_117:
-      Name: assets/assetbundleresource/voice/everystudio/school/mashino_kayo/mashino_kayo_09.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0086.unity3d
       Dependencies: {}
     Info_118:
-      Name: assets/assetbundleresource/voice/everystudio/school/mashino_kayo/mashino_kayo_16.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0015.unity3d
       Dependencies: {}
     Info_119:
-      Name: assets/assetbundleresource/voice/everystudio/school/mashino_kayo/mashino_kayo_15.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0049.unity3d
       Dependencies: {}
     Info_120:
-      Name: assets/assetbundleresource/voice/everystudio/school/mashino_kayo/mashino_kayo_11.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0009.unity3d
       Dependencies: {}
     Info_121:
-      Name: assets/assetbundleresource/voice/everystudio/school/mashino_kayo/mashino_kayo_12.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0088.unity3d
       Dependencies: {}
     Info_122:
-      Name: assets/assetbundleresource/voice/everystudio/school/mashino_kayo/mashino_kayo_14.unity3d
+      Name: assets/assetbundleresource/sprite/everystudio/school/tsukinaga_himeka_face.unity3d
       Dependencies: {}
     Info_123:
-      Name: assets/assetbundleresource/voice/everystudio/school/mashino_kayo/mashino_kayo_05.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0034.unity3d
       Dependencies: {}
     Info_124:
-      Name: assets/assetbundleresource/voice/everystudio/school/mashino_kayo/mashino_kayo_08.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0008.unity3d
       Dependencies: {}
     Info_125:
-      Name: assets/assetbundleresource/voice/everystudio/school/mashino_kayo/mashino_kayo_02.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0127.unity3d
       Dependencies: {}
     Info_126:
-      Name: assets/assetbundleresource/voice/everystudio/school/mashino_kayo/mashino_kayo_10.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0051.unity3d
       Dependencies: {}
     Info_127:
-      Name: assets/assetbundleresource/voice/everystudio/school/mashino_kayo/mashino_kayo_03.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0072.unity3d
       Dependencies: {}
     Info_128:
-      Name: assets/assetbundleresource/voice/everystudio/school/mashino_kayo/mashino_kayo_01.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0079.unity3d
       Dependencies: {}
     Info_129:
-      Name: assets/assetbundleresource/voice/everystudio/school/mashino_kayo/mashino_kayo_07.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0119.unity3d
       Dependencies: {}
     Info_130:
-      Name: assets/assetbundleresource/voice/everystudio/school/mashino_kayo/mashino_kayo_13.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0030.unity3d
       Dependencies: {}
     Info_131:
-      Name: assets/assetbundleresource/voice/everystudio/school/sakuragawa_meina/sakuragawa_meina_15.unity3d
+      Name: assets/assetbundleresource/sprite/xnos/kiss/kiss_all_02_illust.unity3d
       Dependencies: {}
     Info_132:
-      Name: assets/assetbundleresource/voice/everystudio/school/sakuragawa_meina/sakuragawa_meina_04.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0013.unity3d
       Dependencies: {}
     Info_133:
-      Name: assets/assetbundleresource/voice/everystudio/school/sakuragawa_meina/sakuragawa_meina_06.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0094.unity3d
       Dependencies: {}
     Info_134:
-      Name: assets/assetbundleresource/voice/everystudio/school/sakuragawa_meina/sakuragawa_meina_09.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0104.unity3d
       Dependencies: {}
     Info_135:
-      Name: assets/assetbundleresource/voice/everystudio/school/sakuragawa_meina/sakuragawa_meina_02.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0017.unity3d
       Dependencies: {}
     Info_136:
-      Name: assets/assetbundleresource/voice/everystudio/school/sakuragawa_meina/sakuragawa_meina_08.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0043.unity3d
       Dependencies: {}
     Info_137:
-      Name: assets/assetbundleresource/voice/everystudio/school/sakuragawa_meina/sakuragawa_meina_01.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0082.unity3d
       Dependencies: {}
     Info_138:
-      Name: assets/assetbundleresource/voice/everystudio/school/sakuragawa_meina/sakuragawa_meina_05.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0089.unity3d
       Dependencies: {}
     Info_139:
-      Name: assets/assetbundleresource/voice/everystudio/school/sakuragawa_meina/sakuragawa_meina_11.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0052.unity3d
       Dependencies: {}
     Info_140:
-      Name: assets/assetbundleresource/voice/everystudio/school/sakuragawa_meina/sakuragawa_meina_03.unity3d
+      Name: assets/assetbundleresource/sprite/everystudio/school/mashino_kayo_01.unity3d
       Dependencies: {}
     Info_141:
-      Name: assets/assetbundleresource/voice/everystudio/school/sakuragawa_meina/sakuragawa_meina_10.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0113.unity3d
       Dependencies: {}
     Info_142:
-      Name: assets/assetbundleresource/voice/everystudio/school/sakuragawa_meina/sakuragawa_meina_14.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0023.unity3d
       Dependencies: {}
     Info_143:
-      Name: assets/assetbundleresource/voice/everystudio/school/sakuragawa_meina/sakuragawa_meina_12.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0032.unity3d
       Dependencies: {}
     Info_144:
-      Name: assets/assetbundleresource/voice/everystudio/school/sakuragawa_meina/sakuragawa_meina_07.unity3d
+      Name: assets/assetbundleresource/sprite/everystudio/school/amachi_emi_face.unity3d
       Dependencies: {}
     Info_145:
-      Name: assets/assetbundleresource/voice/everystudio/school/sakuragawa_meina/sakuragawa_meina_13.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0121.unity3d
       Dependencies: {}
     Info_146:
-      Name: assets/assetbundleresource/voice/everystudio/school/takira_itsuki/takira_itsuki_12.unity3d
+      Name: assets/assetbundleresource/sprite/everystudio/school/sakuragawa_meina_01.unity3d
       Dependencies: {}
     Info_147:
-      Name: assets/assetbundleresource/voice/everystudio/school/takira_itsuki/takira_itsuki_01.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/texture/harutake_okan_icon.unity3d
       Dependencies: {}
     Info_148:
-      Name: assets/assetbundleresource/voice/everystudio/school/takira_itsuki/takira_itsuki_13.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/texture/harutake_okan_illust.unity3d
       Dependencies: {}
     Info_149:
-      Name: assets/assetbundleresource/voice/everystudio/school/takira_itsuki/takira_itsuki_04.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0003.unity3d
       Dependencies: {}
     Info_150:
-      Name: assets/assetbundleresource/voice/everystudio/school/takira_itsuki/takira_itsuki_03.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/texture/harutake_sister_icon.unity3d
       Dependencies: {}
     Info_151:
-      Name: assets/assetbundleresource/voice/everystudio/school/takira_itsuki/takira_itsuki_05.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0057.unity3d
       Dependencies: {}
     Info_152:
-      Name: assets/assetbundleresource/voice/everystudio/school/takira_itsuki/takira_itsuki_02.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0107.unity3d
       Dependencies: {}
     Info_153:
-      Name: assets/assetbundleresource/voice/everystudio/school/takira_itsuki/takira_itsuki_09.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0109.unity3d
       Dependencies: {}
     Info_154:
-      Name: assets/assetbundleresource/voice/everystudio/school/takira_itsuki/takira_itsuki_15.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0092.unity3d
       Dependencies: {}
     Info_155:
-      Name: assets/assetbundleresource/voice/everystudio/school/takira_itsuki/takira_itsuki_10.unity3d
+      Name: assets/assetbundleresource/sprite/xnos/kiss/kiss_member04_01_icon.unity3d
       Dependencies: {}
     Info_156:
-      Name: assets/assetbundleresource/voice/everystudio/school/takira_itsuki/takira_itsuki_06.unity3d
+      Name: assets/assetbundleresource/sprite/xnos/kiss/kiss_all_02_icon.unity3d
       Dependencies: {}
     Info_157:
-      Name: assets/assetbundleresource/voice/everystudio/school/takira_itsuki/takira_itsuki_14.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0062.unity3d
       Dependencies: {}
     Info_158:
-      Name: assets/assetbundleresource/voice/everystudio/school/takira_itsuki/takira_itsuki_11.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0005.unity3d
       Dependencies: {}
     Info_159:
-      Name: assets/assetbundleresource/voice/everystudio/school/takira_itsuki/takira_itsuki_08.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0060.unity3d
       Dependencies: {}
     Info_160:
-      Name: assets/assetbundleresource/voice/everystudio/school/takira_itsuki/takira_itsuki_07.unity3d
+      Name: assets/assetbundleresource/sprite/everystudio/school/sakuragawa_meina_face.unity3d
       Dependencies: {}
     Info_161:
-      Name: assets/assetbundleresource/voice/everystudio/school/tsukinaga_himeka/tsukinaga_himeka_03.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0061.unity3d
       Dependencies: {}
     Info_162:
-      Name: assets/assetbundleresource/voice/everystudio/school/tsukinaga_himeka/tsukinaga_himeka_13.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0014.unity3d
       Dependencies: {}
     Info_163:
-      Name: assets/assetbundleresource/voice/everystudio/school/tsukinaga_himeka/tsukinaga_himeka_02.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0102.unity3d
       Dependencies: {}
     Info_164:
-      Name: assets/assetbundleresource/voice/everystudio/school/tsukinaga_himeka/tsukinaga_himeka_11.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0076.unity3d
       Dependencies: {}
     Info_165:
-      Name: assets/assetbundleresource/voice/everystudio/school/tsukinaga_himeka/tsukinaga_himeka_06.unity3d
+      Name: assets/assetbundleresource/sprite/everystudio/school/amachi_emi_01.unity3d
       Dependencies: {}
     Info_166:
-      Name: assets/assetbundleresource/voice/everystudio/school/tsukinaga_himeka/tsukinaga_himeka_15.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0080.unity3d
       Dependencies: {}
     Info_167:
-      Name: assets/assetbundleresource/voice/everystudio/school/tsukinaga_himeka/tsukinaga_himeka_04.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0059.unity3d
       Dependencies: {}
     Info_168:
-      Name: assets/assetbundleresource/voice/everystudio/school/tsukinaga_himeka/tsukinaga_himeka_07.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0048.unity3d
       Dependencies: {}
     Info_169:
-      Name: assets/assetbundleresource/voice/everystudio/school/tsukinaga_himeka/tsukinaga_himeka_01.unity3d
+      Name: assets/assetbundleresource/sprite/xnos/kiss/kiss_member01_01_illust.unity3d
       Dependencies: {}
     Info_170:
-      Name: assets/assetbundleresource/voice/everystudio/school/tsukinaga_himeka/tsukinaga_himeka_08.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0071.unity3d
       Dependencies: {}
     Info_171:
-      Name: assets/assetbundleresource/voice/everystudio/school/tsukinaga_himeka/tsukinaga_himeka_14.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0018.unity3d
       Dependencies: {}
     Info_172:
-      Name: assets/assetbundleresource/voice/everystudio/school/tsukinaga_himeka/tsukinaga_himeka_09.unity3d
+      Name: assets/assetbundleresource/sprite/harutake/comic/comic_0047.unity3d
       Dependencies: {}
     Info_173:
-      Name: assets/assetbundleresource/voice/everystudio/school/tsukinaga_himeka/tsukinaga_himeka_12.unity3d
+      Name: assets/assetbundleresource/sound/bgm/demo_song.unity3d
       Dependencies: {}
     Info_174:
-      Name: assets/assetbundleresource/voice/everystudio/school/tsukinaga_himeka/tsukinaga_himeka_10.unity3d
+      Name: assets/assetbundleresource/voice/everystudio/school/se_start_00.unity3d
       Dependencies: {}
     Info_175:
-      Name: assets/assetbundleresource/voice/everystudio/school/tsukinaga_himeka/tsukinaga_himeka_05.unity3d
-      Dependencies: {}
-    Info_176:
-      Name: assets/assetbundleresource/voice/everystudio/school/yuki_shima/yuki_shima_02.unity3d
-      Dependencies: {}
-    Info_177:
-      Name: assets/assetbundleresource/voice/everystudio/school/yuki_shima/yuki_shima_12.unity3d
-      Dependencies: {}
-    Info_178:
-      Name: assets/assetbundleresource/voice/everystudio/school/yuki_shima/yuki_shima_01.unity3d
-      Dependencies: {}
-    Info_179:
-      Name: assets/assetbundleresource/voice/everystudio/school/yuki_shima/yuki_shima_11.unity3d
-      Dependencies: {}
-    Info_180:
-      Name: assets/assetbundleresource/voice/everystudio/school/yuki_shima/yuki_shima_14.unity3d
-      Dependencies: {}
-    Info_181:
-      Name: assets/assetbundleresource/voice/everystudio/school/yuki_shima/yuki_shima_07.unity3d
-      Dependencies: {}
-    Info_182:
-      Name: assets/assetbundleresource/voice/everystudio/school/yuki_shima/yuki_shima_10.unity3d
-      Dependencies: {}
-    Info_183:
-      Name: assets/assetbundleresource/voice/everystudio/school/yuki_shima/yuki_shima_13.unity3d
-      Dependencies: {}
-    Info_184:
-      Name: assets/assetbundleresource/voice/everystudio/school/yuki_shima/yuki_shima_04.unity3d
-      Dependencies: {}
-    Info_185:
-      Name: assets/assetbundleresource/voice/everystudio/school/yuki_shima/yuki_shima_08.unity3d
-      Dependencies: {}
-    Info_186:
-      Name: assets/assetbundleresource/voice/everystudio/school/yuki_shima/yuki_shima_06.unity3d
-      Dependencies: {}
-    Info_187:
-      Name: assets/assetbundleresource/voice/everystudio/school/yuki_shima/yuki_shima_15.unity3d
-      Dependencies: {}
-    Info_188:
-      Name: assets/assetbundleresource/voice/everystudio/school/yuki_shima/yuki_shima_09.unity3d
-      Dependencies: {}
-    Info_189:
-      Name: assets/assetbundleresource/voice/everystudio/school/yuki_shima/yuki_shima_05.unity3d
-      Dependencies: {}
-    Info_190:
-      Name: assets/assetbundleresource/voice/everystudio/school/yuki_shima/yuki_shima_03.unity3d
+      Name: assets/assetbundleresource/voice/everystudio/school/se_goal_00.unity3d
       Dependencies: {}

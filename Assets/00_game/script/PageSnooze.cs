@@ -17,7 +17,7 @@ public class PageSnooze : OtherPage {
 		if (m_bInitialized == false) {
 			base.Initialize ();
 
-			m_bmSnoozeType.ButtonRefresh (DataManagerAlarm.Instance.STR_SNOOZE_ARR.Length);
+			m_bmSnoozeType.ButtonRefresh ();
 
 			for (int i = 0; i < DataManagerAlarm.Instance.STR_SNOOZE_ARR.Length; i++) {
 				GameObject obj = PrefabManager.Instance.MakeObject ("prefab/BannerSnooze", m_Grid.gameObject);
@@ -25,7 +25,7 @@ public class PageSnooze : OtherPage {
 				BannerSnooze script = obj.GetComponent<BannerSnooze> ();
 				script.Initialize (DataManagerAlarm.Instance.STR_SNOOZE_ARR [i], false);
 				m_BannerSnoozeList.Add (script);
-				m_bmSnoozeType.AddButtonBase (i, obj);
+				m_bmSnoozeType.AddButtonBase ( obj);
 			}
 			m_Grid.enabled = true;
 			m_bmSnoozeType.ButtonInit ();

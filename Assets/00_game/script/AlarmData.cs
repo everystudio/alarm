@@ -8,13 +8,13 @@ public class AlarmParam : CsvDataParam {
 	public int m_serial;
 	public string m_time;
 	public int m_status;
-	public long m_repeat_type;
+	public ulong m_repeat_type;
 	public int m_snooze;
 	public int m_voice_type;
 	public int serial{ get{ return m_serial;} set{m_serial = value; } }
 	public string time{ get{ return m_time;} set{m_time = value; } }
 	public int status{ get{ return m_status;} set{m_status = value; } }
-	public long repeat_type{ get{ return m_repeat_type;} set{m_repeat_type = value; } }
+	public ulong repeat_type{ get{ return m_repeat_type;} set{m_repeat_type = value; } }
 	public int snooze{ get{ return m_snooze;} set{m_snooze = value; } }
 	public int voice_type{ get{ return m_voice_type;} set{m_voice_type = value; } }
 }
@@ -22,8 +22,7 @@ public class AlarmParam : CsvDataParam {
 public class AlarmData : CsvData<AlarmParam>{
 
 	public const string FILENAME = "alarmparam";
-
-	public override void Load (string _strFilename)
+	new public void Load (string _strFilename)
 	{
 		string file = string.Format ("{0}.csv", _strFilename);
 		string pathDB = System.IO.Path.Combine (Application.persistentDataPath, file);
@@ -66,13 +65,13 @@ public class AlarmData : CsvData<AlarmParam>{
 			list.Add (new AlarmParam (4,  "2015-10-10 09:00:00"));
 			list.Add (new AlarmParam (5,  "2015-10-10 10:00:00"));
 			*/
-			save ();
+			save (FILENAME);
 		}
 
 		base.Load (_strFilename);
 	}
 
-	protected override void save ()
+	protected override void save ( string _strFilename)
 	{
 		StreamWriter sw = Textreader.Open (string.Format ("{0}.csv", "alarmparam"));
 

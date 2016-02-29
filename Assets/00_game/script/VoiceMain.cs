@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class VoiceMain : PageBase {
+public class VoiceMain : PageBase2 {
 
 	public ButtonManager m_TabButtonManager;
 	private FooterButton m_btnList;
@@ -66,10 +66,12 @@ public class VoiceMain : PageBase {
 			} else {
 			}
 		}
+		/*
 		m_bmBannerList.SetButtonbaseFromList ();
 		m_bmBannerListSelect.SetButtonbaseFromList ();
 		m_bmBannerShop.SetButtonbaseFromList ();
 		m_bmBannerShopSelect.SetButtonbaseFromList ();
+		*/
 
 		m_gridList.enabled = true;
 		m_gridStore.enabled = true;

@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class ComicMain : PageBase
+public class ComicMain : PageBase2
 {
 	public int m_iSelectingId;
 	public ButtonManager m_bmIconList;
@@ -78,7 +78,8 @@ public class ComicMain : PageBase
 				if(SpriteManager.Instance.IsIdle())
 				{
 
-					m_bmIconList.ButtonRefresh(DataManagerAlarm.Instance.master_comic_list.Count);
+					//m_bmIconList.ButtonRefresh(DataManagerAlarm.Instance.master_comic_list.Count);
+					m_bmIconList.ButtonRefresh();
 
 					m_iSelectingId = GameMain.Instance.kvs_data.ReadInt(DataManagerAlarm.KEY_SELECTING_IMAGE_ID);
 
@@ -94,7 +95,7 @@ public class ComicMain : PageBase
 
 						m_iconList.Add(script);
 
-						m_bmIconList.AddButtonBase(iIndex, obj);
+						m_bmIconList.AddButtonBase( obj);
 
 						iIndex += 1;
 					}

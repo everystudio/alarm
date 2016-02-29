@@ -50,9 +50,9 @@ public class DataManagerAlarm : DataManagerBase<DataManagerAlarm> {
 	public override void Initialize ()
 	{
 		base.Initialize ();
-		m_masterTableAudio.Load ();
-		m_masterTablePrefab.Load ();
-		m_masterTableSprite.Load ();
+		m_masterTableAudio.Load ("dummy");
+		m_masterTablePrefab.Load ("dummy");
+		m_masterTableSprite.Load ("dummy");
 
 		SpriteManager.Instance.csv_sprite_list = m_masterTableSprite.All;
 		PrefabManager.Instance.csv_prefab_list = m_masterTablePrefab.All;
@@ -61,7 +61,7 @@ public class DataManagerAlarm : DataManagerBase<DataManagerAlarm> {
 		m_csvImage.Load ();
 		m_csvVoice.Load ();
 		m_csvVoiceset.Load ();
-		m_csvConfig.Load();
+		m_csvConfig.LoadResources("csv/config");
 		if (m_csvConfig.Read ("footer").Contains ("Comic")) {
 			m_csvComic.Load ();
 		}

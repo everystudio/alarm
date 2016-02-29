@@ -3,7 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-public class AlarmMain : PageBase {
+public class AlarmMain : PageBase2 {
 
 	public UtilSwitchSprite m_switchSprite;
 	public ButtonBase m_btnSetList;

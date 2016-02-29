@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PageBase : ButtonBase {
+public class PageBase2 : ButtonBase {
 
 	public virtual void Initialize(){
 	}

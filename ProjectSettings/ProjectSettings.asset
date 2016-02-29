@@ -89,15 +89,15 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleIdentifier: app.everystudio.alarm.school
-  bundleVersion: 0.0.1
+  bundleIdentifier: app.everystudio.alarm.harutake
+  bundleVersion: 0.0.6
   preloadedAssets: []
   metroEnableIndependentInputSource: 0
   metroEnableLowLatencyPresentationAPI: 0
   xboxOneDisableKinectGpuReservation: 0
   virtualRealitySupported: 0
   productGUID: 135e5c711726e4686a488f8089ddf040
-  AndroidBundleVersionCode: 1
+  AndroidBundleVersionCode: 6
   AndroidMinSdkVersion: 16
   AndroidPreferredInstallLocation: 1
   aotOptions: 
@@ -332,7 +332,7 @@ PlayerSettings:
   spritePackerPolicy: 
   scriptingDefineSymbols:
     4: USE_NGUI
-    7: USE_NGUI
+    7: USE_NGUI;NO_USE_UNITY_ADS
   metroPackageName: alarm(Android)
   metroPackageVersion: 
   metroCertificatePath: 
