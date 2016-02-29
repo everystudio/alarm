@@ -26,8 +26,8 @@ public class ComicMain : PageBase2
 	void Start()
 	{
 		Debug.LogError ("here");
-		Debug.LogError (DataManagerAlarm.Instance.m_csvConfig.Read ("footer"));
-		if (DataManagerAlarm.Instance.m_csvConfig.Read ("footer").Contains ("Comic") == false) {
+		Debug.LogError (DataManagerAlarm.Instance.config.Read ("footer"));
+		if (DataManagerAlarm.Instance.config.Read ("footer").Contains ("Comic") == false) {
 			gameObject.SetActive (false);
 		}
 		m_eStep = STEP.WAIT;
@@ -77,7 +77,6 @@ public class ComicMain : PageBase2
 
 				if(SpriteManager.Instance.IsIdle())
 				{
-
 					//m_bmIconList.ButtonRefresh(DataManagerAlarm.Instance.master_comic_list.Count);
 					m_bmIconList.ButtonRefresh();
 
@@ -87,7 +86,6 @@ public class ComicMain : PageBase2
 
 					foreach (CsvImageData data in DataManagerAlarm.Instance.master_comic_list)
 					{
-
 						GameObject obj = PrefabManager.Instance.MakeObject("prefab/IconRoot", m_Grid.gameObject);
 						IconList script = obj.GetComponent<IconList>();
 

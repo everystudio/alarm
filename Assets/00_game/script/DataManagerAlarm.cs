@@ -5,6 +5,13 @@ using Prime31;
 
 public class DataManagerAlarm : DataManagerBase<DataManagerAlarm> {
 
+	public readonly string KEY_CONFIG_VERSION = "config_version";
+	public readonly string KEY_DOWNLOAD_VERSION = "download_version";
+	public readonly string KEY_COMIC_LIST_VERSION = "comic_list_version";
+
+	public readonly string FILENAME_CONFIG = "config";
+	public readonly string FILENAME_DOWNLOAD_LIST = "donwload_list";
+	public readonly string FILENAME_COMIC_LIST = "comic_list";
 
 	public CsvImage m_csvImage = new CsvImage();
 	public List<CsvImageData> master_image_list {
@@ -26,14 +33,6 @@ public class DataManagerAlarm : DataManagerBase<DataManagerAlarm> {
 			return Instance.m_csvVoiceset.All;
 		}
 	}
-	public CsvConfig m_csvConfig= new CsvConfig();
-	public List<CsvKvsParam> master_csv_config
-	{
-		get
-		{
-			return Instance.m_csvConfig.All;
-		}
-	}
 
 	public CsvImage m_csvComic = new CsvImage("csv/comic_list");
 	public List<CsvImageData> master_comic_list
@@ -47,13 +46,17 @@ public class DataManagerAlarm : DataManagerBase<DataManagerAlarm> {
 	public CsvPrefab m_masterTablePrefab = new CsvPrefab();
 	public CsvSprite m_masterTableSprite = new CsvSprite();
 
+	private CsvKvs m_Config = new CsvKvs();
+	public CsvKvs config{
+		get{ return m_Config; }
+	}
+
 	public override void Initialize ()
 	{
 		base.Initialize ();
 		m_masterTableAudio.Load ("dummy");
 		m_masterTablePrefab.Load ("dummy");
 		m_masterTableSprite.Load ("dummy");
-
 		SpriteManager.Instance.csv_sprite_list = m_masterTableSprite.All;
 		PrefabManager.Instance.csv_prefab_list = m_masterTablePrefab.All;
 		SoundManager.Instance.m_csvAudioDataList = m_masterTableAudio.All;
@@ -61,15 +64,16 @@ public class DataManagerAlarm : DataManagerBase<DataManagerAlarm> {
 		m_csvImage.Load ();
 		m_csvVoice.Load ();
 		m_csvVoiceset.Load ();
-		m_csvConfig.LoadResources("csv/config");
-		if (m_csvConfig.Read ("footer").Contains ("Comic")) {
-			m_csvComic.Load ();
-		}
-		foreach( CsvKvsParam param in m_csvConfig.All)
-		{
-			Debug.LogError(param.key);
-		}
 
+		m_Config.Load (FILENAME_CONFIG);
+		kvs.Load (FILENAME_KVS);
+		if (config.Read ("footer").Contains ("Comic")) {
+			m_csvComic.Load (FILENAME_COMIC_LIST);
+		}
+		foreach( CsvKvsParam param in config.All)
+		{
+			Debug.LogError( string.Format( "{0}:{1}", param.key,param.value));
+		}
 	}
 	public string [] STR_MONTH_SHORT_ARR = new string[13]{
 		"NONE",

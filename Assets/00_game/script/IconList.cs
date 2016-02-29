@@ -32,7 +32,7 @@ public class IconList : IconBase {
 		Index = _iIndex;
 		SetSelect (_iSelectingId);
 		m_switchSprite.SetSize (212, 212);
-		Debug.Log(m_csvImageData.name_icon);
+		//Debug.Log(m_csvImageData.name_icon);
 		m_switchSprite.SetSprite (m_csvImageData.name_icon );
 		m_Grid = _grid;
 		m_eStep = STEP.LOADING;
@@ -52,7 +52,7 @@ public class IconList : IconBase {
 		{
 		case STEP.LOADING:
 			if (bInit) {
-				Debug.Log ("Loading,init");
+				//Debug.Log ("Loading,init");
 					
 			}
 				if(true == SpriteManager.Instance.IsLoaded(m_csvImageData.name_icon))
