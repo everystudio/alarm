@@ -29,7 +29,7 @@ public class ComicMain : PageBase2
 	void Start()
 	{
 		//Debug.LogError ("here");
-		Debug.LogError (DataManagerAlarm.Instance.config.Read ("footer"));
+		//Debug.LogError (DataManagerAlarm.Instance.config.Read ("footer"));
 		if (DataManagerAlarm.Instance.config.Read ("footer").Contains ("Comic") == false) {
 			gameObject.SetActive (false);
 		}

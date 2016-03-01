@@ -72,10 +72,6 @@ public class DataManagerAlarm : DataManagerBase<DataManagerAlarm> {
 		if (config.Read ("footer").Contains ("Comic")) {
 			m_csvComic.Load (FILENAME_COMIC_LIST);
 		}
-		foreach( CsvKvsParam param in config.All)
-		{
-			Debug.LogError( string.Format( "{0}:{1}", param.key,param.value));
-		}
 	}
 	public string [] STR_MONTH_SHORT_ARR = new string[13]{
 		"NONE",

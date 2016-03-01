@@ -62,8 +62,8 @@ public class Startup : Singleton<Startup> {
 					DataManagerAlarm.Instance.config.Load (DataManagerAlarm.Instance.FILENAME_CONFIG);
 				}
 				m_eStep = STEP.GOTO_GAME;
-				Debug.LogError (DataManagerAlarm.Instance.config.Read (DataManagerAlarm.Instance.KEY_DOWNLOAD_VERSION));
-				Debug.LogError (DataManagerAlarm.Instance.kvs.Read (DataManagerAlarm.Instance.KEY_DOWNLOAD_VERSION));
+				//Debug.LogError (DataManagerAlarm.Instance.config.Read (DataManagerAlarm.Instance.KEY_DOWNLOAD_VERSION));
+				//Debug.LogError (DataManagerAlarm.Instance.kvs.Read (DataManagerAlarm.Instance.KEY_DOWNLOAD_VERSION));
 				if (false == DataManagerAlarm.Instance.config.Read (DataManagerAlarm.Instance.KEY_DOWNLOAD_VERSION).Equals (DataManagerAlarm.Instance.kvs.Read (DataManagerAlarm.Instance.KEY_DOWNLOAD_VERSION))) {
 					m_eStep = STEP.CHECK_DOWNLOAD;
 				} else if (false == DataManagerAlarm.Instance.config.Read (DataManagerAlarm.Instance.KEY_COMIC_LIST_VERSION).Equals (DataManagerAlarm.Instance.kvs.Read (DataManagerAlarm.Instance.KEY_COMIC_LIST_VERSION))) {
@@ -73,7 +73,6 @@ public class Startup : Singleton<Startup> {
 				}
 			}
 			break;
-
 		case STEP.CHECK_DOWNLOAD:
 			if (bInit) {
 				m_iNetworkSerial = CommonNetwork.Instance.RecieveSpreadSheet (
