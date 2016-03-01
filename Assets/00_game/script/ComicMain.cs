@@ -9,7 +9,10 @@ public class ComicMain : PageBase2
 
 	private List<IconList> m_iconList = new List<IconList>();
 
-	public ImageCheck m_imageCheck;
+	public ImageCheck m_imageCheckComic;
+	public UIPanel m_panelComic;
+
+	public ImageCheck m_imageCheckNormal;
 
 	public UIGrid m_Grid;
 
@@ -52,15 +55,22 @@ public class ComicMain : PageBase2
 			m_eStep = STEP.IDLE;
 		}
 		m_eStepPre = STEP.MAX;
+
+		m_imageCheckNormal.gameObject.SetActive (false);
 	}
 
 	public override void Close()
 	{
 		base.Close();
 		m_eStep = STEP.MAX;
-	}
+		Debug.LogError (string.Format ("Close ComicMain"));
+		m_imageCheckNormal.gameObject.SetActive (true);
 
+		m_imageCheckComic.OutStart ();
+	}
 	// Update is called once per frame
+
+	public int test_selecting_id = 0;
 	void Update()
 	{
 
@@ -71,67 +81,61 @@ public class ComicMain : PageBase2
 			bInit = true;
 		}
 
-		switch (m_eStep)
-		{
-			case STEP.WAIT:
+		switch (m_eStep) {
+		case STEP.WAIT:
 
-				if(SpriteManager.Instance.IsIdle())
-				{
-					//m_bmIconList.ButtonRefresh(DataManagerAlarm.Instance.master_comic_list.Count);
-					m_bmIconList.ButtonRefresh();
+			if (SpriteManager.Instance.IsIdle ()) {
+				//m_bmIconList.ButtonRefresh(DataManagerAlarm.Instance.master_comic_list.Count);
+				m_bmIconList.ButtonRefresh ();
 
-					m_iSelectingId = GameMain.Instance.kvs_data.ReadInt(DataManagerAlarm.KEY_SELECTING_IMAGE_ID);
+				m_iSelectingId = GameMain.Instance.kvs_data.ReadInt (DataManagerAlarm.KEY_SELECTING_IMAGE_ID);
 
-					int iIndex = 0;
+				int iIndex = 0;
 
-					foreach (CsvImageData data in DataManagerAlarm.Instance.master_comic_list)
-					{
-						GameObject obj = PrefabManager.Instance.MakeObject("prefab/IconRoot", m_Grid.gameObject);
-						IconList script = obj.GetComponent<IconList>();
+				foreach (CsvImageData data in DataManagerAlarm.Instance.master_comic_list) {
+					GameObject obj = PrefabManager.Instance.MakeObject ("prefab/IconRoot", m_Grid.gameObject);
+					IconList script = obj.GetComponent<IconList> ();
 
-						script.Initialize(m_iSelectingId, iIndex, data,m_Grid);
+					script.Initialize (test_selecting_id, iIndex, data, m_Grid);
 
-						m_iconList.Add(script);
+					m_iconList.Add (script);
 
-						m_bmIconList.AddButtonBase( obj);
+					m_bmIconList.AddButtonBase (obj);
 
-						iIndex += 1;
-					}
-
-					IconSelect(m_iSelectingId);
-					m_bmIconList.TriggerClearAll();
-
-					m_imageCheck.Initialize();
-
-					m_eStep = STEP.IDLE;
+					iIndex += 1;
 				}
 
-				break;
-			case STEP.IDLE:
-				if (bInit)
-				{
-					m_bmIconList.TriggerClearAll();
-				}
-				if (m_bmIconList.ButtonPushed)
-				{
-					int iPushedId = m_iconList[m_bmIconList.Index].m_csvImageData.id;
-					m_iSelectingId = iPushedId;
-					m_bmIconList.TriggerClearAll();
-					m_eStep = STEP.CHECKING;
-				}
-				break;
+				IconSelect (-1);
+				m_bmIconList.TriggerClearAll ();
 
-			case STEP.CHECKING:
-				if (bInit)
-				{
-					m_imageCheck.TriggerClearAll();
+				m_imageCheckComic.Initialize ();
 
+				m_eStep = STEP.IDLE;
+			}
 
-					m_imageCheck.InStart(DataManagerAlarm.Instance.master_comic_list[m_iSelectingId].name_image);
-				}
-				if (m_imageCheck.ButtonPushed)
-				{
-					/*
+			break;
+		case STEP.IDLE:
+			if (bInit) {
+				m_bmIconList.TriggerClearAll ();
+			}
+			if (m_bmIconList.ButtonPushed) {
+				int iPushedId = m_iconList [m_bmIconList.Index].m_csvImageData.id;
+				// なんか知らんけど補正かけないとうまく出ない
+				m_iSelectingId = iPushedId-1;
+				m_bmIconList.TriggerClearAll ();
+				m_eStep = STEP.CHECKING;
+			}
+			break;
+		case STEP.CHECKING:
+			if (bInit) {
+				m_panelComic.clipOffset = new Vector2 (0.0f, 48.0f);
+				m_panelComic.transform.localPosition = Vector3.zero;
+				m_imageCheckComic.TriggerClearAll ();
+				m_imageCheckComic.InStart (DataManagerAlarm.Instance.master_comic_list [m_iSelectingId].name_image);
+			}
+
+			if (m_imageCheckComic.ButtonPushed) {
+				/*
 					if (m_imageCheck.Index == 0)
 					{
 					}
@@ -144,15 +148,15 @@ public class ComicMain : PageBase2
 					else {
 					}
 					*/
-					m_imageCheck.OutStart();
-					m_eStep = STEP.IDLE;
-				}
-				break;
-			case STEP.MAX:
-			default:
-				break;
+				m_imageCheckComic.OutStart ();
+				m_eStep = STEP.IDLE;
+			}
+			break;
+		case STEP.MAX:
+		default:
+			break;
 		}
-
+		return;
 
 	}
 }

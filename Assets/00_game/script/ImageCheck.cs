@@ -76,7 +76,7 @@ public class ImageCheck : OtherPage {
 			case STEP.LOAD_FILENAME:
 				if (bInit)
 				{
-					m_switchSprite.SetSize(640, 1136);
+					//m_switchSprite.SetSize(640, 1136);
 					m_switchSprite.SetSprite(m_strFilename);
 				}
 				if (m_switchSprite.IsIdle())

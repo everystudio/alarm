@@ -24,6 +24,7 @@ public class IconList : IconBase {
 	public STEP m_eStepPre;
 
 	public void SetSelect( int _iSelectingId ){
+		//Debug.LogError (string.Format ("iconList:{0} == {1}", m_csvImageData.id, _iSelectingId));
 		m_sprSelecting.gameObject.SetActive (m_csvImageData.id == _iSelectingId);
 	}
 
@@ -47,7 +48,6 @@ public class IconList : IconBase {
 			m_eStepPre = m_eStep;
 			bInit = true;
 		}
-
 		switch(m_eStep)
 		{
 		case STEP.LOADING:
