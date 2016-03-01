@@ -18,11 +18,11 @@ public class CsvImage : CsvData<CsvImageData> {
 	{
 		if (false == _path.Equals(""))
 		{
-			FilePath = _path;
+//			FilePath = _path;
 		}
 	}
-	private string FilePath = "csv/image_list";
-	public void Load() { LoadResources(FilePath); }
+	//private string FilePath = "csv/image_list";
+	public void Load() { Load (DataManagerAlarm.Instance.FILENAME_IMAGE_LIST); }
 
 
 	override protected CsvImageData makeParam( List<SpreadSheetData> _list , int _iSerial , int _iRow ){

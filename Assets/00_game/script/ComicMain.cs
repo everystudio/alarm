@@ -28,7 +28,7 @@ public class ComicMain : PageBase2
 	// Use this for initialization
 	void Start()
 	{
-		Debug.LogError ("here");
+		//Debug.LogError ("here");
 		Debug.LogError (DataManagerAlarm.Instance.config.Read ("footer"));
 		if (DataManagerAlarm.Instance.config.Read ("footer").Contains ("Comic") == false) {
 			gameObject.SetActive (false);
@@ -91,6 +91,8 @@ public class ComicMain : PageBase2
 				m_iSelectingId = GameMain.Instance.kvs_data.ReadInt (DataManagerAlarm.KEY_SELECTING_IMAGE_ID);
 
 				int iIndex = 0;
+
+				//Debug.LogError (DataManagerAlarm.Instance.master_comic_list.Count);
 
 				foreach (CsvImageData data in DataManagerAlarm.Instance.master_comic_list) {
 					GameObject obj = PrefabManager.Instance.MakeObject ("prefab/IconRoot", m_Grid.gameObject);

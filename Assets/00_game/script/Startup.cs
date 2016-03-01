@@ -16,7 +16,7 @@ public class Startup : Singleton<Startup> {
 		CHECK_DOWNLOAD		,
 		DATA_DOWNLOAD		,
 		CHECK_COMIC_LIST	,
-		DATA_COMIC_LIST		,
+		CHECK_IMAGE_LIST	,
 		GOTO_GAME			,
 		END					,
 		MAX					,
@@ -68,6 +68,8 @@ public class Startup : Singleton<Startup> {
 					m_eStep = STEP.CHECK_DOWNLOAD;
 				} else if (false == DataManagerAlarm.Instance.config.Read (DataManagerAlarm.Instance.KEY_COMIC_LIST_VERSION).Equals (DataManagerAlarm.Instance.kvs.Read (DataManagerAlarm.Instance.KEY_COMIC_LIST_VERSION))) {
 					m_eStep = STEP.CHECK_COMIC_LIST;
+				} else if (false == DataManagerAlarm.Instance.config.Read (DataManagerAlarm.Instance.KEY_IMAGE_LIST_VERSION).Equals (DataManagerAlarm.Instance.kvs.Read (DataManagerAlarm.Instance.KEY_IMAGE_LIST_VERSION))) {
+					m_eStep = STEP.CHECK_IMAGE_LIST;
 				}
 			}
 			break;
@@ -102,6 +104,8 @@ public class Startup : Singleton<Startup> {
 				m_eStep = STEP.GOTO_GAME;
 				if (false == DataManagerAlarm.Instance.config.Read (DataManagerAlarm.Instance.KEY_COMIC_LIST_VERSION).Equals (DataManagerAlarm.Instance.kvs.Read (DataManagerAlarm.Instance.KEY_COMIC_LIST_VERSION))) {
 					m_eStep = STEP.CHECK_COMIC_LIST;
+				} else if (false == DataManagerAlarm.Instance.config.Read (DataManagerAlarm.Instance.KEY_IMAGE_LIST_VERSION).Equals (DataManagerAlarm.Instance.kvs.Read (DataManagerAlarm.Instance.KEY_IMAGE_LIST_VERSION))) {
+					m_eStep = STEP.CHECK_IMAGE_LIST;
 				}
 			}
 			break;
@@ -119,6 +123,26 @@ public class Startup : Singleton<Startup> {
 				download_list.Input (m_ssdSample);
 				download_list.Save (DataManagerAlarm.Instance.FILENAME_COMIC_LIST);
 				DataManagerAlarm.Instance.m_csvComic.Load (DataManagerAlarm.Instance.FILENAME_COMIC_LIST);
+				m_eStep = STEP.GOTO_GAME;
+				if (false == DataManagerAlarm.Instance.config.Read (DataManagerAlarm.Instance.KEY_IMAGE_LIST_VERSION).Equals (DataManagerAlarm.Instance.kvs.Read (DataManagerAlarm.Instance.KEY_IMAGE_LIST_VERSION))) {
+					m_eStep = STEP.CHECK_IMAGE_LIST;
+				}
+			}
+			break;
+
+		case STEP.CHECK_IMAGE_LIST:
+			if (bInit) {
+				m_iNetworkSerial = CommonNetwork.Instance.RecieveSpreadSheet (
+					"1ih_CiMkZU0VkylrxDfs1gCstGmhEh6oTp4b-o_aPWSQ",
+					DataManagerAlarm.Instance.config.Read ("image_list"));
+			}
+			if (CommonNetwork.Instance.IsConnected (m_iNetworkSerial)) {
+				TNetworkData data = EveryStudioLibrary.CommonNetwork.Instance.GetData (m_iNetworkSerial);
+				m_ssdSample = EveryStudioLibrary.CommonNetwork.Instance.ConvertSpreadSheetData (data.m_dictRecievedData);
+				CsvImage download_list = new CsvImage ();
+				download_list.Input (m_ssdSample);
+				download_list.Save (DataManagerAlarm.Instance.FILENAME_IMAGE_LIST);
+				DataManagerAlarm.Instance.m_csvImage.Load (DataManagerAlarm.Instance.FILENAME_IMAGE_LIST);
 				m_eStep = STEP.GOTO_GAME;
 			}
 			break;

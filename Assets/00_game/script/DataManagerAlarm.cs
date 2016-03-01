@@ -8,10 +8,12 @@ public class DataManagerAlarm : DataManagerBase<DataManagerAlarm> {
 	public readonly string KEY_CONFIG_VERSION = "config_version";
 	public readonly string KEY_DOWNLOAD_VERSION = "download_version";
 	public readonly string KEY_COMIC_LIST_VERSION = "comic_list_version";
+	public readonly string KEY_IMAGE_LIST_VERSION = "image_list_version";
 
 	public readonly string FILENAME_CONFIG = "config";
 	public readonly string FILENAME_DOWNLOAD_LIST = "donwload_list";
 	public readonly string FILENAME_COMIC_LIST = "comic_list";
+	public readonly string FILENAME_IMAGE_LIST = "image_list";
 
 	public CsvImage m_csvImage = new CsvImage();
 	public List<CsvImageData> master_image_list {

@@ -62,7 +62,7 @@ public class ImageCheck : OtherPage {
 					if (data.id == m_iSelectingId) {
 						Debug.LogError (data.name_image);
 
-							m_strFilename = data.name_image;
+						m_strFilename = data.name_image;
 						m_switchSprite.SetSprite (m_strFilename);
 					}
 				}

@@ -2328,7 +2328,7 @@ Transform:
   m_GameObject: {fileID: 1298316489}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.0017605633, y: 0.0017605633, z: 0.0017605633}
+  m_LocalScale: {x: 0.0017590149, y: 0.0017590149, z: 0.0017590149}
   m_Children:
   - {fileID: 36629087}
   - {fileID: 2037274789}
@@ -3356,6 +3356,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 2117222544}
   - 114: {fileID: 2117222545}
+  - 114: {fileID: 2117222546}
   m_Layer: 8
   m_Name: Label
   m_TagString: Untagged
@@ -3370,7 +3371,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2117222543}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -230, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 926895577}
@@ -3404,7 +3405,7 @@ MonoBehaviour:
     absolute: 0
   updateAnchors: 1
   mColor: {r: 1, g: 1, b: 1, a: 1}
-  mPivot: 4
+  mPivot: 3
   mWidth: 561
   mHeight: 166
   mDepth: 1
@@ -3441,3 +3442,15 @@ MonoBehaviour:
   mMaxLineHeight: 0
   mLineWidth: 0
   mMultiline: 1
+--- !u!114 &2117222546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2117222543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d691e67930b357b4ebe80392da96259d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  INTERVAL: 1.5
