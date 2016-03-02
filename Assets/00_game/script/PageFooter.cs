@@ -17,13 +17,6 @@ public class PageFooter : ButtonManager {
 	};
 
 	void Start(){
-
-		Debug.LogError(DataManagerAlarm.Instance.config.Read("config"));
-		Debug.LogError(DataManagerAlarm.Instance.config.Read("download"));
-		Debug.LogError(DataManagerAlarm.Instance.config.Read("download_version"));
-		Debug.LogError(DataManagerAlarm.Instance.config.Read("footer"));
-
-
 		string strFooterInfo = DataManagerAlarm.Instance.config.Read("footer");
 		string [] strArr = strFooterInfo.Split('-');
 		for( int i = 0; i < strArr.Length; i++)

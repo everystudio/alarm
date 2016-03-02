@@ -2366,6 +2366,7 @@ MonoBehaviour:
   m_eStepPre: 0
   m_iNetworkSerial: 0
   m_ssdSample: []
+  m_waitingInitialize: {fileID: 2117222546}
 --- !u!4 &1305436042
 Transform:
   m_ObjectHideFlags: 0
@@ -3371,7 +3372,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2117222543}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -230, y: 0, z: 0}
+  m_LocalPosition: {x: -281.22, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 926895577}
@@ -3406,13 +3407,13 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 3
-  mWidth: 561
+  mWidth: 614
   mHeight: 166
   mDepth: 1
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 3.379518
+  aspectRatio: 3.698795
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 12800000, guid: 898282f85c3564779bfbd07b7579218a, type: 3}
   mFont: {fileID: 0}
@@ -3454,3 +3455,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   INTERVAL: 1.5
+  m_strMessage: 

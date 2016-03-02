@@ -36,8 +36,8 @@ public class Test001 : MonoBehaviour
 		DateTime dt = DateTime.Now;
 		//UTC時刻に変更
 		dt = dt.ToUniversalTime();
-		long unix_time = (long)dt.Subtract(dtUnixEpoch).TotalSeconds - 5;
 #if UNITY_ANDROID && !UNITY_EDITOR
+		long unix_time = (long)dt.Subtract(dtUnixEpoch).TotalSeconds - 5;
 		m_plugin2.Call ("test");
 		m_plugin2.Call ("sendNotification", unix_time, 1, "testTitle", "testText");
 #endif

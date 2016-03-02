@@ -3,16 +3,34 @@ using System.Collections;
 
 public class CsvVoicesetData : CsvDataParam
 {
-	public int id { get; private set; }
-	public string name { get; private set; }
-	public string path { get; private set; }
-	public string kakucho { get; private set; }
+	public int id { get;  set; }
+	public string name { get;  set; }
+	public string path { get;  set; }
+	public string kakucho { get;  set; }
 }
 
 
 public class CsvVoiceset : CsvData<CsvVoicesetData> {
-	private static readonly string FilePath = "csv/voiceset_list";
-	public void Load() { LoadResources(FilePath); }
+	public void Load() {
+		Load (DataManagerAlarm.Instance.FILENAME_VOICESET_LIST);
+	}
+
+
+	protected override CsvVoicesetData makeParam (System.Collections.Generic.List<SpreadSheetData> _list, int _iSerial, int _iRow)
+	{
+		SpreadSheetData id = SpreadSheetData.GetSpreadSheet( _list, _iRow , 1);
+		SpreadSheetData name= SpreadSheetData.GetSpreadSheet( _list,_iRow , 2 );
+		SpreadSheetData path= SpreadSheetData.GetSpreadSheet( _list,_iRow , 3 );
+		SpreadSheetData kakucho= SpreadSheetData.GetSpreadSheet( _list,_iRow , 4 );
+
+		CsvVoicesetData retParam = new CsvVoicesetData ();
+		retParam.id = int.Parse(id.param);
+		retParam.name = name.param;
+		retParam.path = path.param;
+		retParam.kakucho = kakucho.param;
+		return retParam;
+
+	}
 }
 
 

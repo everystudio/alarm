@@ -143,7 +143,7 @@ public class VoiceMain : PageBase2 {
 		}
 
 		if (m_bmBannerList.ButtonPushed) {
-			//Debug.Log (m_bmBannerList.Index);
+			Debug.Log (m_bmBannerList.Index);
 			if (m_iListIndex != m_bmBannerList.Index ) {
 				if (0 <= m_iListIndex) {
 					m_bannerList [m_iListIndex].Reset ();

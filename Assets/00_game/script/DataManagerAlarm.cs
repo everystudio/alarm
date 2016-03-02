@@ -5,15 +5,17 @@ using Prime31;
 
 public class DataManagerAlarm : DataManagerBase<DataManagerAlarm> {
 
-	public readonly string KEY_CONFIG_VERSION = "config_version";
-	public readonly string KEY_DOWNLOAD_VERSION = "download_version";
+	public readonly string SPREAD_SHEET = "1ih_CiMkZU0VkylrxDfs1gCstGmhEh6oTp4b-o_aPWSQ";
+
 	public readonly string KEY_COMIC_LIST_VERSION = "comic_list_version";
 	public readonly string KEY_IMAGE_LIST_VERSION = "image_list_version";
+	public readonly string KEY_VOICE_LIST_VERSION = "voice_list_version";
+	public readonly string KEY_VOICESET_LIST_VERSION = "voiceset_list_version";
 
-	public readonly string FILENAME_CONFIG = "config";
-	public readonly string FILENAME_DOWNLOAD_LIST = "donwload_list";
 	public readonly string FILENAME_COMIC_LIST = "comic_list";
 	public readonly string FILENAME_IMAGE_LIST = "image_list";
+	public readonly string FILENAME_VOICE_LIST = "voice_list";
+	public readonly string FILENAME_VOICESET_LIST = "voiceset_list";
 
 	public CsvImage m_csvImage = new CsvImage();
 	public List<CsvImageData> master_image_list {
@@ -67,7 +69,7 @@ public class DataManagerAlarm : DataManagerBase<DataManagerAlarm> {
 		m_csvVoice.Load ();
 		m_csvVoiceset.Load ();
 
-		m_Config.Load (FILENAME_CONFIG);
+		m_Config.Load (CsvConfig.FILENAME_CONFIG);
 		kvs.Load (FILENAME_KVS);
 		if (config.Read ("footer").Contains ("Comic")) {
 			m_csvComic.Load (FILENAME_COMIC_LIST);
