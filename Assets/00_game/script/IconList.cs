@@ -11,7 +11,7 @@ public class IconList : IconBase {
 	public ImageCheck m_imageCheck;
 
 	public CsvImageData m_csvImageData;
-	private UIGrid m_Grid;
+	protected UIGrid m_Grid;
 
 	public enum STEP
 	{

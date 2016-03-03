@@ -7,7 +7,7 @@ public class ComicMain : PageBase2
 	public int m_iSelectingId;
 	public ButtonManager m_bmIconList;
 
-	private List<IconList> m_iconList = new List<IconList>();
+	private List<IconListComic> m_iconList = new List<IconListComic>();
 
 	public ImageCheck m_imageCheckComic;
 	public UIPanel m_panelComic;
@@ -18,7 +18,7 @@ public class ComicMain : PageBase2
 
 	public void IconSelect(int _iSelectIndex)
 	{
-		foreach (IconList icon in m_iconList)
+		foreach (IconListComic icon in m_iconList)
 		{
 			icon.SetSelect(_iSelectIndex);
 		}
@@ -95,23 +95,20 @@ public class ComicMain : PageBase2
 				//Debug.LogError (DataManagerAlarm.Instance.master_comic_list.Count);
 
 				foreach (CsvImageData data in DataManagerAlarm.Instance.master_comic_list) {
-					GameObject obj = PrefabManager.Instance.MakeObject ("prefab/IconRoot", m_Grid.gameObject);
-					IconList script = obj.GetComponent<IconList> ();
+					GameObject obj = PrefabManager.Instance.MakeObject ("prefab/IconRootComic", m_Grid.gameObject);
+					IconListComic script = obj.GetComponent<IconListComic> ();
 
 					script.Initialize (test_selecting_id, iIndex, data, m_Grid);
 
 					m_iconList.Add (script);
-
 					m_bmIconList.AddButtonBase (obj);
 
 					iIndex += 1;
 				}
-
-				IconSelect (-1);
+				m_iSelectingId = DataManagerAlarm.Instance.kvs.ReadInt ("comic_selecting_id");
+				IconSelect (m_iSelectingId+1);
 				m_bmIconList.TriggerClearAll ();
-
 				m_imageCheckComic.Initialize ();
-
 				m_eStep = STEP.IDLE;
 			}
 
@@ -119,11 +116,13 @@ public class ComicMain : PageBase2
 		case STEP.IDLE:
 			if (bInit) {
 				m_bmIconList.TriggerClearAll ();
+				IconSelect (m_iSelectingId+1);
 			}
 			if (m_bmIconList.ButtonPushed) {
 				int iPushedId = m_iconList [m_bmIconList.Index].m_csvImageData.id;
 				// なんか知らんけど補正かけないとうまく出ない
 				m_iSelectingId = iPushedId-1;
+				DataManagerAlarm.Instance.kvs.WriteInt ("comic_selecting_id", m_iSelectingId);
 				m_bmIconList.TriggerClearAll ();
 				m_eStep = STEP.CHECKING;
 			}

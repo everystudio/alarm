@@ -237,7 +237,7 @@ public class Startup : Singleton<Startup> {
 				CsvVoiceset download_list = new CsvVoiceset ();
 				download_list.Input (m_ssdSample);
 				download_list.Save (DataManagerAlarm.Instance.FILENAME_VOICESET_LIST);
-				DataManagerAlarm.Instance.m_csvImage.Load (DataManagerAlarm.Instance.FILENAME_VOICESET_LIST);
+				DataManagerAlarm.Instance.m_csvVoiceset.Load (DataManagerAlarm.Instance.FILENAME_VOICESET_LIST);
 				DataManagerAlarm.Instance.kvs.Write (DataManagerAlarm.Instance.KEY_VOICESET_LIST_VERSION, DataManagerAlarm.Instance.config.Read (DataManagerAlarm.Instance.KEY_VOICESET_LIST_VERSION));
 				DataManagerAlarm.Instance.kvs.Save (DataManagerAlarm.Instance.FILENAME_KVS);
 				m_eStep = STEP.GOTO_GAME;

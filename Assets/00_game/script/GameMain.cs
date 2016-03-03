@@ -183,11 +183,16 @@ public class GameMain : PageBase2 {
 			}
 
 			for (int i = 0; i < iLoop; i++) {
+
+				CsvVoicesetData data = GetAssetName (reserve.m_iVoiceType);
+
+				string strUse = string.Format( "{0}/{1}.{2}" , data.path , data.name , data.kakucho );
+
 				LocalNotificationManager.Instance.AddLocalNotification (
 					reserve.m_lTime + i*lOffset,
 					ConfigManager.Instance.GetEditPlayerSettingsData ().projectData.m_strProductName,
 					"時刻になりました",
-					GetAssetName (reserve.m_iVoiceType, true)
+					strUse
 				);
 			}
 		}
@@ -288,7 +293,7 @@ public class GameMain : PageBase2 {
 		return;
 	}
 
-	public string GetAssetName(int _iVliceType , bool _bAddPath = false ){
+	public CsvVoicesetData GetAssetName(int _iVliceType ){
 		List<CsvVoicesetData> sound_list = new List<CsvVoicesetData> ();
 
 		foreach (CsvVoicesetData data in DataManagerAlarm.Instance.master_voiceset_list) {
@@ -300,6 +305,8 @@ public class GameMain : PageBase2 {
 
 		CsvVoicesetData use_data = sound_list [iIndex];
 
+		return use_data;
+		/*
 		string strRet = "";
 		if (_bAddPath == false) {
 			strRet = use_data.name;
@@ -307,11 +314,17 @@ public class GameMain : PageBase2 {
 			strRet = string.Format( "{0}/{1}.{2}" , use_data.path , use_data.name , use_data.kakucho );
 		}
 		return strRet;
+		*/
 	}
 
 	public void CallVoice( int _iVoiceType ){
-		string strFilename = GetAssetName (_iVoiceType);
-		SoundManager.Instance.PlaySE ( strFilename );
+		CsvVoicesetData data = GetAssetName (_iVoiceType);
+		//SoundManager.Instance.PlaySE ( strFilename  );
+		//SoundManager.Instance.PlaySE ( "se_goal_00" , EditPlayerSettingsData.GetLocalPathHead() + Application.streamingAssetsPath + "/sound" );
+		//SoundManager.Instance.PlaySE ( "kureha_ruri_01" , EditPlayerSettingsData.GetLocalPathHead() + Application.streamingAssetsPath + "/sound" );
+		SoundManager.Instance.PlaySE ( data.name , data.url + "/" +data.path );
+		//SoundManager.Instance.PlaySE ( "demo_song" , EditPlayerSettingsData.GetLocalPathHead() + Application.persistentDataPath + "/sound" );
+
 		return;
 	}
 	void OnApplicationPause(bool pauseStatus) {

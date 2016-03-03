@@ -151,7 +151,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3048
+  startingRenderQueue: 3054
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 3
@@ -1109,6 +1109,48 @@ MonoBehaviour:
   mMaxLineHeight: 0
   mLineWidth: 0
   mMultiline: 1
+--- !u!1001 &118067501
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1298316493}
+    m_Modifications:
+    - target: {fileID: 438848, guid: 60613ea354c17a74f8a0dd534c1709ea, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 628
+      objectReference: {fileID: 0}
+    - target: {fileID: 438848, guid: 60613ea354c17a74f8a0dd534c1709ea, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -788
+      objectReference: {fileID: 0}
+    - target: {fileID: 438848, guid: 60613ea354c17a74f8a0dd534c1709ea, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 438848, guid: 60613ea354c17a74f8a0dd534c1709ea, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 438848, guid: 60613ea354c17a74f8a0dd534c1709ea, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 438848, guid: 60613ea354c17a74f8a0dd534c1709ea, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 438848, guid: 60613ea354c17a74f8a0dd534c1709ea, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 438848, guid: 60613ea354c17a74f8a0dd534c1709ea, type: 2}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 60613ea354c17a74f8a0dd534c1709ea, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &120048128
 GameObject:
   m_ObjectHideFlags: 0
@@ -2144,7 +2186,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3025
+  startingRenderQueue: 3031
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 3
@@ -3495,7 +3537,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3021
+  startingRenderQueue: 3027
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 3
@@ -3711,7 +3753,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3025
+  startingRenderQueue: 3031
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 3
@@ -3993,6 +4035,10 @@ MonoBehaviour:
   mFixedAspect: 0
   mPixelSize: 1
   nextSprite: {fileID: 0}
+--- !u!4 &565578594 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 438848, guid: 60613ea354c17a74f8a0dd534c1709ea, type: 2}
+  m_PrefabInternal: {fileID: 118067501}
 --- !u!1 &574531235
 GameObject:
   m_ObjectHideFlags: 0
@@ -4757,7 +4803,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3033
+  startingRenderQueue: 3039
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 3
@@ -5138,7 +5184,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3060
+  startingRenderQueue: 3066
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 3
@@ -6038,7 +6084,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3060
+  startingRenderQueue: 3066
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 3
@@ -6480,6 +6526,7 @@ Transform:
   m_Children:
   - {fileID: 1286140995}
   - {fileID: 1706098597}
+  - {fileID: 1860778496}
   m_Father: {fileID: 1003416866}
   m_RootOrder: 3
 --- !u!1 &946527755
@@ -6576,7 +6623,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3048
+  startingRenderQueue: 3054
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 3
@@ -7613,7 +7660,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3048
+  startingRenderQueue: 3054
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 3
@@ -7995,7 +8042,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3035
+  startingRenderQueue: 3041
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 3
@@ -8072,7 +8119,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3025
+  startingRenderQueue: 3031
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 3
@@ -8477,7 +8524,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3004
+  startingRenderQueue: 3005
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 0
@@ -8515,7 +8562,7 @@ Transform:
   m_GameObject: {fileID: 1298316489}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.0017590149, y: 0.0017590149, z: 0.0017590149}
+  m_LocalScale: {x: 0.0017559263, y: 0.0017559263, z: 0.0017559263}
   m_Children:
   - {fileID: 36629087}
   - {fileID: 2037274789}
@@ -8525,6 +8572,7 @@ Transform:
   - {fileID: 2050043906}
   - {fileID: 1510147811}
   - {fileID: 1638157335}
+  - {fileID: 565578594}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!1 &1305436040
@@ -8649,7 +8697,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1310176870}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -213, y: 461.4, z: 0}
+  m_LocalPosition: {x: 0, y: 517, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 506769399}
@@ -8681,10 +8729,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arrangement: 0
   sorting: 0
-  pivot: 0
-  maxPerLine: 3
-  cellWidth: 213
-  cellHeight: 213
+  pivot: 1
+  maxPerLine: 1
+  cellWidth: 96
+  cellHeight: 100
   animateSmoothly: 0
   hideInactive: 0
   keepWithinPanel: 0
@@ -10026,7 +10074,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3051
+  startingRenderQueue: 3057
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 3
@@ -10226,7 +10274,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3026
+  startingRenderQueue: 3032
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 3
@@ -10558,7 +10606,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3054
+  startingRenderQueue: 3060
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 3
@@ -10728,7 +10776,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3026
+  startingRenderQueue: 3032
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 3
@@ -11019,7 +11067,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3021
+  startingRenderQueue: 3027
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 3
@@ -11296,7 +11344,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3033
+  startingRenderQueue: 3039
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 3
@@ -12027,7 +12075,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3021
+  startingRenderQueue: 3027
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 3
@@ -12473,7 +12521,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3028
+  startingRenderQueue: 3034
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 3
@@ -12974,7 +13022,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3027
+  startingRenderQueue: 3033
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 3
@@ -13094,6 +13142,91 @@ MonoBehaviour:
   mMat: {fileID: 0}
   mShader: {fileID: 4800000, guid: e75727d9555d9d14ca51d91908c681bc, type: 3}
   mBorder: {x: 0, y: 0, z: 0, w: 0}
+  mFixedAspect: 0
+  mPixelSize: 1
+  nextSprite: {fileID: 0}
+--- !u!1 &1860778495
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1860778496}
+  - 114: {fileID: 1860778497}
+  m_Layer: 8
+  m_Name: 2D Sprite
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1860778496
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1860778495}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 23.28, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 931509930}
+  m_RootOrder: 2
+--- !u!114 &1860778497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1860778495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e96b31ce75e592f45a1cff563a4869db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftAnchor:
+    target: {fileID: 0}
+    relative: 0
+    absolute: 0
+  rightAnchor:
+    target: {fileID: 0}
+    relative: 1
+    absolute: 0
+  bottomAnchor:
+    target: {fileID: 0}
+    relative: 0
+    absolute: 0
+  topAnchor:
+    target: {fileID: 0}
+    relative: 1
+    absolute: 0
+  updateAnchors: 1
+  mColor: {r: 1, g: 1, b: 1, a: 0.709}
+  mPivot: 4
+  mWidth: 238
+  mHeight: 88
+  mDepth: 0
+  autoResizeBoxCollider: 0
+  hideIfOffScreen: 0
+  keepAspectRatio: 0
+  aspectRatio: 2.7045455
+  mType: 1
+  mFillDirection: 4
+  mFillAmount: 1
+  mInvert: 0
+  mFlip: 0
+  mApplyGradient: 0
+  mGradientTop: {r: 1, g: 1, b: 1, a: 1}
+  mGradientBottom: {r: 0.7, g: 0.7, b: 0.7, a: 1}
+  centerType: 1
+  leftType: 1
+  rightType: 1
+  bottomType: 1
+  topType: 1
+  mSprite: {fileID: 21300000, guid: 8ab12464e803e4a9198be84cabd6b996, type: 3}
+  mMat: {fileID: 0}
+  mShader: {fileID: 4800000, guid: e75727d9555d9d14ca51d91908c681bc, type: 3}
+  mBorder: {x: 14, y: 9, z: 11, w: 12}
   mFixedAspect: 0
   mPixelSize: 1
   nextSprite: {fileID: 0}
@@ -13905,7 +14038,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3025
+  startingRenderQueue: 3031
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 3
