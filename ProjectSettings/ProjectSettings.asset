@@ -90,14 +90,14 @@ PlayerSettings:
     16:9: 1
     Others: 1
   bundleIdentifier: app.everystudio.alarm.harutake
-  bundleVersion: 0.0.10
+  bundleVersion: 0.0.11
   preloadedAssets: []
   metroEnableIndependentInputSource: 0
   metroEnableLowLatencyPresentationAPI: 0
   xboxOneDisableKinectGpuReservation: 0
   virtualRealitySupported: 0
   productGUID: 135e5c711726e4686a488f8089ddf040
-  AndroidBundleVersionCode: 10
+  AndroidBundleVersionCode: 11
   AndroidMinSdkVersion: 16
   AndroidPreferredInstallLocation: 1
   aotOptions: 

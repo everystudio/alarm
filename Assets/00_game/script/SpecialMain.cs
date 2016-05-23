@@ -66,7 +66,7 @@ public class SpecialMain : PageBase2 {
 				Debug.LogError (data.id);
 			}
 		}
-		m_AudioChannelData = SoundManager.Instance.PlayBGM ("demo_song");
+		m_AudioChannelData = SoundManager.Instance.PlayBGM ("demo_song" , "path" );
 		m_eStep = STEP.LOADING;
 		m_eStepPre = STEP.MAX;
 	}

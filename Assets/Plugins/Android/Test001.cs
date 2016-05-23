@@ -9,7 +9,7 @@ public class Test001 : MonoBehaviour
 	static AndroidJavaObject m_plugin = null;
 	static AndroidJavaObject m_plugin2 = null;
 #endif
-	static GameObject m_instance;
+	//static GameObject m_instance;
 
 	public void Awake ()
 	{
@@ -17,7 +17,7 @@ public class Test001 : MonoBehaviour
 		// そのためstaticの変数にあらかじめコピーしておく.
 
 		Debug.Log ("Test001 Awake() here");
-		m_instance = gameObject;
+		//m_instance = gameObject;
 #if UNITY_ANDROID && !UNITY_EDITOR
 			// プラグイン名をパッケージ名+クラス名で指定する。
 		m_plugin = new AndroidJavaObject( "com.everystudio.test001.TestClass" );

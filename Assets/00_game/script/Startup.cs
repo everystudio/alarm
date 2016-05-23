@@ -65,39 +65,39 @@ public class Startup : Singleton<Startup> {
 				m_ssdSample = EveryStudioLibrary.CommonNetwork.Instance.ConvertSpreadSheetData (data.m_dictRecievedData);
 				CsvConfig config_data = new CsvConfig ();
 				config_data.Input (m_ssdSample);
-				config_data.Save (CsvConfig.FILENAME_CONFIG);
+				config_data.Save (CsvConfig.FILE_NAME);
 
 				// configファイルのみconfigファイル同士で判定する
 				if (false == config_data.Read (CsvConfig.KEY_CONFIG_VERSION).Equals (DataManagerAlarm.Instance.config.Read (CsvConfig.KEY_CONFIG_VERSION))) {
-					config_data.Save (CsvConfig.FILENAME_CONFIG);
-					DataManagerAlarm.Instance.config.Load (CsvConfig.FILENAME_CONFIG);
+					config_data.Save (CsvConfig.FILE_NAME);
+					DataManagerAlarm.Instance.config.Load (CsvConfig.FILE_NAME);
 				}
 				m_eStep = STEP.GOTO_GAME;
 				//Debug.LogError (DataManagerAlarm.Instance.config.Read (DataManagerAlarm.Instance.KEY_DOWNLOAD_VERSION));
-				//Debug.LogError (DataManagerAlarm.Instance.kvs.Read (DataManagerAlarm.Instance.KEY_DOWNLOAD_VERSION));
-				if (false == DataManagerAlarm.Instance.config.Read (FileDownloadManager.KEY_DOWNLOAD_VERSION).Equals (DataManagerAlarm.Instance.kvs.Read (FileDownloadManager.KEY_DOWNLOAD_VERSION))) {
+				//Debug.LogError (DataManagerAlarm.Instance.data_kvs.Read (DataManagerAlarm.Instance.KEY_DOWNLOAD_VERSION));
+				if (false == DataManagerAlarm.Instance.config.Read (FileDownloadManager.KEY_DOWNLOAD_VERSION).Equals (DataManagerAlarm.Instance.data_kvs.Read (FileDownloadManager.KEY_DOWNLOAD_VERSION))) {
 					m_eStep = STEP.CHECK_DOWNLOAD;
-				} else if (false == DataManagerAlarm.Instance.config.Read (DataManagerAlarm.Instance.KEY_COMIC_LIST_VERSION).Equals (DataManagerAlarm.Instance.kvs.Read (DataManagerAlarm.Instance.KEY_COMIC_LIST_VERSION))) {
+				} else if (false == DataManagerAlarm.Instance.config.Read (DataManagerAlarm.Instance.KEY_COMIC_LIST_VERSION).Equals (DataManagerAlarm.Instance.data_kvs.Read (DataManagerAlarm.Instance.KEY_COMIC_LIST_VERSION))) {
 					m_eStep = STEP.CHECK_COMIC_LIST;
-				} else if (false == DataManagerAlarm.Instance.config.Read (DataManagerAlarm.Instance.KEY_IMAGE_LIST_VERSION).Equals (DataManagerAlarm.Instance.kvs.Read (DataManagerAlarm.Instance.KEY_IMAGE_LIST_VERSION))) {
+				} else if (false == DataManagerAlarm.Instance.config.Read (DataManagerAlarm.Instance.KEY_IMAGE_LIST_VERSION).Equals (DataManagerAlarm.Instance.data_kvs.Read (DataManagerAlarm.Instance.KEY_IMAGE_LIST_VERSION))) {
 					m_eStep = STEP.CHECK_IMAGE_LIST;
-				} else if (false == DataManagerAlarm.Instance.config.Read (DataManagerAlarm.Instance.KEY_VOICE_LIST_VERSION).Equals (DataManagerAlarm.Instance.kvs.Read (DataManagerAlarm.Instance.KEY_VOICE_LIST_VERSION))) {
+				} else if (false == DataManagerAlarm.Instance.config.Read (DataManagerAlarm.Instance.KEY_VOICE_LIST_VERSION).Equals (DataManagerAlarm.Instance.data_kvs.Read (DataManagerAlarm.Instance.KEY_VOICE_LIST_VERSION))) {
 					m_eStep = STEP.CHECK_VOICE_LIST;
-				} else if (false == DataManagerAlarm.Instance.config.Read (DataManagerAlarm.Instance.KEY_VOICESET_LIST_VERSION).Equals (DataManagerAlarm.Instance.kvs.Read (DataManagerAlarm.Instance.KEY_VOICESET_LIST_VERSION))) {
+				} else if (false == DataManagerAlarm.Instance.config.Read (DataManagerAlarm.Instance.KEY_VOICESET_LIST_VERSION).Equals (DataManagerAlarm.Instance.data_kvs.Read (DataManagerAlarm.Instance.KEY_VOICESET_LIST_VERSION))) {
 					m_eStep = STEP.CHECK_VOICESET_LIST;
 				}
 			} else if (CommonNetwork.Instance.IsError (m_iNetworkSerial)) {
 			//} else if (true) {
 				bool bSuccess = true;
-				if (false == DataManagerAlarm.Instance.config.Read (FileDownloadManager.KEY_DOWNLOAD_VERSION).Equals (DataManagerAlarm.Instance.kvs.Read (FileDownloadManager.KEY_DOWNLOAD_VERSION))) {
+				if (false == DataManagerAlarm.Instance.config.Read (FileDownloadManager.KEY_DOWNLOAD_VERSION).Equals (DataManagerAlarm.Instance.data_kvs.Read (FileDownloadManager.KEY_DOWNLOAD_VERSION))) {
 					bSuccess = false;
-				} else if (false == DataManagerAlarm.Instance.config.Read (DataManagerAlarm.Instance.KEY_COMIC_LIST_VERSION).Equals (DataManagerAlarm.Instance.kvs.Read (DataManagerAlarm.Instance.KEY_COMIC_LIST_VERSION))) {
+				} else if (false == DataManagerAlarm.Instance.config.Read (DataManagerAlarm.Instance.KEY_COMIC_LIST_VERSION).Equals (DataManagerAlarm.Instance.data_kvs.Read (DataManagerAlarm.Instance.KEY_COMIC_LIST_VERSION))) {
 					bSuccess = false;
-				} else if (false == DataManagerAlarm.Instance.config.Read (DataManagerAlarm.Instance.KEY_IMAGE_LIST_VERSION).Equals (DataManagerAlarm.Instance.kvs.Read (DataManagerAlarm.Instance.KEY_IMAGE_LIST_VERSION))) {
+				} else if (false == DataManagerAlarm.Instance.config.Read (DataManagerAlarm.Instance.KEY_IMAGE_LIST_VERSION).Equals (DataManagerAlarm.Instance.data_kvs.Read (DataManagerAlarm.Instance.KEY_IMAGE_LIST_VERSION))) {
 					bSuccess = false;
-				} else if (false == DataManagerAlarm.Instance.config.Read (DataManagerAlarm.Instance.KEY_VOICE_LIST_VERSION).Equals (DataManagerAlarm.Instance.kvs.Read (DataManagerAlarm.Instance.KEY_VOICE_LIST_VERSION))) {
+				} else if (false == DataManagerAlarm.Instance.config.Read (DataManagerAlarm.Instance.KEY_VOICE_LIST_VERSION).Equals (DataManagerAlarm.Instance.data_kvs.Read (DataManagerAlarm.Instance.KEY_VOICE_LIST_VERSION))) {
 					bSuccess = false;
-				} else if (false == DataManagerAlarm.Instance.config.Read (DataManagerAlarm.Instance.KEY_VOICESET_LIST_VERSION).Equals (DataManagerAlarm.Instance.kvs.Read (DataManagerAlarm.Instance.KEY_VOICESET_LIST_VERSION))) {
+				} else if (false == DataManagerAlarm.Instance.config.Read (DataManagerAlarm.Instance.KEY_VOICESET_LIST_VERSION).Equals (DataManagerAlarm.Instance.data_kvs.Read (DataManagerAlarm.Instance.KEY_VOICESET_LIST_VERSION))) {
 					bSuccess = false;
 				}
 				if (bSuccess == true) {
@@ -131,17 +131,17 @@ public class Startup : Singleton<Startup> {
 				FileDownloadManager.Instance.Download ( DataManagerAlarm.Instance.config.ReadInt (FileDownloadManager.KEY_DOWNLOAD_VERSION) ,  source_download_list.list);
 			}
 			if (FileDownloadManager.Instance.IsIdle ()) {
-				DataManagerAlarm.Instance.kvs.Write (FileDownloadManager.KEY_DOWNLOAD_VERSION, DataManagerAlarm.Instance.config.Read (FileDownloadManager.KEY_DOWNLOAD_VERSION));
-				DataManagerAlarm.Instance.kvs.Save (DataManagerAlarm.Instance.FILENAME_KVS);
+				DataManagerAlarm.Instance.data_kvs.Write (FileDownloadManager.KEY_DOWNLOAD_VERSION, DataManagerAlarm.Instance.config.Read (FileDownloadManager.KEY_DOWNLOAD_VERSION));
+				DataManagerAlarm.Instance.data_kvs.Save (DataKvs.FILE_NAME);
 
 				m_eStep = STEP.GOTO_GAME;
-				if (false == DataManagerAlarm.Instance.config.Read (DataManagerAlarm.Instance.KEY_COMIC_LIST_VERSION).Equals (DataManagerAlarm.Instance.kvs.Read (DataManagerAlarm.Instance.KEY_COMIC_LIST_VERSION))) {
+				if (false == DataManagerAlarm.Instance.config.Read (DataManagerAlarm.Instance.KEY_COMIC_LIST_VERSION).Equals (DataManagerAlarm.Instance.data_kvs.Read (DataManagerAlarm.Instance.KEY_COMIC_LIST_VERSION))) {
 					m_eStep = STEP.CHECK_COMIC_LIST;
-				} else if (false == DataManagerAlarm.Instance.config.Read (DataManagerAlarm.Instance.KEY_IMAGE_LIST_VERSION).Equals (DataManagerAlarm.Instance.kvs.Read (DataManagerAlarm.Instance.KEY_IMAGE_LIST_VERSION))) {
+				} else if (false == DataManagerAlarm.Instance.config.Read (DataManagerAlarm.Instance.KEY_IMAGE_LIST_VERSION).Equals (DataManagerAlarm.Instance.data_kvs.Read (DataManagerAlarm.Instance.KEY_IMAGE_LIST_VERSION))) {
 					m_eStep = STEP.CHECK_IMAGE_LIST;
-				} else if (false == DataManagerAlarm.Instance.config.Read (DataManagerAlarm.Instance.KEY_VOICE_LIST_VERSION).Equals (DataManagerAlarm.Instance.kvs.Read (DataManagerAlarm.Instance.KEY_VOICE_LIST_VERSION))) {
+				} else if (false == DataManagerAlarm.Instance.config.Read (DataManagerAlarm.Instance.KEY_VOICE_LIST_VERSION).Equals (DataManagerAlarm.Instance.data_kvs.Read (DataManagerAlarm.Instance.KEY_VOICE_LIST_VERSION))) {
 					m_eStep = STEP.CHECK_VOICE_LIST;
-				} else if (false == DataManagerAlarm.Instance.config.Read (DataManagerAlarm.Instance.KEY_VOICESET_LIST_VERSION).Equals (DataManagerAlarm.Instance.kvs.Read (DataManagerAlarm.Instance.KEY_VOICESET_LIST_VERSION))) {
+				} else if (false == DataManagerAlarm.Instance.config.Read (DataManagerAlarm.Instance.KEY_VOICESET_LIST_VERSION).Equals (DataManagerAlarm.Instance.data_kvs.Read (DataManagerAlarm.Instance.KEY_VOICESET_LIST_VERSION))) {
 					m_eStep = STEP.CHECK_VOICESET_LIST;
 				}
 
@@ -162,15 +162,15 @@ public class Startup : Singleton<Startup> {
 				download_list.Save (DataManagerAlarm.Instance.FILENAME_COMIC_LIST);
 				DataManagerAlarm.Instance.m_csvComic.Load (DataManagerAlarm.Instance.FILENAME_COMIC_LIST);
 
-				DataManagerAlarm.Instance.kvs.Write (DataManagerAlarm.Instance.KEY_COMIC_LIST_VERSION, DataManagerAlarm.Instance.config.Read (DataManagerAlarm.Instance.KEY_COMIC_LIST_VERSION));
-				DataManagerAlarm.Instance.kvs.Save (DataManagerAlarm.Instance.FILENAME_KVS);
+				DataManagerAlarm.Instance.data_kvs.Write (DataManagerAlarm.Instance.KEY_COMIC_LIST_VERSION, DataManagerAlarm.Instance.config.Read (DataManagerAlarm.Instance.KEY_COMIC_LIST_VERSION));
+				DataManagerAlarm.Instance.data_kvs.Save (DataKvs.FILE_NAME);
 
 				m_eStep = STEP.GOTO_GAME;
-				if (false == DataManagerAlarm.Instance.config.Read (DataManagerAlarm.Instance.KEY_IMAGE_LIST_VERSION).Equals (DataManagerAlarm.Instance.kvs.Read (DataManagerAlarm.Instance.KEY_IMAGE_LIST_VERSION))) {
+				if (false == DataManagerAlarm.Instance.config.Read (DataManagerAlarm.Instance.KEY_IMAGE_LIST_VERSION).Equals (DataManagerAlarm.Instance.data_kvs.Read (DataManagerAlarm.Instance.KEY_IMAGE_LIST_VERSION))) {
 					m_eStep = STEP.CHECK_IMAGE_LIST;
-				} else if (false == DataManagerAlarm.Instance.config.Read (DataManagerAlarm.Instance.KEY_VOICE_LIST_VERSION).Equals (DataManagerAlarm.Instance.kvs.Read (DataManagerAlarm.Instance.KEY_VOICE_LIST_VERSION))) {
+				} else if (false == DataManagerAlarm.Instance.config.Read (DataManagerAlarm.Instance.KEY_VOICE_LIST_VERSION).Equals (DataManagerAlarm.Instance.data_kvs.Read (DataManagerAlarm.Instance.KEY_VOICE_LIST_VERSION))) {
 					m_eStep = STEP.CHECK_VOICE_LIST;
-				} else if (false == DataManagerAlarm.Instance.config.Read (DataManagerAlarm.Instance.KEY_VOICESET_LIST_VERSION).Equals (DataManagerAlarm.Instance.kvs.Read (DataManagerAlarm.Instance.KEY_VOICESET_LIST_VERSION))) {
+				} else if (false == DataManagerAlarm.Instance.config.Read (DataManagerAlarm.Instance.KEY_VOICESET_LIST_VERSION).Equals (DataManagerAlarm.Instance.data_kvs.Read (DataManagerAlarm.Instance.KEY_VOICESET_LIST_VERSION))) {
 					m_eStep = STEP.CHECK_VOICESET_LIST;
 				}
 			}
@@ -190,13 +190,13 @@ public class Startup : Singleton<Startup> {
 				download_list.Save (DataManagerAlarm.Instance.FILENAME_IMAGE_LIST);
 				DataManagerAlarm.Instance.m_csvImage.Load (DataManagerAlarm.Instance.FILENAME_IMAGE_LIST);
 
-				DataManagerAlarm.Instance.kvs.Write (DataManagerAlarm.Instance.KEY_IMAGE_LIST_VERSION, DataManagerAlarm.Instance.config.Read (DataManagerAlarm.Instance.KEY_IMAGE_LIST_VERSION));
-				DataManagerAlarm.Instance.kvs.Save (DataManagerAlarm.Instance.FILENAME_KVS);
+				DataManagerAlarm.Instance.data_kvs.Write (DataManagerAlarm.Instance.KEY_IMAGE_LIST_VERSION, DataManagerAlarm.Instance.config.Read (DataManagerAlarm.Instance.KEY_IMAGE_LIST_VERSION));
+				DataManagerAlarm.Instance.data_kvs.Save (DataKvs.FILE_NAME);
 
 				m_eStep = STEP.GOTO_GAME;
-				if (false == DataManagerAlarm.Instance.config.Read (DataManagerAlarm.Instance.KEY_VOICE_LIST_VERSION).Equals (DataManagerAlarm.Instance.kvs.Read (DataManagerAlarm.Instance.KEY_VOICE_LIST_VERSION))) {
+				if (false == DataManagerAlarm.Instance.config.Read (DataManagerAlarm.Instance.KEY_VOICE_LIST_VERSION).Equals (DataManagerAlarm.Instance.data_kvs.Read (DataManagerAlarm.Instance.KEY_VOICE_LIST_VERSION))) {
 					m_eStep = STEP.CHECK_VOICE_LIST;
-				} else if (false == DataManagerAlarm.Instance.config.Read (DataManagerAlarm.Instance.KEY_VOICESET_LIST_VERSION).Equals (DataManagerAlarm.Instance.kvs.Read (DataManagerAlarm.Instance.KEY_VOICESET_LIST_VERSION))) {
+				} else if (false == DataManagerAlarm.Instance.config.Read (DataManagerAlarm.Instance.KEY_VOICESET_LIST_VERSION).Equals (DataManagerAlarm.Instance.data_kvs.Read (DataManagerAlarm.Instance.KEY_VOICESET_LIST_VERSION))) {
 					m_eStep = STEP.CHECK_VOICESET_LIST;
 				}
 			}
@@ -216,11 +216,11 @@ public class Startup : Singleton<Startup> {
 				server_list.Save (DataManagerAlarm.Instance.FILENAME_VOICE_LIST);
 				DataManagerAlarm.Instance.m_csvVoice.Load (DataManagerAlarm.Instance.FILENAME_VOICE_LIST);
 
-				DataManagerAlarm.Instance.kvs.Write (DataManagerAlarm.Instance.KEY_VOICE_LIST_VERSION, DataManagerAlarm.Instance.config.Read (DataManagerAlarm.Instance.KEY_VOICE_LIST_VERSION));
-				DataManagerAlarm.Instance.kvs.Save (DataManagerAlarm.Instance.FILENAME_KVS);
+				DataManagerAlarm.Instance.data_kvs.Write (DataManagerAlarm.Instance.KEY_VOICE_LIST_VERSION, DataManagerAlarm.Instance.config.Read (DataManagerAlarm.Instance.KEY_VOICE_LIST_VERSION));
+				DataManagerAlarm.Instance.data_kvs.Save (DataKvs.FILE_NAME);
 
 				m_eStep = STEP.GOTO_GAME;
-				if (false == DataManagerAlarm.Instance.config.Read (DataManagerAlarm.Instance.KEY_VOICESET_LIST_VERSION).Equals (DataManagerAlarm.Instance.kvs.Read (DataManagerAlarm.Instance.KEY_VOICESET_LIST_VERSION))) {
+				if (false == DataManagerAlarm.Instance.config.Read (DataManagerAlarm.Instance.KEY_VOICESET_LIST_VERSION).Equals (DataManagerAlarm.Instance.data_kvs.Read (DataManagerAlarm.Instance.KEY_VOICESET_LIST_VERSION))) {
 					m_eStep = STEP.CHECK_VOICESET_LIST;
 				}
 			}
@@ -238,8 +238,8 @@ public class Startup : Singleton<Startup> {
 				download_list.Input (m_ssdSample);
 				download_list.Save (DataManagerAlarm.Instance.FILENAME_VOICESET_LIST);
 				DataManagerAlarm.Instance.m_csvVoiceset.Load (DataManagerAlarm.Instance.FILENAME_VOICESET_LIST);
-				DataManagerAlarm.Instance.kvs.Write (DataManagerAlarm.Instance.KEY_VOICESET_LIST_VERSION, DataManagerAlarm.Instance.config.Read (DataManagerAlarm.Instance.KEY_VOICESET_LIST_VERSION));
-				DataManagerAlarm.Instance.kvs.Save (DataManagerAlarm.Instance.FILENAME_KVS);
+				DataManagerAlarm.Instance.data_kvs.Write (DataManagerAlarm.Instance.KEY_VOICESET_LIST_VERSION, DataManagerAlarm.Instance.config.Read (DataManagerAlarm.Instance.KEY_VOICESET_LIST_VERSION));
+				DataManagerAlarm.Instance.data_kvs.Save (DataKvs.FILE_NAME);
 				m_eStep = STEP.GOTO_GAME;
 			}
 			break;

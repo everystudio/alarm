@@ -50,11 +50,6 @@ public class DataManagerAlarm : DataManagerBase<DataManagerAlarm> {
 	public CsvPrefab m_masterTablePrefab = new CsvPrefab();
 	public CsvSprite m_masterTableSprite = new CsvSprite();
 
-	private CsvKvs m_Config = new CsvKvs();
-	public CsvKvs config{
-		get{ return m_Config; }
-	}
-
 	public override void Initialize ()
 	{
 		base.Initialize ();
@@ -69,8 +64,8 @@ public class DataManagerAlarm : DataManagerBase<DataManagerAlarm> {
 		m_csvVoice.Load ();
 		m_csvVoiceset.Load ();
 
-		m_Config.Load (CsvConfig.FILENAME_CONFIG);
-		kvs.Load (FILENAME_KVS);
+		config.Load (CsvConfig.FILE_NAME);
+		data_kvs.Load (DataKvs.FILE_NAME);
 		if (config.Read ("footer").Contains ("Comic")) {
 			m_csvComic.Load (FILENAME_COMIC_LIST);
 		}
