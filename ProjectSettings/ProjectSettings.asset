@@ -10,7 +10,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: EveryStudio
-  productName: "\u76EE\u899A\u307E\u3057"
+  productName: "\u306F\u308B\u305F\u3051\u76EE\u899A\u307E\u3057"
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_ShowUnitySplashScreen: 1
@@ -89,7 +89,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleIdentifier: app.everystudio.alarm.harutake
+  bundleIdentifier: jp.everystudio.alarm.harutake
   bundleVersion: 0.0.11
   preloadedAssets: []
   metroEnableIndependentInputSource: 0

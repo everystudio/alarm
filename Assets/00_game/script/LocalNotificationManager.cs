@@ -42,54 +42,40 @@ public class LocalNotificationManager : MonoBehaviour {
 
 	public int m_iLocalNotificationIndex;
 	public void AddLocalNotification( long _lTime , string _strTitle , string _strMessage , string _strSoundName ){
-		if (m_plugin2 != null) {
-			m_iLocalNotificationIndex += 1;
+		m_iLocalNotificationIndex += 1;
 
-			/*
-			//string sound_path = EditPlayerSettingsData.GetStreamingAssetsAssetBundlePath () + "/sample.mp3";
-			//sound_path = sound_path.Replace ("jar:file://", "");
-			string sound_path = System.IO.Path.Combine (Application.streamingAssetsPath, "AssetBundles/Android/sample.mp3" );
-			sound_path = System.IO.Path.Combine (Application.streamingAssetsPath, "AssetBundles/Android/sample.mp3" );
-			Debug.Log (sound_path);
-			string permissive = Application.persistentDataPath + "/sample.mp3";
-			permissive = Application.persistentDataPath + "/AssetBundles/Android/sample.mp3";
-			Debug.Log (permissive);
+		int notifi_id = id_list.Count + 1;
+		#if UNITY_ANDROID
+		AndroidNotificationBuilder builder = new AndroidNotificationBuilder (notifi_id, _strTitle, _strMessage, (int)_lTime);
+		builder.SetSoundName (_strSoundName);
+		AndroidNotificationManager.instance.ScheduleLocalNotification (builder);
+		id_list.Add (notifi_id);
 
-			if (File.Exists (permissive)) {
-				Debug.LogError ("seikou:" + permissive );
-			} else {
-				Debug.LogError ("not found");
-				StartCoroutine (load (sound_path, permissive));
-			}
-			*/
+		#elif UNITY_IOS
+		ISN_LocalNotification local_notification = new ISN_LocalNotification (
+			DateTime.Now.AddSeconds (_lTime),
+			_strMessage,
+			true);
+		Debug.Log(_strSoundName);
 
-			//sound_path = "content://settings/system/ringtone";
-			//sound_path = Application.persistentDataPath + "/sample.mp3";
-			//m_plugin2.Call ("sendNotification", _lTime, m_iLocalNotificationIndex, _strTitle, _strTitle, _strMessage , sound_path );
-			int notifi_id = id_list.Count + 1;
-			AndroidNotificationBuilder builder = new AndroidNotificationBuilder (notifi_id, _strTitle, _strMessage, (int)_lTime);
-			builder.SetSoundName (_strSoundName);
-			AndroidNotificationManager.instance.ScheduleLocalNotification (builder);
+		local_notification.SetSoundName (_strSoundName);
+		id_list.Add( local_notification.Id );
+		IOSNotificationController.Instance.ScheduleNotification (local_notification);
+		#endif
 
-			id_list.Add (notifi_id);
 
-			//m_plugin2.Call ("sendNotification", _lTime, m_iLocalNotificationIndex, _strTitle, _strTitle, _strMessage , _strSoundName );
-			Debug.LogError (string.Format( "time:{0} index{1} title{2} sound_path:{3}", _lTime, m_iLocalNotificationIndex, _strTitle , _strSoundName ));
-		} else {
-			Debug.LogError ("null m_plugin2");
-		}
+		//m_plugin2.Call ("sendNotification", _lTime, m_iLocalNotificationIndex, _strTitle, _strTitle, _strMessage , _strSoundName );
+		Debug.LogError (string.Format ("time:{0} index{1} title{2} sound_path:{3}", _lTime, m_iLocalNotificationIndex, _strTitle, _strSoundName));
 	}
 
 	const int MAX_LOCALNOTIFICATE_NUM = 100;
 	public void ClearLocalNotification(){
-		if (m_plugin2 != null) {
-			for (int i = 0; i < MAX_LOCALNOTIFICATE_NUM; i++) {
-				m_plugin2.Call ("clearNotification", i + 1);
-			}
-		}
 		m_iLocalNotificationIndex = 0;
-
+		#if UNITY_ANDROID
 		AndroidNotificationManager.instance.CancelAllLocalNotifications ();
+		#elif UNITY_IOS
+		IOSNotificationController.Instance.CancelAllLocalNotifications();
+		#endif
 		id_list.Clear ();
 	}
 
@@ -126,19 +112,16 @@ public class LocalNotificationManager : MonoBehaviour {
 
 	public void sound_stop(){
 		Debug.LogError ("call STOP");
-		m_plugin2.Call ("sendNotification", (long)1, 10, "dummy_title", "dummy_title", "dummy_message" , "stop" );
 	}
 
 	private List<int> localnotificate_list = new List<int> ();
 	void OnApplicationPause(bool pauseStatus) {
 		// ローカル通知用
-		#if UNITY_ANDROID && !UNITY_EDITOR
-		//m_plugin2.Call ("sendNotification", _lTime, m_iLocalNotificationIndex, _strTitle, _strTitle, _strMessage , permissive );
-		#endif
 		if (pauseStatus) {
 
 			//TODO
 			#if UNITY_IPHONE
+			/*
 			foreach( CsvLocalNotificationData data in m_localNotificationDataList ){
 				ISN_LocalNotification local_notification = new ISN_LocalNotification (
 					DateTime.Now.AddSeconds (data.second),
@@ -148,32 +131,20 @@ public class LocalNotificationManager : MonoBehaviour {
 				id_list.Add( local_notification.Id );
 				IOSNotificationController.Instance.ScheduleNotification (local_notification);
 			}
-
+			*/
 			#elif UNITY_ANDROID
 
-			/*
-			int iTemp = 0;
-			foreach( CsvLocalNotificationData data in m_localNotificationDataList ){
-				m_plugin2.Call ("sendNotification", (long)data.second , iTemp , data.title, data.message);
-				iTemp += 1;
-			}
-			*/
 			#endif
 		} else {
 			#if UNITY_IPHONE
 			// こっちの削除はなくてもいいらしい
+			/*
 			foreach( int set_id in id_list ){
 				IOSNotificationController.Instance.CancelLocalNotificationById( set_id );
 			}
+			*/
 			//IOSNotificationController.Instance.CancelAllLocalNotifications ();
 			#elif UNITY_ANDROID
-			/*
-			int iTemp = 0;
-			foreach( CsvLocalNotificationData data in m_localNotificationDataList ){
-				m_plugin2.Call ("clearNotification", iTemp );
-				iTemp += 1;
-			}
-			*/
 			#endif
 		}
 

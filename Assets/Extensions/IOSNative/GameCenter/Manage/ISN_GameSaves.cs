@@ -1,4 +1,4 @@
-#define GAME_CENTER_ENABLED
+//#define GAME_CENTER_ENABLED
 
 using UnityEngine;
 using System;
