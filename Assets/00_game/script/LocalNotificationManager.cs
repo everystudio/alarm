@@ -66,7 +66,14 @@ public class LocalNotificationManager : MonoBehaviour {
 			//sound_path = "content://settings/system/ringtone";
 			//sound_path = Application.persistentDataPath + "/sample.mp3";
 			//m_plugin2.Call ("sendNotification", _lTime, m_iLocalNotificationIndex, _strTitle, _strTitle, _strMessage , sound_path );
-			m_plugin2.Call ("sendNotification", _lTime, m_iLocalNotificationIndex, _strTitle, _strTitle, _strMessage , _strSoundName );
+			int notifi_id = id_list.Count + 1;
+			AndroidNotificationBuilder builder = new AndroidNotificationBuilder (notifi_id, _strTitle, _strMessage, (int)_lTime);
+			builder.SetSoundName (_strSoundName);
+			AndroidNotificationManager.instance.ScheduleLocalNotification (builder);
+
+			id_list.Add (notifi_id);
+
+			//m_plugin2.Call ("sendNotification", _lTime, m_iLocalNotificationIndex, _strTitle, _strTitle, _strMessage , _strSoundName );
 			Debug.LogError (string.Format( "time:{0} index{1} title{2} sound_path:{3}", _lTime, m_iLocalNotificationIndex, _strTitle , _strSoundName ));
 		} else {
 			Debug.LogError ("null m_plugin2");
@@ -81,6 +88,9 @@ public class LocalNotificationManager : MonoBehaviour {
 			}
 		}
 		m_iLocalNotificationIndex = 0;
+
+		AndroidNotificationManager.instance.CancelAllLocalNotifications ();
+		id_list.Clear ();
 	}
 
 	private void Initialize(){

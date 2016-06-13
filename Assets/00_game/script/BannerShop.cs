@@ -45,20 +45,6 @@ public class BannerShop : BannerVoiceBase {
 		}
 
 		#if UNITY_ANDROID
-		foreach (GoogleSkuInfo info in DataManagerAlarm.Instance.product_data_list) {
-			if (info.productId.Equals (m_csvVoiceData.name_voice)) {
-
-				Debug.LogError ("here" + m_csvVoiceData.name_voice );
-
-				string[] stArrayData = info.title.Split (' ');
-
-				if (0 < stArrayData.Length) {
-				}
-				m_lbName.text = info.description;
-				m_lbDescription.text = stArrayData [0];
-				m_lbPrice.text = string.Format ("{0}円", info.price);
-			}
-		}
 		#endif
 
 	}
@@ -71,7 +57,6 @@ public class BannerShop : BannerVoiceBase {
 		{
 			m_btnBuy.TriggerClear();
 #if UNITY_ANDROID
-			GoogleIAB.purchaseProduct(m_csvVoiceData.name_voice);
 #endif
 		}
 	}

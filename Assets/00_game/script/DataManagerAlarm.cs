@@ -110,6 +110,7 @@ public class DataManagerAlarm : DataManagerBase<DataManagerAlarm> {
 		"None",
 	};
 	public const string KEY_SELECTING_IMAGE_ID = "selecting_image_id";
+	public const string PRODUCT_NAME = "はるたけアプリ";
 
 	public CsvVoiceData GetVoiceData( int _iId ){
 		foreach (CsvVoiceData voice_data in DataManagerAlarm.Instance.master_voice_list) {
@@ -119,9 +120,6 @@ public class DataManagerAlarm : DataManagerBase<DataManagerAlarm> {
 		}
 		return new CsvVoiceData ();
 	}
-	#if UNITY_ANDROID
-	public List<GoogleSkuInfo> product_data_list = new List<GoogleSkuInfo> ();
-	#endif
 	public List<string> purchased_list = new List<string> ();
 }
 

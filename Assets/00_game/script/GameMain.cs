@@ -186,11 +186,12 @@ public class GameMain : PageBase2 {
 
 				CsvVoicesetData data = GetAssetName (reserve.m_iVoiceType);
 
-				string strUse = string.Format( "{0}/{1}.{2}" , data.path , data.name , data.kakucho );
+				//string strUse = string.Format( "{0}/{1}.{2}" , data.path , data.name , data.kakucho );
+				string strUse = string.Format( "{1}.{2}" , data.path , data.name , data.kakucho );
 
 				LocalNotificationManager.Instance.AddLocalNotification (
 					reserve.m_lTime + i*lOffset,
-					ConfigManager.Instance.GetEditPlayerSettingsData ().projectData.m_PlayerSettingData.productName,
+					DataManagerAlarm.PRODUCT_NAME,
 					"時刻になりました",
 					strUse
 				);
@@ -214,10 +215,6 @@ public class GameMain : PageBase2 {
 		m_iPagePre = 0;
 		m_timeComming.TriggerClear ();
 		m_timeComming.gameObject.SetActive (false);
-		string key = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwoEtQFcqjLFQJ0wXu8mkFjowH8t4I7tcG1G6Ais7Vx8qZWYidwNPzdp2pvPCQS4/BZDgtRyk1+FsPbaCOndof2e4OlVmdlGUXVQOtJl5hT40xxmlotliBG9IzO1A5Huvy0tjv2pQ6Et0g72k1qxJPFI1O/L7mzQDHPzawYEqHv47U/yGD1GTE6jHK0u1apgxUI89UJsiYIhVlwdZ40390LGWAR8+LrUhk+q//NYjxfKBd3fotgV4QZecNPQks1fz9bk5oWOwOpOz2pQ3aZ62RInlueAk8ttsfow6+M4rmdfBDVGOkVKgScwhBjeCAcsXQaO+qwWdr1GhLPNuYck39wIDAQAB";
-		#if UNITY_ANDROID
-		GoogleIAB.init (key);
-		#endif
 
 		if (m_AlarmData == null) {
 			m_AlarmData = new AlarmData ();
