@@ -250,6 +250,7 @@ public class Startup : Singleton<Startup> {
 
 			if (1.5f < m_fDelayTimer) {
 				SceneManager.LoadScene ("main");
+				m_eStep = STEP.END;
 			}
 			break;
 

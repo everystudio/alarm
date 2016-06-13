@@ -74,6 +74,9 @@ public class LocalNotificationManager : MonoBehaviour {
 		#if UNITY_ANDROID
 		AndroidNotificationManager.instance.CancelAllLocalNotifications ();
 		#elif UNITY_IOS
+		foreach( int id in id_list ){
+			IOSNotificationController.Instance.CancelLocalNotificationById(id );
+		}
 		IOSNotificationController.Instance.CancelAllLocalNotifications();
 		#endif
 		id_list.Clear ();
