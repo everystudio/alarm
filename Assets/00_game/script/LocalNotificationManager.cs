@@ -46,8 +46,13 @@ public class LocalNotificationManager : MonoBehaviour {
 
 		int notifi_id = id_list.Count + 1;
 		#if UNITY_ANDROID
+
+		_strSoundName = _strSoundName.Replace(".mp3","");
 		AndroidNotificationBuilder builder = new AndroidNotificationBuilder (notifi_id, _strTitle, _strMessage, (int)_lTime);
+		builder.ShowIfAppIsForeground( true );
+		builder.SetIconName("iconokan");
 		builder.SetSoundName (_strSoundName);
+		builder.SetVibration(false);
 		AndroidNotificationManager.instance.ScheduleLocalNotification (builder);
 		id_list.Add (notifi_id);
 
@@ -57,7 +62,7 @@ public class LocalNotificationManager : MonoBehaviour {
 			_strMessage,
 			true);
 		Debug.Log(_strSoundName);
-
+		_strSoundName = _strSoundName.Replace(".mp3","");
 		local_notification.SetSoundName (_strSoundName);
 		id_list.Add( local_notification.Id );
 		IOSNotificationController.Instance.ScheduleNotification (local_notification);
@@ -65,7 +70,7 @@ public class LocalNotificationManager : MonoBehaviour {
 
 
 		//m_plugin2.Call ("sendNotification", _lTime, m_iLocalNotificationIndex, _strTitle, _strTitle, _strMessage , _strSoundName );
-		Debug.LogError (string.Format ("time:{0} index{1} title{2} sound_path:{3}", _lTime, m_iLocalNotificationIndex, _strTitle, _strSoundName));
+		//Debug.LogError (string.Format ("time:{0} index{1} title{2} sound_path:{3}", _lTime, m_iLocalNotificationIndex, _strTitle, _strSoundName));
 	}
 
 	const int MAX_LOCALNOTIFICATE_NUM = 100;

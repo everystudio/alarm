@@ -242,6 +242,7 @@ public class GameMain : PageBase2 {
 				InitPage (m_PageNow  , m_PageFooter.Index);
 				m_iPagePre = m_PageFooter.Index;
 			}
+			SoundManager.Instance.StopAll (AUDIO_TYPE.SE);
 			m_PageFooter.TriggerClearAll ();
 		}
 
@@ -319,7 +320,16 @@ public class GameMain : PageBase2 {
 		//SoundManager.Instance.PlaySE ( strFilename  );
 		//SoundManager.Instance.PlaySE ( "se_goal_00" , EditPlayerSettingsData.GetLocalPathHead() + Application.streamingAssetsPath + "/sound" );
 		//SoundManager.Instance.PlaySE ( "kureha_ruri_01" , EditPlayerSettingsData.GetLocalPathHead() + Application.streamingAssetsPath + "/sound" );
-		SoundManager.Instance.PlaySE ( data.name , data.url + "/" +data.path );
+
+		string strPath = "";
+		if (data.path.Equals ("")) {
+			strPath = data.url;
+		} else {
+			strPath = data.url + "/" + data.path;
+		}
+
+
+		SoundManager.Instance.PlaySE ( data.name , strPath );
 		//SoundManager.Instance.PlaySE ( "demo_song" , EditPlayerSettingsData.GetLocalPathHead() + Application.persistentDataPath + "/sound" );
 
 		return;

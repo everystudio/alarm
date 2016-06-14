@@ -60,7 +60,7 @@ public class PictureMain : PageBase2 {
 	public STEP m_eStepPre;
 	public override void Initialize ()
 	{
-		Debug.LogError (string.Format ("Initialize PictureMain"));
+		//Debug.LogError (string.Format ("Initialize PictureMain"));
 		base.Initialize ();
 		m_eStep = STEP.IDLE;
 		m_eStepPre = STEP.MAX;

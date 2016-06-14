@@ -10,7 +10,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: EveryStudio
-  productName: "\u306F\u308B\u305F\u3051\u76EE\u899A\u307E\u3057"
+  productName: "\u7D75\u63CF\u304D\u30AA\u30AB\u30F3\u306E\u6642\u8A08\u30A2\u30D7\u30EA\u3002"
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_ShowUnitySplashScreen: 1

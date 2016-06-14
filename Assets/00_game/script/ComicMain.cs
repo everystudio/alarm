@@ -63,7 +63,7 @@ public class ComicMain : PageBase2
 	{
 		base.Close();
 		m_eStep = STEP.MAX;
-		Debug.LogError (string.Format ("Close ComicMain"));
+		//Debug.LogError (string.Format ("Close ComicMain"));
 		m_imageCheckNormal.gameObject.SetActive (true);
 
 		m_imageCheckComic.OutStart ();
