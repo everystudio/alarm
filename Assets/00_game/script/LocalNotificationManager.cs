@@ -70,7 +70,7 @@ public class LocalNotificationManager : MonoBehaviour {
 
 
 		//m_plugin2.Call ("sendNotification", _lTime, m_iLocalNotificationIndex, _strTitle, _strTitle, _strMessage , _strSoundName );
-		//Debug.LogError (string.Format ("time:{0} index{1} title{2} sound_path:{3}", _lTime, m_iLocalNotificationIndex, _strTitle, _strSoundName));
+		Debug.LogError (string.Format ("time:{0} index{1} title{2} sound_path:{3}", _lTime, m_iLocalNotificationIndex, _strTitle, _strSoundName));
 	}
 
 	const int MAX_LOCALNOTIFICATE_NUM = 100;

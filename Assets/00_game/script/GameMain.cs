@@ -164,15 +164,17 @@ public class GameMain : PageBase2 {
 		}
 
 		foreach (AlarmReserve reserve in _insertList) {
+
+			//Debug.LogError ( string.Format( "snooze={0}", reserve.m_iSnoozeType));
 			int iLoop = 1;
 
 			long lOffset = 0;
 			switch (reserve.m_iSnoozeType) {
-			case 1:
+			case 0:
 				iLoop = 10;
 				lOffset = 5 * 60;
 				break;
-			case 2:
+			case 1:
 				iLoop = 5;
 				lOffset = 10 * 60;
 				break;
