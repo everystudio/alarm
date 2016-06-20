@@ -181,6 +181,9 @@ public class GameMain : PageBase2 {
 			default:
 				iLoop = 1;
 				lOffset = 0;
+
+				iLoop = 2;
+				lOffset = 60;
 				break;
 			}
 
