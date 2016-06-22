@@ -194,7 +194,7 @@ public class GameMain : PageBase2 {
 
 				LocalNotificationManager.Instance.AddLocalNotification (
 					reserve.m_lTime + i*lOffset,
-					DataManagerAlarm.PRODUCT_NAME,
+					Application.productName,
 					"時刻になりました",
 					strUse
 				);

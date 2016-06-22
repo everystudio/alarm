@@ -52,10 +52,10 @@ MonoBehaviour:
   MaxImageLoadSize: 512
   CameraCaptureMode: 0
   ImageFormat: 0
-  ShowAppPermissions: 0
+  ShowAppPermissions: 1
   EnableBillingAPI: 0
   EnablePSAPI: 0
-  EnableSocialAPI: 1
+  EnableSocialAPI: 0
   EnableCameraAPI: 0
   ExpandNativeAPI: 0
   ExpandPSAPI: 0
@@ -85,7 +85,7 @@ MonoBehaviour:
   CameraAPI: 0
   KeepManifestClean: 1
   GooglePlayServiceAppID: 216817929098
-  ToolbarSelectedIndex: 3
+  ToolbarSelectedIndex: 0
   base64EncodedPublicKey: REPLACE_WITH_YOUR_PUBLIC_KEY
   ShowStoreProducts: 1
   InAppProducts: []

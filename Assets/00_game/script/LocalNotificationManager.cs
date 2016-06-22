@@ -63,7 +63,7 @@ public class LocalNotificationManager : MonoBehaviour {
 			true);
 		Debug.Log(_strSoundName);
 		//_strSoundName = _strSoundName.Replace(".mp3","");
-		local_notification.SetBadgesNumber(1);
+		local_notification.SetBadgesNumber(0);
 		local_notification.SetData( "data" );
 		local_notification.SetSoundName (_strSoundName);
 		//local_notification.Schedule();

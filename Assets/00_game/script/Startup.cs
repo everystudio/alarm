@@ -48,7 +48,6 @@ public class Startup : Singleton<Startup> {
 		#if UNITY_IOS
 		UnityEngine.iOS.Device.SetNoBackupFlag(Application.persistentDataPath);
 		#endif
-
 		return;
 	}
 
