@@ -43,6 +43,12 @@ public class Startup : Singleton<Startup> {
 		m_eStep = STEP.CHECK_CONFIG;
 		m_eStepPre = STEP.MAX;
 		m_fDelayTimer = 0.0f;
+
+		// ios対応；基本保存させない
+		#if UNITY_IOS
+		UnityEngine.iOS.Device.SetNoBackupFlag(Application.persistentDataPath);
+		#endif
+
 		return;
 	}
 
@@ -128,9 +134,13 @@ public class Startup : Singleton<Startup> {
 				CsvDownload source_download_list = new CsvDownload ();
 				source_download_list.Load (FileDownloadManager.FILENAME_DOWNLOAD_LIST);
 				Debug.Log (DataManagerAlarm.Instance.config.ReadInt (FileDownloadManager.KEY_DOWNLOAD_VERSION));
-				FileDownloadManager.Instance.Download ( DataManagerAlarm.Instance.config.ReadInt (FileDownloadManager.KEY_DOWNLOAD_VERSION) ,  source_download_list.list);
+				FileDownloadManager.Instance.Download (DataManagerAlarm.Instance.config.ReadInt (FileDownloadManager.KEY_DOWNLOAD_VERSION), source_download_list.list);
 			}
-			if (FileDownloadManager.Instance.IsIdle ()) {
+
+			int iTotal = 0;
+			int iNow = 0;
+
+			if (FileDownloadManager.Instance.IsIdle (out iTotal, out iNow)) {
 				DataManagerAlarm.Instance.data_kvs.Write (FileDownloadManager.KEY_DOWNLOAD_VERSION, DataManagerAlarm.Instance.config.Read (FileDownloadManager.KEY_DOWNLOAD_VERSION));
 				DataManagerAlarm.Instance.data_kvs.Save (DataKvs.FILE_NAME);
 
@@ -144,8 +154,13 @@ public class Startup : Singleton<Startup> {
 				} else if (false == DataManagerAlarm.Instance.config.Read (DataManagerAlarm.Instance.KEY_VOICESET_LIST_VERSION).Equals (DataManagerAlarm.Instance.data_kvs.Read (DataManagerAlarm.Instance.KEY_VOICESET_LIST_VERSION))) {
 					m_eStep = STEP.CHECK_VOICESET_LIST;
 				}
-
+				m_waitingInitialize.SetString ("データ準備中");
+			} else {
+				string strMessage = string.Format ("データダウンロード中\n({0}/{1})", iNow, iTotal);
+				m_waitingInitialize.SetString (strMessage);
 			}
+
+
 			break;
 
 		case STEP.CHECK_COMIC_LIST:

@@ -50,7 +50,7 @@ public class LocalNotificationManager : MonoBehaviour {
 		_strSoundName = _strSoundName.Replace(".mp3","");
 		AndroidNotificationBuilder builder = new AndroidNotificationBuilder (notifi_id, _strTitle, _strMessage, (int)_lTime);
 		builder.ShowIfAppIsForeground( true );
-		builder.SetIconName("iconokan");
+		builder.SetIconName("notice_icon");
 		builder.SetSoundName (_strSoundName);
 		builder.SetVibration(false);
 		AndroidNotificationManager.instance.ScheduleLocalNotification (builder);
