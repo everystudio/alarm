@@ -89,7 +89,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleIdentifier: app.everystudio.alarm.harutake
+  bundleIdentifier: jp.everystudio.alarm.harutake
   bundleVersion: 1.0.0
   preloadedAssets: []
   metroEnableIndependentInputSource: 0
