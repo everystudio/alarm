@@ -63,9 +63,8 @@ public class LocalNotificationManager : MonoBehaviour {
 			_strMessage,
 			true);
 		Debug.Log(_strSoundName);
-		_strSoundName = _strSoundName.Replace(".mp3","");
 		local_notification.SetSoundName (_strSoundName);
-		//local_notification.Schedule();
+		local_notification.SetBadgesNumber(1);
 		id_list.Add( local_notification.Id );
 		IOSNotificationController.Instance.ScheduleNotification (local_notification);
 		#endif
@@ -88,6 +87,7 @@ public class LocalNotificationManager : MonoBehaviour {
 			IOSNotificationController.Instance.CancelLocalNotificationById(id );
 		}
 		IOSNotificationController.Instance.CancelAllLocalNotifications();
+		IOSNativeUtility.SetApplicationBagesNumber(0);
 		#endif
 		id_list.Clear ();
 	}
@@ -149,6 +149,9 @@ public class LocalNotificationManager : MonoBehaviour {
 
 			#endif
 		} else {
+			// 立ち上げても消える
+			IOSNativeUtility.SetApplicationBagesNumber(0);
+
 			#if UNITY_IPHONE
 			// こっちの削除はなくてもいいらしい
 			/*
