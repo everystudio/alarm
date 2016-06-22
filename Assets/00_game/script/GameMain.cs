@@ -222,7 +222,6 @@ public class GameMain : PageBase2 {
 		if (m_AlarmData == null) {
 			m_AlarmData = new AlarmData ();
 		}
-		reserveTimeReset ();
 
 		kvs_data.Load (CsvKvs.FILE_NAME);
 		int iTest = kvs_data.ReadInt ("test");
@@ -289,6 +288,7 @@ public class GameMain : PageBase2 {
 			if (_bCall) {
 				CallVoice (voice_type);
 			}
+			reserveTimeReset ();
 		}
 
 		return;
@@ -344,6 +344,9 @@ public class GameMain : PageBase2 {
 	}
 
 	public void InitPage( PageBase2 _pageBase , int _iPageIndex ){
+		// 一応
+		reserveTimeReset ();
+
 		//_obj.SetActive (true);
 		_pageBase.gameObject.transform.localPosition = Vector3.zero;
 		_pageBase.Initialize ();

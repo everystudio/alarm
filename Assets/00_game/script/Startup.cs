@@ -44,6 +44,8 @@ public class Startup : Singleton<Startup> {
 		m_eStepPre = STEP.MAX;
 		m_fDelayTimer = 0.0f;
 
+		Application.targetFrameRate = 60;
+
 		// ios対応；基本保存させない
 		#if UNITY_IOS
 		UnityEngine.iOS.Device.SetNoBackupFlag(Application.persistentDataPath);
