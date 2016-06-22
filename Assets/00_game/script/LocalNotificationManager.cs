@@ -150,7 +150,8 @@ public class LocalNotificationManager : MonoBehaviour {
 			#endif
 		} else {
 			// 立ち上げても消える
-			IOSNativeUtility.SetApplicationBagesNumber(0);
+			//たぶん準備出来てないだけだと思う
+			//IOSNativeUtility.SetApplicationBagesNumber(0);
 
 			#if UNITY_IPHONE
 			// こっちの削除はなくてもいいらしい
