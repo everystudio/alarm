@@ -48,6 +48,7 @@ public class LocalNotificationManager : MonoBehaviour {
 		#if UNITY_ANDROID
 
 		_strSoundName = _strSoundName.Replace(".mp3","");
+		_strSoundName = _strSoundName.Replace(".wav","");
 		AndroidNotificationBuilder builder = new AndroidNotificationBuilder (notifi_id, _strTitle, _strMessage, (int)_lTime);
 		builder.ShowIfAppIsForeground( true );
 		builder.SetIconName("notice_icon");
