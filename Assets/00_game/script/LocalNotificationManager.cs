@@ -64,7 +64,7 @@ public class LocalNotificationManager : MonoBehaviour {
 			true);
 		Debug.Log(_strSoundName);
 		local_notification.SetSoundName (_strSoundName);
-		local_notification.SetBadgesNumber(1);
+		//local_notification.SetBadgesNumber(1);
 		id_list.Add( local_notification.Id );
 		IOSNotificationController.Instance.ScheduleNotification (local_notification);
 		#endif
@@ -87,7 +87,7 @@ public class LocalNotificationManager : MonoBehaviour {
 			IOSNotificationController.Instance.CancelLocalNotificationById(id );
 		}
 		IOSNotificationController.Instance.CancelAllLocalNotifications();
-		IOSNativeUtility.SetApplicationBagesNumber(0);
+		//IOSNativeUtility.SetApplicationBagesNumber(0);
 		#endif
 		id_list.Clear ();
 	}
