@@ -13,6 +13,9 @@ public class PictureMain : PageBase2 {
 
 	public UIGrid m_Grid;
 
+	[SerializeField]
+	private UIScrollView m_ScrollView;
+
 	public void IconSelect( int _iSelectIndex ){
 		foreach (IconList icon in m_iconList) {
 			icon.SetSelect (_iSelectIndex);
@@ -40,6 +43,11 @@ public class PictureMain : PageBase2 {
 			m_bmIconList.AddButtonBase ( obj);
 
 			iIndex += 1;
+		}
+		if (DataManagerAlarm.Instance.master_image_list.Count <= 12) {
+			m_ScrollView.enabled = false;
+		} else {
+			m_ScrollView.enabled = true;
 		}
 
 		IconSelect (m_iSelectingId);
