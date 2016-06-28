@@ -62,8 +62,9 @@ public class LocalNotificationManager : MonoBehaviour {
 			DateTime.Now.AddSeconds (_lTime),
 			_strMessage,
 			true);
-		Debug.Log(_strSoundName);
-		local_notification.SetSoundName (_strSoundName);
+		string strUseSoundName = string.Format( "Data/Raw/{0}" , _strSoundName );
+		Debug.Log(strUseSoundName);
+		local_notification.SetSoundName (strUseSoundName);
 		//local_notification.SetBadgesNumber(1);
 		id_list.Add( local_notification.Id );
 		IOSNotificationController.Instance.ScheduleNotification (local_notification);
