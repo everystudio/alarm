@@ -9,6 +9,7 @@ public class BuildCustom {
 		EditDirectory.AddCopy ("Assets/00_game/alarm.Resources/sound", "Assets/StreamingAssets");
 		#else
 		EditDirectory.AddCopy ("Assets/00_game/alarm.Resources/sound", "Assets/Plugins/Android/AN_Res/res/raw");
+		EditDirectory.AddCopy ("Assets/00_game/alarm.Resources/drawable", "Assets/Plugins/Android/AN_Res/res/drawable");
 		#endif
 		return;
 	}

@@ -10,7 +10,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: EveryStudio
-  productName: "\u7D75\u63CF\u304D\u30AA\u30AB\u30F3\u306E\u6642\u8A08\u30A2\u30D7\u30EA\u3002"
+  productName: "\u840C\u3048\u30AD\u30E3\u30E9\u6642\u8A08\uFF5E\u96E8\u77E5\u7B11\u7F8E\u7DE8"
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_ShowUnitySplashScreen: 1
@@ -89,15 +89,15 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleIdentifier: jp.everystudio.alarm.harutake
-  bundleVersion: 1.0.2
+  bundleIdentifier: jp.everystudio.alarm.school.amachi
+  bundleVersion: 0.0.0
   preloadedAssets: []
   metroEnableIndependentInputSource: 0
   metroEnableLowLatencyPresentationAPI: 0
   xboxOneDisableKinectGpuReservation: 0
   virtualRealitySupported: 0
   productGUID: 135e5c711726e4686a488f8089ddf040
-  AndroidBundleVersionCode: 102
+  AndroidBundleVersionCode: 0
   AndroidMinSdkVersion: 16
   AndroidPreferredInstallLocation: 1
   aotOptions: 
@@ -105,7 +105,7 @@ PlayerSettings:
   stripEngineCode: 1
   iPhoneStrippingLevel: 0
   iPhoneScriptCallOptimization: 0
-  iPhoneBuildNumber: 102
+  iPhoneBuildNumber: 0
   ForceInternetPermission: 0
   ForceSDCardPermission: 0
   CreateWallpaper: 0
