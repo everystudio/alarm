@@ -5,7 +5,18 @@ using Prime31;
 
 public class DataManagerAlarm : DataManagerBase<DataManagerAlarm> {
 
-	public readonly string SPREAD_SHEET = "1ih_CiMkZU0VkylrxDfs1gCstGmhEh6oTp4b-o_aPWSQ";
+	private string spread_sheet = "";
+	public string SPREAD_SHEET{
+		get{
+			if (spread_sheet.Equals ("")) {
+				CsvConfig core_config = new CsvConfig ();
+				core_config.LoadResources ("csv/core_config");
+				spread_sheet = core_config.Read ("spread_sheet");
+			}
+			return spread_sheet;
+		}
+	}
+
 
 	public readonly string KEY_COMIC_LIST_VERSION = "comic_list_version";
 	public readonly string KEY_IMAGE_LIST_VERSION = "image_list_version";
