@@ -1,7 +1,7 @@
 ﻿/***********************************************
-				EasyTouch IV
+				EasyTouch V
 	Copyright © 2014-2015 The Hedgehog Team
-  http://www.blitz3dfr.com/teamtalk/index.php
+    http://www.thehedgehogteam.com/Forum/
 		
 	  The.Hedgehog.Team@gmail.com
 		
@@ -9,6 +9,7 @@
 using UnityEngine;
 using System.Collections;
 
+namespace HedgehogTeam.EasyTouch{
 [System.Serializable]
 public class ECamera{
 
@@ -20,4 +21,5 @@ public class ECamera{
 		this.guiCamera = gui;
 	}
 	
+}
 }

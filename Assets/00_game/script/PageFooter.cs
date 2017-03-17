@@ -25,6 +25,7 @@ public class PageFooter : ButtonManager {
 			Debug.Log(strPrefabName);
 
 			GameObject obj = PrefabManager.Instance.MakeObject(strPrefabName, m_grid.gameObject);
+			obj.transform.localScale = Vector3.one;
 			ButtonBase button = obj.GetComponent<ButtonBase>();
 
 			int iButtonIndex = 0;

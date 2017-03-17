@@ -14,6 +14,7 @@ public class PageRepeat : OtherPage {
 
 			for (int i = 0; i < DataManagerAlarm.Instance.STR_WEEK_ARR.Length; i++) {
 				GameObject obj = PrefabManager.Instance.MakeObject ("prefab/BannerRepeat", m_Grid.gameObject);
+				obj.transform.localScale = Vector3.one;
 				obj.name = string.Format ("{0}", i);
 				BannerRepeat script = obj.GetComponent<BannerRepeat> ();
 				script.Initialize (DataManagerAlarm.Instance.STR_WEEK_ARR [i], false , i );

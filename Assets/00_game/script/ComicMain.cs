@@ -96,7 +96,9 @@ public class ComicMain : PageBase2
 
 				foreach (CsvImageData data in DataManagerAlarm.Instance.master_comic_list) {
 					GameObject obj = PrefabManager.Instance.MakeObject ("prefab/IconRootComic", m_Grid.gameObject);
-					IconListComic script = obj.GetComponent<IconListComic> ();
+						obj.transform.localScale = Vector3.one;
+
+						IconListComic script = obj.GetComponent<IconListComic> ();
 
 					script.Initialize (test_selecting_id, iIndex, data, m_Grid);
 

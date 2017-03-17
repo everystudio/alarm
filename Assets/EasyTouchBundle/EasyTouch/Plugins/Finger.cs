@@ -1,7 +1,7 @@
 /***********************************************
-				EasyTouch IV
+				EasyTouch V
 	Copyright © 2014-2015 The Hedgehog Team
-  http://www.blitz3dfr.com/teamtalk/index.php
+    http://www.thehedgehogteam.com/Forum/
 		
 	  The.Hedgehog.Team@gmail.com
 		
@@ -11,6 +11,7 @@ using UnityEngine.EventSystems;
 using System.Collections;
 using System.Collections.Generic;
 
+namespace HedgehogTeam.EasyTouch{
 // Represents informations on Finger for touch
 // Internal use only, DO NOT USE IT
 public class Finger : BaseFinger{
@@ -22,6 +23,7 @@ public class Finger : BaseFinger{
 	public EasyTouch.GestureType gesture;		
 	public EasyTouch.SwipeDirection oldSwipeType;
 
+}
 }
 
 	

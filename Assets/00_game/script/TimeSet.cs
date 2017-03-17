@@ -41,6 +41,7 @@ public class TimeSet : OtherPage {
 				}
 
 				GameObject obj = PrefabManager.Instance.MakeObject ("prefab/BannerTimer", m_Grid.gameObject);
+				obj.transform.localScale = Vector3.one;
 				BannerTimer bt = obj.GetComponent<BannerTimer > ();
 				bt.Initialize (param);
 

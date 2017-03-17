@@ -1,7 +1,7 @@
 ﻿/***********************************************
-				EasyTouch IV
+				EasyTouch V
 	Copyright © 2014-2015 The Hedgehog Team
-  http://www.blitz3dfr.com/teamtalk/index.php
+    http://www.thehedgehogteam.com/Forum/
 		
 	  The.Hedgehog.Team@gmail.com
 		
@@ -9,6 +9,7 @@
 using UnityEngine;
 using System.Collections;
 
+namespace HedgehogTeam.EasyTouch{
 public class TwoFingerGesture{
 
 	public EasyTouch.GestureType currentGesture = EasyTouch.GestureType.None;
@@ -22,9 +23,15 @@ public class TwoFingerGesture{
 	public Vector2 position;
 	public Vector2 deltaPosition;
 	public Vector2 oldStartPosition;
+	public float startDistance;
 
 	public float fingerDistance;
 	public float oldFingerDistance;
+
+	public bool lockPinch=false;
+	public bool lockTwist=true;
+	public float lastPinch=0;
+	public float lastTwistAngle = 0;
 
 	// Game Object
 	public GameObject pickedObject;
@@ -54,5 +61,5 @@ public class TwoFingerGesture{
 		pickedUIElement = null;
 	}
 }
-
+}
 

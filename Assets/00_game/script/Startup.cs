@@ -31,6 +31,7 @@ public class Startup : Singleton<Startup> {
 	public int m_iNetworkSerial;
 	public List<SpreadSheetData> m_ssdSample;
 	public CsvScript m_scriptData;
+	public CsvConfig m_csvConfig;
 
 	private FileDownload fd;
 
@@ -56,6 +57,11 @@ public class Startup : Singleton<Startup> {
 		return;
 	}
 
+	private void OnLoadedConfig(bool _bResult)
+	{
+
+	}
+
 	void Update () {
 		bool bInit = false;
 		if (m_eStepPre != m_eStep) {
@@ -68,23 +74,58 @@ public class Startup : Singleton<Startup> {
 		switch (m_eStep) {
 		case STEP.CHECK_CONFIG:
 			if (bInit) {
-				m_iNetworkSerial = CommonNetwork.Instance.RecieveSpreadSheet (DataManagerAlarm.Instance.SPREAD_SHEET, "od6");
-			}
-			if (CommonNetwork.Instance.IsConnected (m_iNetworkSerial)) {
-				TNetworkData data = EveryStudioLibrary.CommonNetwork.Instance.GetData (m_iNetworkSerial);
-				m_ssdSample = EveryStudioLibrary.CommonNetwork.Instance.ConvertSpreadSheetData (data.m_dictRecievedData);
-				CsvConfig config_data = new CsvConfig ();
-				config_data.Input (m_ssdSample);
-				config_data.Save (CsvConfig.FILE_NAME);
+				//m_iNetworkSerial = CommonNetwork.Instance.RecieveSpreadSheet (DataManagerAlarm.Instance.SPREAD_SHEET, "od6");
+					m_csvConfig = new CsvConfig();
+					m_csvConfig.OnRecievedResultEvent.AddListener((bool _bResult) =>
+					{
+						m_csvConfig.Save(CsvConfig.FILE_NAME);
+						if (false == m_csvConfig.Read(CsvConfig.KEY_CONFIG_VERSION).Equals(DataManagerAlarm.Instance.config.Read(CsvConfig.KEY_CONFIG_VERSION)))
+						{
+							m_csvConfig.Save(CsvConfig.FILE_NAME);
+							DataManagerAlarm.Instance.config.Load(CsvConfig.FILE_NAME);
+						}
+						m_eStep = STEP.GOTO_GAME;
+						if (false == DataManagerAlarm.Instance.config.Read(FileDownloadManager.KEY_DOWNLOAD_VERSION).Equals(DataManagerAlarm.Instance.data_kvs.Read(FileDownloadManager.KEY_DOWNLOAD_VERSION)))
+						{
+							m_eStep = STEP.CHECK_DOWNLOAD;
+						}
+						else if (false == DataManagerAlarm.Instance.config.Read(DataManagerAlarm.Instance.KEY_COMIC_LIST_VERSION).Equals(DataManagerAlarm.Instance.data_kvs.Read(DataManagerAlarm.Instance.KEY_COMIC_LIST_VERSION)))
+						{
+							m_eStep = STEP.CHECK_COMIC_LIST;
+						}
+						else if (false == DataManagerAlarm.Instance.config.Read(DataManagerAlarm.Instance.KEY_IMAGE_LIST_VERSION).Equals(DataManagerAlarm.Instance.data_kvs.Read(DataManagerAlarm.Instance.KEY_IMAGE_LIST_VERSION)))
+						{
+							m_eStep = STEP.CHECK_IMAGE_LIST;
+						}
+						else if (false == DataManagerAlarm.Instance.config.Read(DataManagerAlarm.Instance.KEY_VOICE_LIST_VERSION).Equals(DataManagerAlarm.Instance.data_kvs.Read(DataManagerAlarm.Instance.KEY_VOICE_LIST_VERSION)))
+						{
+							m_eStep = STEP.CHECK_VOICE_LIST;
+						}
+						else if (false == DataManagerAlarm.Instance.config.Read(DataManagerAlarm.Instance.KEY_VOICESET_LIST_VERSION).Equals(DataManagerAlarm.Instance.data_kvs.Read(DataManagerAlarm.Instance.KEY_VOICESET_LIST_VERSION)))
+						{
+							m_eStep = STEP.CHECK_VOICESET_LIST;
+						}
+					});
+					m_csvConfig.SpreadSheet(DataManagerAlarm.Instance.SPREAD_SHEET, "config");
+				}
+
+
+				/*
+		if (CommonNetwork.Instance.IsConnected (m_iNetworkSerial)) {
+			TNetworkData data = EveryStudioLibrary.CommonNetwork.Instance.GetData (m_iNetworkSerial);
+			m_ssdSample = EveryStudioLibrary.CommonNetwork.Instance.ConvertSpreadSheetData (data.m_dictRecievedData);
+			CsvConfig config_data = new CsvConfig ();
+			config_data.Input (m_ssdSample);
+			config_data.Save (CsvConfig.FILE_NAME);
+			*/
 
 				// configファイルのみconfigファイル同士で判定する
+				/*
 				if (false == config_data.Read (CsvConfig.KEY_CONFIG_VERSION).Equals (DataManagerAlarm.Instance.config.Read (CsvConfig.KEY_CONFIG_VERSION))) {
 					config_data.Save (CsvConfig.FILE_NAME);
 					DataManagerAlarm.Instance.config.Load (CsvConfig.FILE_NAME);
 				}
 				m_eStep = STEP.GOTO_GAME;
-				//Debug.LogError (DataManagerAlarm.Instance.config.Read (DataManagerAlarm.Instance.KEY_DOWNLOAD_VERSION));
-				//Debug.LogError (DataManagerAlarm.Instance.data_kvs.Read (DataManagerAlarm.Instance.KEY_DOWNLOAD_VERSION));
 				if (false == DataManagerAlarm.Instance.config.Read (FileDownloadManager.KEY_DOWNLOAD_VERSION).Equals (DataManagerAlarm.Instance.data_kvs.Read (FileDownloadManager.KEY_DOWNLOAD_VERSION))) {
 					m_eStep = STEP.CHECK_DOWNLOAD;
 				} else if (false == DataManagerAlarm.Instance.config.Read (DataManagerAlarm.Instance.KEY_COMIC_LIST_VERSION).Equals (DataManagerAlarm.Instance.data_kvs.Read (DataManagerAlarm.Instance.KEY_COMIC_LIST_VERSION))) {
@@ -115,14 +156,27 @@ public class Startup : Singleton<Startup> {
 				} else {
 					m_eStep = STEP.RETRY;
 				}
-			}
-			break;
+		}
+				*/
+				break;
 		case STEP.CHECK_DOWNLOAD:
 			if (bInit) {
+					CsvDownload csvdownload = new CsvDownload();
+					csvdownload.OnRecievedResultEvent.AddListener((bool _bResult) =>
+					{
+						csvdownload.Save(FileDownloadManager.FILENAME_DOWNLOAD_LIST);
+						m_eStep = STEP.DATA_DOWNLOAD;
+					});
+					csvdownload.SpreadSheet(DataManagerAlarm.Instance.SPREAD_SHEET, "download");
+
+/*
 				m_iNetworkSerial = CommonNetwork.Instance.RecieveSpreadSheet (
 					DataManagerAlarm.Instance.SPREAD_SHEET,
 					DataManagerAlarm.Instance.config.Read ("download"));
-			}
+*/			}
+
+			// ここタイムアウト処理必要かも
+			/*
 			if (CommonNetwork.Instance.IsConnected (m_iNetworkSerial)) {
 				TNetworkData data = EveryStudioLibrary.CommonNetwork.Instance.GetData (m_iNetworkSerial);
 				m_ssdSample = EveryStudioLibrary.CommonNetwork.Instance.ConvertSpreadSheetData (data.m_dictRecievedData);
@@ -132,6 +186,7 @@ public class Startup : Singleton<Startup> {
 				dest_download_list.Save (FileDownloadManager.FILENAME_DOWNLOAD_LIST);
 				m_eStep = STEP.DATA_DOWNLOAD;
 			}
+			*/
 			break;
 		case STEP.DATA_DOWNLOAD:
 			if (bInit) {
@@ -169,11 +224,40 @@ public class Startup : Singleton<Startup> {
 
 		case STEP.CHECK_COMIC_LIST:
 			if (bInit) {
+					/*
 				m_iNetworkSerial = CommonNetwork.Instance.RecieveSpreadSheet (
 					DataManagerAlarm.Instance.SPREAD_SHEET,
 					DataManagerAlarm.Instance.config.Read ("comic_list"));
-			}
-			if (CommonNetwork.Instance.IsConnected (m_iNetworkSerial)) {
+					*/
+
+					CsvImage csvdownload = new CsvImage();
+					csvdownload.OnRecievedResultEvent.AddListener((bool _bResult) =>
+					{
+						csvdownload.Save(DataManagerAlarm.Instance.FILENAME_COMIC_LIST);
+						DataManagerAlarm.Instance.m_csvComic.Load(DataManagerAlarm.Instance.FILENAME_COMIC_LIST);
+
+						DataManagerAlarm.Instance.data_kvs.Write(DataManagerAlarm.Instance.KEY_COMIC_LIST_VERSION, DataManagerAlarm.Instance.config.Read(DataManagerAlarm.Instance.KEY_COMIC_LIST_VERSION));
+						DataManagerAlarm.Instance.data_kvs.Save(DataKvs.FILE_NAME);
+
+						m_eStep = STEP.GOTO_GAME;
+						if (false == DataManagerAlarm.Instance.config.Read(DataManagerAlarm.Instance.KEY_IMAGE_LIST_VERSION).Equals(DataManagerAlarm.Instance.data_kvs.Read(DataManagerAlarm.Instance.KEY_IMAGE_LIST_VERSION)))
+						{
+							m_eStep = STEP.CHECK_IMAGE_LIST;
+						}
+						else if (false == DataManagerAlarm.Instance.config.Read(DataManagerAlarm.Instance.KEY_VOICE_LIST_VERSION).Equals(DataManagerAlarm.Instance.data_kvs.Read(DataManagerAlarm.Instance.KEY_VOICE_LIST_VERSION)))
+						{
+							m_eStep = STEP.CHECK_VOICE_LIST;
+						}
+						else if (false == DataManagerAlarm.Instance.config.Read(DataManagerAlarm.Instance.KEY_VOICESET_LIST_VERSION).Equals(DataManagerAlarm.Instance.data_kvs.Read(DataManagerAlarm.Instance.KEY_VOICESET_LIST_VERSION)))
+						{
+							m_eStep = STEP.CHECK_VOICESET_LIST;
+						}
+						m_eStep = STEP.DATA_DOWNLOAD;
+					});
+					csvdownload.SpreadSheet(DataManagerAlarm.Instance.SPREAD_SHEET, "comic_list");
+				}
+			/*
+				if (CommonNetwork.Instance.IsConnected (m_iNetworkSerial)) {
 				TNetworkData data = EveryStudioLibrary.CommonNetwork.Instance.GetData (m_iNetworkSerial);
 				m_ssdSample = EveryStudioLibrary.CommonNetwork.Instance.ConvertSpreadSheetData (data.m_dictRecievedData);
 				CsvImage download_list = new CsvImage();
@@ -193,15 +277,40 @@ public class Startup : Singleton<Startup> {
 					m_eStep = STEP.CHECK_VOICESET_LIST;
 				}
 			}
+			*/
 			break;
 
 		case STEP.CHECK_IMAGE_LIST:
-			if (bInit) {
+
+				if (bInit) {
+					/*
 				m_iNetworkSerial = CommonNetwork.Instance.RecieveSpreadSheet (
 					DataManagerAlarm.Instance.SPREAD_SHEET,
 					DataManagerAlarm.Instance.config.Read ("image_list"));
-			}
-			if (CommonNetwork.Instance.IsConnected (m_iNetworkSerial)) {
+					*/
+					CsvImage csvdownload = new CsvImage();
+					csvdownload.OnRecievedResultEvent.AddListener((bool _bResult) =>
+					{
+						csvdownload.Save(DataManagerAlarm.Instance.FILENAME_IMAGE_LIST);
+						DataManagerAlarm.Instance.m_csvImage.Load(DataManagerAlarm.Instance.FILENAME_IMAGE_LIST);
+
+						DataManagerAlarm.Instance.data_kvs.Write(DataManagerAlarm.Instance.KEY_IMAGE_LIST_VERSION, DataManagerAlarm.Instance.config.Read(DataManagerAlarm.Instance.KEY_IMAGE_LIST_VERSION));
+						DataManagerAlarm.Instance.data_kvs.Save(DataKvs.FILE_NAME);
+
+						m_eStep = STEP.GOTO_GAME;
+						if (false == DataManagerAlarm.Instance.config.Read(DataManagerAlarm.Instance.KEY_VOICE_LIST_VERSION).Equals(DataManagerAlarm.Instance.data_kvs.Read(DataManagerAlarm.Instance.KEY_VOICE_LIST_VERSION)))
+						{
+							m_eStep = STEP.CHECK_VOICE_LIST;
+						}
+						else if (false == DataManagerAlarm.Instance.config.Read(DataManagerAlarm.Instance.KEY_VOICESET_LIST_VERSION).Equals(DataManagerAlarm.Instance.data_kvs.Read(DataManagerAlarm.Instance.KEY_VOICESET_LIST_VERSION)))
+						{
+							m_eStep = STEP.CHECK_VOICESET_LIST;
+						}
+					});
+					csvdownload.SpreadSheet(DataManagerAlarm.Instance.SPREAD_SHEET, "image_list");
+				}
+				/*
+				if (CommonNetwork.Instance.IsConnected (m_iNetworkSerial)) {
 				TNetworkData data = EveryStudioLibrary.CommonNetwork.Instance.GetData (m_iNetworkSerial);
 				m_ssdSample = EveryStudioLibrary.CommonNetwork.Instance.ConvertSpreadSheetData (data.m_dictRecievedData);
 				CsvImage download_list = new CsvImage ();
@@ -219,14 +328,34 @@ public class Startup : Singleton<Startup> {
 					m_eStep = STEP.CHECK_VOICESET_LIST;
 				}
 			}
-			break;
+				*/
+				break;
 
 		case STEP.CHECK_VOICE_LIST:
-			if (bInit) {
-				m_iNetworkSerial = CommonNetwork.Instance.RecieveSpreadSheet (
-					DataManagerAlarm.Instance.SPREAD_SHEET,
-					DataManagerAlarm.Instance.config.Read ("voice_list"));
-			}
+				if (bInit)
+				{
+					/*
+					m_iNetworkSerial = CommonNetwork.Instance.RecieveSpreadSheet(
+						DataManagerAlarm.Instance.SPREAD_SHEET,
+						DataManagerAlarm.Instance.config.Read("voice_list"));
+						*/
+					CsvVoice csv = new CsvVoice();
+					csv.OnRecievedResultEvent.AddListener((bool _bResult) =>
+					{
+						csv.Save(DataManagerAlarm.Instance.FILENAME_VOICE_LIST);
+						DataManagerAlarm.Instance.m_csvVoice.Load(DataManagerAlarm.Instance.FILENAME_VOICE_LIST);
+						DataManagerAlarm.Instance.data_kvs.Write(DataManagerAlarm.Instance.KEY_VOICE_LIST_VERSION, DataManagerAlarm.Instance.config.Read(DataManagerAlarm.Instance.KEY_VOICE_LIST_VERSION));
+						DataManagerAlarm.Instance.data_kvs.Save(DataKvs.FILE_NAME);
+						m_eStep = STEP.GOTO_GAME;
+						if (false == DataManagerAlarm.Instance.config.Read(DataManagerAlarm.Instance.KEY_VOICESET_LIST_VERSION).Equals(DataManagerAlarm.Instance.data_kvs.Read(DataManagerAlarm.Instance.KEY_VOICESET_LIST_VERSION)))
+						{
+							m_eStep = STEP.CHECK_VOICESET_LIST;
+						}
+					});
+					csv.SpreadSheet(DataManagerAlarm.Instance.SPREAD_SHEET, "voice_list");
+				}
+
+				/*
 			if (CommonNetwork.Instance.IsConnected (m_iNetworkSerial)) {
 				TNetworkData data = EveryStudioLibrary.CommonNetwork.Instance.GetData (m_iNetworkSerial);
 				m_ssdSample = EveryStudioLibrary.CommonNetwork.Instance.ConvertSpreadSheetData (data.m_dictRecievedData);
@@ -243,25 +372,42 @@ public class Startup : Singleton<Startup> {
 					m_eStep = STEP.CHECK_VOICESET_LIST;
 				}
 			}
-			break;
+			*/
+				break;
 		case STEP.CHECK_VOICESET_LIST:
 			if (bInit) {
+					/*
 				m_iNetworkSerial = CommonNetwork.Instance.RecieveSpreadSheet (
 					DataManagerAlarm.Instance.SPREAD_SHEET,
 					DataManagerAlarm.Instance.config.Read ("voiceset_list"));
-			}
-			if (CommonNetwork.Instance.IsConnected (m_iNetworkSerial)) {
-				TNetworkData data = EveryStudioLibrary.CommonNetwork.Instance.GetData (m_iNetworkSerial);
-				m_ssdSample = EveryStudioLibrary.CommonNetwork.Instance.ConvertSpreadSheetData (data.m_dictRecievedData);
-				CsvVoiceset download_list = new CsvVoiceset ();
-				download_list.Input (m_ssdSample);
-				download_list.Save (DataManagerAlarm.Instance.FILENAME_VOICESET_LIST);
-				DataManagerAlarm.Instance.m_csvVoiceset.Load (DataManagerAlarm.Instance.FILENAME_VOICESET_LIST);
-				DataManagerAlarm.Instance.data_kvs.Write (DataManagerAlarm.Instance.KEY_VOICESET_LIST_VERSION, DataManagerAlarm.Instance.config.Read (DataManagerAlarm.Instance.KEY_VOICESET_LIST_VERSION));
-				DataManagerAlarm.Instance.data_kvs.Save (DataKvs.FILE_NAME);
-				m_eStep = STEP.GOTO_GAME;
-			}
-			break;
+					*/
+
+					CsvVoiceset csv = new CsvVoiceset();
+					csv.OnRecievedResultEvent.AddListener((bool _bResult) =>
+					{
+						csv.Save(DataManagerAlarm.Instance.FILENAME_VOICESET_LIST);
+						DataManagerAlarm.Instance.m_csvVoiceset.Load(DataManagerAlarm.Instance.FILENAME_VOICESET_LIST);
+						DataManagerAlarm.Instance.data_kvs.Write(DataManagerAlarm.Instance.KEY_VOICESET_LIST_VERSION, DataManagerAlarm.Instance.config.Read(DataManagerAlarm.Instance.KEY_VOICESET_LIST_VERSION));
+						DataManagerAlarm.Instance.data_kvs.Save(DataKvs.FILE_NAME);
+						m_eStep = STEP.GOTO_GAME;
+					});
+					csv.SpreadSheet(DataManagerAlarm.Instance.SPREAD_SHEET, "voiceset_list");
+
+				}
+				/*
+					if (CommonNetwork.Instance.IsConnected (m_iNetworkSerial)) {
+					TNetworkData data = EveryStudioLibrary.CommonNetwork.Instance.GetData (m_iNetworkSerial);
+					m_ssdSample = EveryStudioLibrary.CommonNetwork.Instance.ConvertSpreadSheetData (data.m_dictRecievedData);
+					CsvVoiceset download_list = new CsvVoiceset ();
+					download_list.Input (m_ssdSample);
+					download_list.Save (DataManagerAlarm.Instance.FILENAME_VOICESET_LIST);
+					DataManagerAlarm.Instance.m_csvVoiceset.Load (DataManagerAlarm.Instance.FILENAME_VOICESET_LIST);
+					DataManagerAlarm.Instance.data_kvs.Write (DataManagerAlarm.Instance.KEY_VOICESET_LIST_VERSION, DataManagerAlarm.Instance.config.Read (DataManagerAlarm.Instance.KEY_VOICESET_LIST_VERSION));
+					DataManagerAlarm.Instance.data_kvs.Save (DataKvs.FILE_NAME);
+					m_eStep = STEP.GOTO_GAME;
+				}
+				*/
+				break;
 
 		case STEP.GOTO_GAME:
 			if (bInit) {

@@ -34,6 +34,7 @@ public class PictureMain : PageBase2 {
 		foreach (CsvImageData data in DataManagerAlarm.Instance.master_image_list) {
 
 			GameObject obj = PrefabManager.Instance.MakeObject ("prefab/IconRoot", m_Grid.gameObject);
+			obj.transform.localScale = Vector3.one;
 			IconList script = obj.GetComponent<IconList> ();
 
 			script.Initialize (m_iSelectingId, iIndex , data);

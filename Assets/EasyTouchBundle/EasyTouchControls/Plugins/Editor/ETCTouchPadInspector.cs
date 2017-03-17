@@ -10,9 +10,28 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using UnityEditor;
+#if UNITY_5_3_OR_NEWER
+using UnityEditor.SceneManagement;
+#endif
 
 [CustomEditor(typeof(ETCTouchPad))]
 public class ETCTouchPadInspector : Editor {
+
+	public string[] unityAxes;
+	
+	void OnEnable(){
+		var inputManager = AssetDatabase.LoadAllAssetsAtPath("ProjectSettings/InputManager.asset")[0];
+		SerializedObject obj = new SerializedObject(inputManager);
+		SerializedProperty axisArray = obj.FindProperty("m_Axes");
+		if (axisArray.arraySize > 0){
+			unityAxes = new string[axisArray.arraySize];
+			for( int i = 0; i < axisArray.arraySize; ++i ){
+				var axis = axisArray.GetArrayElementAtIndex(i);
+				unityAxes[i] = axis.FindPropertyRelative("m_Name").stringValue;
+			}
+		}
+		
+	}
 
 	public override void OnInspectorGUI(){
 
@@ -71,11 +90,11 @@ public class ETCTouchPadInspector : Editor {
 				EditorGUILayout.Space();
 
 				ETCGuiTools.BeginGroup(5);{
-					ETCAxisInspector.AxisInspector(t.axisX,"Horizontal",ETCBase.ControlType.TouchPad); 
+					ETCAxisInspector.AxisInspector(t.axisX,"Horizontal",ETCBase.ControlType.TouchPad,false, unityAxes); 
 				}ETCGuiTools.EndGroup();
 				
 				ETCGuiTools.BeginGroup(5);{
-					ETCAxisInspector.AxisInspector( t.axisY,"Vertical",ETCBase.ControlType.TouchPad);
+					ETCAxisInspector.AxisInspector( t.axisY,"Vertical",ETCBase.ControlType.TouchPad,false, unityAxes);
 				}ETCGuiTools.EndGroup();
 
 
@@ -213,13 +232,18 @@ public class ETCTouchPadInspector : Editor {
 		
 		#endregion
 
-		if (GUI.changed){
-			EditorUtility.SetDirty(t);
-		}
-		
 		if (t.anchor != ETCBase.RectAnchor.UserDefined){
 			t.SetAnchorPosition();
 		}
+
+		if (GUI.changed){
+			EditorUtility.SetDirty(t);
+			#if UNITY_5_3_OR_NEWER
+			EditorSceneManager.MarkSceneDirty( EditorSceneManager.GetActiveScene());
+			#endif
+		}
+		
+
 	}
 	
 }

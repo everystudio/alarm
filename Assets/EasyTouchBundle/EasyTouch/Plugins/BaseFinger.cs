@@ -1,7 +1,7 @@
 ﻿/***********************************************
-				EasyTouch IV
+				EasyTouch V
 	Copyright © 2014-2015 The Hedgehog Team
-  http://www.blitz3dfr.com/teamtalk/index.php
+    http://www.thehedgehogteam.com/Forum/
 		
 	  The.Hedgehog.Team@gmail.com
 		
@@ -11,6 +11,7 @@ using UnityEngine.EventSystems;
 using System.Collections;
 using System.Collections.Generic;
 
+namespace HedgehogTeam.EasyTouch{
 public class BaseFinger{
 
 	public int fingerIndex;	
@@ -27,6 +28,18 @@ public class BaseFinger{
 		
 	public bool isOverGui;
 	public GameObject pickedUIElement;
+
+
+	public float altitudeAngle;
+	public float azimuthAngle;
+	public float maximumPossiblePressure;
+	public float pressure;
+
+	public float radius;
+	public float radiusVariance;
+	public TouchType touchType;
+
+	
 
 	public Gesture GetGesture(){
 
@@ -46,7 +59,16 @@ public class BaseFinger{
 
 		gesture.pickedUIElement = pickedUIElement;
 
+		gesture.altitudeAngle = altitudeAngle;
+		gesture.azimuthAngle = azimuthAngle;
+		gesture.maximumPossiblePressure = maximumPossiblePressure;
+		gesture.pressure = pressure;
+		gesture.radius = radius;
+		gesture.radiusVariance = radiusVariance;
+		gesture.touchType = touchType;
+
 		return gesture;
 	}
 
+}
 }

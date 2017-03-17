@@ -1,7 +1,7 @@
 /***********************************************
-				EasyTouch IV
+				EasyTouch V
 	Copyright © 2014-2015 The Hedgehog Team
-  http://www.blitz3dfr.com/teamtalk/index.php
+    http://www.thehedgehogteam.com/Forum/
 		
 	  The.Hedgehog.Team@gmail.com
 		
@@ -9,7 +9,7 @@
 using UnityEngine;
 using System.Collections;
 
-
+namespace HedgehogTeam.EasyTouch{
 // This is the class that simulate touches with the mouse.
 // Internal use only, DO NOT USE IT
 public class EasyTouchInput{
@@ -32,10 +32,10 @@ public class EasyTouchInput{
 	// Return the number of touch
 	public int TouchCount(){
 		
-		#if ((UNITY_ANDROID || UNITY_IOS || UNITY_WINRT || UNITY_BLACKBERRY) && !UNITY_EDITOR) 
-		return getTouchCount(true);
+			#if ((UNITY_ANDROID || UNITY_IOS || UNITY_BLACKBERRY || UNITY_TVOS || UNITY_PSP2) && !UNITY_EDITOR) 
+			return getTouchCount(true);
 		#else
-		return getTouchCount(false);
+			return getTouchCount(false);
 		#endif
 		
 	}
@@ -44,7 +44,7 @@ public class EasyTouchInput{
 		
 		int count=0;
 		
-		if (realTouch || EasyTouch.instance.enableRemote){
+		if (realTouch || EasyTouch.instance.enableRemote ){
 			count = Input.touchCount;
 		}
 		else{
@@ -242,5 +242,5 @@ public class EasyTouchInput{
 	}
 	#endregion
 }
-
+}
 

@@ -1,5 +1,8 @@
 using UnityEngine;
 using UnityEditor;
+#if UNITY_5_3_OR_NEWER
+using UnityEditor.SceneManagement;
+#endif
 using System.Collections;
 
 [CustomEditor(typeof(ETCArea))]
@@ -18,6 +21,13 @@ public class ETCAreaInspector : Editor {
 		if (preset != ETCArea.AreaPreset.Choose){
 			t.ApplyPreset( preset);
 			preset = ETCArea.AreaPreset.Choose;
+		}
+
+		if (GUI.changed){
+			EditorUtility.SetDirty(t);
+			#if UNITY_5_3_OR_NEWER
+			EditorSceneManager.MarkSceneDirty( EditorSceneManager.GetActiveScene());
+			#endif
 		}
 	}
 }

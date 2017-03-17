@@ -49,6 +49,7 @@ public class VoiceMain : PageBase2 {
 			if (data.type == 1) {
 
 				GameObject obj = PrefabManager.Instance.MakeObject ("prefab/BannerList", m_gridList.gameObject);
+				obj.transform.localScale = Vector3.one;
 				BannerList script = obj.GetComponent<BannerList> ();
 				m_bmBannerList.AddButtonBaseList (obj);
 				script.Initialize (data);
@@ -58,6 +59,7 @@ public class VoiceMain : PageBase2 {
 			}
 			else if (data.type == 2) {
 				GameObject obj = PrefabManager.Instance.MakeObject ("prefab/BannerShop", m_gridStore.gameObject);
+				obj.transform.localScale = Vector3.one;
 				BannerShop script = obj.GetComponent<BannerShop> ();
 				m_bmBannerShop.AddButtonBaseList (obj);
 				script.Initialize (data);

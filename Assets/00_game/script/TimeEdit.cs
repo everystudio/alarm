@@ -49,6 +49,7 @@ public class TimeEdit : OtherPage {
 	private void _setup_time( UIGrid _grid , int _iMax , string _strTail , ref List<GameObject> _list ){
 		for (int i = 0; i < _iMax; i++) {
 			GameObject obj = PrefabManager.Instance.MakeObject ("prefab/Hour" , _grid.gameObject );
+			obj.transform.localScale = Vector3.one;
 			obj.name = string.Format ("{0}", i);
 			obj.GetComponent<UILabel> ().text = string.Format ("{0:D2}{1}", i , _strTail );
 			_list.Add (obj);

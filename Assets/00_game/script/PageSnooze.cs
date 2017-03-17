@@ -21,6 +21,7 @@ public class PageSnooze : OtherPage {
 
 			for (int i = 0; i < DataManagerAlarm.Instance.STR_SNOOZE_ARR.Length; i++) {
 				GameObject obj = PrefabManager.Instance.MakeObject ("prefab/BannerSnooze", m_Grid.gameObject);
+				obj.transform.localScale = Vector3.one;
 				obj.name = string.Format ("{0}", i);
 				BannerSnooze script = obj.GetComponent<BannerSnooze> ();
 				script.Initialize (DataManagerAlarm.Instance.STR_SNOOZE_ARR [i], false);
