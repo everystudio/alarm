@@ -44,7 +44,7 @@ public class VoiceMain : PageBase2 {
 	void subStart(){
 		//m_bmBannerList = new ButtonManager ();
 		//m_bmBannerShop = new ButtonManager ();
-		Debug.LogError (DataManagerAlarm.Instance.master_voice_list.Count);
+		//Debug.LogError (DataManagerAlarm.Instance.master_voice_list.Count);
 		foreach (CsvVoiceData data in DataManagerAlarm.Instance.master_voice_list) {
 			if (data.type == 1) {
 

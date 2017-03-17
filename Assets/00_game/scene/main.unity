@@ -13958,7 +13958,6 @@ GameObject:
   - 4: {fileID: 1995560046}
   - 114: {fileID: 1995560049}
   - 114: {fileID: 1995560048}
-  - 114: {fileID: 1995560047}
   - 114: {fileID: 1995560045}
   m_Layer: 8
   m_Name: PanelStore
@@ -13994,18 +13993,6 @@ Transform:
   - {fileID: 1748536402}
   m_Father: {fileID: 2089188312}
   m_RootOrder: 2
---- !u!114 &1995560047
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11444594, guid: 7800576b39fcf43f281020e52a08fc01,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1995560044}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc6997f938ab049b1a76b2638c8c88aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1995560048
 MonoBehaviour:
   m_ObjectHideFlags: 0

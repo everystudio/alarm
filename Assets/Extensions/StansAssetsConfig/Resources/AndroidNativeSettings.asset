@@ -53,13 +53,13 @@ MonoBehaviour:
   CameraCaptureMode: 0
   ImageFormat: 0
   ShowAppPermissions: 1
-  EnableBillingAPI: 0
+  EnableBillingAPI: 1
   EnablePSAPI: 0
   EnableSocialAPI: 0
   EnableCameraAPI: 0
-  ExpandNativeAPI: 1
+  ExpandNativeAPI: 0
   ExpandPSAPI: 0
-  ExpandBillingAPI: 0
+  ExpandBillingAPI: 1
   ExpandSocialAPI: 0
   ExpandCameraAPI: 0
   ThirdPartyParams: 0
@@ -73,7 +73,7 @@ MonoBehaviour:
   PoupsandPreloadersAPI: 1
   CheckAppLicenseAPI: 1
   NetworkStateAPI: 0
-  InAppPurchasesAPI: 0
+  InAppPurchasesAPI: 1
   GooglePlayServicesAPI: 0
   PlayServicesAdvancedSignInAPI: 0
   GoogleButtonAPI: 0
@@ -85,10 +85,37 @@ MonoBehaviour:
   CameraAPI: 0
   KeepManifestClean: 1
   GooglePlayServiceAppID: 216817929098
-  ToolbarSelectedIndex: 3
-  base64EncodedPublicKey: REPLACE_WITH_YOUR_PUBLIC_KEY
+  ToolbarSelectedIndex: 0
+  base64EncodedPublicKey: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAk6GuK4CaQgkoTAB/9CZDmrSkFH2nAkZtLLI9L0tUdYPaqhUgXcOnm41WR89AIsWFPx0mjqG53mc7jjOzVUDuTu7WdjhmibbmrO0ocOnRZtBQ6JYVjgTvh4brsjciHccFjhsuXxnbenfBLLn65kT0RB5c3QkgnIkYSuy/lydVo8QAXfwAIvUl+4l8wMS2cksculUSeVVoxrj0DXo+5+cYExfIiC8BvWD/I0I/C6qgC+eUiai9lPXXzRAlB2jaWBYR1eFZH1IS8yEKIJm8Ku8SvgHzo6aZ0F/TmE9kSFMhBlPgmUEOcBU0tbGPHXuwUj0J0GLjFY066Eo4wa2xTCJ/ewIDAQAB
   ShowStoreProducts: 1
-  InAppProducts: []
+  InAppProducts:
+  - IsOpen: 1
+    SKU: alarm.type.001
+    _LocalizedPrice: 0.99 $
+    _PriceAmountMicros: 990000
+    _PriceCurrencyCode: USD
+    _Description: 
+    _Title: New Product
+    _Texture: {fileID: 0}
+    _ProductType: 0
+  - IsOpen: 1
+    SKU: alarm.type.002
+    _LocalizedPrice: 0.99 $
+    _PriceAmountMicros: 990000
+    _PriceCurrencyCode: USD
+    _Description: 
+    _Title: New Product
+    _Texture: {fileID: 0}
+    _ProductType: 0
+  - IsOpen: 1
+    SKU: alarm.type.003
+    _LocalizedPrice: 0.99 $
+    _PriceAmountMicros: 990000
+    _PriceCurrencyCode: USD
+    _Description: 
+    _Title: New Product
+    _Texture: {fileID: 0}
+    _ProductType: 0
   ShowLeaderboards: 1
   Leaderboards: []
   ShowAchievements: 1

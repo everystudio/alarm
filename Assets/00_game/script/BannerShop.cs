@@ -8,20 +8,29 @@ public class BannerShop : BannerVoiceBase {
 	public UILabel m_lbName;
 	public UILabel m_lbPrice;
 
+	private bool m_bPurchased;
 	public ButtonBase m_btnBuy;
 	public GameObject m_goPurchased;
 	public new CsvVoiceData m_csvVoiceData;
+
+	private void CheckPurchase(){
+		foreach (string product_id in DataManagerAlarm.Instance.purchased_list) {
+			Purchase (product_id);
+		}
+	}
 
 	// 一方通行
 	public void Purchase( string _strProductId ){
 		if (m_csvVoiceData.name_voice.Equals (_strProductId)) {
 			m_btnBuy.gameObject.SetActive (false);
 			m_goPurchased.SetActive (true);
+			m_bPurchased = true;
 		}
 	}
 
 	public override void initialize (CsvVoiceData _data)
 	{
+		m_bPurchased = false;
 		base.initialize (_data);
 		m_lbDescription.text = "";
 		m_lbName.text = "";
@@ -53,11 +62,15 @@ public class BannerShop : BannerVoiceBase {
 	{
 		base.Update();
 
-		if (m_btnBuy.ButtonPushed)
-		{
-			m_btnBuy.TriggerClear();
-#if UNITY_ANDROID
-#endif
+		if (m_bPurchased == false) {
+			CheckPurchase ();
+			if (m_btnBuy.ButtonPushed) {
+				Debug.LogError(m_csvVoiceData.name_voice);
+				GameBillingManager.purchase (m_csvVoiceData.name_voice);
+				m_btnBuy.TriggerClear ();
+			}
+
+
 		}
 	}
 

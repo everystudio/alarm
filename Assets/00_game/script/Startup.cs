@@ -49,6 +49,9 @@ public class Startup : Singleton<Startup> {
 		// ios対応；基本保存させない
 		#if UNITY_IOS
 		UnityEngine.iOS.Device.SetNoBackupFlag(Application.persistentDataPath);
+
+		#elif UNITY_ANDROID
+		GameBillingManager.init();
 		#endif
 		return;
 	}

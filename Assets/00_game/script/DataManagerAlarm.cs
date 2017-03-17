@@ -9,13 +9,28 @@ public class DataManagerAlarm : DataManagerBase<DataManagerAlarm> {
 	public string SPREAD_SHEET{
 		get{
 			if (spread_sheet.Equals ("")) {
+				/*
 				CsvConfig core_config = new CsvConfig ();
 				core_config.LoadResources ("csv/core_config");
+				spread_sheet = core_config.Read ("spread_sheet");
+				*/
 				spread_sheet = core_config.Read ("spread_sheet");
 			}
 			return spread_sheet;
 		}
 	}
+
+	public CsvConfig core_config{
+		get{
+			if (m_csvConfigCore == null) {
+				CsvConfig core_config = new CsvConfig ();
+				core_config.LoadResources ("csv/core_config");
+				m_csvConfigCore = core_config;
+			}
+			return m_csvConfigCore;
+		}
+	}
+	private CsvConfig m_csvConfigCore;
 
 
 	public readonly string KEY_COMIC_LIST_VERSION = "comic_list_version";
@@ -132,6 +147,9 @@ public class DataManagerAlarm : DataManagerBase<DataManagerAlarm> {
 		return new CsvVoiceData ();
 	}
 	public List<string> purchased_list = new List<string> ();
+	public void AddPurchasedList( string _strSKU ){
+		purchased_list.Add (_strSKU);
+	}
 }
 
 [System.Serializable]
