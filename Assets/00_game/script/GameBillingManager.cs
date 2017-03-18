@@ -124,7 +124,7 @@ public class GameBillingManager : MonoBehaviour {
 	private static void OnProductPurchased(BillingResult result) {
 
 		//this flag will tell you if purchase is available
-		//result.isSuccess
+		//result.IsSuccess
 
 
 		//infomation about purchase stored here
@@ -134,25 +134,25 @@ public class GameBillingManager : MonoBehaviour {
 		//result.purchase.SKU
 
 		
-		if(result.isSuccess) {
-			OnProcessingPurchasedProduct (result.purchase);
+		if(result.IsSuccess) {
+			OnProcessingPurchasedProduct (result.Purchase);
 		} else {
-			AndroidMessage.Create("Product Purchase Failed", result.response.ToString() + " " + result.message);
+			AndroidMessage.Create("Product Purchase Failed", result.Response.ToString() + " " + result.Message);
 		}
 		
-		Debug.Log ("Purchased Responce: " + result.response.ToString() + " " + result.message);
+		Debug.Log ("Purchased Responce: " + result.Response.ToString() + " " + result.Message);
 	}
 	
 	
 	private static void OnProductConsumed(BillingResult result) {
 		
-		if(result.isSuccess) {
-			OnProcessingConsumeProduct (result.purchase);
+		if(result.IsSuccess) {
+			OnProcessingConsumeProduct (result.Purchase);
 		} else {
-			AndroidMessage.Create("Product Cousume Failed", result.response.ToString() + " " + result.message);
+			AndroidMessage.Create("Product Cousume Failed", result.Response.ToString() + " " + result.Message);
 		}
 		
-		Debug.Log ("Cousume Responce: " + result.response.ToString() + " " + result.message);
+		Debug.Log ("Cousume Responce: " + result.Response.ToString() + " " + result.Message);
 	}
 	
 	
@@ -161,15 +161,15 @@ public class GameBillingManager : MonoBehaviour {
 		AndroidInAppPurchaseManager.ActionBillingSetupFinished -= OnBillingConnected;
 		
 		
-		if (result.isSuccess) {
+		if (result.IsSuccess) {
 			//Store connection is Successful. Next we loading product and customer purchasing details
 			AndroidInAppPurchaseManager.ActionRetrieveProducsFinished += OnRetrieveProductsFinised;
 			AndroidInAppPurchaseManager.Client.RetrieveProducDetails ();
 
 		} else {
 		
-			AndroidMessage.Create ("errConnection Responce", result.response.ToString () + " msg:" + result.message);
-			Debug.Log ("Connection Responce: " + result.response.ToString () + " " + result.message);
+			AndroidMessage.Create ("errConnection Responce", result.Response.ToString () + " msg:" + result.Message);
+			Debug.Log ("Connection Responce: " + result.Response.ToString () + " " + result.Message);
 		}
 	}
 	
@@ -178,11 +178,11 @@ public class GameBillingManager : MonoBehaviour {
 	
 	private static void OnRetrieveProductsFinised(BillingResult result) {
 		AndroidInAppPurchaseManager.ActionRetrieveProducsFinished -= OnRetrieveProductsFinised;
-		if(result.isSuccess) {
+		if(result.IsSuccess) {
 			UpdateStoreData();
 			_isInited = true;
 		} else {
-			AndroidMessage.Create("Connection Responce", result.response.ToString() + " " + result.message);
+			AndroidMessage.Create("Connection Responce", result.Response.ToString() + " " + result.Message);
 		}
 	}
 

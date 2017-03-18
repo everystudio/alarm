@@ -12,18 +12,10 @@ using System.Collections;
 
 public class AndroidGoogleAdsExample : MonoBehaviour {
 
-
-
-	
-	//replace with your ids
-	private const string MY_BANNERS_AD_UNIT_ID		 = "ca-app-pub-6101605888755494/1824764765";
-	private const string MY_INTERSTISIALS_AD_UNIT_ID =  "ca-app-pub-6101605888755494/3301497967";
-	private const string MY_REWARDED_VIDEO_AD_UNIT_ID =  "ca-app-pub-6101605888755494/5378283960";
-	
 	private GoogleMobileAdBanner banner1;
 	private GoogleMobileAdBanner banner2;
 
-	private bool IsInterstisialsAdReady = false;
+	public bool IsInterstisialsAdReady = false;
 
 	public DefaultPreviewButton ShowIntersButton;
 
@@ -52,24 +44,39 @@ public class AndroidGoogleAdsExample : MonoBehaviour {
 
 	void Start() {
 
+		string MY_BANNERS_AD_UNIT_ID = DataManagerAlarm.Instance.config.Read("admob_banner");
+		string MY_INTERSTISIALS_AD_UNIT_ID = DataManagerAlarm.Instance.config.Read("admob_interstisial"); // "ca-app-pub-6101605888755494/3301497967";
+		string MY_REWARDED_VIDEO_AD_UNIT_ID = DataManagerAlarm.Instance.config.Read("admob_reward_video"); ;// "ca-app-pub-6101605888755494/5378283960";
+
+		Debug.LogError(DataManagerAlarm.Instance.config.Read("admob_banner"));
+
+		AndroidAdMob.Client.AddTestDevices(new string[] {
+			"30ec665ef7c68238905003e951174579",
+			"B58A62380C00BF9DC7BA75C756B5F550" });
 		AndroidAdMob.Client.Init(MY_BANNERS_AD_UNIT_ID);
+
+		CreateBannerBottomCenter();
 
 		//If yoi whant to use Interstisial ad also, you need to set additional ad unin id for Interstisial as well
 		AndroidAdMob.Client.SetInterstisialsUnitID(MY_INTERSTISIALS_AD_UNIT_ID);
 		//If yoi whant to use Rewarded Video Ads also, you need to set additional ad unin id for Rewarded Video as well
 		AndroidAdMobController.Instance.SetRewardedVideoAdUnitID(MY_REWARDED_VIDEO_AD_UNIT_ID);
 		
+		/*
 		//Optional, add data for better ad targeting
 		AndroidAdMob.Client.SetGender(GoogleGender.Male);
 		AndroidAdMob.Client.AddKeyword("game");
 		AndroidAdMob.Client.SetBirthday(1989, AndroidMonth.MARCH, 18);
 		AndroidAdMob.Client.TagForChildDirectedTreatment(false);
+		*/
 
 		//Causes a device to receive test ads. The deviceId can be obtained by viewing the logcat output after creating a new ad
 		//AndroidAdMobController.instance.AddTestDevice("6B9FA8031AEFDC4758B7D8987F77A5A6");
 
 		AndroidAdMob.Client.OnInterstitialLoaded += OnInterstisialsLoaded; 
 		AndroidAdMob.Client.OnInterstitialOpened += OnInterstisialsOpen;
+		AndroidAdMob.Client.OnInterstitialClosed += OnInterstisialsClosed;
+		LoadInterstitialAd();
 
 		AndroidAdMobController.Instance.OnRewardedVideoLoaded += HandleOnRewardedVideoLoaded;
 		AndroidAdMobController.Instance.OnRewardedVideoAdClosed += HandleOnRewardedVideoAdClosed;
@@ -189,7 +196,7 @@ public class AndroidGoogleAdsExample : MonoBehaviour {
 	//--------------------------------------
 	
 
-
+	/*
 	void FixedUpdate() {
 		if(IsInterstisialsAdReady) {
 			ShowIntersButton.EnabledButton();
@@ -277,6 +284,7 @@ public class AndroidGoogleAdsExample : MonoBehaviour {
 
 
 	}
+	*/
 	
 	//--------------------------------------
 	//  GET/SET
@@ -290,8 +298,14 @@ public class AndroidGoogleAdsExample : MonoBehaviour {
 		IsInterstisialsAdReady = true;
 	}
 
-	private void OnInterstisialsOpen() {
+	private void OnInterstisialsOpen()
+	{
 		IsInterstisialsAdReady = false;
+	}
+	private void OnInterstisialsClosed()
+	{
+		IsInterstisialsAdReady = false;
+		LoadInterstitialAd();
 	}
 
 	private void OnInAppRequest(string productId) {

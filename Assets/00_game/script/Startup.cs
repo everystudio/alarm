@@ -411,7 +411,8 @@ public class Startup : Singleton<Startup> {
 
 		case STEP.GOTO_GAME:
 			if (bInit) {
-			}
+					DataManagerAlarm.Instance.AddAdsComponents();
+				}
 
 			if (1.5f < m_fDelayTimer) {
 				SceneManager.LoadScene ("main");

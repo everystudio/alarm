@@ -78,6 +78,7 @@ public class DataManagerAlarm : DataManagerBase<DataManagerAlarm> {
 
 	public override void Initialize ()
 	{
+		SetDontDestroy(true);
 		base.Initialize ();
 		m_masterTableAudio.Load ("dummy");
 		m_masterTablePrefab.Load ("dummy");
@@ -150,6 +151,17 @@ public class DataManagerAlarm : DataManagerBase<DataManagerAlarm> {
 	public void AddPurchasedList( string _strSKU ){
 		purchased_list.Add (_strSKU);
 	}
+
+	public void AddAdsComponents()
+	{
+#if UNITY_ANDROID
+		gameObject.AddComponent<AndroidGoogleAdsExample>();
+#elif UNITY_IPHONE
+#endif
+
+	}
+
+
 }
 
 [System.Serializable]
