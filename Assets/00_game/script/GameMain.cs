@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System;
-using Prime31;
+//using Prime31;
 
 public class GameMain : PageBase2 {
 
@@ -93,7 +93,7 @@ public class GameMain : PageBase2 {
 	}
 	public List<AlarmReserve> reserve_list = new List<AlarmReserve> ();
 
-	public void setupAlarmReserve( ref List<AlarmReserve> _insertList , List<AlarmParam> _alarmList ){
+	private void setupAlarmReserve( ref List<AlarmReserve> _insertList , List<AlarmParam> _alarmList ){
 
 		LocalNotificationManager.Instance.ClearLocalNotification ();
 		_insertList.Clear ();
@@ -230,6 +230,7 @@ public class GameMain : PageBase2 {
 		kvs_data.Save (CsvKvs.FILE_NAME);
 		m_PageNow = m_PageBaseList [m_iPagePre];
 		InitPage (m_PageNow , m_iPagePre);
+
 	}
 
 	public float m_fCheckIntervalTime;

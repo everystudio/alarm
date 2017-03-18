@@ -10,7 +10,7 @@ public class LocalNotificationManager : MonoBehaviour {
 
 	public List<int> id_list = new List<int>();
 	#if UNITY_ANDROID
-	static AndroidJavaObject m_plugin2 = null;
+	//static AndroidJavaObject m_plugin2 = null;
 	#endif
 	protected static LocalNotificationManager instance = null;
 	public static LocalNotificationManager Instance {
@@ -49,12 +49,14 @@ public class LocalNotificationManager : MonoBehaviour {
 
 		_strSoundName = _strSoundName.Replace(".mp3","");
 		_strSoundName = _strSoundName.Replace(".wav","");
+
+		Debug.LogError(_strSoundName);
 		AndroidNotificationBuilder builder = new AndroidNotificationBuilder (notifi_id, _strTitle, _strMessage, (int)_lTime);
 		builder.ShowIfAppIsForeground( true );
 		builder.SetIconName("notice_icon");
 		builder.SetSoundName (_strSoundName);
 		builder.SetVibration(false);
-		AndroidNotificationManager.instance.ScheduleLocalNotification (builder);
+		AndroidNotificationManager.Instance.ScheduleLocalNotification (builder);
 		id_list.Add (notifi_id);
 
 		#elif UNITY_IOS
@@ -80,9 +82,9 @@ public class LocalNotificationManager : MonoBehaviour {
 		m_iLocalNotificationIndex = 0;
 		#if UNITY_ANDROID
 		foreach( int id in id_list ){
-			AndroidNotificationManager.instance.CancelLocalNotification(id);
+			AndroidNotificationManager.Instance.CancelLocalNotification(id);
 		}
-		AndroidNotificationManager.instance.CancelAllLocalNotifications ();
+		AndroidNotificationManager.Instance.CancelAllLocalNotifications ();
 		#elif UNITY_IOS
 		foreach( int id in id_list ){
 			IOSNotificationController.Instance.CancelLocalNotificationById(id );
@@ -100,7 +102,7 @@ public class LocalNotificationManager : MonoBehaviour {
 		id_list.Clear ();
 		#if UNITY_ANDROID && !UNITY_EDITOR
 		// プラグイン名をパッケージ名+クラス名で指定する。
-		m_plugin2 = new AndroidJavaObject( "com.everystudio.test001.TestLocalnotification" );
+		//m_plugin2 = new AndroidJavaObject( "com.everystudio.test001.TestLocalnotification" );
 		#endif
 
 	}
