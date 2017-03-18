@@ -71,9 +71,10 @@ public class TimeEdit : OtherPage {
 		m_btnRepeat.TriggerClear();
 		m_btnSnooze.TriggerClear();
 		m_btnVoice.TriggerClear();
-
+		/*
 		m_PageRepeat.Initialize ();
 		m_PageSnooze.Initialize ();
+		*/
 
 
 	}
@@ -102,7 +103,7 @@ public class TimeEdit : OtherPage {
 
 	}
 
-	public void paramRefresh( AlarmParam _param ){
+	private void paramRefresh( AlarmParam _param ){
 
 		string strRepeat = "None";
 

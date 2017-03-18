@@ -1,12 +1,14 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
-public class BannerRepeat : BannerBase {
+[RequireComponent(typeof(Button))]
+public class BannerRepeat : MonoBehaviour {
 
-	public UILabel m_lbText;
-	public ButtonBase m_btnTrigger;
-	public UI2DSprite m_sprYes;
-	public UI2DSprite m_sprNo;
+	public Text m_lbText;
+	public Image m_imgSwitch;
+	public Image m_sprYes;
+	public Image m_sprNo;
 
 	public bool m_bFlag;
 
@@ -14,11 +16,9 @@ public class BannerRepeat : BannerBase {
 
 	private void button( bool _bOn ){
 		if (_bOn) {
-			m_sprYes.gameObject.SetActive (true);
-			m_sprNo.gameObject.SetActive (false);
+			m_imgSwitch.sprite = SpriteManager.Instance.LoadSprite("Texture/btn_timer_on");
 		} else {
-			m_sprYes.gameObject.SetActive (false);
-			m_sprNo.gameObject.SetActive (true);
+			m_imgSwitch.sprite = SpriteManager.Instance.LoadSprite("Texture/btn_timer_off");
 		}
 	}
 
@@ -26,26 +26,24 @@ public class BannerRepeat : BannerBase {
 		m_lbText.text = _strLabel;
 		m_bFlag = _bOn;
 		button (m_bFlag);
-		m_btnTrigger.TriggerClear ();
 		m_iIndex = _iIndex;
-	}
 
-	void Update(){
-
-		if (m_btnTrigger.ButtonPushed) {
-			m_btnTrigger.TriggerClear ();
-
+		gameObject.GetComponent<Button>().onClick.AddListener(() =>
+		{
 			m_bFlag = !m_bFlag;
-			button (m_bFlag);
+			Debug.LogError(m_bFlag);
+			button(m_bFlag);
 
-			if (m_bFlag) {
+			if (m_bFlag)
+			{
 				GameMain.Instance.EditingAlarmParam.repeat_type |= (ulong)(1 << m_iIndex);
-			} else {
+			}
+			else {
 				GameMain.Instance.EditingAlarmParam.repeat_type &= (ulong)~(1 << m_iIndex);
 			}
-			return;
-		}
 
+		});
 	}
+
 
 }

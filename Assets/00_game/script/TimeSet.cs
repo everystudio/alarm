@@ -89,6 +89,7 @@ public class TimeSet : OtherPage {
 			TriggerClearAll ();
 		}
 
+		/*
 		foreach (BannerTimer bt in m_BannerTimerList) {
 			if (bt.ButtonPushed) {
 				bt.TriggerClear ();
@@ -98,6 +99,7 @@ public class TimeSet : OtherPage {
 				m_TimeEdit.InStart (GameMain.Instance.EditingAlarmParam);
 			}
 		}
+		*/
 
 	}
 

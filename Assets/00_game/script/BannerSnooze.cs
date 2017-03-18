@@ -1,24 +1,30 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 
-public class BannerSnooze : BannerBase {
+[RequireComponent(typeof(Button))]
+public class BannerSnooze : MonoBehaviour {
 
-	public UILabel m_lbText;
+	public Text m_lbText;
 
-	public UI2DSprite m_sprBack;
-	public UI2DSprite m_sprSelecting;
+	public Image m_sprBack;
+	public Image m_sprSelecting;
 
 	public bool m_bFlag;
 
-	public void Initialize( string _strLabel , bool _bOn  ){
+	public void Initialize(string _strLabel, bool _bOn)
+	{
 		m_lbText.text = _strLabel;
-		m_sprSelecting.gameObject.SetActive (_bOn);
-
-		m_sprBack.sprite2D = sprite_list [Index];
+		Switch(_bOn);
 	}
 
-	public List<Sprite> sprite_list = new List<Sprite>();
+	public void Switch(bool _bOn)
+	{
+		m_sprSelecting.gameObject.SetActive(_bOn);
+	}
+
+
 
 
 }

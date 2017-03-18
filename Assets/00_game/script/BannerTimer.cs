@@ -1,16 +1,18 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System;
 
-public class BannerTimer : BannerBase {
+[RequireComponent(typeof(Button))]
+public class BannerTimer : MonoBehaviour {
 
-	public UILabel m_lbTimer;
-	public UILabel m_lbName;
+	public Text m_lbTimer;
+	public Text m_lbName;
 
-	public UI2DSprite m_sprButtonOn;
-	public UI2DSprite m_sprButtonOff;
+	public Image m_imgSwitch;
+	public Button m_btnSwitch;
 
-	public ButtonBase m_btnTrigger;
+	//public ButtonBase m_btnTrigger;
 
 	public AlarmParam m_AlarmParam;
 	public void Initialize( AlarmParam _param ){
@@ -24,16 +26,16 @@ public class BannerTimer : BannerBase {
 
 		SetStatus (_param.status);
 
-		m_btnTrigger.TriggerClear ();
+		gameObject.GetComponent<Button>().onClick.AddListener(OnClickBanner);
+		m_btnSwitch.onClick.AddListener(OnClickSwitch);
+
 	}
 
 	public void SetStatus( int _iStatus ){
 		if (_iStatus == 0) {
-			m_sprButtonOn.gameObject.SetActive (false);
-			m_sprButtonOff.gameObject.SetActive (true);
+			m_imgSwitch.sprite = SpriteManager.Instance.LoadSprite("Texture/btn_timer_on");
 		} else {
-			m_sprButtonOn.gameObject.SetActive (true);
-			m_sprButtonOff.gameObject.SetActive (false);
+			m_imgSwitch.sprite = SpriteManager.Instance.LoadSprite("Texture/btn_timer_off");
 
 			DateTime datetimeNow = TimeManager.GetNow();
 			DateTime checkDate = TimeManager.Instance.MakeDateTime (m_AlarmParam.time);
@@ -50,19 +52,27 @@ public class BannerTimer : BannerBase {
 			m_AlarmParam.time = strCheckDate;
 		}
 	}
+	private void OnClickBanner()
+	{
+		GameMain.Instance.EditingAlarmParam = m_AlarmParam;
+		UIAssistant.main.ShowPage("EditTime");
 
-	void Update(){
-		if (m_btnTrigger.ButtonPushed) {
-			if (m_AlarmParam.status == 0) {
-				m_AlarmParam.status = 1;
-			} else {
-				m_AlarmParam.status = 0;
-			}
-			SetStatus (m_AlarmParam.status);
-			GameMain.Instance.m_AlarmData.UpdateStatus (m_AlarmParam.serial, m_AlarmParam.status);
-			GameMain.Instance.m_AlarmData.Save (AlarmData.FILENAME);
-			m_btnTrigger.TriggerClear ();
-		}
 	}
+
+	private void OnClickSwitch()
+	{
+		if (m_AlarmParam.status == 0)
+		{
+			m_AlarmParam.status = 1;
+		}
+		else {
+			m_AlarmParam.status = 0;
+		}
+		SetStatus(m_AlarmParam.status);
+		GameMain.Instance.m_AlarmData.UpdateStatus(m_AlarmParam.serial, m_AlarmParam.status);
+		GameMain.Instance.m_AlarmData.Save(AlarmData.FILENAME);
+
+	}
+
 
 }
