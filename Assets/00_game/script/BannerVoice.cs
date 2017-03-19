@@ -17,6 +17,8 @@ public class BannerVoice : BannerVoiceBase {
 	[SerializeField]
 	private Button m_btnSelect;
 
+	public string m_strNameVoice;
+
 	private void CheckPurchase()
 	{
 		foreach (string product_id in DataManagerAlarm.Instance.purchased_list)
@@ -31,7 +33,7 @@ public class BannerVoice : BannerVoiceBase {
 		if (m_csvVoiceData.name_voice.Equals(_strProductId))
 		{
 			m_btnBuy.gameObject.SetActive(false);
-			m_goPurchased.SetActive(true);
+			m_goPurchased.SetActive(false);
 			m_bPurchased = true;
 		}
 	}
@@ -47,6 +49,7 @@ public class BannerVoice : BannerVoiceBase {
 		m_lbDescription.text = _data.description;
 		m_lbName.text = _data.name;
 		m_csvVoiceData = _data;
+		m_strNameVoice = m_csvVoiceData.name_voice;
 
 		m_goPurchased.SetActive(_data.type == 2);
 
@@ -58,9 +61,25 @@ public class BannerVoice : BannerVoiceBase {
 		m_btnBuy.onClick.AddListener(OnClick);
 	}
 
+#if UNITY_ANDROID 
+	private void OnProductPurchased(BillingResult result)
+	{
+		foreach (string product_id in DataManagerAlarm.Instance.purchased_list)
+		{
+			Purchase(product_id);
+		}
+		AndroidInAppPurchaseManager.ActionProductPurchased -= OnProductPurchased;
+	}
+#elif UNITY_IPHONE
+#endif
+
 	public void OnClick()
 	{
-		Debug.LogError(m_csvVoiceData.name_voice);
+		//Debug.LogError(m_csvVoiceData.name_voice);
+#if UNITY_ANDROID
+		AndroidInAppPurchaseManager.ActionProductPurchased += OnProductPurchased;
+#elif UNITY_IPHONE
+#endif
 		GameBillingManager.purchase(m_csvVoiceData.name_voice);
 	}
 

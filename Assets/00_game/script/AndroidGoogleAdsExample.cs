@@ -44,11 +44,18 @@ public class AndroidGoogleAdsExample : MonoBehaviour {
 
 	void Start() {
 
-		string MY_BANNERS_AD_UNIT_ID = DataManagerAlarm.Instance.config.Read("admob_banner");
-		string MY_INTERSTISIALS_AD_UNIT_ID = DataManagerAlarm.Instance.config.Read("admob_interstisial"); // "ca-app-pub-6101605888755494/3301497967";
-		string MY_REWARDED_VIDEO_AD_UNIT_ID = DataManagerAlarm.Instance.config.Read("admob_reward_video"); ;// "ca-app-pub-6101605888755494/5378283960";
-
-		Debug.LogError(DataManagerAlarm.Instance.config.Read("admob_banner"));
+#if UNITY_ANDROID
+		string key_banner = "admob_banner_android";
+		string key_interstisial = "admob_interstisial_android";
+		string key_video = "admob_reward_video_android";
+#elif UNITY_IPHONE
+		string key_banner = "admob_banner_ios";
+		string key_interstisial = "admob_interstisial_ios";
+		string key_video = "admob_reward_video_ios";
+#endif
+		string MY_BANNERS_AD_UNIT_ID = DataManagerAlarm.Instance.config.Read(key_banner);
+		string MY_INTERSTISIALS_AD_UNIT_ID = DataManagerAlarm.Instance.config.Read(key_interstisial); // "ca-app-pub-6101605888755494/3301497967";
+		string MY_REWARDED_VIDEO_AD_UNIT_ID = DataManagerAlarm.Instance.config.Read(key_video); ;// "ca-app-pub-6101605888755494/5378283960";
 
 		AndroidAdMob.Client.AddTestDevices(new string[] {
 			"30ec665ef7c68238905003e951174579",

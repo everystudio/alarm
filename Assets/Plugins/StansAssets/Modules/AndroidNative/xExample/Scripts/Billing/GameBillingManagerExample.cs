@@ -120,7 +120,7 @@ public class GameBillingManagerExample : MonoBehaviour {
 		if(result.IsSuccess) {
 			OnProcessingPurchasedProduct (result.Purchase);
 		} else {
-			AndroidMessage.Create("Product Purchase Failed", result.Response.ToString() + " " + result.Message);
+			//AndroidMessage.Create("Product Purchase Failed", result.Response.ToString() + " " + result.Message);
 		}
 		
 		Debug.Log ("Purchased Responce: " + result.Response.ToString() + " " + result.Message);
@@ -132,7 +132,7 @@ public class GameBillingManagerExample : MonoBehaviour {
 		if(result.IsSuccess) {
 			OnProcessingConsumeProduct (result.Purchase);
 		} else {
-			AndroidMessage.Create("Product Cousume Failed", result.Response.ToString() + " " + result.Message);
+			//AndroidMessage.Create("Product Cousume Failed", result.Response.ToString() + " " + result.Message);
 		}
 		
 		Debug.Log ("Cousume Responce: " + result.Response.ToString() + " " + result.Message);
@@ -151,7 +151,7 @@ public class GameBillingManagerExample : MonoBehaviour {
 
 		} 
 		
-		AndroidMessage.Create("Connection Responce", result.Response.ToString() + " " + result.Message);
+		//AndroidMessage.Create("Connection Responce", result.Response.ToString() + " " + result.Message);
 		Debug.Log ("Connection Responce: " + result.Response.ToString() + " " + result.Message);
 	}
 	
@@ -164,7 +164,7 @@ public class GameBillingManagerExample : MonoBehaviour {
 			UpdateStoreData();
 			_isInited = true;
 		} else {
-			AndroidMessage.Create("Connection Responce", result.Response.ToString() + " " + result.Message);
+			//AndroidMessage.Create("Connection Responce", result.Response.ToString() + " " + result.Message);
 		}
 	}
 

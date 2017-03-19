@@ -58,6 +58,7 @@ public class BannerShop : BannerVoiceBase {
 
 	}
 
+	/*
 	new void Update()
 	{
 		base.Update();
@@ -69,10 +70,9 @@ public class BannerShop : BannerVoiceBase {
 				GameBillingManager.purchase (m_csvVoiceData.name_voice);
 				m_btnBuy.TriggerClear ();
 			}
-
-
 		}
 	}
+	*/
 
 
 }

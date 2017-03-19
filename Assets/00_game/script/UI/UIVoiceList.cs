@@ -16,7 +16,7 @@ public class UIVoiceList : CPanel {
 
 	public List<BannerVoice> voiceList = new List<BannerVoice>();
 
-	private void clear_list(int _iType)
+	private void clear_list(int _iType , string _page )
 	{
 		m_iPrevId = 0;
 		BannerVoice[] dellist = m_goRoot.GetComponentsInChildren<BannerVoice>();
@@ -33,6 +33,10 @@ public class UIVoiceList : CPanel {
 				BannerVoice script = PrefabManager.Instance.MakeScript<BannerVoice>("prefab/BannerVoice", m_goRoot);
 				script.gameObject.transform.localScale = Vector3.one;
 				script.Initialize(data);
+				if (_page.Equals("AlarmVoice"))
+				{
+					script.ShowSelectButton();
+				}
 				script.OnPushed.AddListener(OnPushed);
 				voiceList.Add(script);
 			}
@@ -65,17 +69,17 @@ public class UIVoiceList : CPanel {
 
 	public void OnSelectList()
 	{
-		clear_list(1);
+		clear_list(1 , m_strCurrentPage );
 	}
 	public void OnSelectShop()
 	{
-		clear_list(2);
+		clear_list(2 , m_strCurrentPage);
 	}
 
 	protected override void awake()
 	{
 		base.awake();
-		CheckRectTransform(rtList, "rtList");
+		//CheckRectTransform(rtList, "rtList");
 	}
 
 	protected override void panelEndStart()
@@ -85,12 +89,16 @@ public class UIVoiceList : CPanel {
 
 	}
 
+	private string m_strCurrentPage;
+
 	protected override void panelStart()
 	{
 		base.panelStart();
+
+		m_strCurrentPage = UIAssistant.main.GetCurrentPage();
 		OnSelectList();
 
-		if (UIAssistant.main.GetCurrentPage().Equals("AlarmVoice"))
+		if (m_strCurrentPage.Equals("AlarmVoice"))
 		{
 			rtHeader.gameObject.SetActive(true);
 

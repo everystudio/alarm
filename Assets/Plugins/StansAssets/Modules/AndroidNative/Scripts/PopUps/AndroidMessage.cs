@@ -20,16 +20,19 @@ public class AndroidMessage : BaseAndroidPopup {
 	// INITIALIZE
 	//--------------------------------------
 	
-	public static AndroidMessage Create(string title, string message) {
-		return Create(title, message, "Ok");
+	public static void Create(string title, string message) {
+		return;
+		Create(title, message, "Ok");
 	}
 
-    public static AndroidMessage Create(string title, string message, AndroidDialogTheme theme)
+    public static void Create(string title, string message, AndroidDialogTheme theme)
     {
-        return Create(title, message, "Ok", theme);
+		return;
+        Create(title, message, "Ok", theme);
     }
 
-    public static AndroidMessage Create(string title, string message, string ok) {
+    public static void Create(string title, string message, string ok) {
+		return;
 		AndroidMessage dialog;
 		dialog  = new GameObject("AndroidPopUp").AddComponent<AndroidMessage>();
 		dialog.title = title;
@@ -38,11 +41,12 @@ public class AndroidMessage : BaseAndroidPopup {
 		
 		dialog.init();
 		
-		return dialog;
+		//return dialog;
 	}
 
-    public static AndroidMessage Create(string title, string message, string ok, AndroidDialogTheme theme)
+    public static void Create(string title, string message, string ok, AndroidDialogTheme theme)
     {
+		return;
         AndroidMessage dialog;
         dialog = new GameObject("AndroidPopUp").AddComponent<AndroidMessage>();
         dialog.title = title;
@@ -51,7 +55,7 @@ public class AndroidMessage : BaseAndroidPopup {
 
         dialog.init(theme);
 
-        return dialog;
+        //return dialog;
     }
 
     //--------------------------------------

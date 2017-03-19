@@ -38,8 +38,10 @@ public class AndroidPopUpExamples : MonoBehaviour {
 	}
 
 	private void MessagePopUp() {
+		/*
 		AndroidMessage msg = AndroidMessage.Create("Message Titile", "Message message");
 		msg.ActionComplete += OnMessageClose;
+		*/
 	}
 
 	private void ShowPreloader() {

@@ -25,6 +25,13 @@ public class GameMain : PageBase2 {
 		}
 	}
 
+	public override void Initialize()
+	{
+		base.Initialize();
+
+	}
+
+
 	public UIMainMenu m_AlarmMain;
 	public AlarmParam EditingAlarmParam;
 	public AlarmData m_AlarmData = new AlarmData ();
@@ -211,7 +218,12 @@ public class GameMain : PageBase2 {
 		m_AlarmMain.setNextTimer (reserve_list);
 
 	}
-	void Start(){
+	void Awake(){
+
+#if UNITY_ANDROID
+		GameBillingManager.init();
+#endif
+
 		//Screen.fullScreen = false;
 		instance = this;
 		EditingAlarmParam = new AlarmParam ();

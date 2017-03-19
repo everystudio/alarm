@@ -28,11 +28,11 @@ public class GameBillingManager : MonoBehaviour {
 	
 	private static bool ListnersAdded = false;
 	public static void init() {
-
+		Debug.LogError("GameBillingManager.init");
 		if(ListnersAdded) {
 			return;
 		}
-
+		AndroidNativeSettings.Instance.base64EncodedPublicKey = DataManagerAlarm.Instance.config.Read("publickey");
 
 		//Filling product list
 		//You can skip this if you alredy did this in Editor settings menu

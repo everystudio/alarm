@@ -52,7 +52,7 @@ public class Startup : Singleton<Startup> {
 		UnityEngine.iOS.Device.SetNoBackupFlag(Application.persistentDataPath);
 
 		#elif UNITY_ANDROID
-		GameBillingManager.init();
+		//GameBillingManager.init();
 		#endif
 		return;
 	}
