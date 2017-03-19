@@ -18,6 +18,7 @@ public class FooterButton : MonoBehaviourEx {
 		"Comic"
 	};
 
+
 	public UnityEngine.Sprite m_sprOn;
 	public UnityEngine.Sprite m_sprOff;
 
@@ -41,6 +42,7 @@ public class FooterButton : MonoBehaviourEx {
 
 	public void OnClick()
 	{
+		UIAssistant.main.ShowPage(m_TypeName);
 		OnPushed.Invoke(m_TypeName);
 	}
 

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -6,8 +7,8 @@ public class BannerVoiceBase : BannerBase {
 
 	public UtilSwitchSprite m_switchSprite;
 
-	public UI2DSprite m_sprStop;
-	public UI2DSprite m_sprPlaying;
+	public Image m_sprStop;
+	public Image m_sprPlaying;
 
 	public GameObject m_goSelect;
 
@@ -44,15 +45,34 @@ public class BannerVoiceBase : BannerBase {
 		m_eStepPre = STEP.MAX;
 	}
 
+	public UnityEventInt OnPushed = new UnityEventInt();
+
 	public void Pushed(){
 		if (m_eStep == STEP.IDLE) {
 			m_eStep = STEP.PLAYING;
 		} else {
 			m_eStep = STEP.STOP;
 		}
+		OnPushed.Invoke(m_csvVoiceData.id);
+	}
+
+	public void SetView( int _iId)
+	{
+		if( _iId == m_csvVoiceData.id)
+		{
+			m_sprStop.gameObject.SetActive(false);
+			m_sprPlaying.gameObject.SetActive(true);
+		}
+		else
+		{
+			m_sprStop.gameObject.SetActive(true);
+			m_sprPlaying.gameObject.SetActive(false);
+		}
 	}
 
 	protected void Update(){
+
+		return;
 
 		bool bInit = false;
 		if (m_eStepPre != m_eStep) {
@@ -69,19 +89,7 @@ public class BannerVoiceBase : BannerBase {
 		case STEP.PLAYING:
 			if (bInit) {
 				SoundManager.Instance.StopAll (AUDIO_TYPE.SE);
-
 				GameMain.Instance.CallVoice (m_csvVoiceData.id);
-				/*
-				List<string> sound_list = new List<string> ();
-
-				foreach (CsvVoicesetData data in DataManagerAlarm.Instance.master_voiceset_list) {
-					if (m_csvVoiceData.id == data.id) {
-						sound_list.Add (data.name);
-					}
-				}
-				int iIndex = UtilRand.GetRand (sound_list.Count);
-				SoundManager.Instance.PlaySE ( sound_list[iIndex] );
-				*/
 				m_sprStop.gameObject.SetActive (false);
 				m_sprPlaying.gameObject.SetActive (true);
 			}

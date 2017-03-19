@@ -25,7 +25,7 @@ public class GameMain : PageBase2 {
 		}
 	}
 
-	public AlarmMain m_AlarmMain;
+	public UIMainMenu m_AlarmMain;
 	public AlarmParam EditingAlarmParam;
 	public AlarmData m_AlarmData = new AlarmData ();
 	public TimeComing m_timeComming;
@@ -284,8 +284,7 @@ public class GameMain : PageBase2 {
 		if (0 < iRemoveNum) {
 			Debug.LogError ("remove");
 			m_AlarmMain.setNextTimer (reserve_list);
-			m_timeComming.gameObject.SetActive (true);
-			m_timeComming.Appear ();
+			UIAssistant.main.ShowPage("TimeComming");
 			if (_bCall) {
 				CallVoice (voice_type);
 			}
@@ -347,18 +346,21 @@ public class GameMain : PageBase2 {
 	public void InitPage( PageBase2 _pageBase , int _iPageIndex ){
 		// 一応
 		reserveTimeReset ();
-
+		/*
 		//_obj.SetActive (true);
 		_pageBase.gameObject.transform.localPosition = Vector3.zero;
 		_pageBase.Initialize ();
 
 		m_PageFooter.SetIndex (_iPageIndex);
+		*/
 	}
 
 	public void ClosePage(PageBase2 _pageBase , int _iIndex ){
 		//_obj.SetActive (false);
+		/*
 		_pageBase.gameObject.transform.localPosition = new Vector3( 640.0f , 1136.0f * (2 - _iIndex ) , 0.0f );
 		_pageBase.Close ();
+		*/
 	}
 
 

@@ -79,12 +79,14 @@ public class AlarmMain : PageBase2 {
 			m_btnSetList.TriggerClear ();
 			m_TimeSet.InStart ();
 		}
+		/*
 		if (m_TimeSet.ButtonPushed) {
 			if (m_TimeSet.Index == 0) {
 				m_TimeSet.OutStart ();
 				setNextTimer (GameMain.Instance.reserve_list);
 			}
 		}
+		*/
 
 	}
 

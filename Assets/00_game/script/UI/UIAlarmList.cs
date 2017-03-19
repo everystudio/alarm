@@ -50,4 +50,12 @@ public class UIAlarmList : CPanel {
 		GameMain.Instance.m_AlarmData.Save(AlarmData.FILENAME);
 	}
 
+	protected override void panelEndStart()
+	{
+		Debug.LogError("alarmlist_end");
+		GameMain.Instance.m_AlarmData.Save(AlarmData.FILENAME);
+		base.panelEndStart();
+
+	}
+
 }

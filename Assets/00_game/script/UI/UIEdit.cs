@@ -72,7 +72,7 @@ public class UIEdit : CPanel {
 	public void OnPushSave()
 	{
 
-		//Debug.LogError (GameMain.Instance.EditingAlarmParam.serial);
+		Debug.LogError (GameMain.Instance.EditingAlarmParam.serial);
 		GameMain.Instance.EditingAlarmParam.time = string.Format("1982-10-10 {0:D2}:{1:D2}:00", m_iHour, m_iMinute);
 		GameMain.Instance.m_AlarmData.Load(AlarmData.FILENAME);
 		if (0 < GameMain.Instance.EditingAlarmParam.serial)
@@ -101,6 +101,8 @@ public class UIEdit : CPanel {
 			GameMain.Instance.EditingAlarmParam.serial = GameMain.Instance.m_AlarmData.list.Count + 1;
 			GameMain.Instance.m_AlarmData.list.Add(GameMain.Instance.EditingAlarmParam);
 		}
+		GameMain.Instance.m_AlarmData.Save(AlarmData.FILENAME);
+		UIAssistant.main.ShowPage("AlarmList");
 	}
 
 	public void OnPushDelete()
@@ -118,12 +120,13 @@ public class UIEdit : CPanel {
 					param.status = -1;
 				}
 			}
+			GameMain.Instance.m_AlarmData.Save(AlarmData.FILENAME);
+			GameMain.Instance.reserveTimeReset();
+			GameMain.Instance.TimeSetRefresh();
 		}
 		else {
 		}
-		GameMain.Instance.m_AlarmData.Save(AlarmData.FILENAME);
-		GameMain.Instance.reserveTimeReset();
-		GameMain.Instance.TimeSetRefresh();
+		UIAssistant.main.ShowPage("AlarmList");
 
 	}
 

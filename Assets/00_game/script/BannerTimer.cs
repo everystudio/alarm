@@ -33,9 +33,9 @@ public class BannerTimer : MonoBehaviour {
 
 	public void SetStatus( int _iStatus ){
 		if (_iStatus == 0) {
-			m_imgSwitch.sprite = SpriteManager.Instance.LoadSprite("Texture/btn_timer_on");
-		} else {
 			m_imgSwitch.sprite = SpriteManager.Instance.LoadSprite("Texture/btn_timer_off");
+		} else {
+			m_imgSwitch.sprite = SpriteManager.Instance.LoadSprite("Texture/btn_timer_on");
 
 			DateTime datetimeNow = TimeManager.GetNow();
 			DateTime checkDate = TimeManager.Instance.MakeDateTime (m_AlarmParam.time);

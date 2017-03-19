@@ -88,7 +88,7 @@ MonoBehaviour:
   CameraAPI: 1
   KeepManifestClean: 1
   GooglePlayServiceAppID: 216817929098
-  ToolbarSelectedIndex: 0
+  ToolbarSelectedIndex: 3
   base64EncodedPublicKey: REPLACE_WITH_YOUR_PUBLIC_KEY
   ShowStoreProducts: 1
   InAppProducts:
@@ -125,9 +125,9 @@ MonoBehaviour:
   Achievements: []
   ShowWhenAppIsForeground: 1
   EnableVibrationLocal: 0
-  LocalNotificationSmallIcon: {fileID: 2800000, guid: fa5a3a09854f203408435826273350b0,
+  LocalNotificationSmallIcon: {fileID: 2800000, guid: 7733c628b6c1e9842a851a5db4339580,
     type: 3}
-  LocalNotificationLargeIcon: {fileID: 2800000, guid: fa5a3a09854f203408435826273350b0,
+  LocalNotificationLargeIcon: {fileID: 2800000, guid: 7733c628b6c1e9842a851a5db4339580,
     type: 3}
   LocalNotificationSound: {fileID: 0}
   LocalNotificationWakeLockTimer: 10000

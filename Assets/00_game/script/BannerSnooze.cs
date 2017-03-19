@@ -13,16 +13,23 @@ public class BannerSnooze : MonoBehaviour {
 
 	public bool m_bFlag;
 
-	public void Initialize(string _strLabel, bool _bOn)
+	public void Initialize(string _strLabel, int _iSnoozeType , bool _bOn)
 	{
 		m_lbText.text = _strLabel;
 		Switch(_bOn);
+
+		gameObject.GetComponent<Button>().onClick.AddListener(() =>
+		{
+			GameMain.Instance.EditingAlarmParam.snooze = _iSnoozeType;
+			UIAssistant.main.ShowPreviousPage();
+		});
 	}
 
 	public void Switch(bool _bOn)
 	{
 		m_sprSelecting.gameObject.SetActive(_bOn);
 	}
+
 
 
 

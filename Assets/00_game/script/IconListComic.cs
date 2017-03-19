@@ -9,7 +9,7 @@ public class IconListComic : IconList {
 		Index = _iIndex;
 		SetSelect (_iSelectingId);
 		m_lbTitle.text = _data.name;
-		m_Grid = _grid;
+		//m_Grid = _grid;
 		m_eStep = STEP.LOADING;
 		m_eStepPre = STEP.MAX;
 		return;

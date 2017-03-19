@@ -24,7 +24,7 @@ public class PageSnooze : OtherPage {
 				obj.transform.localScale = Vector3.one;
 				obj.name = string.Format ("{0}", i);
 				BannerSnooze script = obj.GetComponent<BannerSnooze> ();
-				script.Initialize (DataManagerAlarm.Instance.STR_SNOOZE_ARR [i], false);
+				script.Initialize (DataManagerAlarm.Instance.STR_SNOOZE_ARR [i],i, false);
 				m_BannerSnoozeList.Add (script);
 				m_bmSnoozeType.AddButtonBase ( obj);
 			}
@@ -34,7 +34,7 @@ public class PageSnooze : OtherPage {
 
 		int iCount = 0;
 		foreach (BannerSnooze snooze in m_BannerSnoozeList) {
-			snooze.Initialize (DataManagerAlarm.Instance.STR_SNOOZE_ARR [iCount], iCount == GameMain.Instance.EditingAlarmParam.snooze);
+			snooze.Initialize (DataManagerAlarm.Instance.STR_SNOOZE_ARR [iCount],iCount, iCount == GameMain.Instance.EditingAlarmParam.snooze);
 		}
 
 		m_bInitialized = true;
@@ -45,7 +45,7 @@ public class PageSnooze : OtherPage {
 		base.InStart ();
 		int iCount = 0;
 		foreach (BannerSnooze snooze in m_BannerSnoozeList) {
-			snooze.Initialize (DataManagerAlarm.Instance.STR_SNOOZE_ARR [iCount], iCount == _param.snooze);
+			snooze.Initialize (DataManagerAlarm.Instance.STR_SNOOZE_ARR [iCount],iCount, iCount == _param.snooze);
 			iCount += 1;
 		}
 

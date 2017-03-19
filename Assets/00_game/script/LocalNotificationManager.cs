@@ -54,6 +54,7 @@ public class LocalNotificationManager : MonoBehaviour {
 		AndroidNotificationBuilder builder = new AndroidNotificationBuilder (notifi_id, _strTitle, _strMessage, (int)_lTime);
 		builder.ShowIfAppIsForeground( true );
 		builder.SetIconName("notice_icon");
+		builder.SetLargeIcon("notice_icon");
 		builder.SetSoundName (_strSoundName);
 		builder.SetVibration(false);
 		AndroidNotificationManager.Instance.ScheduleLocalNotification (builder);

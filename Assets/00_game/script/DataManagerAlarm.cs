@@ -138,6 +138,7 @@ public class DataManagerAlarm : DataManagerBase<DataManagerAlarm> {
 	};
 	public const string KEY_SELECTING_IMAGE_ID = "selecting_image_id";
 	public const string PRODUCT_NAME = "はるたけアプリ";
+	public int ImageCheckIndex;
 
 	public CsvVoiceData GetVoiceData( int _iId ){
 		foreach (CsvVoiceData voice_data in DataManagerAlarm.Instance.master_voice_list) {

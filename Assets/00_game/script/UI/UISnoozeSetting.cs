@@ -25,16 +25,18 @@ public class UISnoozeSetting : CPanel
 			BannerSnooze script = PrefabManager.Instance.MakeScript<BannerSnooze>("prefab/BannerSnooze", m_goRoot);
 			script.gameObject.name = string.Format("{0}", i);
 			script.gameObject.transform.localScale = Vector3.one;
-			script.Initialize(DataManagerAlarm.Instance.STR_SNOOZE_ARR[i], false);
+			script.Initialize(DataManagerAlarm.Instance.STR_SNOOZE_ARR[i],i, i == GameMain.Instance.EditingAlarmParam.snooze);
 			list.Add(script);
 		}
 
+		/*
 		int iCount = 0;
 		foreach (BannerSnooze snooze in list)
 		{
 			snooze.Initialize(DataManagerAlarm.Instance.STR_SNOOZE_ARR[iCount], iCount == GameMain.Instance.EditingAlarmParam.snooze);
 			iCount += 1;
 		}
+		*/
 
 	}
 
