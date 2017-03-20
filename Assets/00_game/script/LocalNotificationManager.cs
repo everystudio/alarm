@@ -70,7 +70,8 @@ public class LocalNotificationManager : MonoBehaviour {
 		local_notification.SetSoundName (strUseSoundName);
 		//local_notification.SetBadgesNumber(1);
 		id_list.Add( local_notification.Id );
-		IOSNotificationController.Instance.ScheduleNotification (local_notification);
+		//IOSNotificationController.Instance.ScheduleNotification (local_notification);
+		local_notification.Schedule();
 		#endif
 
 
@@ -88,10 +89,11 @@ public class LocalNotificationManager : MonoBehaviour {
 		AndroidNotificationManager.Instance.CancelAllLocalNotifications ();
 		#elif UNITY_IOS
 		foreach( int id in id_list ){
-			IOSNotificationController.Instance.CancelLocalNotificationById(id );
+			//IOSNotificationController.Instance.CancelLocalNotificationById(id );
 		}
-		IOSNotificationController.Instance.CancelAllLocalNotifications();
+		//IOSNotificationController.Instance.CancelAllLocalNotifications();
 		//IOSNativeUtility.SetApplicationBagesNumber(0);
+		ISN_LocalNotificationsController.Instance.CancelAllLocalNotifications();
 		#endif
 		id_list.Clear ();
 	}

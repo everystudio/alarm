@@ -91,6 +91,13 @@ public class DataManagerAlarm : DataManagerBase<DataManagerAlarm> {
 		m_csvVoice.Load ();
 		m_csvVoiceset.Load ();
 
+		DataKvs purchaseCheck = new DataKvs ();
+		if (purchaseCheck.Load ("data/purchaseCheck")) {
+			foreach (CsvKvsParam param in purchaseCheck.list) {
+				purchased_list.Add (param.value);
+			}
+		}
+
 		config.Load (CsvConfig.FILE_NAME);
 		data_kvs.Load (DataKvs.FILE_NAME);
 		if (config.Read ("footer").Contains ("Comic")) {
@@ -148,8 +155,26 @@ public class DataManagerAlarm : DataManagerBase<DataManagerAlarm> {
 		}
 		return new CsvVoiceData ();
 	}
+
 	public List<string> purchased_list = new List<string> ();
 	public void AddPurchasedList( string _strSKU ){
+
+		DataKvs purchaseCheck = new DataKvs ();
+		if (purchaseCheck.Load ("data/purchaseCheck")) {
+
+			bool bAdd = true;
+			foreach (CsvKvsParam param in purchaseCheck.list) {
+				foreach (string check in purchased_list) {
+					if (param.key.Equals (check)) {
+						bAdd = false;
+					}
+				}
+			}
+			if (bAdd) {
+				purchaseCheck.Write (_strSKU, _strSKU);
+				purchaseCheck.Save ("data/purchaseCheck");
+			}
+		}
 		purchased_list.Add (_strSKU);
 	}
 

@@ -26,7 +26,7 @@ MonoBehaviour:
   AppEventsAPI: 0
   AppleId: XXXXXXXXX
   ToolbarIndex: 0
-  ExpandMoreActionsMenu: 1
+  ExpandMoreActionsMenu: 0
   ExpandModulesSettings: 1
   InAppsEditorTesting: 1
   CheckInternetBeforeLoadRequest: 0
