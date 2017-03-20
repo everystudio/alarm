@@ -59,6 +59,7 @@ public class BannerVoice : BannerVoiceBase {
 		}
 		m_btnBuy.onClick.RemoveAllListeners();
 		m_btnBuy.onClick.AddListener(OnClick);
+
 	}
 
 #if UNITY_ANDROID 

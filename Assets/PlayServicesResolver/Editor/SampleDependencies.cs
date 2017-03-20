@@ -14,7 +14,7 @@
 //    limitations under the License.
 // </copyright>
 
-using Google.JarResolver;
+//using Google.JarResolver;
 using UnityEditor;
 
 /// <summary>
@@ -29,7 +29,7 @@ public static class SampleDependencies
     /// The name of your plugin.  This is used to create a settings file
     /// which contains the dependencies specific to your plugin.
     /// </summary>
-    private static readonly string PluginName = "your_plugin_name";
+    //private static readonly string PluginName = "your_plugin_name";
 
     /// <summary>
     /// Initializes static members of the <see cref="SampleDependencies"/> class.
