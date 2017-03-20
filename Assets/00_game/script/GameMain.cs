@@ -3,6 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 //using Prime31;
+#if UNITY_IPHONE
+using GoogleMobileAds.Api;
+#endif
 
 public class GameMain : PageBase2 {
 
@@ -222,6 +225,19 @@ public class GameMain : PageBase2 {
 
 #if UNITY_ANDROID
 		GameBillingManager.init();
+#elif UNITY_IPHONE
+		string key_banner = "admob_banner_ios";
+		string key_interstisial = "admob_interstisial_ios";
+		string key_video = "admob_reward_video_ios";
+		string MY_BANNERS_AD_UNIT_ID = DataManagerAlarm.Instance.config.Read(key_banner);
+		string MY_INTERSTISIALS_AD_UNIT_ID = DataManagerAlarm.Instance.config.Read(key_interstisial); // "ca-app-pub-6101605888755494/3301497967";
+		string MY_REWARDED_VIDEO_AD_UNIT_ID = DataManagerAlarm.Instance.config.Read(key_video); ;// "ca-app-pub-6101605888755494/5378283960";
+
+		BannerView bannerview = new BannerView( MY_BANNERS_AD_UNIT_ID ,AdSize.Banner,AdPosition.Bottom);
+		AdRequest request = new AdRequest.Builder().AddTestDevice("30ec665ef7c68238905003e951174579").Build();
+		bannerview.LoadAd(request);
+
+
 #endif
 
 		//Screen.fullScreen = false;
