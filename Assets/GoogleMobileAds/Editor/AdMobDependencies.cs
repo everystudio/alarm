@@ -25,7 +25,6 @@ public class AdMobDependencies : AssetPostprocessor
 
     static void SetupDeps() {
 #if UNITY_ANDROID
-		/*
         // Setup the resolver using reflection as the module may not be
         // available at compile time.
         Type playServicesSupport = Google.VersionHandler.FindClass(
@@ -50,7 +49,6 @@ public class AdMobDependencies : AssetPostprocessor
                         "extra-google-m2repository",
                         "extra-android-m2repository"} }
             });
-			*/
 #elif UNITY_IOS
         Type iosResolver = Google.VersionHandler.FindClass(
             "Google.IOSResolver", "Google.IOSResolver");
