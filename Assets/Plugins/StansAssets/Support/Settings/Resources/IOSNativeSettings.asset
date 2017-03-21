@@ -24,8 +24,8 @@ MonoBehaviour:
   EnablePushNotificationsAPI: 0
   EnableContactsAPI: 0
   AppEventsAPI: 0
-  AppleId: XXXXXXXXX
-  ToolbarIndex: 0
+  AppleId: 1217287027
+  ToolbarIndex: 7
   ExpandMoreActionsMenu: 0
   ExpandModulesSettings: 1
   InAppsEditorTesting: 1
@@ -55,7 +55,7 @@ MonoBehaviour:
   ContactsUsageDescription: for contacts reading
   UrlTypes: []
   ApplicationQueriesSchemes: []
-  DisablePluginLogs: 0
+  DisablePluginLogs: 1
   SoomlaDownloadLink: http://goo.gl/7LYwuj
   SoomlaDocsLink: https://goo.gl/JFkpNa
   SoomlaGameKey: 
