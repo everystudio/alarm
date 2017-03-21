@@ -237,6 +237,8 @@ public class GameMain : PageBase2 {
 		AdRequest request = new AdRequest.Builder().AddTestDevice("30ec665ef7c68238905003e951174579").Build();
 		bannerview.LoadAd(request);
 
+		PaymentManagerAlarm.init();
+
 
 #endif
 

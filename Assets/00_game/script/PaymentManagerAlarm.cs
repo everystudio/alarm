@@ -102,7 +102,11 @@ public class PaymentManagerAlarm {
 
 		//if you want to handle your transactions finish manually, call following method aftter trsansactions is finished
 		PaymentManager.Instance.FinishTransaction (productIdentifier);
+
+
 	}
+
+	public static UnityEventBool OnPurchased = new UnityEventBool();
 
 	private static void OnTransactionComplete (PurchaseResult result) {
 
@@ -133,8 +137,10 @@ public class PaymentManagerAlarm {
 		}
 
 		if(result.State == PurchaseState.Failed) {
+			OnPurchased.Invoke (false);
 			IOSNativePopUpManager.showMessage("Transaction Failed", "Error code: " + result.Error.Code + "\n" + "Error description:" + result.Error.Message);
 		} else {
+			OnPurchased.Invoke (true);
 			IOSNativePopUpManager.showMessage("Store Kit Response", "product " + result.ProductIdentifier + " state: " + result.State.ToString());
 		}
 
