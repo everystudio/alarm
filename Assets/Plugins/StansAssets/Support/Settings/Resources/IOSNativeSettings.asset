@@ -25,11 +25,11 @@ MonoBehaviour:
   EnableContactsAPI: 0
   AppEventsAPI: 0
   AppleId: 1217287027
-  ToolbarIndex: 7
+  ToolbarIndex: 1
   ExpandMoreActionsMenu: 0
   ExpandModulesSettings: 1
   InAppsEditorTesting: 1
-  CheckInternetBeforeLoadRequest: 0
+  CheckInternetBeforeLoadRequest: 1
   TransactionsHandlingMode: 0
   DefaultStoreProductsView: []
   InAppProducts: []

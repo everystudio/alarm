@@ -119,7 +119,7 @@ PlayerSettings:
     16:9: 1
     Others: 1
   bundleIdentifier: jp.everystudio.alarm.school.amachi
-  bundleVersion: 1.0.4
+  bundleVersion: 1.0.8
   preloadedAssets: []
   metroInputSource: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -133,7 +133,7 @@ PlayerSettings:
   stripEngineCode: 1
   iPhoneStrippingLevel: 0
   iPhoneScriptCallOptimization: 0
-  iPhoneBuildNumber: 4
+  iPhoneBuildNumber: 8
   ForceInternetPermission: 0
   ForceSDCardPermission: 0
   CreateWallpaper: 0
@@ -467,6 +467,10 @@ PlayerSettings:
   XboxOnePersistentLocalStorageSize: 0
   vrEditorSettings: {}
   cloudServicesEnabled:
+    Build: 0
+    Collab: 0
+    ErrorHub: 0
+    Hub: 0
     UNet: 1
   cloudProjectId: c44d82c4-5c1c-4d3f-b384-0e9dcf80ae2c
   projectName: "\u840C\u3048\u30AD\u30E3\u30E9\u6642\u8A08\uFF5E\u96E8\u77E5\u7B11\u7F8E\u7DE8"

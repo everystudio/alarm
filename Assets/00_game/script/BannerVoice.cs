@@ -73,7 +73,7 @@ public class BannerVoice : BannerVoiceBase {
 	}
 #elif UNITY_IPHONE
 	private void OnPurchased(bool _bResult){
-		PaymentManagerAlarm.OnPurchased.RemoveListener (OnPurchased);
+		PaymentManagerAlarm.Instance.OnPurchased.RemoveListener (OnPurchased);
 	}
 #endif
 
@@ -84,8 +84,8 @@ public class BannerVoice : BannerVoiceBase {
 		AndroidInAppPurchaseManager.ActionProductPurchased += OnProductPurchased;
 		GameBillingManager.purchase(m_csvVoiceData.name_voice);
 #elif UNITY_IPHONE
-				PaymentManagerAlarm.buyItem(m_csvVoiceData.name_voice);
-				PaymentManagerAlarm.OnPurchased.AddListener(OnPurchased);
+		PaymentManagerAlarm.Instance.buyItem(m_csvVoiceData.name_voice);
+		PaymentManagerAlarm.Instance.OnPurchased.AddListener(OnPurchased);
 #endif
 	}
 

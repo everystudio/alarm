@@ -12,8 +12,9 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using SA.IOSNative.StoreKit;
+using UnityEngine.Purchasing;
 
-public class PaymentManagerAlarm {
+public class PaymentManagerAlarm :Singleton<PaymentManagerAlarm>, IStoreListener{
 	
 	
 	//--------------------------------------
@@ -25,40 +26,86 @@ public class PaymentManagerAlarm {
 
 
 	public string lastTransactionProdudctId = string.Empty;
-	
+
+	private IStoreController m_StoreController;
+	private IExtensionProvider m_StoreExtensionProvider;
+
+	public void OnInitialized (IStoreController controller, IExtensionProvider extensions){
+		IOSNativePopUpManager.showMessage("StoreKit Init","Succeeded" );
+		m_StoreController = controller;
+		m_StoreExtensionProvider = extensions;
+		m_StoreExtensionProvider.GetExtension<IAppleExtensions> ().RestoreTransactions (result => {
+			if (result) {
+			} else {
+			}
+		});
+	}
+
+	public void OnInitializeFailed (InitializationFailureReason error){
+		IOSNativePopUpManager.showMessage("StoreKit Init" ,"Failed:"+error.ToString() );
+
+	}
+
+	public void OnPurchaseFailed (UnityEngine.Purchasing.Product i, PurchaseFailureReason p){
+		OnPurchased.Invoke (false);
+	}
+
+	public PurchaseProcessingResult ProcessPurchase (PurchaseEventArgs e){
+
+		DataManagerAlarm.Instance.AddPurchasedList (e.purchasedProduct.definition.id);
 
 
-	private static bool IsInitialized = false;
-	public static void init() {
+		OnPurchased.Invoke (true);
 
+
+
+		return PurchaseProcessingResult.Complete;
+	}
+
+
+
+
+	private bool IsInitialized = false;
+	public override void Initialize ()
+	{
+		base.Initialize ();
 
 		if(!IsInitialized) {
 
 			//You do not have to add products by code if you already did it in seetings guid
 			//Windows -> IOS Native -> Edit Settings
 			//Billing tab.
+
+			/*
 			for (int i = 0; i < 10; i++) {
 				string strKey = string.Format ("item{0:D3}", i);
 				if (DataManagerAlarm.Instance.core_config.HasKey (strKey)) {
-					Debug.LogError (strKey);
 					string sku = DataManagerAlarm.Instance.core_config.Read (strKey);
+					Debug.LogError (sku);
 					PaymentManager.Instance.AddProductId(sku);
 				}
 			}
+			*/
+
+			var builder = ConfigurationBuilder.Instance (StandardPurchasingModule.Instance ());
+			builder.AddProduct ("alarm.type.001", UnityEngine.Purchasing.ProductType.NonConsumable);
+			builder.AddProduct ("alarm.type.002", UnityEngine.Purchasing.ProductType.NonConsumable);
+			builder.AddProduct ("alarm.type.003", UnityEngine.Purchasing.ProductType.NonConsumable);
+			UnityPurchasing.Initialize (this, builder);
 
 			//Event Use Examples
-			PaymentManager.OnVerificationComplete += HandleOnVerificationComplete;
-			PaymentManager.OnStoreKitInitComplete += OnStoreKitInitComplete;
+			//PaymentManager.OnVerificationComplete += HandleOnVerificationComplete;
+			//PaymentManager.OnStoreKitInitComplete += OnStoreKitInitComplete;
 
 
-			PaymentManager.OnTransactionComplete += OnTransactionComplete;
-			PaymentManager.OnRestoreComplete += OnRestoreComplete;
+			//PaymentManager.OnTransactionComplete += OnTransactionComplete;
+			//PaymentManager.OnRestoreComplete += OnRestoreComplete;
 
 
 			IsInitialized = true;
 
 
-			PaymentManager.Instance.LoadStore();
+			//PaymentManager.Instance.LoadStore();
 
 
 		} 
@@ -72,8 +119,16 @@ public class PaymentManagerAlarm {
 	//--------------------------------------
 	
 	
-	public static void buyItem(string productId) {
-		PaymentManager.Instance.BuyProduct(productId);
+	public void buyItem(string productId) {
+
+		UnityEngine.Purchasing.Product product = m_StoreController.products.WithID (productId);
+
+		if (product != null && product.availableToPurchase) {
+			m_StoreController.InitiatePurchase (product);
+		}
+
+
+		//PaymentManager.Instance.BuyProduct(productId);
 	}
 	
 	//--------------------------------------
@@ -106,7 +161,7 @@ public class PaymentManagerAlarm {
 
 	}
 
-	public static UnityEventBool OnPurchased = new UnityEventBool();
+	public UnityEventBool OnPurchased = new UnityEventBool();
 
 	private static void OnTransactionComplete (PurchaseResult result) {
 
@@ -137,10 +192,8 @@ public class PaymentManagerAlarm {
 		}
 
 		if(result.State == PurchaseState.Failed) {
-			OnPurchased.Invoke (false);
 			IOSNativePopUpManager.showMessage("Transaction Failed", "Error code: " + result.Error.Code + "\n" + "Error description:" + result.Error.Message);
 		} else {
-			OnPurchased.Invoke (true);
 			IOSNativePopUpManager.showMessage("Store Kit Response", "product " + result.ProductIdentifier + " state: " + result.State.ToString());
 		}
 
@@ -168,7 +221,7 @@ public class PaymentManagerAlarm {
 		if(result.IsSucceeded) {
 
 			int avaliableProductsCount = 0;
-			foreach(Product tpl in PaymentManager.Instance.Products) {
+			foreach(SA.IOSNative.StoreKit.Product tpl in PaymentManager.Instance.Products) {
 				if(tpl.IsAvailable) {
 					avaliableProductsCount++;
 				}
