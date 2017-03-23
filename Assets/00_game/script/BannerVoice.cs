@@ -12,10 +12,13 @@ public class BannerVoice : BannerVoiceBase {
 	private bool m_bPurchased;
 	public GameObject m_goPurchased;
 	public new CsvVoiceData m_csvVoiceData;
+
 	[SerializeField]
 	private Button m_btnBuy;
 	[SerializeField]
 	private Button m_btnSelect;
+	[SerializeField]
+	private Button m_btnStanby;
 
 	public string m_strNameVoice;
 
@@ -46,6 +49,16 @@ public class BannerVoice : BannerVoiceBase {
 		m_lbName.text = "";
 		//m_lbPrice.text = "";
 
+#if UNITY_ANDROID
+		m_btnStanby.gameObject.SetActive(false);
+#elif UNITY_IPHONE
+		m_btnStanby.gameObject.SetActive(true);
+		m_btnStanby.onClick.AddListener(() =>
+		{
+			IOSNativePopUpManager.showMessage("Stand by", "準備中です。現在利用できません");
+		});
+#endif
+
 		m_lbDescription.text = _data.description;
 		m_lbName.text = _data.name;
 		m_csvVoiceData = _data;
@@ -62,7 +75,7 @@ public class BannerVoice : BannerVoiceBase {
 
 	}
 
-#if UNITY_ANDROID 
+#if UNITY_ANDROID
 	private void OnProductPurchased(BillingResult result)
 	{
 		foreach (string product_id in DataManagerAlarm.Instance.purchased_list)

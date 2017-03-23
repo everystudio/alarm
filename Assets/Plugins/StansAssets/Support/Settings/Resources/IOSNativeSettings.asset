@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: IOSNativeSettings
   m_EditorClassIdentifier: 
   EnableGameCenterAPI: 1
-  EnableInAppsAPI: 1
+  EnableInAppsAPI: 0
   EnableCameraAPI: 1
   EnableSocialSharingAPI: 1
   EnablePickerAPI: 0
@@ -25,10 +25,10 @@ MonoBehaviour:
   EnableContactsAPI: 0
   AppEventsAPI: 0
   AppleId: 1217287027
-  ToolbarIndex: 1
+  ToolbarIndex: 0
   ExpandMoreActionsMenu: 0
   ExpandModulesSettings: 1
-  InAppsEditorTesting: 1
+  InAppsEditorTesting: 0
   CheckInternetBeforeLoadRequest: 1
   TransactionsHandlingMode: 0
   DefaultStoreProductsView: []
@@ -42,7 +42,7 @@ MonoBehaviour:
   AutoLoadUsersBigImages: 0
   ShowLeaderboards: 1
   ShowAchievementsParams: 1
-  AdEditorTesting: 1
+  AdEditorTesting: 0
   EditorFillRateIndex: 4
   EditorFillRate: 100
   MaxImageLoadSize: 512
