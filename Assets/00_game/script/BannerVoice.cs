@@ -52,7 +52,7 @@ public class BannerVoice : BannerVoiceBase {
 #if UNITY_ANDROID
 		m_btnStanby.gameObject.SetActive(false);
 #elif UNITY_IPHONE
-		m_btnStanby.gameObject.SetActive(true);
+		m_btnStanby.gameObject.SetActive(_data.type ==2);
 		m_btnStanby.onClick.AddListener(() =>
 		{
 			IOSNativePopUpManager.showMessage("Stand by", "準備中です。現在利用できません");
