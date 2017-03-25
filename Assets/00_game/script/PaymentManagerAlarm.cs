@@ -98,6 +98,9 @@ public class PaymentManagerAlarm :Singleton<PaymentManagerAlarm>, IStoreListener
 			*/
 
 			var builder = ConfigurationBuilder.Instance (StandardPurchasingModule.Instance ());
+#if UNITY_ANDROID
+			builder.Configure<IGooglePlayConfiguration>().SetPublicKey("MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAk6GuK4CaQgkoTAB/9CZDmrSkFH2nAkZtLLI9L0tUdYPaqhUgXcOnm41WR89AIsWFPx0mjqG53mc7jjOzVUDuTu7WdjhmibbmrO0ocOnRZtBQ6JYVjgTvh4brsjciHccFjhsuXxnbenfBLLn65kT0RB5c3QkgnIkYSuy/lydVo8QAXfwAIvUl+4l8wMS2cksculUSeVVoxrj0DXo+5+cYExfIiC8BvWD/I0I/C6qgC+eUiai9lPXXzRAlB2jaWBYR1eFZH1IS8yEKIJm8Ku8SvgHzo6aZ0F/TmE9kSFMhBlPgmUEOcBU0tbGPHXuwUj0J0GLjFY066Eo4wa2xTCJ/ewIDAQAB");
+#endif
 			builder.AddProduct ("alarm.type.001", UnityEngine.Purchasing.ProductType.NonConsumable);
 			builder.AddProduct ("alarm.type.002", UnityEngine.Purchasing.ProductType.NonConsumable);
 			builder.AddProduct ("alarm.type.003", UnityEngine.Purchasing.ProductType.NonConsumable);
