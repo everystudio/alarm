@@ -30,20 +30,16 @@ namespace GoogleMobileAds.iOS
 
         #region Native Express Ad callback types
 
-        internal delegate void GADUNativeExpressAdViewDidReceiveAdCallback(
-            IntPtr nativeExpressAdClient);
+        internal delegate void GADUNativeExpressAdViewDidReceiveAdCallback(IntPtr nativeExpressAdClient);
 
         internal delegate void GADUNativeExpressAdViewDidFailToReceiveAdWithErrorCallback(
             IntPtr nativeExpressAdClient, string error);
 
-        internal delegate void GADUNativeExpressAdViewWillPresentScreenCallback(
-            IntPtr nativeExpressAdClient);
+        internal delegate void GADUNativeExpressAdViewWillPresentScreenCallback(IntPtr nativeExpressAdClient);
 
-        internal delegate void GADUNativeExpressAdViewDidDismissScreenCallback(
-            IntPtr nativeExpressAdClient);
+        internal delegate void GADUNativeExpressAdViewDidDismissScreenCallback(IntPtr nativeExpressAdClient);
 
-        internal delegate void GADUNativeExpressAdViewWillLeaveApplicationCallback(
-            IntPtr nativeExpressAdClient);
+        internal delegate void GADUNativeExpressAdViewWillLeaveApplicationCallback(IntPtr nativeExpressAdClient);
 
         #endregion
 
@@ -88,30 +84,6 @@ namespace GoogleMobileAds.iOS
                     NativeExpressAdViewWillPresentScreenCallback,
                     NativeExpressAdViewDidDismissScreenCallback,
                     NativeExpressAdViewWillLeaveApplicationCallback);
-        }
-
-        public void CreateNativeExpressAdView(
-            string adUnitId,
-            AdSize adSize,
-            int x,
-            int y)
-        {
-            nativeExpressAdClientPtr = (IntPtr)GCHandle.Alloc(this);
-            this.NativeExpressAdViewPtr = Externs.GADUCreateNativeExpressAdViewWithCustomPosition(
-                nativeExpressAdClientPtr,
-                adUnitId,
-                adSize.Width,
-                adSize.Height,
-                x,
-                y);
-
-            Externs.GADUSetNativeExpressAdCallbacks(
-                this.NativeExpressAdViewPtr,
-                NativeExpressAdViewDidReceiveAdCallback,
-                NativeExpressAdViewDidFailToReceiveAdWithErrorCallback,
-                NativeExpressAdViewWillPresentScreenCallback,
-                NativeExpressAdViewDidDismissScreenCallback,
-                NativeExpressAdViewWillLeaveApplicationCallback);
         }
 
         // Loads an ad.

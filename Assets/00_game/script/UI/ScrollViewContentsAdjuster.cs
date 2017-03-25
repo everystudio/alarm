@@ -11,7 +11,7 @@ public class ScrollViewContentsAdjuster : MonoBehaviour {
 
 	[SerializeField]
 	private float offset_height;
-	private float height_interval;
+	public float height_interval;
 
 	[SerializeField]
 	private RectTransform contents;

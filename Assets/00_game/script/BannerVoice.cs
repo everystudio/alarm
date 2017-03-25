@@ -85,21 +85,22 @@ public class BannerVoice : BannerVoiceBase {
 		AndroidInAppPurchaseManager.ActionProductPurchased -= OnProductPurchased;
 	}
 #elif UNITY_IPHONE
-	private void OnPurchased(bool _bResult){
-		PaymentManagerAlarm.Instance.OnPurchased.RemoveListener (OnPurchased);
-	}
 #endif
+	private void OnPurchased(bool _bResult)
+	{
+		PaymentManagerAlarm.Instance.OnPurchased.RemoveListener(OnPurchased);
+	}
 
 	public void OnClick()
 	{
 		//Debug.LogError(m_csvVoiceData.name_voice);
 #if UNITY_ANDROID
-		AndroidInAppPurchaseManager.ActionProductPurchased += OnProductPurchased;
-		GameBillingManager.purchase(m_csvVoiceData.name_voice);
+		//		AndroidInAppPurchaseManager.ActionProductPurchased += OnProductPurchased;
+		//		GameBillingManager.purchase(m_csvVoiceData.name_voice);
 #elif UNITY_IPHONE
+#endif
 		PaymentManagerAlarm.Instance.buyItem(m_csvVoiceData.name_voice);
 		PaymentManagerAlarm.Instance.OnPurchased.AddListener(OnPurchased);
-#endif
 	}
 
 	public void ShowSelectButton()

@@ -30,7 +30,14 @@ public class PaymentManagerAlarm :Singleton<PaymentManagerAlarm>, IStoreListener
 	private IExtensionProvider m_StoreExtensionProvider;
 
 	public void OnInitialized (IStoreController controller, IExtensionProvider extensions){
+#if UNITY_ANDROID
+		/*
+		Product item = controller.products.WithID("alarm.type.001");
+		AndroidMessage.Create("Purchase OnInitialized", "SUCCESS:"+ item.availableToPurchase.ToString() );
+		*/
+#elif UNITY_IPHONE
 		//IOSNativePopUpManager.showMessage("StoreKit Init","Succeeded" );
+#endif
 		m_StoreController = controller;
 		m_StoreExtensionProvider = extensions;
 		m_StoreExtensionProvider.GetExtension<IAppleExtensions> ().RestoreTransactions (result => {
@@ -41,7 +48,11 @@ public class PaymentManagerAlarm :Singleton<PaymentManagerAlarm>, IStoreListener
 	}
 
 	public void OnInitializeFailed (InitializationFailureReason error){
+#if UNITY_ANDROID
+		AndroidMessage.Create("Purchase OnInitializeFailed", "Failed:"+ error.ToString());
+#elif UNITY_IPHONE
 		//IOSNativePopUpManager.showMessage("StoreKit Init" ,"Failed:"+error.ToString() );
+#endif
 
 	}
 

@@ -8,7 +8,6 @@ public class BannerShop : BannerVoiceBase {
 	public UILabel m_lbName;
 	public UILabel m_lbPrice;
 
-	private bool m_bPurchased;
 	public ButtonBase m_btnBuy;
 	public GameObject m_goPurchased;
 	public new CsvVoiceData m_csvVoiceData;
@@ -24,13 +23,11 @@ public class BannerShop : BannerVoiceBase {
 		if (m_csvVoiceData.name_voice.Equals (_strProductId)) {
 			m_btnBuy.gameObject.SetActive (false);
 			m_goPurchased.SetActive (true);
-			m_bPurchased = true;
 		}
 	}
 
 	public override void initialize (CsvVoiceData _data)
 	{
-		m_bPurchased = false;
 		base.initialize (_data);
 		m_lbDescription.text = "";
 		m_lbName.text = "";

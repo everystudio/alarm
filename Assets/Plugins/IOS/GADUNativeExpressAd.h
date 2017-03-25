@@ -18,14 +18,6 @@
                                                 height:(CGFloat)height
                                             adPosition:(GADAdPosition)adPosition;
 
-/// Returns an initialized GADNativeExpressAdView object with specified width and height, positioned
-/// at the specified CGPoint.
-- (instancetype)initWithNativeExpressAdClientReference:
-                    (GADUTypeNativeExpressAdClientRef *)nativeExpressAdClient
-                                              adUnitID:(NSString *)adUnitID
-                                                adSize:(GADAdSize)size
-                                      customAdPosition:(CGPoint)customAdPosition;
-
 /// A reference to the Unity native express ad client.
 @property(nonatomic, assign) GADUTypeNativeExpressAdClientRef *nativeExpressAdClient;
 

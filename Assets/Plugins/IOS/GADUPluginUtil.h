@@ -12,11 +12,6 @@
 /// Position view in the bounds of the parent view, corresponding to the adPosition.
 + (void)positionView:(UIView *)view
       inParentBounds:(CGRect)parentBounds
-          adPosition:(GADAdPosition)adPosition;
-
-/// Position view in the bounds of the parent view, corresponding to the CGPoint.
-+ (void)positionView:(UIView *)view
-      inParentBounds:(CGRect)parentBounds
-      customPosition:(CGPoint)adPosition;
+      withAdPosition:(GADAdPosition)adPosition;
 
 @end

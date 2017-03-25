@@ -10,7 +10,7 @@ public class UIImageList : CPanel {
 	public int m_iSelectingId;
 	private List<IconList> m_iconList = new List<IconList>();
 
-	private bool bSet = false;
+	public bool bSet = false;
 
 	private void OnChange( string _strName)
 	{

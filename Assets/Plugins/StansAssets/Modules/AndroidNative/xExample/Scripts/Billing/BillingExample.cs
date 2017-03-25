@@ -44,7 +44,7 @@ public class BillingExample : MonoBehaviour {
 		if(GPaymnetManagerExample.isInited) {
 			AndroidInAppPurchaseManager.Client.Purchase (GPaymnetManagerExample.ANDROID_TEST_PURCHASED);
 		} else {
-			AndroidMessage.Create("Error", "PaymnetManagerExample not yet inited");
+			//AndroidMessage.Create("Error", "PaymnetManagerExample not yet inited");
 		}
 
 	}
@@ -54,7 +54,7 @@ public class BillingExample : MonoBehaviour {
 		if(GPaymnetManagerExample.isInited) {
 			AndroidInAppPurchaseManager.Client.Purchase (GPaymnetManagerExample.ANDROID_TEST_ITEM_UNAVAILABLE);
 		} else {
-			AndroidMessage.Create("Error", "PaymnetManagerExample not yet inited");
+			//AndroidMessage.Create("Error", "PaymnetManagerExample not yet inited");
 		}
 	}
 
@@ -64,11 +64,11 @@ public class BillingExample : MonoBehaviour {
 			if(AndroidInAppPurchaseManager.Client.Inventory.IsProductPurchased(GPaymnetManagerExample.ANDROID_TEST_PURCHASED)) {
 				GPaymnetManagerExample.consume (GPaymnetManagerExample.ANDROID_TEST_PURCHASED);
 			} else {
-				AndroidMessage.Create("Error", "You do not own product to consume it");
+				//AndroidMessage.Create("Error", "You do not own product to consume it");
 			}
 			
 		} else {
-			AndroidMessage.Create("Error", "PaymnetManagerExample not yet inited");
+			//AndroidMessage.Create("Error", "PaymnetManagerExample not yet inited");
 		}
 	}
 

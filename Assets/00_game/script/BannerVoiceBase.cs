@@ -70,39 +70,6 @@ public class BannerVoiceBase : BannerBase {
 		}
 	}
 
-	protected void Update(){
-
-		return;
-
-		bool bInit = false;
-		if (m_eStepPre != m_eStep) {
-			m_eStepPre  = m_eStep;
-			bInit = true;
-		}
-		switch (m_eStep) {
-		case STEP.IDLE:
-			if (bInit) {
-				m_sprStop.gameObject.SetActive (true);
-				m_sprPlaying.gameObject.SetActive (false);
-			}
-			break;
-		case STEP.PLAYING:
-			if (bInit) {
-				SoundManager.Instance.StopAll (AUDIO_TYPE.SE);
-				GameMain.Instance.CallVoice (m_csvVoiceData.id);
-				m_sprStop.gameObject.SetActive (false);
-				m_sprPlaying.gameObject.SetActive (true);
-			}
-			break;
-		case STEP.STOP:
-			SoundManager.Instance.StopAll (AUDIO_TYPE.SE);
-			m_eStep = STEP.IDLE;
-			break;
-		default:
-			break;
-		}
-
-	}
 
 
 

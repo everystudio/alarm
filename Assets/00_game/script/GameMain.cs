@@ -4,8 +4,9 @@ using System.Collections.Generic;
 using System;
 //using Prime31;
 #if UNITY_IPHONE
-using GoogleMobileAds.Api;
+//using GoogleMobileAds.Api;
 #endif
+using GoogleMobileAds.Api;
 
 public class GameMain : PageBase2 {
 
@@ -224,24 +225,27 @@ public class GameMain : PageBase2 {
 	void Awake(){
 
 #if UNITY_ANDROID
-		GameBillingManager.init();
+		//GameBillingManager.init();
+		string key_banner = "admob_banner_android";
+		//string key_interstisial = "admob_interstisial_android";
+		//string key_video = "admob_reward_video_android";
 #elif UNITY_IPHONE
 		string key_banner = "admob_banner_ios";
-		string key_interstisial = "admob_interstisial_ios";
-		string key_video = "admob_reward_video_ios";
-		string MY_BANNERS_AD_UNIT_ID = DataManagerAlarm.Instance.config.Read(key_banner);
-		string MY_INTERSTISIALS_AD_UNIT_ID = DataManagerAlarm.Instance.config.Read(key_interstisial); // "ca-app-pub-6101605888755494/3301497967";
-		string MY_REWARDED_VIDEO_AD_UNIT_ID = DataManagerAlarm.Instance.config.Read(key_video); ;// "ca-app-pub-6101605888755494/5378283960";
-
-		BannerView bannerview = new BannerView( MY_BANNERS_AD_UNIT_ID ,AdSize.Banner,AdPosition.Bottom);
-		AdRequest request = new AdRequest.Builder().AddTestDevice("30ec665ef7c68238905003e951174579").Build();
-		bannerview.LoadAd(request);
-
-
-		PaymentManagerAlarm.Instance.Initialize();
-
+		//string key_interstisial = "admob_interstisial_ios";
+		//string key_video = "admob_reward_video_ios";
 
 #endif
+		string MY_BANNERS_AD_UNIT_ID = DataManagerAlarm.Instance.config.Read(key_banner);
+		//string MY_INTERSTISIALS_AD_UNIT_ID = DataManagerAlarm.Instance.config.Read(key_interstisial); // "ca-app-pub-6101605888755494/3301497967";
+		//string MY_REWARDED_VIDEO_AD_UNIT_ID = DataManagerAlarm.Instance.config.Read(key_video); ;// "ca-app-pub-6101605888755494/5378283960";
+		Debug.LogError("adbanner");
+		BannerView bannerview = new BannerView(MY_BANNERS_AD_UNIT_ID, AdSize.Banner, AdPosition.Bottom);
+		AdRequest request = new AdRequest.Builder()
+			.AddTestDevice("B58A62380C00BF9DC7BA75C756B5F550")
+			.AddTestDevice("30ec665ef7c68238905003e951174579")
+			.Build();
+		bannerview.LoadAd(request);
+		PaymentManagerAlarm.Instance.Initialize();
 
 		//Screen.fullScreen = false;
 		instance = this;

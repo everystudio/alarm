@@ -28,9 +28,6 @@ namespace GoogleMobileAds.Common
             Debug.Log("Dummy " + MethodBase.GetCurrentMethod().Name);
         }
 
-        // Disable warnings for unused dummy ad events.
-        #pragma warning disable 67
-
         public event EventHandler<EventArgs> OnAdLoaded;
 
         public event EventHandler<AdFailedToLoadEventArgs> OnAdFailedToLoad;
@@ -47,8 +44,6 @@ namespace GoogleMobileAds.Common
 
         public event EventHandler<CustomNativeEventArgs> OnCustomNativeTemplateAdLoaded;
 
-        #pragma warning restore 67
-
         public string UserId
         {
             get
@@ -64,11 +59,6 @@ namespace GoogleMobileAds.Common
         }
 
         public void CreateBannerView(string adUnitId, AdSize adSize, AdPosition position)
-        {
-            Debug.Log("Dummy " + MethodBase.GetCurrentMethod().Name);
-        }
-
-        public void CreateBannerView(string adUnitId, AdSize adSize, int positionX, int positionY)
         {
             Debug.Log("Dummy " + MethodBase.GetCurrentMethod().Name);
         }
@@ -139,6 +129,16 @@ namespace GoogleMobileAds.Common
             Debug.Log("Dummy " + MethodBase.GetCurrentMethod().Name);
         }
 
+        public void SetDefaultInAppPurchaseProcessor(IDefaultInAppPurchaseProcessor processor)
+        {
+            Debug.Log("Dummy " + MethodBase.GetCurrentMethod().Name);
+        }
+
+        public void SetCustomInAppPurchaseProcessor(ICustomInAppPurchaseProcessor processor)
+        {
+            Debug.Log("Dummy " + MethodBase.GetCurrentMethod().Name);
+        }
+
         public void CreateAdLoader(AdLoader.Builder builder)
         {
             Debug.Log("Dummy " + MethodBase.GetCurrentMethod().Name);
@@ -150,11 +150,6 @@ namespace GoogleMobileAds.Common
         }
 
         public void CreateNativeExpressAdView(string adUnitId, AdSize adSize, AdPosition position)
-        {
-            Debug.Log("Dummy " + MethodBase.GetCurrentMethod().Name);
-        }
-
-        public void CreateNativeExpressAdView(string adUnitId, AdSize adSize, int positionX, int positionY)
         {
             Debug.Log("Dummy " + MethodBase.GetCurrentMethod().Name);
         }

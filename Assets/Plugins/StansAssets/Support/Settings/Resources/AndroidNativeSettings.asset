@@ -53,11 +53,11 @@ MonoBehaviour:
   MaxImageLoadSize: 512
   CameraCaptureMode: 0
   ImageFormat: 0
-  ShowAppPermissions: 1
-  EnableBillingAPI: 1
-  EnablePSAPI: 1
-  EnableSocialAPI: 1
-  EnableCameraAPI: 1
+  ShowAppPermissions: 0
+  EnableBillingAPI: 0
+  EnablePSAPI: 0
+  EnableSocialAPI: 0
+  EnableCameraAPI: 0
   ExpandNativeAPI: 0
   ExpandPSAPI: 0
   ExpandBillingAPI: 0
@@ -65,7 +65,7 @@ MonoBehaviour:
   ExpandCameraAPI: 0
   ThirdPartyParams: 0
   ShowPSSettingsResources: 0
-  ShowActions: 0
+  ShowActions: 1
   GCMSettingsActinve: 0
   LocalNotificationsAPI: 1
   ImmersiveModeAPI: 1
@@ -75,59 +75,32 @@ MonoBehaviour:
   CheckAppLicenseAPI: 1
   NetworkStateAPI: 0
   FirebaseAnalytics: 0
-  InAppPurchasesAPI: 1
-  GooglePlayServicesAPI: 1
-  PlayServicesAdvancedSignInAPI: 1
-  GoogleButtonAPI: 1
-  AnalyticsAPI: 1
-  GoogleCloudSaveAPI: 1
-  PushNotificationsAPI: 1
-  GoogleMobileAdAPI: 1
+  InAppPurchasesAPI: 0
+  GooglePlayServicesAPI: 0
+  PlayServicesAdvancedSignInAPI: 0
+  GoogleButtonAPI: 0
+  AnalyticsAPI: 0
+  GoogleCloudSaveAPI: 0
+  PushNotificationsAPI: 0
+  GoogleMobileAdAPI: 0
   GoogleOAuthAPI: 1
-  GalleryAPI: 1
-  CameraAPI: 1
+  GalleryAPI: 0
+  CameraAPI: 0
   KeepManifestClean: 1
   GooglePlayServiceAppID: 216817929098
-  ToolbarSelectedIndex: 3
+  ToolbarSelectedIndex: 0
   base64EncodedPublicKey: REPLACE_WITH_YOUR_PUBLIC_KEY
   ShowStoreProducts: 1
-  InAppProducts:
-  - IsOpen: 1
-    SKU: alarm.type.001
-    _LocalizedPrice: 0.99 $
-    _PriceAmountMicros: 990000
-    _PriceCurrencyCode: USD
-    _Description: 
-    _Title: New Product
-    _Texture: {fileID: 0}
-    _ProductType: 0
-  - IsOpen: 1
-    SKU: alarm.type.002
-    _LocalizedPrice: 0.99 $
-    _PriceAmountMicros: 990000
-    _PriceCurrencyCode: USD
-    _Description: 
-    _Title: New Product
-    _Texture: {fileID: 0}
-    _ProductType: 0
-  - IsOpen: 1
-    SKU: alarm.type.003
-    _LocalizedPrice: 0.99 $
-    _PriceAmountMicros: 990000
-    _PriceCurrencyCode: USD
-    _Description: 
-    _Title: New Product
-    _Texture: {fileID: 0}
-    _ProductType: 0
+  InAppProducts: []
   ShowLeaderboards: 1
   Leaderboards: []
   ShowAchievements: 1
   Achievements: []
   ShowWhenAppIsForeground: 1
   EnableVibrationLocal: 0
-  LocalNotificationSmallIcon: {fileID: 2800000, guid: 7733c628b6c1e9842a851a5db4339580,
+  LocalNotificationSmallIcon: {fileID: 2800000, guid: fa5a3a09854f203408435826273350b0,
     type: 3}
-  LocalNotificationLargeIcon: {fileID: 2800000, guid: 7733c628b6c1e9842a851a5db4339580,
+  LocalNotificationLargeIcon: {fileID: 2800000, guid: fa5a3a09854f203408435826273350b0,
     type: 3}
   LocalNotificationSound: {fileID: 0}
   LocalNotificationWakeLockTimer: 10000

@@ -44,5 +44,11 @@ namespace GoogleMobileAds.Common {
 
         // Destroys an InterstitialAd.
         void DestroyInterstitial();
+
+        // Sets processor for default purchase flow.
+        void SetDefaultInAppPurchaseProcessor(IDefaultInAppPurchaseProcessor processor);
+
+        // Sets processor for custom purchase flow.
+        void SetCustomInAppPurchaseProcessor(ICustomInAppPurchaseProcessor processor);
     }
 }

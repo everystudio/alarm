@@ -51,6 +51,8 @@ namespace GoogleMobileAds.iOS
 
         public event EventHandler<EventArgs> OnAdOpening;
 
+        public event EventHandler<EventArgs> OnAdClosing;
+
         public event EventHandler<EventArgs> OnAdClosed;
 
         public event EventHandler<EventArgs> OnAdLeavingApplication;
@@ -121,6 +123,16 @@ namespace GoogleMobileAds.iOS
         ~InterstitialClient()
         {
             this.Dispose();
+        }
+
+        public void SetDefaultInAppPurchaseProcessor(IDefaultInAppPurchaseProcessor processor)
+        {
+            // iOS currently does not support in-app purchase ads.
+        }
+
+        public void SetCustomInAppPurchaseProcessor(ICustomInAppPurchaseProcessor processor)
+        {
+            // iOS currently does not support in-app purchase ads.
         }
 
         #endregion
