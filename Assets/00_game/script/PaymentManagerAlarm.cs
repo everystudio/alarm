@@ -30,6 +30,15 @@ public class PaymentManagerAlarm :Singleton<PaymentManagerAlarm>, IStoreListener
 	private IStoreController m_StoreController;
 	private IExtensionProvider m_StoreExtensionProvider;
 
+	public IExtensionProvider getIExtensionProvider()
+	{
+		return m_StoreExtensionProvider;
+	}
+	public IStoreController getIStoreController()
+	{
+		return m_StoreController;
+	}
+
 	public void OnInitialized (IStoreController controller, IExtensionProvider extensions){
 		//IOSNativePopUpManager.showMessage("StoreKit Init","Succeeded" );
 		m_StoreController = controller;
@@ -40,11 +49,9 @@ public class PaymentManagerAlarm :Singleton<PaymentManagerAlarm>, IStoreListener
 			IOSNativePopUpManager.showMessage("I have no items","cannot buy items" );
 		}
 
+		/*
 		m_StoreExtensionProvider.GetExtension<IAppleExtensions> ().RestoreTransactions (result => {
 			if (result) {
-
-
-
 				foreach (var product in m_StoreController.products.all)
 				{
 					if (product.hasReceipt)
@@ -55,16 +62,11 @@ public class PaymentManagerAlarm :Singleton<PaymentManagerAlarm>, IStoreListener
 						DataManagerAlarm.Instance.restore_data.Add(product.definition.id);
 					}
 				}
-
-
-
-
-
-
 			}
 			else {
 			}
 		});
+		*/
 	}
 
 	public void OnInitializeFailed (InitializationFailureReason error){
@@ -91,12 +93,13 @@ public class PaymentManagerAlarm :Singleton<PaymentManagerAlarm>, IStoreListener
 
 
 
-	private bool IsInitialized = false;
+	public bool IsInitialized = false;
 	public override void Initialize ()
 	{
-		base.Initialize ();
-
 		if(!IsInitialized) {
+
+			// 一応ロック
+			IsInitialized = true;
 
 			//You do not have to add products by code if you already did it in seetings guid
 			//Windows -> IOS Native -> Edit Settings
@@ -140,7 +143,6 @@ public class PaymentManagerAlarm :Singleton<PaymentManagerAlarm>, IStoreListener
 			//PaymentManager.OnRestoreComplete += OnRestoreComplete;
 
 
-			IsInitialized = true;
 
 
 			//PaymentManager.Instance.LoadStore();
