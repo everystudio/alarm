@@ -40,7 +40,7 @@ public class GameBillingManager : MonoBehaviour {
 		//AndroidInAppPurchaseManager.Client.AddProduct(COINS_BOOST);
 
 		for (int i = 0; i < 10; i++) {
-			string strKey = string.Format ("item{0:D3}", i);
+			string strKey = string.Format ("item{0:D2}", i);
 			if (DataManagerAlarm.Instance.core_config.HasKey (strKey)) {
 				Debug.LogError (strKey);
 				string sku = DataManagerAlarm.Instance.core_config.Read (strKey);

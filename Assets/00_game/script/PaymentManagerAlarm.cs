@@ -108,9 +108,21 @@ public class PaymentManagerAlarm :Singleton<PaymentManagerAlarm>, IStoreListener
 			*/
 
 			var builder = ConfigurationBuilder.Instance (StandardPurchasingModule.Instance ());
-			builder.AddProduct ("alarm.type.001", UnityEngine.Purchasing.ProductType.NonConsumable);
-			builder.AddProduct ("alarm.type.002", UnityEngine.Purchasing.ProductType.NonConsumable);
-			builder.AddProduct ("alarm.type.003", UnityEngine.Purchasing.ProductType.NonConsumable);
+
+
+			for (int i = 0; i < 10; i++)
+			{
+				string strKey = string.Format("item{0:D2}", i);
+				if (DataManagerAlarm.Instance.core_config.HasKey(strKey))
+				{
+					Debug.LogError(strKey);
+					string sku = DataManagerAlarm.Instance.core_config.Read(strKey);
+					builder.AddProduct(sku, UnityEngine.Purchasing.ProductType.NonConsumable);
+				}
+			}
+			//builder.AddProduct ("alarm.type.01", UnityEngine.Purchasing.ProductType.NonConsumable);
+			//builder.AddProduct ("alarm.type.02", UnityEngine.Purchasing.ProductType.NonConsumable);
+			//builder.AddProduct ("alarm.type.03", UnityEngine.Purchasing.ProductType.NonConsumable);
 			UnityPurchasing.Initialize (this, builder);
 
 			//Event Use Examples
