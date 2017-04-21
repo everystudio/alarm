@@ -84,8 +84,8 @@ public class BannerVoice : BannerVoiceBase {
 		AndroidInAppPurchaseManager.ActionProductPurchased += OnProductPurchased;
 		GameBillingManager.purchase(m_csvVoiceData.name_voice);
 #elif UNITY_IPHONE
-		PaymentManagerAlarm.Instance.buyItem(m_csvVoiceData.name_voice);
 		PaymentManagerAlarm.Instance.OnPurchased.AddListener(OnPurchased);
+		PaymentManagerAlarm.Instance.buyItem(m_csvVoiceData.name_voice);
 #endif
 	}
 

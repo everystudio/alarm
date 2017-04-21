@@ -34,6 +34,12 @@ public class PaymentManagerAlarm :Singleton<PaymentManagerAlarm>, IStoreListener
 		//IOSNativePopUpManager.showMessage("StoreKit Init","Succeeded" );
 		m_StoreController = controller;
 		m_StoreExtensionProvider = extensions;
+
+		if( m_StoreController.products.all.Length == 0)
+		{
+			IOSNativePopUpManager.showMessage("I have no items","cannot buy items" );
+		}
+
 		m_StoreExtensionProvider.GetExtension<IAppleExtensions> ().RestoreTransactions (result => {
 			if (result) {
 
@@ -158,7 +164,11 @@ public class PaymentManagerAlarm :Singleton<PaymentManagerAlarm>, IStoreListener
 		if (product != null && product.availableToPurchase) {
 			m_StoreController.InitiatePurchase (product);
 		}
-		if (false == product.availableToPurchase)
+		if( product == null)
+		{
+			IOSNativePopUpManager.showMessage("Purchase Failed", "no product:" + productId);
+		}
+		else if (false == product.availableToPurchase)
 		{
 			IOSNativePopUpManager.showMessage("Purchase Failed", "not available:" + product.definition.id);
 		}
