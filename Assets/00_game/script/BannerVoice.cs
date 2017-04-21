@@ -73,6 +73,10 @@ public class BannerVoice : BannerVoiceBase {
 	}
 #elif UNITY_IPHONE
 	private void OnPurchased(bool _bResult){
+		foreach (string product_id in DataManagerAlarm.Instance.purchased_list)
+		{
+			Purchase(product_id);
+		}
 		PaymentManagerAlarm.Instance.OnPurchased.RemoveListener (OnPurchased);
 	}
 #endif
