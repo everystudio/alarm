@@ -21,7 +21,6 @@ public class UIRestore : CPanel {
 
 		m_txtMessage.text = "データ復元中";
 
-		DataManagerAlarm.Instance.restore_data.Add("alarm.type.002");
 		DataManagerAlarm.Instance.purchased_list.Clear();
 
 		DataKvs purchaseCheck = new DataKvs();
