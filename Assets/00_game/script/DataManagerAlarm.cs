@@ -97,8 +97,13 @@ public class DataManagerAlarm : DataManagerBase<DataManagerAlarm> {
 				purchased_list.Add (param.value);
 			}
 		}
+		else
+		{
+			purchaseCheck.Save("data/purchaseCheck");
+			Debug.LogError("できてないよ");
+		}
 
-		config.Load (CsvConfig.FILE_NAME);
+	config.Load (CsvConfig.FILE_NAME);
 		data_kvs.Load (DataKvs.FILE_NAME);
 		if (config.Read ("footer").Contains ("Comic")) {
 			m_csvComic.Load (FILENAME_COMIC_LIST);
@@ -156,6 +161,7 @@ public class DataManagerAlarm : DataManagerBase<DataManagerAlarm> {
 		return new CsvVoiceData ();
 	}
 
+	public List<string> restore_data = new List<string>();
 	public List<string> purchased_list = new List<string> ();
 	public void AddPurchasedList( string _strSKU ){
 

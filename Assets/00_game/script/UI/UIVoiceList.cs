@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIVoiceList : CPanel {
 
@@ -15,6 +16,14 @@ public class UIVoiceList : CPanel {
 	private GameObject m_goRoot;
 
 	public List<BannerVoice> voiceList = new List<BannerVoice>();
+
+	public void CheckPurchase()
+	{
+		foreach (BannerVoice script in voiceList)
+		{
+			script.CheckPurchase();
+		}
+	}
 
 	private void clear_list(int _iType , string _page )
 	{
@@ -41,6 +50,19 @@ public class UIVoiceList : CPanel {
 				voiceList.Add(script);
 			}
 		}
+#if UNITY_IOS
+		// 課金は復元ボタンが！
+		if (_iType == 2)
+		{
+			BannerVoice script = PrefabManager.Instance.MakeScript<BannerVoice>("prefab/BannerRestore", m_goRoot);
+			script.gameObject.transform.localScale = Vector3.one;
+			script.gameObject.GetComponent<Button>().onClick.AddListener(() =>
+			{
+
+			});
+		}
+#endif
+
 		OnPushed(m_iPrevId);
 	}
 

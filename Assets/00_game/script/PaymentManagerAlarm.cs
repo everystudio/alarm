@@ -36,7 +36,27 @@ public class PaymentManagerAlarm :Singleton<PaymentManagerAlarm>, IStoreListener
 		m_StoreExtensionProvider = extensions;
 		m_StoreExtensionProvider.GetExtension<IAppleExtensions> ().RestoreTransactions (result => {
 			if (result) {
-			} else {
+
+
+
+				foreach (var product in m_StoreController.products.all)
+				{
+					if (product.hasReceipt)
+					{ // リストア可能なレシートあるよ! 
+					  // product.definition.id - アイテムID
+					  // product.receipt - レシート関連(JSON) 
+					  // サーバー検証して アイテム復元しなはれ
+						DataManagerAlarm.Instance.restore_data.Add(product.definition.id);
+					}
+				}
+
+
+
+
+
+
+			}
+			else {
 			}
 		});
 	}

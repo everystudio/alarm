@@ -19,7 +19,7 @@ public class BannerVoice : BannerVoiceBase {
 
 	public string m_strNameVoice;
 
-	private void CheckPurchase()
+	public void CheckPurchase()
 	{
 		foreach (string product_id in DataManagerAlarm.Instance.purchased_list)
 		{
