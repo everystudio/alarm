@@ -2510,6 +2510,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114181369696399246, guid: 2c1e00f4f3c6a63488903d6b449fe632,
+        type: 2}
+      propertyPath: productName
+      value: "\u840C\u3048\u30AD\u30E3\u30E9\u6642\u8A08\uFF5E\u91D1\u57CE\u674E\u8389\u5B50\u7DE8"
+      objectReference: {fileID: 0}
+    - target: {fileID: 114181369696399246, guid: 2c1e00f4f3c6a63488903d6b449fe632,
+        type: 2}
+      propertyPath: bundleIdentifier
+      value: jp.everystudio.alarm.school.kanashiro
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2c1e00f4f3c6a63488903d6b449fe632, type: 2}
   m_IsPrefabParent: 0
