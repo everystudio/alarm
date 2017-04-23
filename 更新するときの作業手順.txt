@@ -1,0 +1,19 @@
+
+スプレッドシートを調整
+
+Assets\00_game\alarm.Resources -----------------------------------------------
+
+Assets\00_game\alarm.Resources\Resources\csv\core_config.csv
+spread sheet の準備も行う
+
+ほかのcsvファイルは使ってません
+
+Assets\00_game\alarm.Resources\drawable\notice_icon.png
+アンドロイドの通知用アイコン
+　→キャラの形に切り出す必要あり
+
+Assets\00_game\alarm.Resources\sound
+→キャラごとのmp3ファイルを入れる
+
+Assets\00_game\alarm.Resources
+→icon512.png
