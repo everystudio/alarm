@@ -41,9 +41,9 @@ public class GameBillingManager : MonoBehaviour {
 
 		for (int i = 0; i < 10; i++) {
 			string strKey = string.Format ("item{0:D2}", i);
-			if (DataManagerAlarm.Instance.core_config.HasKey (strKey)) {
+			if (DataManagerAlarm.Instance.config.HasKey (strKey)) {
 				Debug.LogError (strKey);
-				string sku = DataManagerAlarm.Instance.core_config.Read (strKey);
+				string sku = DataManagerAlarm.Instance.config.Read (strKey);
 				AndroidInAppPurchaseManager.Client.AddProduct (sku);
 			}
 		}
