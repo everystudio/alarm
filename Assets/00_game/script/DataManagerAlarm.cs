@@ -104,7 +104,7 @@ public class DataManagerAlarm : DataManagerBase<DataManagerAlarm> {
 		}
 
 	config.Load (CsvConfig.FILE_NAME);
-		data_kvs.Load (DataKvs.FILE_NAME);
+		user_data.Load (DataKvs.FILE_NAME);
 		if (config.Read ("footer").Contains ("Comic")) {
 			m_csvComic.Load (FILENAME_COMIC_LIST);
 		}

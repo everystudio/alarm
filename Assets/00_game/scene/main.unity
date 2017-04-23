@@ -234,7 +234,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3049
+  startingRenderQueue: 3045
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 3
@@ -1366,7 +1366,12 @@ Prefab:
       propertyPath: m_AnchoredPosition.x
       value: -470.6
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 1000011280126212, guid: cc9340974238ba749bf41af59d9c80e8, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114000012698402644, guid: cc9340974238ba749bf41af59d9c80e8, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: cc9340974238ba749bf41af59d9c80e8, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &74173735
@@ -5676,7 +5681,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3027
+  startingRenderQueue: 3023
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 3
@@ -6620,6 +6625,14 @@ MonoBehaviour:
   m_fPitch: 0
   m_fTimer: 0
   m_fTimerMax: 0
+  m_AudioChannelData:
+    iChannelIndex: 0
+    m_eStatus: 0
+    m_bLoop: 0
+    m_bForce: 0
+    m_tAudioSource: {fileID: 0}
+    m_strFilename: 
+    m_strPath: 
 --- !u!1 &388263675
 GameObject:
   m_ObjectHideFlags: 0
@@ -6928,12 +6941,6 @@ MonoBehaviour:
   mMaxLineHeight: 0
   mLineWidth: 0
   mMultiline: 1
---- !u!114 &414472489 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114000012698402644, guid: cc9340974238ba749bf41af59d9c80e8,
-    type: 2}
-  m_PrefabInternal: {fileID: 67596187}
-  m_Script: {fileID: 11500000, guid: d9ee96c79cde0d6458a8efa8428f7682, type: 3}
 --- !u!1 &419284626
 GameObject:
   m_ObjectHideFlags: 0
@@ -7586,7 +7593,7 @@ Prefab:
     - target: {fileID: 224906583580213678, guid: 80a57d4237e934b47b9ac33e24122261,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -50
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224906583580213678, guid: 80a57d4237e934b47b9ac33e24122261,
         type: 2}
@@ -7896,7 +7903,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3023
+  startingRenderQueue: 3019
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 3
@@ -8308,7 +8315,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3027
+  startingRenderQueue: 3023
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 3
@@ -11192,7 +11199,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3034
+  startingRenderQueue: 3030
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 3
@@ -11772,7 +11779,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3061
+  startingRenderQueue: 3057
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 3
@@ -13607,7 +13614,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3061
+  startingRenderQueue: 3057
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 3
@@ -14650,7 +14657,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3049
+  startingRenderQueue: 3045
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 3
@@ -16911,7 +16918,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: f9add77b615e8418eb9b4f85e06798a0, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -17127,7 +17134,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3049
+  startingRenderQueue: 3045
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 3
@@ -17983,6 +17990,28 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1161547770}
+--- !u!1 &1173346309 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1000011280126212, guid: cc9340974238ba749bf41af59d9c80e8,
+    type: 2}
+  m_PrefabInternal: {fileID: 67596187}
+--- !u!114 &1173346313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1173346309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b17239a82381c6840b1bc2dd5e90ddb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  freez: 0
+  hide: 
+  show: 
+  ChangePageName: Alarm
+  load_assetbundle: 0
+  asset_bundle_url: 
 --- !u!1 &1173932473
 GameObject:
   m_ObjectHideFlags: 0
@@ -18225,7 +18254,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3036
+  startingRenderQueue: 3032
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 3
@@ -19933,7 +19962,7 @@ MonoBehaviour:
   - {fileID: 35379515}
   - {fileID: 112614130}
   - {fileID: 2047178974}
-  - {fileID: 414472489}
+  - {fileID: 1173346313}
   - {fileID: 1346482934}
   - {fileID: 594851886}
   - {fileID: 725319501}
@@ -19951,7 +19980,7 @@ MonoBehaviour:
     - {fileID: 962754311}
     ignoring_panels: []
     soundtrack: '-'
-    default_page: 1
+    default_page: 0
     setTimeScale: 1
     timeScale: 1
   - name: AlarmList
@@ -20034,7 +20063,7 @@ MonoBehaviour:
     - {fileID: 35379515}
     - {fileID: 112614130}
     - {fileID: 2047178974}
-    - {fileID: 414472489}
+    - {fileID: 0}
     - {fileID: 1346482934}
     - {fileID: 594851886}
     - {fileID: 725319501}
@@ -20053,7 +20082,7 @@ MonoBehaviour:
     - {fileID: 35379515}
     - {fileID: 112614130}
     - {fileID: 2047178974}
-    - {fileID: 414472489}
+    - {fileID: 0}
     - {fileID: 1346482934}
     - {fileID: 594851886}
     - {fileID: 725319501}
@@ -20064,6 +20093,14 @@ MonoBehaviour:
     - {fileID: 1116824754}
     soundtrack: '-'
     default_page: 0
+    setTimeScale: 1
+    timeScale: 1
+  - name: Startup
+    panels:
+    - {fileID: 1173346313}
+    ignoring_panels: []
+    soundtrack: '-'
+    default_page: 1
     setTimeScale: 1
     timeScale: 1
 --- !u!224 &1305528213
@@ -22945,7 +22982,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3052
+  startingRenderQueue: 3048
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 3
@@ -22956,6 +22993,63 @@ MonoBehaviour:
   mSortingLayerName: 
   mClipOffset: {x: 0, y: 0}
   useSortingOrder: 0
+--- !u!1001 &1478532763
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 114181369696399246, guid: 2c1e00f4f3c6a63488903d6b449fe632,
+        type: 2}
+      propertyPath: config_params.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4016456919501020, guid: 2c1e00f4f3c6a63488903d6b449fe632, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 792.62885
+      objectReference: {fileID: 0}
+    - target: {fileID: 4016456919501020, guid: 2c1e00f4f3c6a63488903d6b449fe632, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 458.82983
+      objectReference: {fileID: 0}
+    - target: {fileID: 4016456919501020, guid: 2c1e00f4f3c6a63488903d6b449fe632, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4016456919501020, guid: 2c1e00f4f3c6a63488903d6b449fe632, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4016456919501020, guid: 2c1e00f4f3c6a63488903d6b449fe632, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4016456919501020, guid: 2c1e00f4f3c6a63488903d6b449fe632, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4016456919501020, guid: 2c1e00f4f3c6a63488903d6b449fe632, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4016456919501020, guid: 2c1e00f4f3c6a63488903d6b449fe632, type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114181369696399246, guid: 2c1e00f4f3c6a63488903d6b449fe632,
+        type: 2}
+      propertyPath: config_params.Array.data[1].m_key
+      value: scene
+      objectReference: {fileID: 0}
+    - target: {fileID: 114181369696399246, guid: 2c1e00f4f3c6a63488903d6b449fe632,
+        type: 2}
+      propertyPath: config_params.Array.data[1].m_value
+      value: main
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 2c1e00f4f3c6a63488903d6b449fe632, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1492882919
 GameObject:
   m_ObjectHideFlags: 0
@@ -23227,7 +23321,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3027
+  startingRenderQueue: 3023
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 3
@@ -23717,7 +23811,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3055
+  startingRenderQueue: 3051
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 3
@@ -24105,7 +24199,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3027
+  startingRenderQueue: 3023
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 3
@@ -24946,7 +25040,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3023
+  startingRenderQueue: 3019
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 3
@@ -25580,7 +25674,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3034
+  startingRenderQueue: 3030
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 3
@@ -27127,7 +27221,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3023
+  startingRenderQueue: 3019
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 3
@@ -27853,7 +27947,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3029
+  startingRenderQueue: 3025
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 3
@@ -28596,7 +28690,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3028
+  startingRenderQueue: 3024
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 3
@@ -30802,7 +30896,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3027
+  startingRenderQueue: 3023
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 3

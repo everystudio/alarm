@@ -362,8 +362,17 @@ public class GameMain : PageBase2 {
 			strPath = data.url + "/" + data.path;
 		}
 
+		Debug.LogError(strPath);
+		Debug.LogError(data.name);
 
-		SoundManager.Instance.PlaySE ( data.name , strPath );
+		string name = data.name;
+#if UNITY_ANDROID
+		name += ".unity3d.android";
+#elif UNITY_IOS
+		name += ".unity3d.iphone";
+#endif
+
+		SoundManager.Instance.PlaySE ( name , strPath );
 		//SoundManager.Instance.PlaySE ( "demo_song" , EditPlayerSettingsData.GetLocalPathHead() + Application.persistentDataPath + "/sound" );
 
 		return;

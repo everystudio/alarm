@@ -57,6 +57,7 @@ public class UIMainMenu : CPanel {
 			}
 			if (data.id == iSelectingImageId)
 			{
+				Debug.LogError(data.name_image);
 				m_switchSprite.SetSprite(data.name_image);
 			}
 		}

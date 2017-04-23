@@ -795,6 +795,14 @@ MonoBehaviour:
   m_fPitch: 0
   m_fTimer: 0
   m_fTimerMax: 0
+  m_AudioChannelData:
+    iChannelIndex: 0
+    m_eStatus: 0
+    m_bLoop: 0
+    m_bForce: 0
+    m_tAudioSource: {fileID: 0}
+    m_strFilename: 
+    m_strPath: 
 --- !u!1 &520903920
 GameObject:
   m_ObjectHideFlags: 0
@@ -2463,6 +2471,48 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 53, y: 57, z: 0}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1001 &1291972063
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4016456919501020, guid: 2c1e00f4f3c6a63488903d6b449fe632, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 792.62885
+      objectReference: {fileID: 0}
+    - target: {fileID: 4016456919501020, guid: 2c1e00f4f3c6a63488903d6b449fe632, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 458.82983
+      objectReference: {fileID: 0}
+    - target: {fileID: 4016456919501020, guid: 2c1e00f4f3c6a63488903d6b449fe632, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4016456919501020, guid: 2c1e00f4f3c6a63488903d6b449fe632, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4016456919501020, guid: 2c1e00f4f3c6a63488903d6b449fe632, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4016456919501020, guid: 2c1e00f4f3c6a63488903d6b449fe632, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4016456919501020, guid: 2c1e00f4f3c6a63488903d6b449fe632, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4016456919501020, guid: 2c1e00f4f3c6a63488903d6b449fe632, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 2c1e00f4f3c6a63488903d6b449fe632, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1298316489
 GameObject:
   m_ObjectHideFlags: 0

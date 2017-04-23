@@ -107,7 +107,7 @@ public class ComicMain : PageBase2
 
 					iIndex += 1;
 				}
-				m_iSelectingId = DataManagerAlarm.Instance.data_kvs.ReadInt ("comic_selecting_id");
+				m_iSelectingId = DataManagerAlarm.Instance.user_data.ReadInt ("comic_selecting_id");
 				IconSelect (m_iSelectingId+1);
 				m_bmIconList.TriggerClearAll ();
 				m_imageCheckComic.Initialize ();
@@ -124,7 +124,7 @@ public class ComicMain : PageBase2
 				int iPushedId = m_iconList [m_bmIconList.Index].m_csvImageData.id;
 				// なんか知らんけど補正かけないとうまく出ない
 				m_iSelectingId = iPushedId-1;
-				DataManagerAlarm.Instance.data_kvs.WriteInt ("comic_selecting_id", m_iSelectingId);
+				DataManagerAlarm.Instance.user_data.WriteInt ("comic_selecting_id", m_iSelectingId);
 				m_bmIconList.TriggerClearAll ();
 				m_eStep = STEP.CHECKING;
 			}
