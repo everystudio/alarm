@@ -338,7 +338,7 @@ public class IOSNativeSettingsEditor : Editor {
 		EditorGUILayout.BeginHorizontal();
 		EditorGUILayout.Space();
 		if(GUILayout.Button("Add", EditorStyles.miniButton, GUILayout.Width(250))) {
-			SA.IOSNative.Models.UrlType newUlr = new SA.IOSNative.Models.UrlType (PlayerSettings.bundleIdentifier);
+			SA.IOSNative.Models.UrlType newUlr = new SA.IOSNative.Models.UrlType (PlayerSettings.applicationIdentifier);
 			newUlr.AddSchemes ("url_sheme");
 
 
@@ -1011,7 +1011,7 @@ public class IOSNativeSettingsEditor : Editor {
 
 
 
-				PlayerSettings.bundleIdentifier = "com.stansassets.iosnative.dev";
+				PlayerSettings.applicationIdentifier = "com.stansassets.iosnative.dev";
 				Settings.InAppProducts.Clear();
 
 

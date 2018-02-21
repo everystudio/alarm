@@ -1448,6 +1448,7 @@ namespace LunarConsolePluginInternal
                     payload.AppendFormat("&an={0}", productName);
                 }
             }
+			/*
             if (!string.IsNullOrEmpty(Application.bundleIdentifier))
             {
                 var bundleIdentifier = WWW.EscapeURL(Application.bundleIdentifier);
@@ -1456,6 +1457,7 @@ namespace LunarConsolePluginInternal
                     payload.AppendFormat("&aid={0}", bundleIdentifier);
                 }
             }
+            */
             if (!string.IsNullOrEmpty(Application.companyName))
             {
                 var companyName = WWW.EscapeURL(Application.companyName);
